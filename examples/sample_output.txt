@@ -1,0 +1,148 @@
+================================================================================
+  11 U.S.C. 1328(f) DISCHARGE BAR VIOLATION SCREEN
+  BAPCPA filter: Only Ch.13 cases filed on/after 10/17/2005
+================================================================================
+
+  Target attorneys: Anderson, James, Miller, Sarah, Thompson, David
+  Control attorneys: Wilson, Robert [CONTROL]
+  Data directory: ./csv-exports
+
+Loaded 8,247 unique cases from 8 CSV files (12,391 total rows)
+Ch.13 cases in dataset: 4,812
+Found 1,247 debtor name keys with 2+ cases
+
+Skipped 42 pre-BAPCPA Ch.13 filings (before 10/17/2005)
+
+================================================================================
+  Section 1328(f)(1): Ch.7/11/12 discharge within 4 YEARS before Ch.13 filing [TARGET]
+  Total: 87 (87 Target + 0 Control)
+================================================================================
+
+  [1] JOHNSON MICHAEL A
+      Prior:  4:2019bk40123 (MOWBK) Ch.7  discharged 2019-08-15
+              Attorney(s): Anderson, James
+      NEW 13: 4:2020bk41567 (MOWBK) Ch.13  filed 2020-03-22
+              Attorney(s): Anderson, James
+      Gap:    220 days (0.6 years)
+      Status: DISMISSED 2021-01-15 | Dismissed for Other Reason
+
+  [2] WILLIAMS PATRICIA L
+      Prior:  2:2020bk20456 (KSBK) Ch.7  discharged 2020-11-30
+              Attorney(s): Miller, Sarah
+      NEW 13: 2:2022bk20789 (KSBK) Ch.13  filed 2022-06-14
+              Attorney(s): Miller, Sarah
+      Gap:    561 days (1.54 years)
+      Status: DISMISSED 2023-09-01 | Failure to Make Plan Payments
+
+  [3] DAVIS ROBERT AND DAVIS MARIA
+      Prior:  4:2021bk40234 (MOWBK) Ch.7  discharged 2021-06-22
+              Attorney(s): Thompson, David
+      NEW 13: 4:2023bk40567 (MOWBK) Ch.13  filed 2023-01-10
+              Attorney(s): Thompson, David
+      Gap:    567 days (1.55 years)
+      Status: PENDING/OPEN
+
+  ... [84 more entries] ...
+
+================================================================================
+  Section 1328(f)(2): Ch.13 discharge within 2 YEARS before Ch.13 filing [TARGET]
+  Total: 61 (61 Target + 0 Control)
+================================================================================
+
+  [1] CARTER JAMES T
+      Prior:  4:2022bk40890 (MOWBK) Ch.13  discharged 2024-02-15
+              Attorney(s): Anderson, James
+      NEW 13: 4:2024bk41234 (MOWBK) Ch.13  filed 2024-08-01
+              Attorney(s): Anderson, James
+      Gap:    168 days (0.46 years)
+      Status: PENDING/OPEN
+
+  ... [60 more entries] ...
+
+================================================================================
+  Section 1328(f)(1) -- CONTROL: Ch.7/11/12 discharge within 4 YEARS before Ch.13 filing [CONTROL]
+  Total: 7 (0 Target + 7 Control)
+================================================================================
+
+  [1] GARCIA CARLOS
+      Prior:  4:2020bk40111 (MOWBK) Ch.7  discharged 2020-09-01
+              Attorney(s): Wilson, Robert [CONTROL]
+      NEW 13: 4:2022bk40222 (MOWBK) Ch.13  filed 2022-04-15
+              Attorney(s): Wilson, Robert [CONTROL]
+      Gap:    591 days (1.62 years)
+      Status: DISMISSED 2023-06-30 | Dismissed for Other Reason
+
+  ... [6 more entries] ...
+
+================================================================================
+  CROSS-ATTORNEY DETAIL: Prior case by different attorney than Ch.13 filer
+================================================================================
+
+  Found 23 cross-attorney violation pairs:
+
+  [1] MARTINEZ ANA
+      Prior: 4:2019bk40333 Ch.7 by Parker, Lisa
+      Ch.13: 4:2021bk40444 by Anderson, James (487d / 1.33yr gap)
+
+  ... [22 more entries] ...
+
+================================================================================
+  MOST EGREGIOUS: Short gaps and non-dismissed barred Ch.13 cases
+================================================================================
+
+  Barred Ch.13 cases NOT DISMISSED (12):
+    DAVIS ROBERT AND DAVIS MARIA: 4:2023bk40567 (gap: 567d) [OPEN/PENDING]
+    TAYLOR SUSAN: 4:2024bk41890 (gap: 312d) ** DISCHARGED 2025-08-15 **
+    ... [10 more] ...
+
+  f(1) hits with gap < 2 years (31):
+    JOHNSON MICHAEL A: 220d (0.6yr) Ch.7 discharge -> Ch.13 [Anderson, James]
+    SMITH DONNA: 289d (0.79yr) Ch.7 discharge -> Ch.13 [Miller, Sarah]
+    ... [29 more] ...
+
+================================================================================
+  SUMMARY: 1328(f) Violations by Attorney (Ch.13 filed on/after BAPCPA 10/17/2005)
+================================================================================
+
+  Target Attorneys:
+  Attorney                       f(1)     f(2)     Total
+  ------------------------------------------------------
+  Anderson, James                42       28       70
+  Miller, Sarah                  23       19       42
+  Thompson, David                22       14       36
+  ------------------------------------------------------
+  Target TOTAL                   87       61       148
+
+  Control Attorneys:
+  Attorney                       f(1)     f(2)     Total
+  ------------------------------------------------------
+  Wilson, Robert [CONTROL]       7        4        11
+  ------------------------------------------------------
+  Control TOTAL                  7        4        11
+
+  Unique Target Ch.13 cases with 1328(f) bar: 131
+  Unique prior-discharge -> Ch.13 violation pairs: 148
+  Ch.13 cases that received discharge DESPITE bar: 47
+    (May be legitimate if court granted waiver or dates are imprecise)
+
+================================================================================
+  METHODOLOGICAL NOTES / CAVEATS
+================================================================================
+
+  1. Name matching is fuzzy (first+last). Some hits may be different people
+     with the same name. Manual verification required for each hit.
+  2. Pre-BAPCPA cases (Ch.13 filed before 10/17/2005) are EXCLUDED.
+     Section 1328(f) did not exist before BAPCPA.
+  3. Some 'DISCHARGED' Ch.13 cases may reflect legitimate situations:
+     - Court may have determined dates did not overlap
+     - Hardship discharge under 1328(b) may not be affected
+     - Data entry lag in PACER
+  4. 'OPEN/PENDING' status means the case has not yet reached discharge.
+     The bar prevents discharge, not filing.
+  5. The prior discharge NEED NOT be by a target attorney. The violation
+     is filing a Ch.13 that cannot result in discharge.
+  6. Attorney competence issue: an attorney should check 1328(f) before
+     filing. Filing a case that is discharge-barred wastes the debtor's
+     filing fee, attorney fees, and time, while providing no benefit.
+  7. Joint cases are split on ' and ' -- each spouse matched independently.
+  8. Encoding: utf-8-sig used for CSV reading (handles BOM from PACER).

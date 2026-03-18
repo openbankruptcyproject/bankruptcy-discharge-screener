@@ -1,0 +1,7 @@
+  *.csv
+  *.json
+  !examples/*.json
+  __pycache__/
+  *.pyc
+  .env
+  results/
