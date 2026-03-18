@@ -1,4 +1,4 @@
-# Screening Results Submission Form — Field Reference
+# Screening Results Submission Form, Field Reference
 
 This documents the fields for the Google Form where volunteers submit their screening results. Create the form at [forms.google.com](https://forms.google.com) with these fields.
 

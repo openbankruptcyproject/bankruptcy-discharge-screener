@@ -14,7 +14,7 @@ PACER Case Locator searches are free. CSV exports are free. The only cost is if 
 
 Every federal district has a bankruptcy court. Pick yours, or pick one you're curious about.
 
-To find high-volume filers, go to [PACER Case Locator](https://pcl.uscourts.gov) and search by court. Sort by attorney name. The biggest filers jump out fast — if someone has 500+ Ch. 13 cases, they're worth screening.
+To find high-volume filers, go to [PACER Case Locator](https://pcl.uscourts.gov) and search by court. Sort by attorney name. The biggest filers jump out fast, if someone has 500+ Ch. 13 cases, they're worth screening.
 
 You can also search by attorney name if you already have someone in mind.
 
@@ -30,7 +30,7 @@ Quick version:
 
 Name your files like: `api_LastName_FirstName_court_date.csv`
 
-**Tip:** Pull at least one high-volume filer and one or two smaller firms from the same district. The smaller firms are your control group — they establish the baseline rate.
+**Tip:** Pull at least one high-volume filer and one or two smaller firms from the same district. The smaller firms are your control group, they establish the baseline rate.
 
 ## Step 3: Run the tools
 
@@ -65,24 +65,24 @@ Same data, bigger picture. Generates a full practice profile: volume, outcomes, 
 Add `--control OtherAttorney_Name` to get a side-by-side comparison table with deltas.
 
 **New in v1.1.0:**
-- `--markdown` — outputs Reddit-ready markdown tables you can paste directly into a comment
-- `--leaderboard` — generates a paste-ready submission block for the [leaderboard](../LEADERBOARD.md)
-- `--username YOUR_NAME` — tags your submission with your Reddit/GitHub username
-- `--by-district` — aggregates by court instead of by attorney (great for district-level screening)
+- `--markdown`, outputs Reddit-ready markdown tables you can paste directly into a comment
+- `--leaderboard`, generates a paste-ready submission block for the [leaderboard](../LEADERBOARD.md)
+- `--username YOUR_NAME`, tags your submission with your Reddit/GitHub username
+- `--by-district`, aggregates by court instead of by attorney (great for district-level screening)
 
 ## Step 4: Review the hits
 
 The screener flags *potential* violations based on name matching. Not every hit is real:
 
-- **Same name, different person** — the most common false positive. Check the court and dates. If the prior case is in a completely different state with no connection, it might be a different person.
-- **Very common names** — "Michael Johnson" will match across the country. The screener notes this.
-- **Legitimate explanations** — rare, but possible (hardship discharge, court waiver).
+- **Same name, different person**, the most common false positive. Check the court and dates. If the prior case is in a completely different state with no connection, it might be a different person.
+- **Very common names**, "Michael Johnson" will match across the country. The screener notes this.
+- **Legitimate explanations**, rare, but possible (hardship discharge, court waiver).
 
-To verify a specific hit, pull Document 1 (the petition) from PACER and check Question 9 on page 7-8. Q9 asks whether the debtor had prior filings. If Q9 says "No" but your data shows a prior discharge inside the window — that's either a lie or attorney negligence.
+To verify a specific hit, pull Document 1 (the petition) from PACER and check Question 9 on page 7-8. Q9 asks whether the debtor had prior filings. If Q9 says "No" but your data shows a prior discharge inside the window, that's either a lie or attorney negligence.
 
 ## Step 5: Share what you find
 
-Post your aggregate results — we're building a national picture:
+Post your aggregate results, we're building a national picture:
 
 **From the screener:**
 - District screened
@@ -115,14 +115,14 @@ All three must be true:
 
 ## What Doesn't Count
 
-- **Prior case was dismissed, not discharged** — no discharge = no bar
-- **Gap is outside the window** — 4 years and 1 day is legal
-- **Case filed before October 17, 2005** — 1328(f) didn't exist yet (BAPCPA)
-- **Different person, same name** — false positive
+- **Prior case was dismissed, not discharged**, no discharge = no bar
+- **Gap is outside the window**, 4 years and 1 day is legal
+- **Case filed before October 17, 2005**, 1328(f) didn't exist yet (BAPCPA)
+- **Different person, same name**, false positive
 
 ## Why This Matters
 
-When an attorney files a Ch. 13 that's discharge-barred, the client pays filing fees and attorney fees for a case that can never achieve its purpose. It's three dates and subtraction — the attorney is supposed to check this before filing. The tool automates the check across thousands of cases. If an attorney has a pattern of these, that's not a mistake.
+When an attorney files a Ch. 13 that's discharge-barred, the client pays filing fees and attorney fees for a case that can never achieve its purpose. It's three dates and subtraction, the attorney is supposed to check this before filing. The tool automates the check across thousands of cases. If an attorney has a pattern of these, that's not a mistake.
 
 ## Questions?
 

@@ -8,9 +8,7 @@
       "state": "AK",
       "annual_ch13": 62,
       "annual_total": 238,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "ALMBK",
@@ -18,9 +16,7 @@
       "state": "AL",
       "annual_ch13": 5303,
       "annual_total": 6378,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "ALNBK",
@@ -28,9 +24,7 @@
       "state": "AL",
       "annual_ch13": 6175,
       "annual_total": 10251,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "ALSBK",
@@ -38,9 +32,7 @@
       "state": "AL",
       "annual_ch13": 3132,
       "annual_total": 4007,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "ARBK",
@@ -48,9 +40,7 @@
       "state": "AR",
       "annual_ch13": 3903,
       "annual_total": 6997,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "AZBK",
@@ -58,9 +48,7 @@
       "state": "AZ",
       "annual_ch13": 2109,
       "annual_total": 12891,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "CACBK",
@@ -74,10 +62,7 @@
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
       "annual_ch13": 4153,
-      "annual_total": 29591,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 29591
     },
     {
       "court_id": "CAEBK",
@@ -85,9 +70,7 @@
       "state": "CA",
       "annual_ch13": 2493,
       "annual_total": 12830,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "CANBK",
@@ -95,9 +78,7 @@
       "state": "CA",
       "annual_ch13": 1910,
       "annual_total": 6478,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "CASBK",
@@ -105,9 +86,7 @@
       "state": "CA",
       "annual_ch13": 670,
       "annual_total": 5593,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "COBK",
@@ -115,9 +94,7 @@
       "state": "CO",
       "annual_ch13": 1520,
       "annual_total": 8641,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "CTBK",
@@ -125,9 +102,7 @@
       "state": "CT",
       "annual_ch13": 572,
       "annual_total": 3671,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "DCBK",
@@ -135,9 +110,7 @@
       "state": "DC",
       "annual_ch13": 133,
       "annual_total": 618,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "DEBK",
@@ -145,9 +118,7 @@
       "state": "DE",
       "annual_ch13": 568,
       "annual_total": 2331,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "FLMBK",
@@ -155,9 +126,7 @@
       "state": "FL",
       "annual_ch13": 5461,
       "annual_total": 26279,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "FLNBK",
@@ -165,9 +134,7 @@
       "state": "FL",
       "annual_ch13": 570,
       "annual_total": 2602,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "FLSBK",
@@ -180,11 +147,9 @@
       "attorneys": 22,
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
-      "screening_status": "not_started",
+      "screening_status": "cases_loaded",
       "annual_ch13": 6615,
-      "annual_total": 15780,
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 15780
     },
     {
       "court_id": "GAMBK",
@@ -192,9 +157,7 @@
       "state": "GA",
       "annual_ch13": 4542,
       "annual_total": 6612,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "GANBK",
@@ -207,11 +170,9 @@
       "attorneys": 15,
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
-      "screening_status": "not_started",
+      "screening_status": "cases_loaded",
       "annual_ch13": 9164,
-      "annual_total": 21161,
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 21161
     },
     {
       "court_id": "GASBK",
@@ -219,9 +180,7 @@
       "state": "GA",
       "annual_ch13": 3153,
       "annual_total": 3820,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "GUBK",
@@ -229,9 +188,7 @@
       "state": "GU",
       "annual_ch13": 4,
       "annual_total": 25,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "HIBK",
@@ -239,9 +196,7 @@
       "state": "HI",
       "annual_ch13": 475,
       "annual_total": 1194,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "IANBK",
@@ -249,9 +204,7 @@
       "state": "IA",
       "annual_ch13": 183,
       "annual_total": 1471,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "IASBK",
@@ -259,9 +212,7 @@
       "state": "IA",
       "annual_ch13": 442,
       "annual_total": 2267,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "IDBK",
@@ -269,9 +220,7 @@
       "state": "ID",
       "annual_ch13": 180,
       "annual_total": 2474,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "ILCBK",
@@ -279,9 +228,7 @@
       "state": "IL",
       "annual_ch13": 726,
       "annual_total": 2684,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "ILNBK",
@@ -295,10 +242,7 @@
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
       "annual_ch13": 9510,
-      "annual_total": 21936,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 21936
     },
     {
       "court_id": "ILSBK",
@@ -306,9 +250,7 @@
       "state": "IL",
       "annual_ch13": 768,
       "annual_total": 1789,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "INNBK",
@@ -316,9 +258,7 @@
       "state": "IN",
       "annual_ch13": 2983,
       "annual_total": 7134,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "INSBK",
@@ -326,9 +266,7 @@
       "state": "IN",
       "annual_ch13": 4921,
       "annual_total": 11076,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "KSBK",
@@ -342,10 +280,7 @@
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
       "annual_ch13": 1884,
-      "annual_total": 4213,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 4213
     },
     {
       "court_id": "KYEBK",
@@ -353,9 +288,7 @@
       "state": "KY",
       "annual_ch13": 2257,
       "annual_total": 6130,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "KYWBK",
@@ -363,9 +296,7 @@
       "state": "KY",
       "annual_ch13": 3237,
       "annual_total": 5999,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "LAEBK",
@@ -373,9 +304,7 @@
       "state": "LA",
       "annual_ch13": 2172,
       "annual_total": 3130,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "LAMBK",
@@ -383,9 +312,7 @@
       "state": "LA",
       "annual_ch13": 649,
       "annual_total": 1235,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "LAWBK",
@@ -393,9 +320,7 @@
       "state": "LA",
       "annual_ch13": 4671,
       "annual_total": 5866,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MABK",
@@ -408,11 +333,9 @@
       "attorneys": 1,
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
-      "screening_status": "not_started",
+      "screening_status": "cases_loaded",
       "annual_ch13": 1527,
-      "annual_total": 5085,
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 5085
     },
     {
       "court_id": "MDBK",
@@ -420,9 +343,7 @@
       "state": "MD",
       "annual_ch13": 4501,
       "annual_total": 12405,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MEBK",
@@ -430,9 +351,7 @@
       "state": "ME",
       "annual_ch13": 119,
       "annual_total": 595,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MIEBK",
@@ -440,9 +359,7 @@
       "state": "MI",
       "annual_ch13": 5862,
       "annual_total": 18378,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MIWBK",
@@ -450,9 +367,7 @@
       "state": "MI",
       "annual_ch13": 1259,
       "annual_total": 3891,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MNBK",
@@ -460,9 +375,7 @@
       "state": "MN",
       "annual_ch13": 2357,
       "annual_total": 10260,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MOEBK",
@@ -476,10 +389,7 @@
       "screened_by": "volunteer",
       "screened_date": "2026-03-14",
       "annual_ch13": 2397,
-      "annual_total": 6173,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 6173
     },
     {
       "court_id": "MOWBK",
@@ -493,10 +403,7 @@
       "screened_by": "volunteer",
       "screened_date": "2026-03-14",
       "annual_ch13": 2187,
-      "annual_total": 4440,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 4440
     },
     {
       "court_id": "MSNBK",
@@ -504,9 +411,7 @@
       "state": "MS",
       "annual_ch13": 2691,
       "annual_total": 4454,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MSSBK",
@@ -514,9 +419,7 @@
       "state": "MS",
       "annual_ch13": 2547,
       "annual_total": 5320,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "MTBK",
@@ -524,9 +427,7 @@
       "state": "MT",
       "annual_ch13": 131,
       "annual_total": 830,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NCEBK",
@@ -534,9 +435,7 @@
       "state": "NC",
       "annual_ch13": 3816,
       "annual_total": 5242,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NCMBK",
@@ -544,9 +443,7 @@
       "state": "NC",
       "annual_ch13": 1106,
       "annual_total": 2101,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NCWBK",
@@ -554,9 +451,7 @@
       "state": "NC",
       "annual_ch13": 1329,
       "annual_total": 2504,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NDBK",
@@ -564,9 +459,7 @@
       "state": "ND",
       "annual_ch13": 63,
       "annual_total": 620,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NEBK",
@@ -574,9 +467,7 @@
       "state": "NE",
       "annual_ch13": 943,
       "annual_total": 2796,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NHBK",
@@ -584,9 +475,7 @@
       "state": "NH",
       "annual_ch13": 259,
       "annual_total": 935,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NJBK",
@@ -594,9 +483,7 @@
       "state": "NJ",
       "annual_ch13": 5130,
       "annual_total": 14171,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NMBK",
@@ -604,9 +491,7 @@
       "state": "NM",
       "annual_ch13": 214,
       "annual_total": 1660,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NVBK",
@@ -619,11 +504,9 @@
       "attorneys": 2,
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
-      "screening_status": "not_started",
+      "screening_status": "cases_loaded",
       "annual_ch13": 1486,
-      "annual_total": 9408,
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 9408
     },
     {
       "court_id": "NYEBK",
@@ -631,9 +514,7 @@
       "state": "NY",
       "annual_ch13": 3806,
       "annual_total": 11228,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NYNBK",
@@ -641,9 +522,7 @@
       "state": "NY",
       "annual_ch13": 989,
       "annual_total": 3883,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NYSBK",
@@ -651,9 +530,7 @@
       "state": "NY",
       "annual_ch13": 1332,
       "annual_total": 5596,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "NYWBK",
@@ -661,9 +538,7 @@
       "state": "NY",
       "annual_ch13": 830,
       "annual_total": 2479,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "OHNBK",
@@ -671,9 +546,7 @@
       "state": "OH",
       "annual_ch13": 2626,
       "annual_total": 14333,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "OHSBK",
@@ -681,9 +554,7 @@
       "state": "OH",
       "annual_ch13": 3518,
       "annual_total": 11777,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "OKEBK",
@@ -691,9 +562,7 @@
       "state": "OK",
       "annual_ch13": 147,
       "annual_total": 1270,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "OKNBK",
@@ -701,9 +570,7 @@
       "state": "OK",
       "annual_ch13": 228,
       "annual_total": 1997,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "OKWBK",
@@ -711,9 +578,7 @@
       "state": "OK",
       "annual_ch13": 924,
       "annual_total": 4186,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "ORBK",
@@ -721,9 +586,7 @@
       "state": "OR",
       "annual_ch13": 1790,
       "annual_total": 8202,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "PAEBK",
@@ -731,9 +594,7 @@
       "state": "PA",
       "annual_ch13": 2682,
       "annual_total": 5336,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "PAMBK",
@@ -741,9 +602,7 @@
       "state": "PA",
       "annual_ch13": 1769,
       "annual_total": 3780,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "PAWBK",
@@ -751,9 +610,7 @@
       "state": "PA",
       "annual_ch13": 1710,
       "annual_total": 4849,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "PRBK",
@@ -761,9 +618,7 @@
       "state": "PR",
       "annual_ch13": 3866,
       "annual_total": 6036,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "RIBK",
@@ -771,9 +626,7 @@
       "state": "RI",
       "annual_ch13": 277,
       "annual_total": 1077,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "SCBK",
@@ -781,9 +634,7 @@
       "state": "SC",
       "annual_ch13": 3368,
       "annual_total": 5210,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "SDBK",
@@ -791,9 +642,7 @@
       "state": "SD",
       "annual_ch13": 158,
       "annual_total": 669,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "TNEBK",
@@ -801,9 +650,7 @@
       "state": "TN",
       "annual_ch13": 3403,
       "annual_total": 7446,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "TNMBK",
@@ -811,9 +658,7 @@
       "state": "TN",
       "annual_ch13": 2585,
       "annual_total": 5533,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "TNWBK",
@@ -821,9 +666,7 @@
       "state": "TN",
       "annual_ch13": 6261,
       "annual_total": 8659,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "TXEBK",
@@ -831,9 +674,7 @@
       "state": "TX",
       "annual_ch13": 2414,
       "annual_total": 6199,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "TXNBK",
@@ -846,11 +687,9 @@
       "attorneys": 17,
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
-      "screening_status": "not_started",
+      "screening_status": "cases_loaded",
       "annual_ch13": 4572,
-      "annual_total": 12785,
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 12785
     },
     {
       "court_id": "TXSBK",
@@ -864,10 +703,7 @@
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
       "annual_ch13": 3951,
-      "annual_total": 10846,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 10846
     },
     {
       "court_id": "TXWBK",
@@ -875,9 +711,7 @@
       "state": "TX",
       "annual_ch13": 2602,
       "annual_total": 8236,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "UTBK",
@@ -885,9 +719,7 @@
       "state": "UT",
       "annual_ch13": 2721,
       "annual_total": 7912,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "VAEBK",
@@ -895,9 +727,7 @@
       "state": "VA",
       "annual_ch13": 4945,
       "annual_total": 12322,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "VAWBK",
@@ -905,9 +735,7 @@
       "state": "VA",
       "annual_ch13": 1364,
       "annual_total": 3637,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "VIBK",
@@ -915,9 +743,7 @@
       "state": "VI",
       "annual_ch13": 2,
       "annual_total": 14,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "VTBK",
@@ -925,9 +751,7 @@
       "state": "VT",
       "annual_ch13": 62,
       "annual_total": 283,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "WAEBK",
@@ -935,9 +759,7 @@
       "state": "WA",
       "annual_ch13": 343,
       "annual_total": 2295,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "WAWBK",
@@ -945,9 +767,7 @@
       "state": "WA",
       "annual_ch13": 1501,
       "annual_total": 7051,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "WIEBK",
@@ -961,10 +781,7 @@
       "screened_by": "ilikemath9999",
       "screened_date": "2026-03-14",
       "annual_ch13": 2771,
-      "annual_total": 7338,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "annual_total": 7338
     },
     {
       "court_id": "WIWBK",
@@ -972,9 +789,7 @@
       "state": "WI",
       "annual_ch13": 779,
       "annual_total": 2833,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "WVNBK",
@@ -982,9 +797,7 @@
       "state": "WV",
       "annual_ch13": 172,
       "annual_total": 791,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "WVSBK",
@@ -992,9 +805,7 @@
       "state": "WV",
       "annual_ch13": 143,
       "annual_total": 994,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     },
     {
       "court_id": "WYBK",
@@ -1002,9 +813,7 @@
       "state": "WY",
       "annual_ch13": 84,
       "annual_total": 572,
-      "screening_status": "not_started",
-      "cases_screened": 0,
-      "cases_flagged": 0
+      "screening_status": "not_started"
     }
   ]
 }

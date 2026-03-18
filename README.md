@@ -1,8 +1,104 @@
-# 1328(f) Discharge Bar Screening Toolkit
+# Bankruptcy Court Monitoring Toolkit
 
-Open-source tools for detecting potential [11 U.S.C. 1328(f)](https://www.law.cornell.edu/uscode/text/11/1328) discharge bar violations in bankruptcy cases using publicly available PACER data.
+Open-source Python tools for monitoring US bankruptcy courts and detecting patterns in publicly available PACER data. Standard library only. No pip install needed.
 
-## What is Section 1328(f)?
+Three tool families:
+1. **RSS Monitor** -- Real-time court surveillance using free RSS feeds ($0/day)
+2. **Discharge Bar Screener** -- Detect potential [11 U.S.C. 1328(f)](https://www.law.cornell.edu/uscode/text/11/1328) violations, [109(g)](https://www.law.cornell.edu/uscode/text/11/109) filing bars, and Ch.7-to-Ch.13 pipeline patterns in PACER CSV exports
+3. **Practice Report** -- Attorney practice quality profiles: volume, outcomes, case duration, statutory compliance, repeat debtors, comparative analysis
+
+## RSS Monitor
+
+### `rss_monitor.py` -- Real-Time Court Surveillance
+
+Fetches free public RSS feeds from US bankruptcy courts and runs five analysis layers on every new docket entry. No PACER login required. $0 operating cost. Standard library only.
+
+```
+python rss_monitor.py                         # Default courts from config
+python rss_monitor.py --court mowbk           # Single court
+python rss_monitor.py --courts mowbk ksbk     # Multiple courts
+python rss_monitor.py --national              # National mill-detection mode
+python rss_monitor.py --fullsend              # ALL ~90 US bankruptcy courts
+python rss_monitor.py --screen                # Enable 1328(f) screening
+python rss_monitor.py --expanded              # Expanded court set from config
+python rss_monitor.py --portfolio             # Show all portfolio hits
+python rss_monitor.py --full                  # All display flags on
+python rss_monitor.py --all                   # Show every RSS entry
+python rss_monitor.py --stats                 # Portfolio loading stats
+python rss_monitor.py --rebuild               # Force rebuild portfolio cache
+python rss_monitor.py --dry-run               # Fetch without updating state
+python rss_monitor.py --reset                 # Clear seen-state
+```
+
+**Five surveillance layers:**
+
+1. **Case-specific alerts** -- Hand-picked cases with custom trigger keywords (e.g., "motion to dismiss", "withdrawal", "contempt"). Configurable per case.
+2. **Portfolio monitoring** -- Cross-references RSS entries against PACER CSV exports. Any docket activity on a target attorney's case triggers an alert.
+3. **New filing detection** -- Catches voluntary petitions as they hit the docket. Track new filings in real time.
+4. **Section 1328(f) screening** -- Screens new Ch.13 filings against the debtor index to flag discharge-barred cases the moment they appear on the docket.
+5. **Serial filer detection** -- Matches debtor names across the portfolio to identify repeat filers.
+
+**Additional features:**
+- Mill signal scoring (heuristic scoring of docket events for bankruptcy mill indicators)
+- Tiered priority system (T1-T6: primary, secondary, watchlist, portfolio, associated, control)
+- Filing velocity trends and time-series tracking (`--timeseries`)
+- Monitored case changelog (`--history`)
+- Covers all ~90 US bankruptcy courts
+
+### Configuration
+
+Copy `rss_config.example.json` to `rss_config.json` and customize:
+
+```json
+{
+  "courts": {
+    "default": ["mowbk", "ksbk"],
+    "expanded": ["mowbk", "ksbk", "moebk"],
+    "national": ["mowbk", "ksbk", "txsb", "ilnb", "cacb", "flsb"]
+  },
+  "target_attorneys": {
+    "names": ["Smith", "Jones"]
+  },
+  "watched_cases": {
+    "24-12345": {
+      "name": "Example Debtor",
+      "court": "mowbk",
+      "tier": 1,
+      "attorney": "Smith, John",
+      "triggers": ["withdrawal", "plan modification", "contempt"]
+    }
+  },
+  "portfolio_triggers": {
+    "keywords": ["motion to dismiss", "conversion", "sanctions", "withdrawal"]
+  }
+}
+```
+
+See `rss_config.example.json` for the full configuration template with all options.
+
+### How RSS Feeds Work
+
+Every US bankruptcy court publishes a free RSS feed at a predictable URL:
+```
+https://ecf.{court-code}.uscourts.gov/cgi-bin/rss_outside.pl
+```
+
+These feeds contain the last ~24 hours of docket activity. Entries disappear when they roll off, so the monitor saves state between runs to track what's been seen. No authentication needed. No PACER charges.
+
+### Data Directory
+
+The monitor stores state in `rss_data/` (auto-created):
+- `rss_state.json` -- Seen entries (prevents duplicate alerts)
+- `rss_changelog.json` -- History of monitored case activity
+- `rss_alerts.json` -- Triggered alerts log
+- `portfolio_cache.json` -- Cached portfolio from CSV exports
+- `timeseries.json` -- Filing velocity data
+
+---
+
+## Discharge Bar Screener
+
+### What is Section 1328(f)?
 
 Section 1328(f) of the Bankruptcy Code bars discharge in a Chapter 13 case if the debtor received a prior discharge within certain time limits:
 
@@ -18,8 +114,6 @@ This provision was enacted by BAPCPA (effective October 17, 2005).
 3. Chapter of prior case
 
 No expert testimony needed. No subjective judgment. Arithmetic.
-
-## Tools
 
 ### `screen_1328f.py` -- Core Screener
 
@@ -60,6 +154,39 @@ python screen_discharge_bars.py --data-dir ./csv-exports --target Smith_John
 2. **Section 109(g) filing bar** -- Cases dismissed then refiled within 180 days by the same attorney
 3. **Ch.7 -> Ch.13 pipeline** -- Same attorney handles Ch.7 discharge then files Ch.13 for same debtor (business model indicator)
 
+---
+
+## Attorney Practice Report
+
+### `practice_report.py` -- Practice Quality Profiles
+
+Same PACER CSVs, same `--target` / `--control` pattern. Generates a comprehensive practice profile for any attorney in your data.
+
+```
+python practice_report.py --data-dir ./csv-exports --target Smith_John
+python practice_report.py --data-dir ./csv-exports --target Smith_John --control Jones_Bob
+python practice_report.py --data-dir ./csv-exports --target Smith_John --output-json report.json
+python practice_report.py --data-dir ./csv-exports --target Smith_John --oneline
+python practice_report.py --data-dir ./csv-exports --all
+```
+
+**Six metric groups:**
+
+1. **Volume Profile** -- Total cases, chapter breakdown (7/11/12/13), chapter mix %, filing date range, filing velocity (cases/year), courts active
+2. **Outcome Analysis** -- Ch. 13 dismissal/discharge/pending rates, disposition breakdown (top reasons: failure to make payments, failure to file, etc.)
+3. **Case Duration** -- Median days to dismissal, median days to discharge, % dismissed within 90 days (bare petition signal), % dismissed within 180 days
+4. **Statutory Compliance** -- 1328(f)(1) and (2) hits with rate per 1,000 Ch. 13 cases, 109(g) refiling bar hits, Ch. 7 → Ch. 13 pipeline count
+5. **Debtor Patterns** -- Unique debtors, debtors with 2+ cases under same attorney, serial filing rate, max cases per debtor
+6. **Comparative Analysis** -- Side-by-side table with delta column when comparing target vs control
+
+**Output formats:**
+- **Text** (default): Clean tables, one section per metric group
+- **JSON** (`--output-json`): Structured for aggregation across districts
+- **One-line** (`--oneline`): Quick scan, one line per attorney:
+  `Smith, John | 450 Ch.13 | 78% dismissed | 2.3/yr | 12 1328f hits (2.7%)`
+
+---
+
 ## Getting PACER Data
 
 These tools process locally-downloaded CSV files. They do **not** access PACER servers or make any network calls.
@@ -81,7 +208,13 @@ CSV files should follow the naming convention: `api_{LastName_FirstName}_{court}
 ```
 git clone https://github.com/ilikemath9999/bankruptcy-discharge-screener.git
 cd bankruptcy-discharge-screener
-python screen_1328f.py --help
+
+# RSS Monitor
+cp rss_config.example.json rss_config.json   # Edit with your courts/attorneys
+python rss_monitor.py --help
+
+# Discharge Bar Screener
+python screen_1328f.py --data-dir ./csv-exports --help
 ```
 
 ## Requirements
@@ -108,6 +241,28 @@ Cases are deduplicated by PACER case ID. Joint cases ("John Smith and Jane Smith
 - "Discharged despite bar" cases may have legitimate explanations (hardship discharge, court waiver)
 - The bar prevents **discharge**, not filing -- an open case is not necessarily an error yet
 
+## Live Map
+
+**[View the national map](https://ilikemath9999.github.io/bankruptcy-discharge-screener/)** -- see which districts have been screened and what the numbers look like.
+
+The map updates as volunteers screen new districts. Every row is independently generated from public PACER data.
+
+---
+
+## Screen Your District
+
+We tested this on two federal districts, 56,563 Ch. 13 filings screened, 360 flagged inside the 1328(f) window, 14 hand-verified, all confirmed. 114 flagged cases received a discharge despite the bar.
+
+**Help build the national picture:**
+
+- **[Screening guide](docs/volunteer_guide.md)**, step-by-step: pull PACER CSVs, run the screener, share results (~30 min per district)
+- **[Submit results](docs/submission_template.md)**, form field reference for reporting what you find
+- **[Leaderboard](LEADERBOARD.md)**, districts screened, records, hall of fame
+
+Pick a district, pick some high-volume filers, and run the tool. The more districts screened, the clearer the picture of whether this is localized or systemic. First person to find a district with a 5%+ hit rate gets the top spot.
+
+---
+
 ## Running Tests
 
 ```
@@ -121,4 +276,3 @@ MIT License. See [LICENSE](LICENSE).
 ## Disclaimer
 
 This tool is for research and analysis purposes. It identifies *potential* violations based on publicly available data. All results require manual verification before drawing conclusions. The tool does not provide legal advice.
-<!-- cache bust -->

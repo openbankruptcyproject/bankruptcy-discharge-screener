@@ -606,7 +606,12 @@ def compute_district_profile(cases, court_id):
                 prior_discharge = parse_date(prior.get('dateDischarged', ''))
                 if not prior_discharge or prior_discharge >= ch13_filed:
                     continue
-                gap = (ch13_filed - prior_discharge).days
+                # Gap measured from prior FILING date, not discharge date
+                # See In re Blendheim, 803 F.3d 477 (9th Cir. 2015)
+                prior_filed = parse_date(prior.get('dateFiled', ''))
+                if not prior_filed or prior_filed >= ch13_filed:
+                    continue
+                gap = (ch13_filed - prior_filed).days
                 prior_ch = prior.get('bankruptcyChapter', '').strip()
                 if prior_ch in ('7', '11', '12') and gap <= WINDOW_F1_DAYS:
                     k = (prior_id, ch13_case_id, 'f1')
