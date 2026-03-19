@@ -198,14 +198,26 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 .dist-tooltip {
     font-family: system-ui, sans-serif; font-size: 12px;
     padding: 4px 10px; border-radius: 4px; font-weight: 500;
+    background: #161b22 !important; color: #c9d1d9 !important;
+    border: 1px solid #30363d !important;
 }
+
+/* ── Leaflet popup dark theme ─────────────── */
+.leaflet-popup-content-wrapper {
+    background: #161b22 !important; color: #c9d1d9 !important;
+    border: 1px solid #30363d !important; border-radius: 8px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
+}
+.leaflet-popup-tip { background: #161b22 !important; }
+.leaflet-popup-close-button { color: #8b949e !important; }
+.leaflet-popup-close-button:hover { color: #f0f6fc !important; }
 
 /* ── Sparkline ─────────────────────────────── */
 .sparkline-container {
-    margin-top: 8px; padding-top: 6px; border-top: 1px solid #e2e8f0;
+    margin-top: 8px; padding-top: 6px; border-top: 1px solid #30363d;
 }
 .sparkline-container .spark-label {
-    font-size: 10px; color: #64748b; margin-bottom: 2px;
+    font-size: 10px; color: #8b949e; margin-bottom: 2px;
 }
 .sparkline-container svg { display: block; }
 </style>
@@ -492,55 +504,77 @@ function makeSparkline(code, layer) {
 function buildPopup(code, s, yearKey) {
     var m = distMeta[code];
     var label = yearKey === 'all' ? 'All Years (2008-2024)' : ('FY ' + yearKey);
+    var nat = nationalByYear[yearKey];
 
-    var h = '<div style="min-width:260px;font-family:system-ui,sans-serif;font-size:13px;">';
-    h += '<div style="font-weight:700;font-size:15px;margin-bottom:4px;">' + m.name + '</div>';
-    h += '<div style="color:#666;font-size:11px;margin-bottom:8px;">' + label + '</div>';
+    var h = '<div style="min-width:300px;max-width:380px;font-family:system-ui,sans-serif;font-size:13px;background:#161b22;color:#c9d1d9;padding:4px;">';
+    h += '<div style="font-weight:700;font-size:16px;margin-bottom:2px;color:#f0f6fc;">' + m.name + '</div>';
+    h += '<div style="color:#8b949e;font-size:11px;margin-bottom:8px;">' + label;
 
-    h += '<table style="width:100%;border-collapse:collapse;">';
-    h += '<tr><td style="padding:2px 8px 2px 0;">Total Filed</td><td style="text-align:right;font-weight:600;">' + s.total.toLocaleString() + '</td></tr>';
-    h += '<tr><td style="padding:2px 8px 2px 0;">Closed Cases</td><td style="text-align:right;font-weight:600;">' + s.closed.toLocaleString() + '</td></tr>';
+    // Rank for active layer
+    var rankKey = currentLayer + '_rank';
+    var totalRankedKey = currentLayer + '_total_ranked';
+    if (s[rankKey]) h += ' &middot; Rank #' + s[rankKey] + ' of ' + s[totalRankedKey];
+    h += '</div>';
 
-    // Dismissal
+    h += '<table style="width:100%;border-collapse:collapse;color:#c9d1d9;">';
+
+    // Filing stats
+    h += '<tr><td style="padding:2px 8px 2px 0;color:#8b949e;">Total Filed</td><td style="text-align:right;font-weight:600;">' + s.total.toLocaleString() + '</td></tr>';
+    h += '<tr><td style="padding:2px 8px 2px 0;color:#8b949e;">Closed Cases</td><td style="text-align:right;font-weight:600;">' + s.closed.toLocaleString() + '</td></tr>';
+
+    // Dismissal with national comparison
     if (!s.insufficient_main) {
-        h += '<tr style="background:#fef2f2;"><td style="padding:2px 8px 2px 0;color:#dc2626;">Dismissed</td><td style="text-align:right;font-weight:700;color:#dc2626;">' + s.dismissed.toLocaleString() + ' (' + s.dismiss_rate + '%)</td></tr>';
-        h += '<tr style="background:#f0fdf4;"><td style="padding:2px 8px 2px 0;color:#16a34a;">Discharged</td><td style="text-align:right;font-weight:700;color:#16a34a;">' + s.discharged.toLocaleString() + ' (' + s.discharge_rate + '%)</td></tr>';
+        var dmDelta = (s.dismiss_rate - nat.dismiss_rate).toFixed(1);
+        var dmSign = dmDelta > 0 ? '+' : '';
+        h += '<tr><td style="padding:2px 8px 2px 0;color:#f87171;">Dismissed</td><td style="text-align:right;font-weight:700;color:#f87171;">' + s.dismissed.toLocaleString() + ' (' + s.dismiss_rate + '%) <span style="font-size:10px;color:#8b949e;">' + dmSign + dmDelta + 'pp vs nat.</span></td></tr>';
+        h += '<tr><td style="padding:2px 8px 2px 0;color:#4ade80;">Discharged</td><td style="text-align:right;font-weight:700;color:#4ade80;">' + s.discharged.toLocaleString() + ' (' + s.discharge_rate + '%)</td></tr>';
     } else {
-        h += '<tr><td colspan="2" style="padding:3px 0;color:#94a3b8;font-style:italic;">Insufficient closed cases</td></tr>';
+        h += '<tr><td colspan="2" style="padding:3px 0;color:#484f58;font-style:italic;">Insufficient closed cases</td></tr>';
     }
 
     // Prior filers
-    h += '<tr style="border-top:1px solid #e2e8f0;"><td style="padding:4px 8px 2px 0;">Prior Filers</td><td style="text-align:right;font-weight:600;">' + s.prior.toLocaleString() + ' (' + s.prior_rate + '%)</td></tr>';
+    h += '<tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px 2px 0;color:#8b949e;">Prior Filers</td><td style="text-align:right;font-weight:600;">' + s.prior.toLocaleString() + ' (' + s.prior_rate + '%)</td></tr>';
 
-    // The money shot
+    // Discharged despite prior -- the key metric
     if (!s.insufficient_prior) {
-        var pdrColor = s.prior_discharge_rate > 40 ? '#dc2626' : (s.prior_discharge_rate > 25 ? '#d97706' : '#16a34a');
-        h += '<tr style="background:#fefce8;"><td style="padding:2px 8px 2px 0;color:' + pdrColor + ';font-weight:600;">Discharged Despite Prior</td><td style="text-align:right;font-weight:700;color:' + pdrColor + ';">' + s.prior_discharged.toLocaleString() + ' of ' + s.prior_closed.toLocaleString() + ' (' + s.prior_discharge_rate + '%)</td></tr>';
+        var pdrColor = s.prior_discharge_rate > 40 ? '#f87171' : (s.prior_discharge_rate > 25 ? '#fbbf24' : '#4ade80');
+        var pdrDelta = (s.prior_discharge_rate - nat.prior_discharge_rate).toFixed(1);
+        var pdrSign = pdrDelta > 0 ? '+' : '';
+        h += '<tr style="background:rgba(251,191,36,0.1);"><td style="padding:2px 8px 2px 0;color:' + pdrColor + ';font-weight:600;">Discharged Despite Prior</td><td style="text-align:right;font-weight:700;color:' + pdrColor + ';">' + s.prior_discharged.toLocaleString() + ' (' + s.prior_discharge_rate + '%) <span style="font-size:10px;color:#8b949e;">' + pdrSign + pdrDelta + 'pp</span></td></tr>';
     } else {
-        h += '<tr><td style="padding:2px 8px 2px 0;color:#94a3b8;">Discharge-Despite-Prior</td><td style="text-align:right;color:#94a3b8;font-style:italic;">Insufficient data</td></tr>';
+        h += '<tr><td style="padding:2px 8px 2px 0;color:#484f58;">Discharge-Despite-Prior</td><td style="text-align:right;color:#484f58;font-style:italic;">Insufficient data</td></tr>';
     }
 
     // Pro se
-    h += '<tr><td style="padding:2px 8px 2px 0;">Pro Se at Filing</td><td style="text-align:right;">' + s.prose.toLocaleString() + ' (' + s.prose_rate + '%)</td></tr>';
+    h += '<tr><td style="padding:2px 8px 2px 0;color:#8b949e;">Pro Se at Filing</td><td style="text-align:right;">' + s.prose.toLocaleString() + ' (' + s.prose_rate + '%)</td></tr>';
 
-    // Verified 1328(f) if available
-    var v = verifiedData[code];
-    if (v && v.screened) {
-        h += '<tr style="border-top:2px solid #dc2626;background:#fef2f2;"><td style="padding:4px 8px 2px 0;color:#dc2626;font-weight:700;">\u00a71328(f) VERIFIED</td><td style="text-align:right;font-weight:700;color:#dc2626;">' + v.discharged + ' of ' + v.barred + ' (' + v.violation_rate + '%)</td></tr>';
-    } else {
-        h += '<tr style="border-top:1px solid #e2e8f0;"><td style="padding:2px 8px 2px 0;color:#94a3b8;">\u00a71328(f) Status</td><td style="text-align:right;color:#94a3b8;font-style:italic;">Not yet screened</td></tr>';
-    }
-
-    // Estimated violations
-    var e = estimatedData[code];
-    if (e && e.est_violations !== null) {
-        h += '<tr style="background:#fefce8;"><td style="padding:2px 8px 2px 0;color:#d97706;">Est. Violations (43%)</td><td style="text-align:right;color:#d97706;font-weight:600;">~' + e.est_violations.toLocaleString() + ' (' + e.est_rate + '%)</td></tr>';
-    }
+    // Screening status
+    h += '<tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px 2px 0;color:#8b949e;">\u00a71328(f) Verified</td><td style="text-align:right;color:#484f58;font-style:italic;">Not yet screened</td></tr>';
 
     h += '</table>';
 
     // Sparkline for active layer
     h += makeSparkline(code, currentLayer);
+
+    // Year-over-year mini table for this district (last 5 years)
+    var miniYears = [2020, 2021, 2022, 2023, 2024];
+    h += '<div style="margin-top:6px;padding-top:6px;border-top:1px solid #30363d;">';
+    h += '<div style="font-size:10px;color:#8b949e;margin-bottom:3px;">Recent Years</div>';
+    h += '<table style="width:100%;border-collapse:collapse;font-size:11px;color:#8b949e;">';
+    h += '<tr><td style="font-weight:600;">Year</td><td style="text-align:right;font-weight:600;">Filed</td><td style="text-align:right;font-weight:600;">Dism%</td><td style="text-align:right;font-weight:600;">Prior Disch%</td></tr>';
+    for (var yi = 0; yi < miniYears.length; yi++) {
+        var yrKey = String(miniYears[yi]);
+        var yrS = yearData[yrKey] ? yearData[yrKey][code] : null;
+        if (yrS) {
+            h += '<tr><td>' + yrKey + '</td>';
+            h += '<td style="text-align:right;">' + yrS.total.toLocaleString() + '</td>';
+            h += '<td style="text-align:right;">' + (yrS.dismiss_rate !== null ? yrS.dismiss_rate + '%' : '-') + '</td>';
+            h += '<td style="text-align:right;">' + (yrS.prior_discharge_rate !== null ? yrS.prior_discharge_rate + '%' : '-') + '</td>';
+            h += '</tr>';
+        }
+    }
+    h += '</table></div>';
+
     h += '</div>';
     return h;
 }
