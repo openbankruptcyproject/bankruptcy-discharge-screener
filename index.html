@@ -434,7 +434,7 @@
 
 <header>
   <h1>Bankruptcy Discharge Screener</h1>
-  <p class="subtitle">A crowd-sourced national map of bankruptcy cases that were mathematically impossible before they were filed.</p>
+  <p class="subtitle">391,951 repeat bankruptcy filers received discharge with zero eligibility verification. The government published the data but never checked it. Pick a district. Run the screener. Find out how many are violations.</p>
   <p class="links">
     <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub</a>
     <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Volunteer Guide</a>
@@ -447,20 +447,20 @@
     <div class="label">Districts</div>
   </div>
   <div class="stat">
-    <div class="number" id="stat-states">-</div>
-    <div class="label">States</div>
-  </div>
-  <div class="stat">
     <div class="number" id="stat-total">-</div>
-    <div class="label">Annual Ch.13 Filings</div>
+    <div class="label">Ch.13 Cases (FY2008-2024)</div>
   </div>
   <div class="stat">
-    <div class="number" id="stat-cases">-</div>
-    <div class="label">Cases Screened</div>
+    <div class="number" id="stat-prior">-</div>
+    <div class="label">Prior Filers</div>
   </div>
   <div class="stat">
-    <div class="number" id="stat-hits">-</div>
-    <div class="label">Flagged Cases</div>
+    <div class="number" id="stat-unchecked">-</div>
+    <div class="label">Discharged Without Verification</div>
+  </div>
+  <div class="stat">
+    <div class="number" id="stat-verified">-</div>
+    <div class="label">Districts Verified</div>
   </div>
 </div>
 
@@ -528,10 +528,10 @@
       </div>
     </div>
     <div class="map-legend">
-      <span><span class="legend-dot green"></span> Screened</span>
-      <span><span class="legend-dot yellow"></span> Cases Loaded</span>
-      <span><span class="legend-dot blue"></span> Filing Stats Only</span>
-      <span><span class="legend-dot gray"></span> No Data</span>
+      <span><span class="legend-dot green"></span> High prior-filer discharge rate (40%+)</span>
+      <span><span class="legend-dot yellow"></span> Medium rate (25-40%)</span>
+      <span><span class="legend-dot blue"></span> Lower rate (&lt;25%)</span>
+      <span><span class="legend-dot gray"></span> Insufficient data</span>
     </div>
     <div class="filter-info" id="filter-info"></div>
   </div>
@@ -544,12 +544,12 @@
           <tr>
             <th data-col="court_id">District <span class="arrow"></span></th>
             <th data-col="state">State <span class="arrow"></span></th>
-            <th data-col="annual_ch13" data-type="num">Annual Ch.13 <span class="arrow"></span></th>
-            <th data-col="ch13_cases" data-type="num">Screened <span class="arrow"></span></th>
-            <th data-col="coverage" data-type="num">Coverage <span class="arrow"></span></th>
-            <th data-col="dismissed_pct" data-type="num">Dismissed % <span class="arrow"></span></th>
-            <th data-col="hits_1328f" data-type="num">Flagged <span class="arrow"></span></th>
-            <th data-col="attorneys" data-type="num">Attorneys <span class="arrow"></span></th>
+            <th data-col="total_filed" data-type="num">Total Filed <span class="arrow"></span></th>
+            <th data-col="dismiss_rate" data-type="num">Dismiss % <span class="arrow"></span></th>
+            <th data-col="prior_filers" data-type="num">Prior Filers <span class="arrow"></span></th>
+            <th data-col="prior_discharge_rate" data-type="num">Prior Disch. % <span class="arrow"></span></th>
+            <th data-col="prior_discharged" data-type="num">Unchecked <span class="arrow"></span></th>
+            <th data-col="screening_status">Verified <span class="arrow"></span></th>
           </tr>
         </thead>
         <tbody id="table-body"></tbody>
@@ -678,58 +678,49 @@ cd bankruptcy-discharge-screener</div>
   }
 
   function stats() {
-    var cases = 0, hits = 0, total = 0, states = {}, screened = 0;
+    var totalFiled = 0, priorFilers = 0, priorDischarged = 0, verified = 0;
     for (var i = 0; i < data.length; i++) {
-      cases += data[i].ch13_cases || 0;
-      total += data[i].annual_ch13 || data[i].total_ch13 || 0;
-      hits += data[i].hits_1328f || 0;
-      states[data[i].state] = 1;
-      if (data[i].hits_1328f != null) screened++;
+      totalFiled += data[i].total_filed || 0;
+      priorFilers += data[i].prior_filers || 0;
+      priorDischarged += data[i].prior_discharged || 0;
+      if (data[i].verified_violations != null) verified++;
     }
     document.getElementById('stat-districts').textContent = data.length;
-    document.getElementById('stat-states').textContent = Object.keys(states).length;
-    document.getElementById('stat-total').textContent = total.toLocaleString();
-    document.getElementById('stat-cases').textContent = cases.toLocaleString();
-    document.getElementById('stat-hits').textContent = hits.toLocaleString();
+    document.getElementById('stat-total').textContent = totalFiled.toLocaleString();
+    document.getElementById('stat-prior').textContent = priorFilers.toLocaleString();
+    document.getElementById('stat-unchecked').textContent = priorDischarged.toLocaleString();
+    document.getElementById('stat-verified').textContent = verified + ' of ' + data.length;
   }
 
   function getStateStatus() {
+    // Color states by worst (highest) prior-filer discharge rate in state
     var stateMap = {};
     for (var i = 0; i < data.length; i++) {
       var st = data[i].state;
-      if (!stateMap[st]) stateMap[st] = { screened: false, loaded: false, f2: false };
-      if (data[i].hits_1328f != null) {
-        stateMap[st].screened = true;
-      }
-      if (data[i].screening_status === 'cases_loaded') {
-        stateMap[st].loaded = true;
-      }
-      if (data[i].annual_ch13 != null || data[i].screening_status === 'not_started') {
-        stateMap[st].f2 = true;
+      var rate = data[i].prior_discharge_rate;
+      if (rate != null) {
+        if (!stateMap[st] || rate > stateMap[st].rate) {
+          stateMap[st] = { rate: rate, verified: data[i].verified_violations != null };
+        }
       }
     }
     var result = {};
     for (var st in stateMap) {
-      if (stateMap[st].screened) result[st] = 'screened';
-      else if (stateMap[st].loaded) result[st] = 'cases-loaded';
-      else if (stateMap[st].f2) result[st] = 'f2-data';
+      var r = stateMap[st].rate;
+      if (stateMap[st].verified) result[st] = 'screened';
+      else if (r >= 40) result[st] = 'screened';  // high rate = red/green
+      else if (r >= 25) result[st] = 'cases-loaded';  // medium = yellow
+      else result[st] = 'f2-data';  // low = blue
     }
     return result;
   }
 
   function getStateData(st) {
     var districts = [];
-    var totalCases = 0, totalHits = 0, totalScreened = 0, annualCh13 = 0;
     for (var i = 0; i < data.length; i++) {
-      if (data[i].state === st) {
-        districts.push(data[i]);
-        totalCases += data[i].total_ch13 || 0;
-        totalScreened += data[i].ch13_cases || 0;
-        totalHits += data[i].hits_1328f || 0;
-        annualCh13 += data[i].annual_ch13 || 0;
-      }
+      if (data[i].state === st) districts.push(data[i]);
     }
-    return { districts: districts, totalCases: totalCases, totalScreened: totalScreened, totalHits: totalHits, annualCh13: annualCh13 };
+    return { districts: districts };
   }
 
   function colorMap() {
@@ -802,22 +793,17 @@ cd bankruptcy-discharge-screener</div>
           ttState.textContent = name + ' (' + st + ')';
 
           var sd = getStateData(st);
-          if (status[st] === 'screened') {
-            ttDetail.textContent = sd.districts.length + ' district' +
-              (sd.districts.length !== 1 ? 's' : '') + ' screened \u2014 ' +
-              sd.totalScreened.toLocaleString() + ' cases \u2014 ' +
-              sd.totalHits.toLocaleString() + ' flagged';
-          } else if (status[st] === 'cases-loaded') {
-            ttDetail.textContent = sd.districts.length + ' district' +
-              (sd.districts.length !== 1 ? 's' : '') + ' \u2014 ' +
-              sd.totalCases.toLocaleString() + ' cases loaded (not yet screened)';
-          } else if (status[st] === 'f2-data') {
-            ttDetail.textContent = sd.districts.length + ' district' +
-              (sd.districts.length !== 1 ? 's' : '') + ' \u2014 ' +
-              sd.annualCh13.toLocaleString() + ' Ch.13 filings/yr (needs volunteer)';
-          } else {
-            ttDetail.textContent = 'No data yet';
+          var dCount = sd.districts.length + ' district' + (sd.districts.length !== 1 ? 's' : '');
+          var totalPriorDisch = 0;
+          var maxRate = 0;
+          for (var j = 0; j < sd.districts.length; j++) {
+            totalPriorDisch += sd.districts[j].prior_discharged || 0;
+            var r = sd.districts[j].prior_discharge_rate;
+            if (r != null && r > maxRate) maxRate = r;
           }
+          ttDetail.textContent = dCount + ' -- ' +
+            totalPriorDisch.toLocaleString() + ' prior filers discharged without verification' +
+            (maxRate > 0 ? ' (highest: ' + maxRate + '%)' : '');
           tooltip.style.display = 'block';
         };
       })(newPath, stateStatus);
@@ -899,18 +885,15 @@ cd bankruptcy-discharge-screener</div>
     var html = '';
     for (var i = 0; i < rows.length; i++) {
       var d = rows[i];
-      var hasScreening = d.ch13_cases != null;
-      var cov = hasScreening && d.annual_ch13 ? ((d.ch13_cases / d.annual_ch13) * 100).toFixed(1) + '%' : '-';
-      d.coverage = hasScreening && d.annual_ch13 ? (d.ch13_cases / d.annual_ch13) * 100 : 0;
       html += '<tr>' +
-        '<td>' + d.court_id + '</td>' +
+        '<td>' + (d.name || d.court_id) + '</td>' +
         '<td>' + d.state + '</td>' +
-        '<td class="num">' + (d.annual_ch13 ? d.annual_ch13.toLocaleString() : '-') + '</td>' +
-        '<td class="num">' + (hasScreening ? d.ch13_cases.toLocaleString() : '-') + '</td>' +
-        '<td class="num">' + cov + '</td>' +
-        '<td class="num">' + (hasScreening ? d.dismissed_pct.toFixed(1) + '%' : '-') + '</td>' +
-        '<td class="num">' + (hasScreening ? d.hits_1328f.toLocaleString() : '-') + '</td>' +
-        '<td class="num">' + (hasScreening ? (d.attorneys || '-') : '<button class="screen-btn" onclick="showVolunteer(\'' + d.court_id + '\')">Screen this</button>') + '</td>' +
+        '<td class="num">' + (d.total_filed ? d.total_filed.toLocaleString() : '-') + '</td>' +
+        '<td class="num">' + (d.dismiss_rate != null ? d.dismiss_rate + '%' : '-') + '</td>' +
+        '<td class="num">' + (d.prior_filers ? d.prior_filers.toLocaleString() : '-') + '</td>' +
+        '<td class="num">' + (d.prior_discharge_rate != null ? d.prior_discharge_rate + '%' : '-') + '</td>' +
+        '<td class="num">' + (d.prior_discharged ? d.prior_discharged.toLocaleString() : '-') + '</td>' +
+        '<td>' + (d.verified_violations != null ? 'Yes' : '<button class="screen-btn" onclick="showVolunteer(\'' + d.court_id + '\')">Screen this</button>') + '</td>' +
         '</tr>';
     }
     tbody.innerHTML = html;
