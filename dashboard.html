@@ -226,14 +226,15 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 <div id="map"></div>
 
 <div class="title-overlay">
-    National Ch.13 Bankruptcy Dashboard
-    <div class="subtitle">FJC Integrated Database &middot; FY 2008&ndash;2024 &middot; 94 Districts &middot; 4,895,163 Cases</div>
+    <div style="font-size:36px;font-weight:800;color:#f87171;letter-spacing:-1px;">391,951</div>
+    <div style="font-size:14px;font-weight:600;margin-top:2px;">repeat filers received discharge. Nobody verified eligibility.</div>
+    <div class="subtitle">4,895,163 Ch.13 cases &middot; 94 federal districts &middot; FY 2008&ndash;2024 &middot; FJC Integrated Database</div>
 </div>
 
 <div class="layer-toggle" id="layerToggle">
-    <button class="layer-btn active" data-layer="dismiss_rate"><span class="layer-icon">1</span>Dismissal Rate</button>
+    <button class="layer-btn" data-layer="dismiss_rate"><span class="layer-icon">1</span>Dismissal Rate</button>
     <button class="layer-btn" data-layer="prior_rate"><span class="layer-icon">2</span>Prior Filer Rate</button>
-    <button class="layer-btn" data-layer="prior_discharge_rate"><span class="layer-icon">3</span>Discharge Despite Prior</button>
+    <button class="layer-btn active" data-layer="prior_discharge_rate"><span class="layer-icon">3</span>Discharge Despite Prior</button>
     <button class="layer-btn" data-layer="prose_rate"><span class="layer-icon">4</span>Pro Se Rate</button>
 </div>
 
@@ -866,7 +867,7 @@ document.getElementById('methodClose').addEventListener('click', function() {
 });
 
 // ── Initial render ───────────────────────────────
-updateMap('all', 'dismiss_rate');
+updateMap('all', 'prior_discharge_rate');
 </script>
 </body>
 </html>
