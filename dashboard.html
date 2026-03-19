@@ -200,6 +200,18 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     border: 1px solid #30363d !important;
 }
 
+/* ── Circle labels ────────────────────────── */
+.circle-label {
+    font-family: system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.5);
+    pointer-events: none;
+    line-height: 16px;
+}
+
 /* ── Leaflet popup dark theme ─────────────── */
 .leaflet-popup-content-wrapper {
     background: #161b22 !important; color: #c9d1d9 !important;
@@ -420,8 +432,9 @@ function getColor(rate, scale) {
 }
 
 function getRadius(total) {
-    if (total <= 0) return 6;
-    return Math.max(6, Math.min(28, 3 + 4 * Math.log10(total)));
+    if (total <= 0) return 10;
+    // Linear-ish scale: sqrt gives better visual proportionality than log
+    return Math.max(10, Math.min(40, 5 + Math.sqrt(total) / 12));
 }
 
 // ── Legend gradient CSS ──────────────────────────
@@ -457,16 +470,30 @@ fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geo
 
 // ── Circle markers ───────────────────────────────
 var markers = {};
+var labels = {};
 var codes = Object.keys(distMeta);
 var markersLayer = L.layerGroup().addTo(map);
+var labelsLayer = L.layerGroup().addTo(map);
 
 codes.forEach(function(code) {
     var m = distMeta[code];
     var marker = L.circleMarker([m.lat, m.lng], {
-        radius: 6, fillColor: '#d1d5db', fillOpacity: 0.85,
+        radius: 10, fillColor: '#d1d5db', fillOpacity: 0.85,
         weight: 1, color: '#30363d', interactive: true, bubblingMouseEvents: false
     }).addTo(markersLayer);
     markers[code] = marker;
+
+    // Text label on top of circle
+    var label = L.marker([m.lat, m.lng], {
+        icon: L.divIcon({
+            className: 'circle-label',
+            html: '',
+            iconSize: [40, 16],
+            iconAnchor: [20, 8]
+        }),
+        interactive: false
+    }).addTo(labelsLayer);
+    labels[code] = label;
 });
 
 // ── Sparkline generator ──────────────────────────
@@ -656,6 +683,21 @@ function updateMap(yearKey, layer) {
         // Popup always shows full metrics
         marker.unbindPopup();
         marker.bindPopup(buildPopup(code, s, yearKey), {maxWidth: 380});
+
+        // Update label text
+        var labelVal = s[layer];
+        var labelText = '';
+        if (labelVal !== null && labelVal !== undefined) {
+            labelText = labelVal + '%';
+        }
+        if (labels[code]) {
+            labels[code].setIcon(L.divIcon({
+                className: 'circle-label',
+                html: labelText,
+                iconSize: [40, 16],
+                iconAnchor: [20, 8]
+            }));
+        }
     });
 
     updateStatsPanel(yearKey, layer);
