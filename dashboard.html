@@ -47,29 +47,27 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 /* ── Stats panel ──────────────────────────── */
 .stats-panel {
     position: absolute; top: 12px; right: 12px; z-index: 1000;
-    background: rgba(22,27,34,0.95); padding: 14px 18px;
+    background: rgba(22,27,34,0.95); padding: 10px 14px;
     border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.4);
     border: 1px solid #30363d;
-    font-size: 12px; color: #c9d1d9; min-width: 260px;
+    font-size: 11px; color: #c9d1d9; max-width: 240px;
     backdrop-filter: blur(4px);
 }
 .stats-panel h3 {
-    font-size: 13px; font-weight: 700; margin-bottom: 8px; color: #f0f6fc;
-    border-bottom: 2px solid #30363d; padding-bottom: 4px;
+    font-size: 11px; font-weight: 700; margin-bottom: 4px; color: #f0f6fc;
+    border-bottom: 1px solid #30363d; padding-bottom: 3px;
 }
 .stats-panel .stat-row {
-    display: flex; justify-content: space-between; padding: 3px 0;
+    display: flex; justify-content: space-between; padding: 1px 0;
     align-items: center;
 }
 .stats-panel .stat-val { font-weight: 600; }
-.stats-panel .stat-val.red { color: #dc2626; }
-.stats-panel .stat-val.green { color: #16a34a; }
-.stats-panel .stat-val.amber { color: #d97706; }
-.stats-panel .stat-val.blue { color: #2563eb; }
+.stats-panel .stat-val.red { color: #f87171; }
+.stats-panel .stat-val.green { color: #4ade80; }
+.stats-panel .stat-val.amber { color: #fbbf24; }
 .stats-panel .stat-val.blue { color: #58a6ff; }
 .stats-panel .layer-desc {
-    font-size: 11px; color: #8b949e; margin-top: 8px; padding-top: 8px;
-    border-top: 1px solid #30363d; line-height: 1.4;
+    display: none;
 }
 
 /* ── Legend ────────────────────────────────── */
@@ -226,9 +224,9 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 <div id="map"></div>
 
 <div class="title-overlay">
-    <div style="font-size:36px;font-weight:800;color:#f87171;letter-spacing:-1px;">391,951</div>
-    <div style="font-size:14px;font-weight:600;margin-top:2px;">repeat filers received discharge. Nobody verified eligibility.</div>
-    <div class="subtitle">4,895,163 Ch.13 cases &middot; 94 federal districts &middot; FY 2008&ndash;2024 &middot; FJC Integrated Database</div>
+    <div style="font-size:32px;font-weight:800;color:#f87171;letter-spacing:-1px;line-height:1;">391,951</div>
+    <div style="font-size:13px;font-weight:600;margin-top:3px;">repeat filers received discharge without verification</div>
+    <div class="subtitle">4,895,163 cases &middot; 94 districts &middot; FY 2008&ndash;2024 &middot; FJC IDB</div>
 </div>
 
 <div class="layer-toggle" id="layerToggle">
