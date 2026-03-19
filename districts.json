@@ -3,7 +3,7 @@
   "source": "FJC Integrated Database, Ch.13 cases FY2008-2024, deduplicated by CASEKEY",
   "national_prior_filer_discharges": 391951,
   "national_prior_filers": 1627116,
-  "national_total": 4895155,
+  "national_total": 4895163,
   "districts": [
     {
       "court_id": "MEBK",
@@ -1769,6 +1769,25 @@
       "prior_closed": 39,
       "prior_discharge_rate": 33.3,
       "pro_se_rate": 2.0,
+      "screening_status": "not_screened",
+      "verified_violations": null
+    },
+    {
+      "court_id": "NMIBK",
+      "fjc_code": "94",
+      "name": "D.N. Mar. I.",
+      "state": "MP",
+      "total_filed": 8,
+      "closed": 5,
+      "discharged": 3,
+      "dismissed": 2,
+      "dismiss_rate": null,
+      "prior_filers": 0,
+      "prior_rate": 0.0,
+      "prior_discharged": 0,
+      "prior_closed": 0,
+      "prior_discharge_rate": null,
+      "pro_se_rate": 0.0,
       "screening_status": "not_screened",
       "verified_violations": null
     }
