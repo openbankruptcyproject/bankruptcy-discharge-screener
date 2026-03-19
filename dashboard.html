@@ -144,6 +144,28 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 .search-box {
     position: absolute; top: 148px; left: 12px; z-index: 1000;
 }
+
+/* ── Top 10 panel ─────────────────────────── */
+.top10-panel {
+    position: absolute; top: 190px; left: 12px; z-index: 1000;
+    background: rgba(22,27,34,0.95); padding: 10px 12px;
+    border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    border: 1px solid #30363d;
+    font-size: 11px; color: #c9d1d9;
+    backdrop-filter: blur(4px); width: 210px;
+}
+.top10-panel h4 {
+    font-size: 11px; font-weight: 700; color: #f87171; margin-bottom: 6px;
+    border-bottom: 1px solid #30363d; padding-bottom: 3px;
+}
+.top10-row {
+    display: flex; justify-content: space-between; padding: 2px 0;
+    cursor: pointer; border-radius: 3px; padding: 2px 4px;
+}
+.top10-row:hover { background: #21262d; }
+.top10-rank { color: #484f58; font-weight: 700; width: 18px; }
+.top10-name { flex: 1; color: #c9d1d9; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.top10-val { font-weight: 700; margin-left: 8px; }
 .search-box input {
     padding: 8px 14px; border: 1px solid #30363d; border-radius: 6px;
     font-size: 13px; width: 220px; box-shadow: 0 1px 4px rgba(0,0,0,0.3);
@@ -255,6 +277,8 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search district or state..." />
 </div>
+
+<div class="top10-panel" id="top10Panel"></div>
 
 <button class="export-btn" id="exportBtn" title="Download CSV of current layer data">Export CSV</button>
 
@@ -702,6 +726,7 @@ function updateMap(yearKey, layer) {
 
     updateStatsPanel(yearKey, layer);
     updateLegend(layer);
+    updateTop10(yearKey, layer);
 }
 
 // ── Stats panel ──────────────────────────────────
@@ -905,6 +930,53 @@ document.getElementById('methodBtn').addEventListener('click', function() {
 document.getElementById('methodClose').addEventListener('click', function() {
     document.getElementById('methodPanel').classList.remove('visible');
 });
+
+// ── Top 10 panel ─────────────────────────────────
+function updateTop10(yearKey, layer) {
+    var stats = yearData[yearKey];
+    var cfg = LAYERS[layer];
+    if (!stats || !cfg) return;
+
+    // Collect districts with valid data for this layer
+    var items = [];
+    codes.forEach(function(code) {
+        var s = stats[code];
+        var val = s ? s[layer] : null;
+        if (val !== null && val !== undefined) {
+            var insuf = (layer === 'dismiss_rate' && s.insufficient_main) ||
+                        (layer === 'prior_discharge_rate' && s.insufficient_prior);
+            if (!insuf) {
+                items.push({ code: code, name: distMeta[code].name, val: val });
+            }
+        }
+    });
+
+    items.sort(function(a, b) { return b.val - a.val; });
+    var top = items.slice(0, 10);
+
+    var h = '<h4>Worst 10 Districts</h4>';
+    for (var i = 0; i < top.length; i++) {
+        var color = getColor(top[i].val, cfg.colorScale);
+        h += '<div class="top10-row" data-code="' + top[i].code + '">';
+        h += '<span class="top10-rank">' + (i+1) + '</span>';
+        h += '<span class="top10-name">' + top[i].name + '</span>';
+        h += '<span class="top10-val" style="color:' + color + ';">' + top[i].val + '%</span>';
+        h += '</div>';
+    }
+
+    document.getElementById('top10Panel').innerHTML = h;
+
+    // Click to fly to district
+    var rows = document.querySelectorAll('.top10-row');
+    rows.forEach(function(row) {
+        row.addEventListener('click', function() {
+            var code = this.getAttribute('data-code');
+            var m = distMeta[code];
+            map.flyTo([m.lat, m.lng], 7, {duration: 0.8});
+            markers[code].openPopup();
+        });
+    });
+}
 
 // ── Initial render ───────────────────────────────
 updateMap('all', 'prior_discharge_rate');
