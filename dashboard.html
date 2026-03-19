@@ -421,8 +421,8 @@ function getColor(rate, scale) {
 }
 
 function getRadius(total) {
-    if (total <= 0) return 4;
-    return Math.max(4, Math.min(28, 3 + 4 * Math.log10(total)));
+    if (total <= 0) return 6;
+    return Math.max(6, Math.min(28, 3 + 4 * Math.log10(total)));
 }
 
 // ── Legend gradient CSS ──────────────────────────
@@ -450,8 +450,9 @@ fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geo
     .then(function(geojson) {
         L.geoJSON(geojson, {
             style: function() {
-                return { fillColor: '#e2e8f0', fillOpacity: 0.15, weight: 1, color: '#94a3b8', dashArray: '2,2' };
-            }
+                return { fillColor: '#21262d', fillOpacity: 0.15, weight: 1, color: '#30363d', dashArray: '2,2' };
+            },
+            interactive: false
         }).addTo(map);
     });
 
@@ -463,8 +464,8 @@ var markersLayer = L.layerGroup().addTo(map);
 codes.forEach(function(code) {
     var m = distMeta[code];
     var marker = L.circleMarker([m.lat, m.lng], {
-        radius: 4, fillColor: '#d1d5db', fillOpacity: 0.85,
-        weight: 1, color: '#fff'
+        radius: 6, fillColor: '#d1d5db', fillOpacity: 0.85,
+        weight: 1, color: '#30363d', interactive: true, bubblingMouseEvents: false
     }).addTo(markersLayer);
     markers[code] = marker;
 });
