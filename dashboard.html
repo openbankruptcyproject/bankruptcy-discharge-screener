@@ -310,6 +310,12 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
         <p>Projection: (Prior filers discharged per district) &times; 43% verified hit rate from 7-district PACER sample. The 43% rate represents the proportion of prior-filer discharges where the prior case fell within the &sect;1328(f) bar window. Actual rates vary by district. This is an estimate, not a verification.</p>
     </div>
     <div class="method-section">
+        <h4>Known Limitations</h4>
+        <p><b>Maturation bias:</b> Cases filed after FY 2019 have not had sufficient time to complete a 3&ndash;5 year Ch.13 plan. Recent-year dismissal rates are artificially inflated because the only closed cases are early failures. The &ldquo;All Years&rdquo; aggregate is reliable because older cohorts have fully resolved. Year-by-year trends after 2019 should be interpreted with this caveat.</p>
+        <p><b>Conversions:</b> 368,997 cases filed as Ch.13 and converted to Ch.7 received a discharge but are counted as Ch.7 outcomes in the FJC data. If these are included as Ch.13 successes, the national dismissal rate adjusts from 58.3% to approximately 53.6%. The dashboard uses the FJC&rsquo;s current-chapter classification (crntchp), which excludes these conversions from the Ch.13 discharge count.</p>
+        <p><b>Pro se attrition:</b> The pro se rate reflects status at filing. Many pro se cases dismiss before the 341 meeting, so the surviving pro se rate at confirmation is substantially lower than at filing.</p>
+    </div>
+    <div class="method-section">
         <h4>What This Means</h4>
         <p>The discharge eligibility check under &sect;1328(f) is purely mechanical: prior filing date + disposition + current filing date. No legal judgment required. Yet no automated screening exists in CM/ECF, no rule mandates it, and no court systematically performs it. The result: an estimated 163,000+ ineligible discharges over 12 years. The proposed amendment to Rule 4004 would require this check.</p>
     </div>
