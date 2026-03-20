@@ -292,7 +292,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     </div>
     <div class="method-section">
         <h4>Scope</h4>
-        <p>Chapter 13 cases filed FY 2008&ndash;2024 (post-BAPCPA, sufficient time for case resolution). 4,895,163 unique cases across 94 federal districts.</p>
+        <p>Chapter 13 cases filed FY 2008&ndash;2024 (post-BAPCPA). 4,895,163 unique cases across 94 federal districts. Mature cohort (FY 2008&ndash;2019, sufficient time for plan completion): 4,060,721 cases, 55.9% dismissal rate (51.3% conversion-adjusted).</p>
     </div>
     <div class="method-section">
         <h4>Layers 1&ndash;4: FJC Aggregate Metrics</h4>
@@ -775,6 +775,11 @@ function updateStatsPanel(yearKey, layer) {
             h += '<div class="stat-row"><span>Discharged</span><span class="stat-val green">' + n.discharged.toLocaleString() + ' (' + n.discharge_rate + '%)</span></div>';
         } else {
             h += '<div class="stat-row"><span>Discharged</span><span class="stat-val green">' + n.discharged.toLocaleString() + ' (' + n.discharge_rate + '%)</span></div>';
+        }
+        // Conversion-adjusted rate (Ch.13 → Ch.7 discharges not counted above)
+        if (layer === 'dismiss_rate' && yearKey === 'all') {
+            h += '<div class="stat-row" style="border-top:1px solid #30363d;padding-top:4px;margin-top:4px;"><span style="font-size:10px;color:#8b949e;">Conv-Adjusted Dism. Rate</span><span class="stat-val" style="font-size:11px;color:#8b949e;">~53.6%</span></div>';
+            h += '<div class="stat-row"><span style="font-size:10px;color:#8b949e;">Prior Filer Discharges</span><span class="stat-val" style="font-size:11px;color:#8b949e;">391,951 of 1,433,059</span></div>';
         }
 
         // Prior discharge highlight (always show on prior layers)
