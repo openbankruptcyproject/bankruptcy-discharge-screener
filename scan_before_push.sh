@@ -61,6 +61,33 @@ if [ $FOUND -eq 1 ]; then
     echo "PUSH BLOCKED — sensitive terms found above."
     echo "Fix the files and try again."
     exit 1
+fi
+
+# Check git metadata: author/committer identities
+echo "Scanning git history for identity leaks..."
+BAD_AUTHORS=$(git log --all --format="%an <%ae>" | sort -u | grep -iv "ilikemath9999")
+if [ -n "$BAD_AUTHORS" ]; then
+    echo ""
+    echo "BLOCKED: Non-anonymous author(s) found in git history:"
+    echo "$BAD_AUTHORS"
+    echo ""
+    echo "Run: git filter-branch --env-filter to fix."
+    FOUND=1
+fi
+
+# Check commit messages for Co-Authored-By leaks
+BAD_COAUTHOR=$(git log --all --format="%B" | grep -i "Co-Authored-By" | grep -iv "ilikemath9999")
+if [ -n "$BAD_COAUTHOR" ]; then
+    echo ""
+    echo "BLOCKED: Co-Authored-By leak in commit messages:"
+    echo "$BAD_COAUTHOR"
+    FOUND=1
+fi
+
+if [ $FOUND -eq 1 ]; then
+    echo "============================================"
+    echo "PUSH BLOCKED — issues found above."
+    exit 1
 else
     echo "All clear. No sensitive terms found."
     exit 0
