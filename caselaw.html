@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Case Law - Section 1328(f) Discharge Bar</title>
+    <meta name="description" content="Key court decisions interpreting 11 U.S.C. Section 1328(f), the bankruptcy discharge bar for repeat filers. Case summaries, holdings, and links to full opinions.">
+    <meta name="keywords" content="1328(f) case law, bankruptcy discharge bar, In re Filice, In re Blendheim, Cisneros, Espinosa, Rule 4004, repeat filer discharge">
+    <link rel="canonical" href="https://ilikemath9999.github.io/bankruptcy-discharge-screener/caselaw.html">
+    <meta property="og:title" content="Key Case Law - Section 1328(f) Discharge Bar">
+    <meta property="og:description" content="Court decisions interpreting the bankruptcy discharge bar for repeat filers. Summaries, holdings, and links to opinions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ilikemath9999.github.io/bankruptcy-discharge-screener/caselaw.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Key Case Law - Section 1328(f) Discharge Bar">
+    <meta name="twitter:description" content="Court decisions interpreting the bankruptcy discharge bar for repeat filers.">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+            --purple: #bc8cff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        .toc .label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .toc ul { list-style: none; margin: 0; padding: 0; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { font-size: 15px; }
+
+        /* Case cards */
+        .case-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px;
+            margin: 28px 0;
+        }
+        .case-card .case-name {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+        .case-card .case-name em {
+            font-style: italic;
+        }
+        .case-card .citation {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-family: 'Georgia', serif;
+        }
+        .case-card .court-date {
+            display: inline-block;
+            font-size: 13px;
+            color: var(--text-muted);
+            background: rgba(88, 166, 255, 0.08);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .case-card .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin: 16px 0 6px;
+        }
+        .case-card .holding {
+            border-left: 3px solid var(--accent);
+            padding-left: 16px;
+            margin: 12px 0 16px;
+            color: var(--text);
+            font-size: 15px;
+        }
+        .case-card .relevance {
+            border-left: 3px solid var(--green);
+            padding-left: 16px;
+            margin: 12px 0 16px;
+            color: var(--text);
+            font-size: 15px;
+        }
+        .case-card .links {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .case-card .links a {
+            margin-right: 16px;
+        }
+
+        /* Pending tag */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .tag-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); }
+        .tag-purple { background: rgba(188,140,255,0.15); color: var(--purple); }
+        .tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
+        .tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
+
+        /* Info box */
+        .info-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .info-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        /* CTA box */
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .cta-box a.btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+        .cta-box a.btn:hover { opacity: 0.9; text-decoration: none; }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .footer a { color: var(--text-muted); }
+        .footer a:hover { color: var(--accent); }
+
+        /* Number badges */
+        .case-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--bg);
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .case-card { padding: 20px; }
+            .case-card .case-name { font-size: 17px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Key Case Law on Section 1328(f) Bankruptcy Discharge Bar",
+        "description": "Court decisions interpreting the bankruptcy discharge bar for repeat filers under 11 U.S.C. Section 1328(f).",
+        "author": {
+            "@type": "Organization",
+            "name": "1328f.com"
+        },
+        "datePublished": "2026-03-21",
+        "mainEntityOfPage": "https://ilikemath9999.github.io/bankruptcy-discharge-screener/caselaw.html"
+    }
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Screener</a> &middot;
+        <a href="explainer.html">Explainer</a> &middot;
+        <a href="dashboard.html">Dashboard</a> &middot;
+        <strong>Case Law</strong>
+    </div>
+
+    <h1>Key Case Law: Section 1328(f)</h1>
+    <p class="subtitle">Court decisions and pending rule changes that define how the bankruptcy discharge bar works &mdash; and why it fails.</p>
+
+    <div class="toc">
+        <div class="label">On This Page</div>
+        <ul>
+            <li><a href="#filice">1. <em>In re Filice</em> (Bankr. E.D. Cal. 2018)</a></li>
+            <li><a href="#blendheim">2. <em>In re Blendheim</em> (9th Cir. 2015)</a></li>
+            <li><a href="#rule-25-bk-n">3. Rules Suggestion 25-BK-N (Pending, 2025)</a></li>
+            <li><a href="#cisneros">4. <em>In re Cisneros</em> (9th Cir. 1993)</a></li>
+            <li><a href="#espinosa">5. <em>United Student Aid Funds v. Espinosa</em> (S. Ct. 2010)</a></li>
+            <li><a href="#why-it-matters">Why This Matters</a></li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <div class="label">Context</div>
+        <p style="margin-bottom:0;">Section 1328(f) bars a Chapter 13 discharge if the debtor received a prior discharge within specified time periods (4 years for Chapter 7/11, 2 years for Chapter 13). The statute is mandatory &mdash; but the current procedural rules rely on creditor objections to enforce it. These cases show what happens when the system fails.</p>
+    </div>
+
+    <!-- Case 1: Filice -->
+    <div class="case-card" id="filice">
+        <div class="case-name"><span class="case-number">1</span><em>In re Filice</em></div>
+        <div class="citation">580 B.R. 259 (Bankr. E.D. Cal. 2018)</div>
+        <div class="court-date">U.S. Bankruptcy Court, Eastern District of California &mdash; 2018</div>
+
+        <div class="section-label">Key Holding</div>
+        <div class="holding">
+            <p style="margin-bottom:8px;">Judge Christopher D. Klein held that Bankruptcy Rule 4004(a) is <strong>invalid to the extent it requires entry of a discharge contravening Section 727(a)(8)</strong>. The court found that a procedural rule cannot override a statutory prohibition.</p>
+            <p style="margin-bottom:8px;">The debtor had received a Chapter 7 discharge in a prior case and filed a second Chapter 7 within the 8-year bar period. No party objected, and the clerk entered a discharge automatically. Judge Klein vacated the mistaken second discharge under Rule 60(a), treating it as a clerical error correctable at any time.</p>
+            <p style="margin-bottom:0;">The court reasoned that the Bankruptcy Rules cannot create a right to discharge that the Bankruptcy Code expressly prohibits. A discharge entered in violation of Section 727(a)(8) is not merely voidable &mdash; it should never have been entered at all.</p>
+        </div>
+
+        <div class="section-label">Why It Matters for 1328(f)</div>
+        <div class="relevance">
+            <p style="margin-bottom:0;"><em>Filice</em> exposed the structural flaw in the current system: when no one objects, barred debtors receive discharges they are not entitled to. This decision directly prompted <a href="#rule-25-bk-n">Rules Suggestion 25-BK-N</a>, a proposal by two sitting bankruptcy judges to fix the procedural gap. The same logic applies to Section 1328(f) &mdash; if the time bar is mandatory, the procedure should not depend on someone raising it.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://www.courtlistener.com/opinion/4870655/in-re-filice/" target="_blank" rel="noopener">CourtListener</a>
+            <a href="https://scholar.google.com/scholar_case?case=12teledu7383476337" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+    </div>
+
+    <!-- Case 2: Blendheim -->
+    <div class="case-card" id="blendheim">
+        <div class="case-name"><span class="case-number">2</span><em>In re Blendheim</em></div>
+        <div class="citation">803 F.3d 477 (9th Cir. 2015)</div>
+        <div class="court-date">U.S. Court of Appeals, Ninth Circuit &mdash; 2015</div>
+
+        <div class="section-label">Key Holding</div>
+        <div class="holding">
+            <p style="margin-bottom:8px;">The Ninth Circuit held that the time period under Section 1328(f) runs from <strong>filing date to filing date</strong>, not from discharge date to filing date. This resolved a split in how bankruptcy courts were calculating the statutory bar period.</p>
+            <p style="margin-bottom:0;">The court examined the plain text of Section 1328(f)(1), which bars discharge if "the debtor has received a discharge... in a case filed" within the specified period. The phrase "in a case filed" modifies the time calculation &mdash; the clock starts when the prior case was <em>filed</em>, and the relevant endpoint is when the current case was <em>filed</em>.</p>
+        </div>
+
+        <div class="section-label">Why It Matters for 1328(f)</div>
+        <div class="relevance">
+            <p style="margin-bottom:0;"><em>Blendheim</em> is the controlling circuit authority on how to calculate the 1328(f) bar window. Filing-to-filing measurement is critical for screening tools and for courts assessing eligibility. This is the rule our <a href="index.html">screener</a> applies: it compares prior filing dates against the current filing date, not discharge dates. The distinction can shift eligibility by months or years.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://www.courtlistener.com/opinion/3219032/in-re-blendheim/" target="_blank" rel="noopener">CourtListener</a>
+            <a href="https://scholar.google.com/scholar_case?case=16826638937498768530" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+    </div>
+
+    <!-- Case 3: Rules Suggestion 25-BK-N -->
+    <div class="case-card" id="rule-25-bk-n">
+        <div class="case-name"><span class="case-number">3</span>Rules Suggestion 25-BK-N <span class="tag tag-yellow">Pending</span></div>
+        <div class="citation">Suggestion to Amend Bankruptcy Rule 4004 (Connelly &amp; Kahn, Nov. 2025)</div>
+        <div class="court-date">Advisory Committee on Bankruptcy Rules &mdash; Pending</div>
+
+        <div class="section-label">The Proposal</div>
+        <div class="holding">
+            <p style="margin-bottom:8px;">Two sitting bankruptcy judges &mdash; Hon. Thomas M. Connelly (W.D. Mo.) and Hon. David E. Kahn (N.D. Cal.) &mdash; submitted a formal proposal to amend Federal Rule of Bankruptcy Procedure 4004. The amendment would <strong>require the court to independently verify discharge eligibility before entering a discharge</strong>, removing the current model that depends entirely on creditor or party objections.</p>
+            <p style="margin-bottom:0;">Under the current system, discharges are entered automatically by the clerk unless someone files an objection. If no one objects &mdash; which is common when creditors lack economic incentive to monitor &mdash; debtors who are statutorily barred under Sections 727(a)(8), 727(a)(9), or 1328(f) receive discharges anyway. The Connelly-Kahn proposal shifts verification from adversarial policing to judicial gatekeeping.</p>
+        </div>
+
+        <div class="section-label">Why It Matters for 1328(f)</div>
+        <div class="relevance">
+            <p style="margin-bottom:0;">This is a direct response to the enforcement gap our <a href="dashboard.html">national data</a> quantifies. When we screened 56,000+ Chapter 13 cases, we found hundreds of debtors who appear barred under 1328(f) but received discharges &mdash; because no one objected. Rules Suggestion 25-BK-N would close this gap systemically. It is currently pending before the Advisory Committee on Bankruptcy Rules. <em>Filice</em> is cited as the catalyst.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://www.uscourts.gov/rules-policies/records-rules-committees/suggestions" target="_blank" rel="noopener">Rules Committee Suggestions</a>
+        </div>
+    </div>
+
+    <!-- Case 4: Cisneros -->
+    <div class="case-card" id="cisneros">
+        <div class="case-name"><span class="case-number">4</span><em>Cisneros v. United States (In re Cisneros)</em></div>
+        <div class="citation">994 F.2d 1462 (9th Cir. 1993)</div>
+        <div class="court-date">U.S. Court of Appeals, Ninth Circuit &mdash; 1993</div>
+
+        <div class="section-label">Key Holding</div>
+        <div class="holding">
+            <p style="margin-bottom:8px;">The Ninth Circuit held that a bankruptcy court may <strong>sua sponte vacate a discharge that was entered in violation of Section 727(a)(8)</strong>. The court does not need to wait for a party to raise the issue &mdash; it has independent authority to correct a discharge that should never have been granted.</p>
+            <p style="margin-bottom:0;">The debtor had received a Chapter 7 discharge within the statutory bar period. After no one objected and the discharge was entered, the IRS moved to vacate. The Ninth Circuit affirmed, holding that Section 727(a)(8) is a mandatory bar, and a court has inherent power to vacate an order entered in violation of a statutory prohibition.</p>
+        </div>
+
+        <div class="section-label">Why It Matters for 1328(f)</div>
+        <div class="relevance">
+            <p style="margin-bottom:0;"><em>Cisneros</em> establishes that mistaken discharges are correctable even after the fact. This is the backstop: when the system fails to catch a barred debtor before discharge, the court retains power to fix it. Combined with <em>Filice</em>, it creates a framework where barred discharges are void (not merely voidable) and correctable at any time. The same principle applies to 1328(f) violations in Chapter 13.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://www.courtlistener.com/opinion/606804/in-re-cisneros/" target="_blank" rel="noopener">CourtListener</a>
+            <a href="https://scholar.google.com/scholar_case?case=5651888505498498209" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+    </div>
+
+    <!-- Case 5: Espinosa -->
+    <div class="case-card" id="espinosa">
+        <div class="case-name"><span class="case-number">5</span><em>United Student Aid Funds, Inc. v. Espinosa</em></div>
+        <div class="citation">559 U.S. 260 (2010)</div>
+        <div class="court-date">Supreme Court of the United States &mdash; 2010</div>
+
+        <div class="section-label">Key Holding</div>
+        <div class="holding">
+            <p style="margin-bottom:8px;">The Supreme Court held that a bankruptcy court has an <strong>independent duty to ensure that a Chapter 13 plan complies with applicable provisions of the Bankruptcy Code</strong> before entering a confirmation order. This obligation exists regardless of whether any party raises an objection.</p>
+            <p style="margin-bottom:8px;">In <em>Espinosa</em>, a Chapter 13 plan proposed to discharge student loan debt without the required adversary proceeding under Section 523(a)(8). No one objected, and the plan was confirmed. The Supreme Court acknowledged the finality of the confirmation order but emphasized that bankruptcy courts must not confirm plans that violate the Code on their face.</p>
+            <p style="margin-bottom:0;">The Court stated: "Bankruptcy courts have a duty to review Chapter 13 plans to ensure that they comply with the Code's requirements, even if no creditor raises an objection."</p>
+        </div>
+
+        <div class="section-label">Why It Matters for 1328(f)</div>
+        <div class="relevance">
+            <p style="margin-bottom:0;"><em>Espinosa</em> establishes the broader principle: courts cannot rubber-stamp proceedings that violate the Code just because no one complained. If a bankruptcy court has an independent duty to verify plan compliance at confirmation, the same logic supports an independent duty to verify discharge eligibility before entry. This is the doctrinal foundation for the argument that 1328(f) enforcement should not depend on creditor vigilance.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://www.courtlistener.com/opinion/7860/united-student-aid-funds-inc-v-espinosa/" target="_blank" rel="noopener">CourtListener</a>
+            <a href="https://scholar.google.com/scholar_case?case=17875285357478928709" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="https://supreme.justia.com/cases/federal/us/559/260/" target="_blank" rel="noopener">Justia</a>
+        </div>
+    </div>
+
+    <!-- Why It Matters section -->
+    <h2 id="why-it-matters">The Common Thread</h2>
+
+    <p>These cases and the pending rule change share a single theme: <strong>mandatory statutory bars should not depend on adversarial enforcement</strong>.</p>
+
+    <p>The current system works like this:</p>
+    <ol>
+        <li>Congress enacted Sections 727(a)(8), 727(a)(9), and 1328(f) as absolute bars to discharge for repeat filers within specified time windows.</li>
+        <li>Bankruptcy Rule 4004(a) implements these bars through an objection deadline. If no party objects before the deadline, the clerk enters the discharge automatically.</li>
+        <li>Creditors often lack economic incentive to monitor individual cases for prior filings. The U.S. Trustee does not systematically screen for eligibility. Debtors' attorneys may not check.</li>
+        <li>The result: debtors who are statutorily ineligible for discharge receive one anyway &mdash; not because the law permits it, but because no one caught it.</li>
+    </ol>
+
+    <p><em>Filice</em> and <em>Cisneros</em> say these mistakes are correctable. <em>Espinosa</em> says courts have an independent duty to catch them. <em>Blendheim</em> clarifies how to do the math. And Rules Suggestion 25-BK-N proposes fixing the procedure so the mistakes stop happening in the first place.</p>
+
+    <div class="cta-box">
+        <p><strong>Check a case for 1328(f) eligibility</strong></p>
+        <p style="color: var(--text-muted); font-size: 14px;">Our free screener cross-references PACER filing histories against the statutory time bars.</p>
+        <a class="btn" href="index.html">Open the Screener</a>
+    </div>
+
+    <div class="footer">
+        <p>
+            <a href="index.html">Screener</a> &middot;
+            <a href="explainer.html">1328(f) Explained</a> &middot;
+            <a href="dashboard.html">National Data</a> &middot;
+            <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">GitHub</a>
+        </p>
+        <p style="margin-top: 8px;">Case summaries are for informational purposes only and do not constitute legal advice. Verify all citations independently. Last updated March 2026.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

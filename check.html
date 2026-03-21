@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1328(f) Eligibility Checker - Am I Barred from Discharge?</title>
+    <meta name="description" content="Free tool to check whether Section 1328(f) bars your Chapter 13 bankruptcy discharge based on prior filing dates. Enter two dates, get an instant answer.">
+    <meta name="keywords" content="1328(f) calculator, bankruptcy discharge bar check, Chapter 13 eligibility, prior bankruptcy discharge, BAPCPA waiting period, repeat bankruptcy filing">
+    <link rel="canonical" href="https://1328f.com/check.html">
+    <meta property="og:title" content="Section 1328(f) Eligibility Checker">
+    <meta property="og:description" content="Free tool: check whether a prior bankruptcy discharge bars your current Chapter 13 case. Two dates, instant answer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1328f.com/check.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Section 1328(f) Eligibility Checker">
+    <meta name="twitter:description" content="Free tool: check whether a prior bankruptcy discharge bars your current Chapter 13 case.">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Form */
+        .form-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px 28px 32px;
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group:last-of-type {
+            margin-bottom: 28px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        label .hint {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        select, input[type="date"] {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 15px;
+            font-family: inherit;
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238b949e' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 36px;
+            cursor: pointer;
+        }
+        select:focus, input[type="date"]:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.7);
+            cursor: pointer;
+        }
+
+        .btn-check {
+            display: block;
+            width: 100%;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inherit;
+            color: #fff;
+            background: #238636;
+            border: 1px solid rgba(240,246,252,0.1);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn-check:hover {
+            background: #2ea043;
+        }
+        .btn-check:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .btn-check:active {
+            background: #1a7f37;
+        }
+
+        /* Result */
+        .result {
+            display: none;
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        .result.show { display: block; }
+        .result.clear {
+            background: rgba(63, 185, 80, 0.1);
+            border: 1px solid rgba(63, 185, 80, 0.3);
+        }
+        .result.barred {
+            background: rgba(248, 81, 73, 0.1);
+            border: 1px solid rgba(248, 81, 73, 0.3);
+        }
+        .result-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .result-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .result.clear .result-title { color: var(--green); }
+        .result.barred .result-title { color: var(--red); }
+        .result-detail {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .result-detail strong {
+            color: var(--text);
+        }
+        .result-math {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin-top: 14px;
+            font-size: 14px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .result-math .highlight {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* Info box */
+        .info-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        .info-box strong {
+            color: var(--text);
+        }
+
+        /* Links section */
+        .links-section {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .links-section ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+        .links-section li {
+            margin-bottom: 6px;
+            padding-left: 16px;
+            position: relative;
+        }
+        .links-section li::before {
+            content: "\2192";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 24px 0;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+        footer a { color: var(--accent); }
+
+        /* Error state */
+        .form-group.error select,
+        .form-group.error input[type="date"] {
+            border-color: var(--red);
+        }
+        .error-msg {
+            display: none;
+            font-size: 13px;
+            color: var(--red);
+            margin-top: 4px;
+        }
+        .form-group.error .error-msg {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 { font-size: 22px; }
+            .form-card { padding: 20px 18px 24px; }
+            .result { padding: 20px 18px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Section 1328(f) Eligibility Checker",
+        "description": "Free tool to check whether Section 1328(f) bars your Chapter 13 bankruptcy discharge based on prior filing dates.",
+        "url": "https://1328f.com/check.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Screener</a> /
+            <a href="explainer.html">Explainer</a> /
+            Eligibility Checker
+        </nav>
+
+        <h1>Section 1328(f) Eligibility Checker</h1>
+        <p class="subtitle">Check whether a prior bankruptcy discharge bars your current Chapter 13 case. Client-side only — no data leaves your browser.</p>
+
+        <div class="form-card">
+            <div class="form-group" id="group-chapter">
+                <label for="prior-chapter">What chapter was your prior bankruptcy?</label>
+                <select id="prior-chapter">
+                    <option value="" disabled selected>Select chapter...</option>
+                    <option value="7">Chapter 7</option>
+                    <option value="11">Chapter 11</option>
+                    <option value="12">Chapter 12</option>
+                    <option value="13">Chapter 13</option>
+                </select>
+                <div class="error-msg">Please select a chapter.</div>
+            </div>
+
+            <div class="form-group" id="group-prior-date">
+                <label for="prior-date">
+                    When was your prior case filed?
+                    <span class="hint">(filing date, not discharge date)</span>
+                </label>
+                <input type="date" id="prior-date">
+                <div class="error-msg">Please enter a valid date.</div>
+            </div>
+
+            <div class="form-group" id="group-current-date">
+                <label for="current-date">
+                    When was your current Chapter 13 filed?
+                    <span class="hint">(defaults to today)</span>
+                </label>
+                <input type="date" id="current-date">
+                <div class="error-msg">Please enter a valid date.</div>
+            </div>
+
+            <button class="btn-check" id="btn-check" type="button">Check Eligibility</button>
+        </div>
+
+        <div class="result" id="result" role="alert" aria-live="polite"></div>
+
+        <div class="info-box">
+            <strong>Disclaimer:</strong> This is an informational tool, not legal advice. Section 1328(f) is measured from the <em>filing date</em> of the prior case to the <em>filing date</em> of the current case. Individual circumstances vary. Consult a licensed attorney for advice about your specific situation.
+        </div>
+
+        <div class="links-section">
+            <strong>Learn more</strong>
+            <ul>
+                <li><a href="explainer.html">What is Section 1328(f)?</a> — Plain-English explanation of the statute</li>
+                <li><a href="index.html">National Screener Dashboard</a> — 264 flagged cases across 50+ districts</li>
+                <li><a href="https://www.law.cornell.edu/uscode/text/11/1328" target="_blank" rel="noopener">11 U.S.C. &sect; 1328</a> — Full statutory text (Cornell LII)</li>
+                <li><a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">GitHub Repository</a> — Open-source screener code</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">Open Source</a>
+        &nbsp;&middot;&nbsp; No data collected &nbsp;&middot;&nbsp; No cookies
+    </footer>
+
+    <script>
+    (function() {
+        // Default current-date to today
+        const today = new Date();
+        const todayStr = today.getFullYear() + '-' +
+            String(today.getMonth() + 1).padStart(2, '0') + '-' +
+            String(today.getDate()).padStart(2, '0');
+        document.getElementById('current-date').value = todayStr;
+
+        const btn = document.getElementById('btn-check');
+        const resultEl = document.getElementById('result');
+
+        btn.addEventListener('click', function() {
+            // Clear errors
+            ['group-chapter', 'group-prior-date', 'group-current-date'].forEach(function(id) {
+                document.getElementById(id).classList.remove('error');
+            });
+            resultEl.classList.remove('show', 'clear', 'barred');
+
+            // Validate
+            let valid = true;
+            const chapter = document.getElementById('prior-chapter').value;
+            const priorStr = document.getElementById('prior-date').value;
+            const currentStr = document.getElementById('current-date').value;
+
+            if (!chapter) {
+                document.getElementById('group-chapter').classList.add('error');
+                valid = false;
+            }
+            if (!priorStr) {
+                document.getElementById('group-prior-date').classList.add('error');
+                valid = false;
+            }
+            if (!currentStr) {
+                document.getElementById('group-current-date').classList.add('error');
+                valid = false;
+            }
+            if (!valid) return;
+
+            const priorDate = new Date(priorStr + 'T00:00:00');
+            const currentDate = new Date(currentStr + 'T00:00:00');
+
+            if (isNaN(priorDate.getTime())) {
+                document.getElementById('group-prior-date').classList.add('error');
+                return;
+            }
+            if (isNaN(currentDate.getTime())) {
+                document.getElementById('group-current-date').classList.add('error');
+                return;
+            }
+            if (currentDate <= priorDate) {
+                document.getElementById('group-current-date').classList.add('error');
+                document.querySelector('#group-current-date .error-msg').textContent =
+                    'Current filing date must be after the prior filing date.';
+                return;
+            }
+
+            // Calculate gap
+            var totalMonths = (currentDate.getFullYear() - priorDate.getFullYear()) * 12 +
+                (currentDate.getMonth() - priorDate.getMonth());
+            // Adjust if the day hasn't been reached yet in the final month
+            if (currentDate.getDate() < priorDate.getDate()) {
+                totalMonths--;
+            }
+            var years = Math.floor(totalMonths / 12);
+            var months = totalMonths % 12;
+
+            // Also calculate total days for precision
+            var diffMs = currentDate.getTime() - priorDate.getTime();
+            var totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+            // Statutory period
+            var requiredYears;
+            var subsection;
+            if (chapter === '13') {
+                requiredYears = 2;
+                subsection = '1328(f)(2)';
+            } else {
+                requiredYears = 4;
+                subsection = '1328(f)(1)';
+            }
+
+            var requiredDays = requiredYears * 365; // approximate
+            // More precise: add requiredYears to priorDate
+            var barExpires = new Date(priorDate);
+            barExpires.setFullYear(barExpires.getFullYear() + requiredYears);
+
+            var isBarred = currentDate < barExpires;
+
+            // Format dates for display
+            function fmtDate(d) {
+                var m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                return m[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+            }
+
+            var gapText = years > 0 ? years + ' year' + (years !== 1 ? 's' : '') : '';
+            if (months > 0) {
+                if (gapText) gapText += ', ';
+                gapText += months + ' month' + (months !== 1 ? 's' : '');
+            }
+            if (!gapText) gapText = 'less than 1 month';
+            gapText += ' (' + totalDays.toLocaleString() + ' days)';
+
+            var chapterLabel = 'Chapter ' + chapter;
+
+            if (isBarred) {
+                resultEl.className = 'result show barred';
+                resultEl.innerHTML =
+                    '<div class="result-title">Section ' + subsection + ' MAY bar discharge in your current case.</div>' +
+                    '<p class="result-detail">The gap between your prior <strong>' + chapterLabel + '</strong> filing and your current Chapter 13 filing is <strong>' + gapText + '</strong>. The required waiting period is <strong>' + requiredYears + ' years</strong>.</p>' +
+                    '<div class="result-math">' +
+                        '<span class="highlight">Prior filed:</span> ' + fmtDate(priorDate) + '<br>' +
+                        '<span class="highlight">Current filed:</span> ' + fmtDate(currentDate) + '<br>' +
+                        '<span class="highlight">Gap:</span> ' + gapText + '<br>' +
+                        '<span class="highlight">Required:</span> ' + requiredYears + ' years (' + subsection + ')' + '<br>' +
+                        '<span class="highlight">Bar expires:</span> ' + fmtDate(barExpires) +
+                    '</div>' +
+                    '<p class="result-detail" style="margin-top:14px">This does not necessarily mean your case will be dismissed. Speak with a bankruptcy attorney about your options. The bar applies only if a <em>discharge</em> was granted in the prior case.</p>';
+            } else {
+                resultEl.className = 'result show clear';
+                resultEl.innerHTML =
+                    '<div class="result-title">Section 1328(f) does NOT bar discharge in your current case.</div>' +
+                    '<p class="result-detail">The gap between your prior <strong>' + chapterLabel + '</strong> filing and your current Chapter 13 filing is <strong>' + gapText + '</strong>, which exceeds the <strong>' + requiredYears + '-year</strong> waiting period under ' + subsection + '.</p>' +
+                    '<div class="result-math">' +
+                        '<span class="highlight">Prior filed:</span> ' + fmtDate(priorDate) + '<br>' +
+                        '<span class="highlight">Current filed:</span> ' + fmtDate(currentDate) + '<br>' +
+                        '<span class="highlight">Gap:</span> ' + gapText + '<br>' +
+                        '<span class="highlight">Required:</span> ' + requiredYears + ' years (' + subsection + ')' +
+                    '</div>';
+            }
+
+            resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    })();
+    </script>
+</body>
+</html>
