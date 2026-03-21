@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankruptcy Discharge Bars Compared: 1328(f) vs 727(a)(8) vs 727(a)(9) vs 109(g)</title>
+    <meta name="description" content="Side-by-side comparison of the four major bankruptcy discharge bars: Section 1328(f), 727(a)(8), 727(a)(9), and 109(g). Bar periods, what they block, how they are enforced, and what you can do.">
+    <meta name="keywords" content="1328(f), 727(a)(8), 727(a)(9), 109(g), bankruptcy discharge bar, repeat filing, Chapter 7, Chapter 13, filing bar, discharge denied, BAPCPA, bankruptcy waiting period">
+    <link rel="canonical" href="https://1328f.com/compare.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between 1328(f) and 727(a)(8)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Section 1328(f) bars discharge in a Chapter 13 case if the debtor received a discharge in a prior Chapter 7, 11, or 12 case within 4 years, or a prior Chapter 13 discharge within 2 years. Section 727(a)(8) bars discharge in a Chapter 7 case if the debtor received a prior Chapter 7 or Chapter 11 discharge within 8 years. Both are measured from filing date to filing date. The key difference is the chapter they apply to and the length of the bar period."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long do I have to wait between bankruptcies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the chapters involved. Chapter 7 after Chapter 7: 8 years. Chapter 7 after Chapter 13: 6 years (unless you paid 100% or 70% in good faith). Chapter 13 after Chapter 7: 4 years. Chapter 13 after Chapter 13: 2 years. These periods are measured from filing date to filing date, not from discharge or closing. A separate rule, Section 109(g), imposes a 180-day bar on filing itself after certain dismissals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I file bankruptcy if my last case was dismissed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generally yes, but Section 109(g) may bar you from filing for 180 days if your prior case was dismissed for willful failure to comply with court orders or to appear, or if you voluntarily dismissed a case after a creditor sought relief from the automatic stay. Unlike the discharge bars (1328(f), 727(a)(8), 727(a)(9)), Section 109(g) prevents filing entirely, not just discharge. If your prior case was dismissed without discharge, the discharge bars do not apply because no discharge was granted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 8 year rule in bankruptcy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 8-year rule refers to 11 U.S.C. Section 727(a)(8), which bars a Chapter 7 discharge if the debtor received a prior Chapter 7 or Chapter 11 discharge within 8 years of the current filing date. The 8-year period is measured from the filing date of the prior case to the filing date of the new case. This is the longest discharge bar period in the Bankruptcy Code."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .warning-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .warning-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        /* Comparison table */
+        .compare-table-wrap {
+            overflow-x: auto;
+            margin: 24px 0;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 700px;
+        }
+        .compare-table thead th {
+            background: var(--surface);
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+        .compare-table thead th:first-child {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .compare-table tbody td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .compare-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .compare-table tbody td:first-child {
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .compare-table tbody tr:hover {
+            background: rgba(88, 166, 255, 0.04);
+        }
+        .col-1328f { border-top: 3px solid var(--accent); }
+        .col-727a8 { border-top: 3px solid var(--green); }
+        .col-727a9 { border-top: 3px solid var(--yellow); }
+        .col-109g { border-top: 3px solid var(--red); }
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag-blue { background: rgba(88, 166, 255, 0.15); color: var(--accent); }
+        .tag-green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+        .tag-yellow { background: rgba(210, 153, 34, 0.15); color: var(--yellow); }
+        .tag-red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+
+        /* Statute detail cards */
+        .statute-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .statute-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        .statute-card p:last-child { margin-bottom: 0; }
+        .statute-card .cornell-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .footer a { color: var(--accent); }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+        /* Cite block */
+        .cite-section { margin-top: 40px; }
+        .cite-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px 16px;
+            color: var(--text-muted);
+            font-size: 14px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .cite-toggle:hover { border-color: var(--accent); }
+        .cite-body { display: none; margin-top: 8px; }
+        .cite-section.open .cite-body { display: block; }
+        .cite-section.open .chevron { transform: rotate(180deg); }
+        .chevron { transition: transform 0.2s; font-size: 10px; }
+        .cite-format { margin-bottom: 12px; }
+        .cite-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 4px; }
+        .cite-row { display: flex; gap: 8px; align-items: flex-start; }
+        .cite-text {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .cite-copy-btn {
+            background: var(--border);
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .cite-copy-btn:hover { background: var(--accent); color: #fff; }
+        .cite-copy-btn.copied { background: var(--green); color: #fff; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 22px; }
+            .container { padding: 24px 0 60px; }
+            .compare-table { font-size: 13px; }
+            .compare-table thead th,
+            .compare-table tbody td { padding: 8px 10px; }
+            .statute-card { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="index.html">Screener</a> / <a href="explainer.html">Explainer</a> / Discharge Bar Comparison
+</div>
+
+<h1>Bankruptcy Discharge Bars Compared</h1>
+<p class="subtitle">Side-by-side comparison of Sections 1328(f), 727(a)(8), 727(a)(9), and 109(g) &mdash; the four statutes that limit repeat bankruptcy filings and discharges.</p>
+
+<h2>Comparison Table</h2>
+
+<div class="compare-table-wrap">
+<table class="compare-table">
+<thead>
+    <tr>
+        <th>Feature</th>
+        <th class="col-1328f">&sect;1328(f)</th>
+        <th class="col-727a8">&sect;727(a)(8)</th>
+        <th class="col-727a9">&sect;727(a)(9)</th>
+        <th class="col-109g">&sect;109(g)</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Applies to</td>
+        <td><span class="tag tag-blue">Ch.13 discharge</span></td>
+        <td><span class="tag tag-green">Ch.7 discharge</span></td>
+        <td><span class="tag tag-yellow">Ch.7 discharge</span></td>
+        <td><span class="tag tag-red">Filing itself</span></td>
+    </tr>
+    <tr>
+        <td>Bar period</td>
+        <td>4 years (from prior Ch.7/11/12 discharge) or 2 years (from prior Ch.13 discharge)</td>
+        <td>8 years from prior Ch.7 or Ch.11 discharge</td>
+        <td>6 years from prior Ch.12 or Ch.13 discharge</td>
+        <td>180 days from prior dismissal</td>
+    </tr>
+    <tr>
+        <td>Measured from</td>
+        <td>Filing date to filing date</td>
+        <td>Filing date to filing date</td>
+        <td>Filing date to filing date</td>
+        <td>Dismissal date to new filing date</td>
+    </tr>
+    <tr>
+        <td>What it blocks</td>
+        <td>Discharge only &mdash; you can still file and receive automatic stay protection</td>
+        <td>Discharge only &mdash; you can still file and receive automatic stay protection</td>
+        <td>Discharge only (unless you paid 100% of unsecured claims, or 70%+ in good faith)</td>
+        <td>The filing itself &mdash; the court may refuse to accept the petition</td>
+    </tr>
+    <tr>
+        <td>Key case</td>
+        <td><em>In re Blendheim</em>, 803 F.3d 477 (9th Cir. 2015)</td>
+        <td><em>In re Filice</em>, 590 B.R. 645 (Bankr. E.D. Cal. 2018)</td>
+        <td>Same framework as &sect;727(a)(8)</td>
+        <td>Statutory; verified at filing by court clerks</td>
+    </tr>
+    <tr>
+        <td>Enforcement</td>
+        <td>Objection-dependent &mdash; a party must raise it or the court must catch it</td>
+        <td>Objection-dependent &mdash; a party must raise it or the court must catch it</td>
+        <td>Objection-dependent &mdash; a party must raise it or the court must catch it</td>
+        <td>Court verification at filing</td>
+    </tr>
+    <tr>
+        <td>Proposed reform</td>
+        <td colspan="3" style="text-align:center;">Suggestion 25-BK-N would amend Rule 4004 to require courts to independently verify discharge eligibility, reducing reliance on objections</td>
+        <td>N/A (already verified at filing)</td>
+    </tr>
+    <tr>
+        <td>Can be screened?</td>
+        <td><a href="check.html">Yes &mdash; 1328f.com checker</a></td>
+        <td>Yes &mdash; same methodology</td>
+        <td>Yes &mdash; same methodology</td>
+        <td>Yes &mdash; docket review</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning-box">
+    <div class="label">Important distinction</div>
+    <p style="margin-bottom:0;">Sections 1328(f), 727(a)(8), and 727(a)(9) bar <strong>discharge</strong>, not filing. A debtor can still file a new case and receive automatic stay protection even if discharge is barred. Section 109(g) is different &mdash; it bars the <strong>filing itself</strong>.</p>
+</div>
+
+<h2>Section 1328(f) &mdash; Chapter 13 Discharge Bar</h2>
+
+<div class="statute-card">
+    <h3>&sect;1328(f): Two Waiting Periods for Chapter 13</h3>
+    <p>Section 1328(f) prevents a Chapter 13 debtor from receiving a discharge if they received a discharge in a prior case within a specified period. If the prior discharge was under Chapter 7, 11, or 12, the bar period is 4 years. If the prior discharge was under Chapter 13, the bar period is 2 years. Both periods are measured from the <em>filing date</em> of the prior case to the <em>filing date</em> of the new case &mdash; not from discharge or case closing.</p>
+    <p>This statute was added by BAPCPA in 2005 and is one of the most commonly missed eligibility checks in consumer bankruptcy. Because enforcement is objection-dependent, cases can proceed through confirmation, plan payments, and even completion before anyone realizes discharge was never available. The debtor completes a 3-to-5-year plan and receives nothing.</p>
+    <p>The Ninth Circuit's decision in <em>In re Blendheim</em> (2015) established that the filing-date-to-filing-date measurement applies even when the prior case had unusual procedural history. This is the leading circuit-level authority on the statute's temporal computation.</p>
+    <p class="cornell-link"><a href="https://www.law.cornell.edu/uscode/text/11/1328" target="_blank" rel="noopener">Read 11 U.S.C. &sect;1328 at Cornell Law</a></p>
+</div>
+
+<h2>Section 727(a)(8) &mdash; The 8-Year Rule</h2>
+
+<div class="statute-card">
+    <h3>&sect;727(a)(8): Chapter 7 After Chapter 7 or 11</h3>
+    <p>Section 727(a)(8) bars a Chapter 7 discharge if the debtor received a discharge in a prior Chapter 7 or Chapter 11 case filed within 8 years of the new filing. This is the longest discharge bar in the Bankruptcy Code and the one most people refer to when they say "you can only file bankruptcy every 8 years" &mdash; although that common understanding is incomplete, because it applies only to the Chapter 7-to-Chapter 7 path.</p>
+    <p>Like Section 1328(f), the 8-year period is measured from filing date to filing date. And like 1328(f), enforcement depends on someone raising the issue. The court does not automatically verify discharge eligibility in a Chapter 7 case. If no party objects and the court does not independently investigate, a debtor who is barred under 727(a)(8) can receive a discharge that should never have been granted.</p>
+    <p><em>In re Filice</em> (Bankr. E.D. Cal. 2018) addressed the intersection of the 8-year period with case conversions and the computation of the filing date when a case changes chapters during its life.</p>
+    <p class="cornell-link"><a href="https://www.law.cornell.edu/uscode/text/11/727" target="_blank" rel="noopener">Read 11 U.S.C. &sect;727 at Cornell Law</a></p>
+</div>
+
+<h2>Section 727(a)(9) &mdash; The 6-Year Rule</h2>
+
+<div class="statute-card">
+    <h3>&sect;727(a)(9): Chapter 7 After Chapter 12 or 13</h3>
+    <p>Section 727(a)(9) bars a Chapter 7 discharge if the debtor received a discharge in a prior Chapter 12 or Chapter 13 case filed within 6 years &mdash; unless the debtor paid 100% of allowed unsecured claims in the prior case, or paid at least 70% of such claims and the plan was proposed in good faith with best-effort payments.</p>
+    <p>This exception makes 727(a)(9) unique among the discharge bars. A debtor who completed a Chapter 13 plan paying 70% or more to unsecured creditors in good faith can file a Chapter 7 case within the 6-year window and still receive a discharge. The good-faith and best-effort requirements are determined by the court on a case-by-case basis.</p>
+    <p>The enforcement gap is the same: no automatic court verification. If a debtor files Chapter 7 within 6 years of a Chapter 13 filing and no one objects, the discharge may be granted even when the statute bars it. The same screening methodology that detects 1328(f) violations can identify potential 727(a)(9) violations by cross-referencing filing dates across chapters.</p>
+    <p class="cornell-link"><a href="https://www.law.cornell.edu/uscode/text/11/727" target="_blank" rel="noopener">Read 11 U.S.C. &sect;727 at Cornell Law</a></p>
+</div>
+
+<h2>Section 109(g) &mdash; The 180-Day Filing Bar</h2>
+
+<div class="statute-card" style="border-left: 4px solid var(--red);">
+    <h3>&sect;109(g): Cannot File at All</h3>
+    <p>Section 109(g) is fundamentally different from the discharge bars above. It does not merely prevent discharge &mdash; it prevents filing entirely. A debtor may not be a debtor under any chapter if a prior case was dismissed within the preceding 180 days under either of two conditions: (1) the debtor willfully failed to abide by court orders or to appear before the court, or (2) the debtor voluntarily dismissed the case after a creditor requested relief from the automatic stay.</p>
+    <p>Because 109(g) is a filing eligibility bar, courts are more likely to catch it at the intake stage. However, enforcement still varies by district. Some courts run automated checks against the debtor's filing history; others rely on creditor objections or the U.S. Trustee. The 180-day period is measured from the date of dismissal (not filing date) of the prior case to the filing date of the new case.</p>
+    <p>Section 109(g) often intersects with the serial-filing problem. Debtors who file repeatedly to invoke the automatic stay and then dismiss may trigger 109(g) &mdash; or may face limitations on the stay under Section 362(c)(3) (stay limited to 30 days) or Section 362(c)(4) (no automatic stay at all) in subsequent cases filed within one year of a prior dismissal.</p>
+    <p class="cornell-link"><a href="https://www.law.cornell.edu/uscode/text/11/109" target="_blank" rel="noopener">Read 11 U.S.C. &sect;109 at Cornell Law</a></p>
+</div>
+
+<h2>Which Bar Applies to You?</h2>
+
+<div class="statute-box">
+    <div class="label">Quick reference</div>
+    <p style="margin-bottom:8px;"><strong>Filing Chapter 13 now?</strong> Check &sect;1328(f). Prior Ch.7/11/12 discharge within 4 years or prior Ch.13 discharge within 2 years bars your discharge.</p>
+    <p style="margin-bottom:8px;"><strong>Filing Chapter 7 now?</strong> Check &sect;727(a)(8) (prior Ch.7/11 within 8 years) and &sect;727(a)(9) (prior Ch.12/13 within 6 years).</p>
+    <p style="margin-bottom:8px;"><strong>Prior case dismissed?</strong> Check &sect;109(g) if the dismissal was within 180 days and involved court-order noncompliance or post-stay-relief voluntary dismissal.</p>
+    <p style="margin-bottom:0;"><strong>All measurements use filing dates</strong> except &sect;109(g), which measures from dismissal date. &rarr; <a href="check.html">Run the eligibility checker</a></p>
+</div>
+
+<h2>The Enforcement Gap</h2>
+
+<p>Sections 1328(f), 727(a)(8), and 727(a)(9) share a critical structural problem: enforcement depends on someone raising the issue. Courts do not automatically verify discharge eligibility. If no creditor, trustee, or U.S. Trustee objects, a debtor who is statutorily barred from discharge can complete an entire bankruptcy case &mdash; years of plan payments in Chapter 13 &mdash; and receive a discharge that should never have been entered.</p>
+
+<p>This is not a theoretical concern. Research using PACER data has identified hundreds of cases where debtors were potentially barred from discharge under these statutes, including cases where discharge was granted despite an apparent bar. The <a href="check.html">1328f.com screener</a> was built to make this verification accessible to anyone with PACER data.</p>
+
+<p>Suggestion 25-BK-N, currently before the Advisory Committee on Bankruptcy Rules, proposes amending Federal Rule of Bankruptcy Procedure 4004 to require courts to independently verify discharge eligibility. If adopted, this would close the enforcement gap for all three discharge bar statutes.</p>
+
+<!-- Cite block -->
+<style>
+    .cite-section { margin-top: 40px; }
+</style>
+<div class="cite-section" id="citeSection">
+    <button class="cite-toggle" onclick="document.getElementById('citeSection').classList.toggle('open')" aria-expanded="false" aria-controls="citeBody">
+        <span>Cite This Page</span>
+        <span class="chevron">&#9660;</span>
+    </button>
+    <div class="cite-body" id="citeBody">
+        <div class="cite-format">
+            <div class="cite-label">Bluebook</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeBluebook">Daniel Brown, <i>Bankruptcy Discharge Bars Compared: 1328(f) vs 727(a)(8) vs 727(a)(9) vs 109(g)</i>, 1328f.com (Mar. 2026), https://1328f.com/compare.html.</div>
+                <button class="cite-copy-btn" onclick="copyCite('citeBluebook', this)" title="Copy to clipboard">Copy</button>
+            </div>
+        </div>
+        <div class="cite-format">
+            <div class="cite-label">APA (7th ed.)</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeAPA">Brown, D. (2026, March). <i>Bankruptcy discharge bars compared: 1328(f) vs 727(a)(8) vs 727(a)(9) vs 109(g)</i>. 1328f.com. https://1328f.com/compare.html</div>
+                <button class="cite-copy-btn" onclick="copyCite('citeAPA', this)" title="Copy to clipboard">Copy</button>
+            </div>
+        </div>
+        <div class="cite-format">
+            <div class="cite-label">Chicago (17th ed.)</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeChicago">Brown, Daniel. "Bankruptcy Discharge Bars Compared: 1328(f) vs 727(a)(8) vs 727(a)(9) vs 109(g)." 1328f.com. Last modified March 2026. https://1328f.com/compare.html.</div>
+                <button class="cite-copy-btn" onclick="copyCite('citeChicago', this)" title="Copy to clipboard">Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function copyCite(id, btn) {
+    var el = document.getElementById(id);
+    var text = el.innerText || el.textContent;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() { showCopied(btn); });
+    } else {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta); showCopied(btn);
+    }
+}
+function showCopied(btn) {
+    var orig = btn.textContent;
+    btn.textContent = '\u2713'; btn.classList.add('copied');
+    setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+}
+</script>
+
+<div class="footer">
+    <p>This page is part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. Data sourced from publicly available PACER records and the FJC Integrated Database. This is not legal advice.</p>
+
+    <div class="footer-links">
+        <a href="index.html">National Map</a>
+        <a href="check.html">Eligibility Checker</a>
+        <a href="explainer.html">1328(f) Explainer</a>
+        <a href="caselaw.html">Case Law</a>
+        <a href="dashboard.html">Dashboard</a>
+    </div>
+
+    <p style="margin-top:12px;"><strong>Cornell Law Institute</strong> &mdash; full statute text:</p>
+    <div class="footer-links">
+        <a href="https://www.law.cornell.edu/uscode/text/11/1328" target="_blank" rel="noopener">&sect;1328</a>
+        <a href="https://www.law.cornell.edu/uscode/text/11/727" target="_blank" rel="noopener">&sect;727</a>
+        <a href="https://www.law.cornell.edu/uscode/text/11/109" target="_blank" rel="noopener">&sect;109</a>
+        <a href="https://www.law.cornell.edu/uscode/text/11/362" target="_blank" rel="noopener">&sect;362</a>
+    </div>
+
+    <p style="margin-top:12px"><a href="https://1328f.org">Research</a> &middot; Research and reports at <a href="https://1328f.org">1328f.org</a></p>
+    <p style="margin-top:8px">Last updated: March 2026</p>
+</div>
+
+</div>
+</body>
+</html>
