@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1328(f) Explained - Bankruptcy Discharge Bar</title>
+    <meta name="description" content="Plain-English explanation of 11 U.S.C. Section 1328(f), the federal statute that bars Chapter 13 bankruptcy discharge for repeat filers. What it means, how it works, and what to do if it applies to you.">
+    <meta name="keywords" content="1328(f), bankruptcy discharge bar, Chapter 13, prior filing, BAPCPA, discharge denied, repeat bankruptcy filing">
+    <link rel="canonical" href="https://ilikemath9999.github.io/bankruptcy-discharge-screener/explainer.html">
+    <link rel="alternate" hreflang="en" href="https://ilikemath9999.github.io/bankruptcy-discharge-screener/explainer.html">
+    <link rel="alternate" hreflang="es" href="https://ilikemath9999.github.io/bankruptcy-discharge-screener/explainer-es.html">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .warning-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .example-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .red-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--red);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .example-box .label, .warning-box .label, .red-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .tag-red { background: rgba(248,81,73,0.15); color: var(--red); }
+        .tag-green { background: rgba(63,185,80,0.15); color: var(--green); }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        .toc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        .toc .label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .toc ul { list-style: none; margin: 0; padding: 0; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { font-size: 15px; }
+        .faq-q {
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .cta-box a {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+        .cta-box a:hover { opacity: 0.9; text-decoration: none; }
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        code {
+            background: var(--surface);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .container { padding: 20px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="index.html">Screener</a> / Section 1328(f) Explained
+    <span style="float:right;font-size:14px"><a href="explainer-es.html">Espanol</a></span>
+</div>
+
+<h1>Section 1328(f): The Bankruptcy Discharge Bar</h1>
+<p class="subtitle">A plain-English guide to the federal statute that prevents repeat bankruptcy filers from receiving a Chapter 13 discharge.</p>
+
+<div class="toc">
+    <div class="label">Contents</div>
+    <ul>
+        <li><a href="#what">What is Section 1328(f)?</a></li>
+        <li><a href="#how">How the time limits work</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#question9">Question 9 on the Chapter 13 petition</a></li>
+        <li><a href="#what-happens">What happens when 1328(f) applies</a></li>
+        <li><a href="#why">Why violations happen</a></li>
+        <li><a href="#what-to-do">What to do if this applies to you</a></li>
+        <li><a href="#scale">How big is this problem?</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#legal">Legal references</a></li>
+    </ul>
+</div>
+
+<h2 id="what">What is Section 1328(f)?</h2>
+
+<p>Section 1328(f) is part of the United States Bankruptcy Code. It creates a hard time limit on how soon a person can receive a Chapter 13 discharge after getting a prior bankruptcy discharge.</p>
+
+<p>In plain terms: if you already completed a bankruptcy and received a discharge, the law says you have to wait a certain number of years before you can get another discharge in a Chapter 13 case. If you file too soon, you can go through the entire Chapter 13 process -- make payments for years -- and the court still cannot grant you a discharge at the end.</p>
+
+<div class="statute-box">
+    <div class="label">11 U.S.C. Section 1328(f)</div>
+    <p><strong>(f)(1)</strong> &mdash; The court shall not grant a discharge if the debtor has received a discharge in a case filed under <strong>Chapter 7, 11, or 12</strong> during the <strong>4-year period</strong> preceding the date of the order for relief under this chapter.</p>
+    <p style="margin-top:12px"><strong>(f)(2)</strong> &mdash; The court shall not grant a discharge if the debtor has received a discharge in a case filed under <strong>Chapter 13</strong> during the <strong>2-year period</strong> preceding the date of the order for relief under this chapter.</p>
+</div>
+
+<p>This provision was added by BAPCPA (the Bankruptcy Abuse Prevention and Consumer Protection Act) in 2005 and applies to all Chapter 13 cases filed on or after October 17, 2005.</p>
+
+<h2 id="how">How the time limits work</h2>
+
+<p>The clock runs from <strong>filing date to filing date</strong>, not from discharge date to filing date. This is an important distinction established by the Ninth Circuit in <em>In re Blendheim</em>, 803 F.3d 477 (9th Cir. 2015).</p>
+
+<table>
+    <tr>
+        <th>Prior case chapter</th>
+        <th>Waiting period</th>
+        <th>Measured from</th>
+    </tr>
+    <tr>
+        <td>Chapter 7</td>
+        <td>4 years</td>
+        <td>Prior filing date to new filing date</td>
+    </tr>
+    <tr>
+        <td>Chapter 11</td>
+        <td>4 years</td>
+        <td>Prior filing date to new filing date</td>
+    </tr>
+    <tr>
+        <td>Chapter 12</td>
+        <td>4 years</td>
+        <td>Prior filing date to new filing date</td>
+    </tr>
+    <tr>
+        <td>Chapter 13</td>
+        <td>2 years</td>
+        <td>Prior filing date to new filing date</td>
+    </tr>
+</table>
+
+<p>The statute says "the 4-year period preceding the date of the order for relief." In a voluntary bankruptcy, the order for relief is entered on the date the petition is filed. So the calculation is:</p>
+
+<ol>
+    <li>Find the <strong>filing date</strong> of the prior case</li>
+    <li>Find the <strong>filing date</strong> of the new Chapter 13 case</li>
+    <li>Count the years between them</li>
+    <li>If the gap is less than the required period and the prior case resulted in a discharge, the bar applies</li>
+</ol>
+
+<h2 id="examples">Examples</h2>
+
+<div class="example-box">
+    <div class="label">No violation</div>
+    <p>Jane files Chapter 7 on January 1, 2018 and receives a discharge. She files Chapter 13 on March 15, 2023. The gap between filing dates is 5 years, 2 months. The 4-year bar does not apply. Jane can receive a Chapter 13 discharge.</p>
+</div>
+
+<div class="red-box">
+    <div class="label">1328(f)(1) violation</div>
+    <p>John files Chapter 7 on June 1, 2021 and receives a discharge. His attorney files a new Chapter 13 on April 15, 2024. The gap between filing dates is 2 years, 10 months. This is within the 4-year bar. <strong>John cannot receive a Chapter 13 discharge.</strong> He can go through the entire repayment plan, make every payment, and the court still cannot discharge his debts.</p>
+</div>
+
+<div class="red-box">
+    <div class="label">1328(f)(2) violation</div>
+    <p>Maria files Chapter 13 on March 1, 2022 and receives a discharge. Her attorney files a new Chapter 13 on November 1, 2023. The gap between filing dates is 1 year, 8 months. This is within the 2-year bar. <strong>Maria cannot receive a Chapter 13 discharge.</strong></p>
+</div>
+
+<h2 id="question9">Question 9 on the Chapter 13 petition</h2>
+
+<p>The official Chapter 13 petition form (Official Form 101) asks at Question 9:</p>
+
+<div class="statute-box">
+    <div class="label">Question 9</div>
+    <p>"Within the last 8 years, have you filed a case under any chapter of the Bankruptcy Code?"</p>
+</div>
+
+<p>If the answer is yes, the debtor must list the prior case number, district, date filed, and chapter. This is where the court and the U.S. Trustee are supposed to catch 1328(f) bars.</p>
+
+<p>When this system works, the clerk or trustee checks the dates and raises the issue before the case proceeds. When it fails, the debtor goes through the full Chapter 13 process without anyone flagging the bar.</p>
+
+<div class="warning-box">
+    <div class="label">The enforcement gap</div>
+    <p>Question 9 relies on accurate disclosure and manual review. If the debtor answers "No" (either because the attorney didn't ask or didn't check), and no one in the system catches it, the case proceeds as if the bar doesn't exist. Our screening of 56,563 Chapter 13 cases across multiple districts found 264 cases where the 1328(f) window was violated. Of those, 114 received a discharge despite the statutory bar.</p>
+</div>
+
+<h2 id="what-happens">What happens when 1328(f) applies</h2>
+
+<p>The bar prevents <strong>discharge</strong>, not filing. A debtor can still file a Chapter 13 case even if 1328(f) applies. The case will proceed normally -- the automatic stay will go into effect, the debtor will make plan payments, and creditors will receive distributions. But at the end of the plan, the court cannot enter a discharge order.</p>
+
+<p>This means:</p>
+<ul>
+    <li>The debtor pays attorney fees for a case that can never achieve its primary purpose</li>
+    <li>The debtor makes plan payments for 3 to 5 years</li>
+    <li>At the end, debts are not discharged -- they survive in full</li>
+    <li>The filing appears on the debtor's credit report</li>
+    <li>The debtor has used up time and money with no debt relief</li>
+</ul>
+
+<h2 id="why">Why violations happen</h2>
+
+<p>Based on screening data, the most common patterns are:</p>
+
+<ol>
+    <li><strong>Attorney didn't check.</strong> The attorney failed to review the debtor's filing history before filing the new case. Question 9 was answered "No" when it should have been "Yes."</li>
+    <li><strong>Attorney knew and filed anyway.</strong> The attorney calculated that the filing fee, attorney fee, and temporary automatic stay were worth it to the client even without a discharge. In some cases, this is a deliberate strategy. In others, it's a business model.</li>
+    <li><strong>System didn't catch it.</strong> The debtor disclosed the prior case on Question 9, but no one -- clerk, trustee, or U.S. Trustee -- flagged the timing issue before the case proceeded.</li>
+    <li><strong>Cross-district filing.</strong> The debtor filed the prior case in a different district. PACER data is siloed by district, making cross-district checks harder without the Case Locator.</li>
+</ol>
+
+<h2 id="what-to-do">What to do if this applies to you</h2>
+
+<p>If you believe you may be in a Chapter 13 case that is barred by Section 1328(f):</p>
+
+<ol>
+    <li><strong>Check your prior case dates.</strong> Find the filing date (not the discharge date) of your prior case and the filing date of your current Chapter 13. Count the years.</li>
+    <li><strong>Review Question 9 on your petition.</strong> Did your attorney accurately disclose your prior filing? You can view your petition on PACER or request a copy from your attorney.</li>
+    <li><strong>Consult an independent attorney.</strong> Do not rely on the attorney who filed the case. Get an independent opinion on whether the bar applies and what your options are.</li>
+    <li><strong>Contact the U.S. Trustee.</strong> The U.S. Trustee's office monitors bankruptcy cases for abuse. If your attorney knowingly filed a barred case, the U.S. Trustee may investigate.</li>
+    <li><strong>File a bar complaint.</strong> If your attorney filed knowing the case was barred, or failed to check, you may have grounds for a disciplinary complaint with your state bar.</li>
+</ol>
+
+<h2 id="scale">How big is this problem?</h2>
+
+<p>We don't know yet. That's the point of this project.</p>
+
+<p>Our initial screening covered 56,563 Chapter 13 cases across multiple federal districts. We found:</p>
+
+<ul>
+    <li><strong>264</strong> cases where the filing fell within the 1328(f) statutory window</li>
+    <li><strong>114</strong> of those cases received a discharge despite the bar</li>
+    <li><strong>43</strong> cases where Question 9 was answered "No" despite a verifiable prior filing (concealment)</li>
+</ul>
+
+<p>These are preliminary numbers from a handful of districts. There are 94 federal bankruptcy districts in the United States. The Chapter 13 system processes hundreds of thousands of cases per year.</p>
+
+<div class="cta-box">
+    <p>The screener is open source. It runs on public data. Anyone can check their district.</p>
+    <a href="index.html">View the national map</a>
+</div>
+
+<h2 id="faq">FAQ</h2>
+
+<p class="faq-q">Can I still file bankruptcy if 1328(f) applies?</p>
+<p>Yes. The bar prevents discharge, not filing. You can file a Chapter 13 case and receive the benefit of the automatic stay. But you will not receive a discharge at the end of the plan. You may also be able to file under a different chapter -- consult an attorney.</p>
+
+<p class="faq-q">Does my attorney have to check for this?</p>
+<p>Yes. An attorney has a duty to investigate the client's filing history before filing a new case. Question 9 on the petition exists specifically for this purpose. Failing to check is, at minimum, a competence issue under most state bar rules.</p>
+
+<p class="faq-q">What if my attorney knew and filed anyway?</p>
+<p>If your attorney knowingly filed a case that was barred by 1328(f) without informing you, that may constitute malpractice, a violation of professional conduct rules, or both. Consult an independent attorney and consider contacting your state bar.</p>
+
+<p class="faq-q">What if I answered Question 9 incorrectly because my attorney told me to?</p>
+<p>An attorney who instructs a client to answer Question 9 inaccurately is potentially suborning a false statement under penalty of perjury. This is a serious ethical violation. Document everything and consult an independent attorney immediately.</p>
+
+<p class="faq-q">Is this tool legal advice?</p>
+<p>No. This tool identifies potential statutory bar violations using publicly available data. It is not legal advice. All results require manual verification. Consult a licensed attorney for advice about your specific situation.</p>
+
+<p class="faq-q">How accurate is the screener?</p>
+<p>The screener uses name matching on PACER data, which can produce false positives (different people with the same name). Every hit requires manual verification by pulling the actual petition and checking Question 9. Our hand-verification rate on confirmed hits is high, but the tool is a starting point, not a final determination.</p>
+
+<p class="faq-q">Can I check my own case?</p>
+<p>Yes. You need a PACER account (free to create, searches are free, document pulls are $0.10/page capped at $3). Download CSV exports for the attorneys or districts you want to check, and run the screener locally on your own computer. The tool makes no network calls.</p>
+
+<h2 id="legal">Legal references</h2>
+
+<ul>
+    <li><a href="https://www.law.cornell.edu/uscode/text/11/1328">11 U.S.C. Section 1328</a> -- Discharge (full text)</li>
+    <li><a href="https://www.law.cornell.edu/uscode/text/11/109">11 U.S.C. Section 109(g)</a> -- Who may be a debtor (filing bar)</li>
+    <li><em>In re Blendheim</em>, 803 F.3d 477 (9th Cir. 2015) -- Filing-to-filing measurement</li>
+    <li><a href="https://www.uscourts.gov/services-forms/bankruptcy/bankruptcy-basics/chapter-13-bankruptcy-basics">Chapter 13 Bankruptcy Basics</a> -- U.S. Courts</li>
+    <li>BAPCPA, Pub. L. 109-8, 119 Stat. 23 (2005) -- Added Section 1328(f)</li>
+    <li><a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a> -- Source data for national screening</li>
+</ul>
+
+<div class="footer">
+    <p>This page is part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. Data sourced from publicly available PACER records and the FJC Integrated Database. This is not legal advice.</p>
+    <p style="margin-top:8px">Last updated: March 2026</p>
+</div>
+
+</div>
+</body>
+</html>

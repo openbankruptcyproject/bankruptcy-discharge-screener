@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seccion 1328(f) Explicada - Impedimento de Descarga en Bancarrota</title>
+    <meta name="description" content="Explicacion en espanol de la Seccion 1328(f) del Codigo de Bancarrota de EE.UU., la ley federal que impide la descarga en casos del Capitulo 13 para personas que han declarado bancarrota anteriormente.">
+    <meta name="keywords" content="1328(f), bancarrota, descarga, Capitulo 13, declaracion previa, BAPCPA, descarga denegada, bancarrota repetida, quiebra, bankruptcy en espanol">
+    <link rel="canonical" href="https://ilikemath9999.github.io/bankruptcy-discharge-screener/explainer-es.html">
+    <link rel="alternate" hreflang="en" href="https://ilikemath9999.github.io/bankruptcy-discharge-screener/explainer.html">
+    <link rel="alternate" hreflang="es" href="https://ilikemath9999.github.io/bankruptcy-discharge-screener/explainer-es.html">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .lang-switch {
+            float: right;
+            font-size: 14px;
+        }
+        .lang-switch a { color: var(--accent); text-decoration: none; }
+        .lang-switch a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .warning-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .example-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .red-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--red);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .example-box .label, .warning-box .label, .red-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        .toc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        .toc .label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .toc ul { list-style: none; margin: 0; padding: 0; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { font-size: 15px; }
+        .faq-q {
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .cta-box a {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+        .cta-box a:hover { opacity: 0.9; text-decoration: none; }
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        code {
+            background: var(--surface);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .container { padding: 20px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="index.html">Screener</a> / Seccion 1328(f) Explicada
+    <span class="lang-switch"><a href="explainer.html">English</a></span>
+</div>
+
+<h1>Seccion 1328(f): El Impedimento de Descarga en Bancarrota</h1>
+<p class="subtitle">Una guia en espanol sobre la ley federal que impide a personas que han declarado bancarrota anteriormente recibir una descarga en un caso del Capitulo 13.</p>
+
+<div class="toc">
+    <div class="label">Contenido</div>
+    <ul>
+        <li><a href="#que-es">Que es la Seccion 1328(f)?</a></li>
+        <li><a href="#plazos">Como funcionan los plazos</a></li>
+        <li><a href="#ejemplos">Ejemplos</a></li>
+        <li><a href="#pregunta9">Pregunta 9 en la peticion del Capitulo 13</a></li>
+        <li><a href="#que-pasa">Que pasa cuando aplica la 1328(f)</a></li>
+        <li><a href="#por-que">Por que ocurren las violaciones</a></li>
+        <li><a href="#que-hacer">Que hacer si esto le aplica a usted</a></li>
+        <li><a href="#magnitud">Que tan grande es este problema?</a></li>
+        <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        <li><a href="#referencias">Referencias legales</a></li>
+    </ul>
+</div>
+
+<h2 id="que-es">Que es la Seccion 1328(f)?</h2>
+
+<p>La Seccion 1328(f) es parte del Codigo de Bancarrota de los Estados Unidos. Establece un limite de tiempo estricto sobre que tan pronto una persona puede recibir una descarga del Capitulo 13 despues de haber recibido una descarga previa en otro caso de bancarrota.</p>
+
+<p>En terminos sencillos: si usted ya completo una bancarrota y recibio una descarga, la ley dice que debe esperar cierto numero de anos antes de poder recibir otra descarga en un caso del Capitulo 13. Si presenta su caso demasiado pronto, puede pasar por todo el proceso del Capitulo 13 -- hacer pagos durante anos -- y al final el tribunal no puede otorgarle una descarga.</p>
+
+<div class="statute-box">
+    <div class="label">11 U.S.C. Seccion 1328(f)</div>
+    <p><strong>(f)(1)</strong> &mdash; El tribunal no otorgara una descarga si el deudor ha recibido una descarga en un caso presentado bajo el <strong>Capitulo 7, 11 o 12</strong> durante el <strong>periodo de 4 anos</strong> anterior a la fecha de la orden de alivio bajo este capitulo.</p>
+    <p style="margin-top:12px"><strong>(f)(2)</strong> &mdash; El tribunal no otorgara una descarga si el deudor ha recibido una descarga en un caso presentado bajo el <strong>Capitulo 13</strong> durante el <strong>periodo de 2 anos</strong> anterior a la fecha de la orden de alivio bajo este capitulo.</p>
+</div>
+
+<p>Esta disposicion fue agregada por BAPCPA (la Ley de Prevencion del Abuso de Bancarrota y Proteccion al Consumidor) en 2005 y aplica a todos los casos del Capitulo 13 presentados a partir del 17 de octubre de 2005.</p>
+
+<h2 id="plazos">Como funcionan los plazos</h2>
+
+<p>El reloj corre desde la <strong>fecha de presentacion hasta la fecha de presentacion</strong>, no desde la fecha de descarga hasta la fecha de presentacion. Esta es una distincion importante establecida por el Noveno Circuito en <em>In re Blendheim</em>, 803 F.3d 477 (9th Cir. 2015).</p>
+
+<table>
+    <tr>
+        <th>Capitulo del caso anterior</th>
+        <th>Periodo de espera</th>
+        <th>Medido desde</th>
+    </tr>
+    <tr>
+        <td>Capitulo 7</td>
+        <td>4 anos</td>
+        <td>Fecha de presentacion anterior a fecha de presentacion nueva</td>
+    </tr>
+    <tr>
+        <td>Capitulo 11</td>
+        <td>4 anos</td>
+        <td>Fecha de presentacion anterior a fecha de presentacion nueva</td>
+    </tr>
+    <tr>
+        <td>Capitulo 12</td>
+        <td>4 anos</td>
+        <td>Fecha de presentacion anterior a fecha de presentacion nueva</td>
+    </tr>
+    <tr>
+        <td>Capitulo 13</td>
+        <td>2 anos</td>
+        <td>Fecha de presentacion anterior a fecha de presentacion nueva</td>
+    </tr>
+</table>
+
+<p>El estatuto dice "el periodo de 4 anos anterior a la fecha de la orden de alivio." En una bancarrota voluntaria, la orden de alivio se emite en la fecha en que se presenta la peticion. Entonces el calculo es:</p>
+
+<ol>
+    <li>Encuentre la <strong>fecha de presentacion</strong> del caso anterior</li>
+    <li>Encuentre la <strong>fecha de presentacion</strong> del nuevo caso del Capitulo 13</li>
+    <li>Cuente los anos entre ambas fechas</li>
+    <li>Si la diferencia es menor que el periodo requerido y el caso anterior resulto en una descarga, el impedimento aplica</li>
+</ol>
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+<div class="example-box">
+    <div class="label">Sin violacion</div>
+    <p>Maria presenta el Capitulo 7 el 1 de enero de 2018 y recibe una descarga. Presenta el Capitulo 13 el 15 de marzo de 2023. La diferencia entre las fechas de presentacion es de 5 anos y 2 meses. El impedimento de 4 anos no aplica. Maria puede recibir una descarga del Capitulo 13.</p>
+</div>
+
+<div class="red-box">
+    <div class="label">Violacion de 1328(f)(1)</div>
+    <p>Juan presenta el Capitulo 7 el 1 de junio de 2021 y recibe una descarga. Su abogado presenta un nuevo Capitulo 13 el 15 de abril de 2024. La diferencia entre las fechas de presentacion es de 2 anos y 10 meses. Esto esta dentro del impedimento de 4 anos. <strong>Juan no puede recibir una descarga del Capitulo 13.</strong> Puede completar todo el plan de pagos, hacer cada pago, y el tribunal aun asi no puede descargar sus deudas.</p>
+</div>
+
+<div class="red-box">
+    <div class="label">Violacion de 1328(f)(2)</div>
+    <p>Rosa presenta el Capitulo 13 el 1 de marzo de 2022 y recibe una descarga. Su abogado presenta un nuevo Capitulo 13 el 1 de noviembre de 2023. La diferencia entre las fechas de presentacion es de 1 ano y 8 meses. Esto esta dentro del impedimento de 2 anos. <strong>Rosa no puede recibir una descarga del Capitulo 13.</strong></p>
+</div>
+
+<h2 id="pregunta9">Pregunta 9 en la peticion del Capitulo 13</h2>
+
+<p>El formulario oficial de peticion del Capitulo 13 (Formulario Oficial 101) pregunta en la Pregunta 9:</p>
+
+<div class="statute-box">
+    <div class="label">Pregunta 9</div>
+    <p>"En los ultimos 8 anos, ha presentado un caso bajo cualquier capitulo del Codigo de Bancarrota?"</p>
+</div>
+
+<p>Si la respuesta es si, el deudor debe listar el numero de caso anterior, el distrito, la fecha de presentacion y el capitulo. Aqui es donde el tribunal y el Fideicomisario de los Estados Unidos (U.S. Trustee) deben detectar los impedimentos de la 1328(f).</p>
+
+<p>Cuando este sistema funciona, el secretario del tribunal o el fideicomisario revisa las fechas y plantea el problema antes de que el caso avance. Cuando falla, el deudor pasa por todo el proceso del Capitulo 13 sin que nadie senale el impedimento.</p>
+
+<div class="warning-box">
+    <div class="label">La brecha en la aplicacion</div>
+    <p>La Pregunta 9 depende de una divulgacion precisa y una revision manual. Si el deudor responde "No" (ya sea porque el abogado no pregunto o no verifico), y nadie en el sistema lo detecta, el caso procede como si el impedimento no existiera. Nuestro analisis de 56,563 casos del Capitulo 13 en multiples distritos encontro 264 casos donde se violo la ventana de la 1328(f). De esos, 114 recibieron una descarga a pesar del impedimento legal.</p>
+</div>
+
+<h2 id="que-pasa">Que pasa cuando aplica la 1328(f)</h2>
+
+<p>El impedimento previene la <strong>descarga</strong>, no la presentacion. Un deudor aun puede presentar un caso del Capitulo 13 aunque la 1328(f) aplique. El caso procedera normalmente -- la suspension automatica entrara en efecto, el deudor hara pagos del plan, y los acreedores recibiran distribuciones. Pero al final del plan, el tribunal no puede emitir una orden de descarga.</p>
+
+<p>Esto significa:</p>
+<ul>
+    <li>El deudor paga honorarios de abogado por un caso que nunca puede cumplir su proposito principal</li>
+    <li>El deudor hace pagos del plan durante 3 a 5 anos</li>
+    <li>Al final, las deudas no son descargadas -- sobreviven en su totalidad</li>
+    <li>La presentacion aparece en el historial crediticio del deudor</li>
+    <li>El deudor ha gastado tiempo y dinero sin obtener alivio de deuda</li>
+</ul>
+
+<h2 id="por-que">Por que ocurren las violaciones</h2>
+
+<p>Basado en los datos de analisis, los patrones mas comunes son:</p>
+
+<ol>
+    <li><strong>El abogado no verifico.</strong> El abogado no reviso el historial de presentaciones del deudor antes de presentar el nuevo caso. La Pregunta 9 fue respondida "No" cuando debio ser "Si."</li>
+    <li><strong>El abogado sabia y presento de todas formas.</strong> El abogado calculo que los honorarios, la tarifa de presentacion y la suspension automatica temporal valian la pena para el cliente incluso sin una descarga. En algunos casos, esto es una estrategia deliberada. En otros, es un modelo de negocio.</li>
+    <li><strong>El sistema no lo detecto.</strong> El deudor revelo el caso anterior en la Pregunta 9, pero nadie -- secretario, fideicomisario o Fideicomisario de los Estados Unidos -- senalo el problema de tiempo antes de que el caso avanzara.</li>
+    <li><strong>Presentacion en otro distrito.</strong> El deudor presento el caso anterior en un distrito diferente. Los datos de PACER estan separados por distrito, lo que hace las verificaciones entre distritos mas dificiles sin el Localizador de Casos.</li>
+</ol>
+
+<h2 id="que-hacer">Que hacer si esto le aplica a usted</h2>
+
+<p>Si usted cree que puede estar en un caso del Capitulo 13 que esta impedido por la Seccion 1328(f):</p>
+
+<ol>
+    <li><strong>Verifique las fechas de su caso anterior.</strong> Encuentre la fecha de presentacion (no la fecha de descarga) de su caso anterior y la fecha de presentacion de su Capitulo 13 actual. Cuente los anos.</li>
+    <li><strong>Revise la Pregunta 9 en su peticion.</strong> Su abogado revelo con precision su presentacion anterior? Puede ver su peticion en PACER o solicitar una copia a su abogado.</li>
+    <li><strong>Consulte con un abogado independiente.</strong> No dependa del abogado que presento el caso. Obtenga una opinion independiente sobre si el impedimento aplica y cuales son sus opciones.</li>
+    <li><strong>Contacte al Fideicomisario de los Estados Unidos (U.S. Trustee).</strong> La oficina del U.S. Trustee supervisa los casos de bancarrota por abuso. Si su abogado presento un caso impedido a sabiendas, el U.S. Trustee puede investigar.</li>
+    <li><strong>Presente una queja ante el colegio de abogados.</strong> Si su abogado presento sabiendo que el caso estaba impedido, o no verifico, usted puede tener bases para una queja disciplinaria ante el colegio de abogados de su estado.</li>
+</ol>
+
+<h2 id="magnitud">Que tan grande es este problema?</h2>
+
+<p>Aun no lo sabemos. Ese es el proposito de este proyecto.</p>
+
+<p>Nuestro analisis inicial cubrio 56,563 casos del Capitulo 13 en multiples distritos federales. Encontramos:</p>
+
+<ul>
+    <li><strong>264</strong> casos donde la presentacion cayo dentro de la ventana de la 1328(f)</li>
+    <li><strong>114</strong> de esos casos recibieron una descarga a pesar del impedimento</li>
+    <li><strong>43</strong> casos donde la Pregunta 9 fue respondida "No" a pesar de una presentacion anterior verificable (ocultamiento)</li>
+</ul>
+
+<p>Estos son numeros preliminares de un punado de distritos. Hay 94 distritos federales de bancarrota en los Estados Unidos. El sistema del Capitulo 13 procesa cientos de miles de casos por ano.</p>
+
+<div class="cta-box">
+    <p>La herramienta es de codigo abierto. Funciona con datos publicos. Cualquiera puede verificar su distrito.</p>
+    <a href="index.html">Ver el mapa nacional</a>
+</div>
+
+<h2 id="preguntas">Preguntas frecuentes</h2>
+
+<p class="faq-q">Puedo presentar bancarrota si la 1328(f) aplica?</p>
+<p>Si. El impedimento previene la descarga, no la presentacion. Puede presentar un caso del Capitulo 13 y recibir el beneficio de la suspension automatica. Pero no recibira una descarga al final del plan. Tambien puede presentar bajo un capitulo diferente -- consulte con un abogado.</p>
+
+<p class="faq-q">Mi abogado tiene que verificar esto?</p>
+<p>Si. Un abogado tiene el deber de investigar el historial de presentaciones del cliente antes de presentar un nuevo caso. La Pregunta 9 en la peticion existe especificamente para este proposito. No verificar es, como minimo, un problema de competencia bajo las reglas de la mayoria de los colegios de abogados estatales.</p>
+
+<p class="faq-q">Que pasa si mi abogado sabia y presento de todas formas?</p>
+<p>Si su abogado presento un caso impedido por la 1328(f) a sabiendas y sin informarle, eso puede constituir mala practica profesional, una violacion de las reglas de conducta profesional, o ambas. Consulte con un abogado independiente y considere contactar a su colegio de abogados estatal.</p>
+
+<p class="faq-q">Que pasa si respondi la Pregunta 9 incorrectamente porque mi abogado me dijo que lo hiciera?</p>
+<p>Un abogado que instruye a un cliente a responder la Pregunta 9 de manera inexacta esta potencialmente induciendo una declaracion falsa bajo pena de perjurio. Esta es una violacion etica grave. Documente todo y consulte con un abogado independiente inmediatamente.</p>
+
+<p class="faq-q">Esta herramienta es asesoria legal?</p>
+<p>No. Esta herramienta identifica posibles violaciones de impedimentos legales utilizando datos disponibles publicamente. No es asesoria legal. Todos los resultados requieren verificacion manual. Consulte con un abogado licenciado para consejo sobre su situacion especifica.</p>
+
+<p class="faq-q">Que tan precisa es la herramienta?</p>
+<p>La herramienta utiliza coincidencia de nombres en datos de PACER, lo que puede producir falsos positivos (diferentes personas con el mismo nombre). Cada resultado requiere verificacion manual revisando la peticion real y verificando la Pregunta 9. Nuestra tasa de verificacion manual en resultados confirmados es alta, pero la herramienta es un punto de partida, no una determinacion final.</p>
+
+<p class="faq-q">Puedo verificar mi propio caso?</p>
+<p>Si. Necesita una cuenta de PACER (gratis para crear, las busquedas son gratis, la descarga de documentos cuesta $0.10/pagina con un tope de $3). Descargue los archivos CSV para los abogados o distritos que desea verificar, y ejecute la herramienta localmente en su propia computadora. La herramienta no hace llamadas a la red.</p>
+
+<h2 id="referencias">Referencias legales</h2>
+
+<ul>
+    <li><a href="https://www.law.cornell.edu/uscode/text/11/1328">11 U.S.C. Seccion 1328</a> -- Descarga (texto completo, en ingles)</li>
+    <li><a href="https://www.law.cornell.edu/uscode/text/11/109">11 U.S.C. Seccion 109(g)</a> -- Quien puede ser deudor (impedimento de presentacion, en ingles)</li>
+    <li><em>In re Blendheim</em>, 803 F.3d 477 (9th Cir. 2015) -- Medicion de fecha de presentacion a fecha de presentacion</li>
+    <li><a href="https://www.uscourts.gov/services-forms/bankruptcy/bankruptcy-basics/chapter-13-bankruptcy-basics">Conceptos Basicos del Capitulo 13</a> -- Tribunales de EE.UU. (en ingles)</li>
+    <li>BAPCPA, Pub. L. 109-8, 119 Stat. 23 (2005) -- Agrego la Seccion 1328(f)</li>
+    <li><a href="https://www.fjc.gov/research/idb">Base de Datos Integrada del FJC</a> -- Datos fuente para el analisis nacional (en ingles)</li>
+</ul>
+
+<div class="footer">
+    <p>Esta pagina es parte del <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, un proyecto de codigo abierto. Datos obtenidos de registros publicos de PACER y la Base de Datos Integrada del FJC. Esto no es asesoria legal.</p>
+    <p style="margin-top:8px">Ultima actualizacion: marzo 2026</p>
+</div>
+
+</div>
+</body>
+</html>

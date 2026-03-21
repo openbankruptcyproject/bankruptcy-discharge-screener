@@ -137,6 +137,33 @@ Pick a district, pick some high-volume filers, and run the tool. The more distri
 python -m unittest discover tests
 ```
 
+## Citing This Tool
+
+If you use this tool or its data in academic research, legal analysis, or published reporting, please cite it as:
+
+**APA:**
+> Bankruptcy Discharge Bar Screener (Version 1.3) [Computer software]. (2026). https://github.com/ilikemath9999/bankruptcy-discharge-screener
+
+**BibTeX:**
+```bibtex
+@software{discharge_screener_2026,
+  title = {Bankruptcy Discharge Bar Screener},
+  version = {1.3},
+  year = {2026},
+  url = {https://github.com/ilikemath9999/bankruptcy-discharge-screener},
+  note = {Open-source tool for detecting 11 U.S.C. \S 1328(f) discharge bar violations in PACER data}
+}
+```
+
+**Chicago:**
+> "Bankruptcy Discharge Bar Screener," version 1.3, 2026, https://github.com/ilikemath9999/bankruptcy-discharge-screener.
+
+**Data source:** FJC Integrated Database, Ch.13 cases FY2008-2024; PACER Case Locator public records.
+
+**Legal authority:** 11 U.S.C. Section 1328(f); *In re Blendheim*, 803 F.3d 477 (9th Cir. 2015) (filing-to-filing measurement).
+
+---
+
 ## License
 
 MIT License. See [LICENSE](LICENSE).
