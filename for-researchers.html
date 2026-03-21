@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Researchers: Open Data and Academic Partnership</title>
+    <meta name="description" content="Open-source bankruptcy screening tools and datasets for academic research. 4.9 million cases, 94 districts, FJC IDB data, reproducible methodology. Free access for researchers.">
+    <meta name="keywords" content="bankruptcy research data, open source bankruptcy tools, FJC Integrated Database, PACER data analysis, academic bankruptcy research, 1328(f) dataset, consumer bankruptcy empirical research">
+    <link rel="canonical" href="https://1328f.com/for-researchers.html">
+    <meta property="og:title" content="For Researchers: Open Data and Academic Partnership">
+    <meta property="og:description" content="Open-source bankruptcy screening tools and datasets for academic research. 4.9M cases, 94 districts, reproducible methodology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1328f.com/for-researchers.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="For Researchers: Open Data and Academic Partnership">
+    <meta name="twitter:description" content="Open-source bankruptcy screening tools and datasets. 4.9M cases, 94 districts, reproducible methodology.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What data is available for academic research?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The project draws on two primary public data sources: the FJC Integrated Database (IDB), which contains aggregate filing, disposition, and discharge data for all 94 federal bankruptcy districts, and the PACER Case Locator, which provides individual case records with attorney attribution, filing dates, and disposition codes. The screening tools process these datasets to identify potential Section 1328(f) discharge bar violations, calculate dismissal rates by attorney and district, and measure prior filer concentrations. All tools are open source on GitHub and run locally on exported data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the methodology reproducible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The entire methodology is documented and the tools are open source. The core screener is a single Python script using only the standard library -- no external dependencies. Researchers can download the tool, export PACER data for any district, and reproduce the screening results independently. The methodology documentation at 1328f.org covers name matching algorithms, statistical controls, false positive mitigation, and all known limitations. District-level aggregate data from the FJC IDB is freely available from the Federal Judicial Center."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can researchers access and use this data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FJC IDB data is freely available from the Federal Judicial Center website at no cost. PACER Case Locator searches are free; individual document pulls cost $0.10 per page capped at $3 per document. Researchers affiliated with academic institutions may qualify for PACER fee exemptions. The screening tools are MIT-licensed on GitHub. The project welcomes academic collaboration -- methodology reports and contact information are available at 1328f.org."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+            --purple: #bc8cff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code {
+            background: var(--surface);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .example-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .example-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .purple-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--purple);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .purple-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .metric-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+        }
+        .metric-card .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .metric-card .label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            color: var(--text-muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+        }
+        .tool-card h3 {
+            font-size: 16px;
+            margin: 0 0 8px;
+        }
+        .tool-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .footer a { color: var(--accent); }
+    </style>
+<meta name="last-modified" content="2026-03-21">
+</head>
+<body>
+<div class="container">
+    <div class="breadcrumb"><a href="index.html">Screener</a> / For Researchers</div>
+
+    <h1>Open Data and Academic Partnership</h1>
+    <p class="subtitle">Reproducible methodology, open-source tools, and public datasets for empirical bankruptcy research.</p>
+
+    <div class="metric-grid">
+        <div class="metric-card">
+            <div class="number">4.9M</div>
+            <div class="label">Cases in dataset</div>
+        </div>
+        <div class="metric-card">
+            <div class="number">94</div>
+            <div class="label">Federal districts</div>
+        </div>
+        <div class="metric-card">
+            <div class="number">2005-2025</div>
+            <div class="label">Coverage period</div>
+        </div>
+        <div class="metric-card">
+            <div class="number">MIT</div>
+            <div class="label">License</div>
+        </div>
+    </div>
+
+    <h2>Dataset overview</h2>
+
+    <p>The project analyzes bankruptcy filing and disposition data to identify potential <a href="https://www.law.cornell.edu/uscode/text/11/1328">Section 1328(f)</a> discharge bar violations and measure practice quality metrics at the attorney and district level. The analysis covers the period from BAPCPA's effective date (October 17, 2005) through the most recent available data.</p>
+
+    <h3>Primary data sources</h3>
+
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>Coverage</th>
+            <th>Access</th>
+        </tr>
+        <tr>
+            <td><strong>FJC Integrated Database (IDB)</strong></td>
+            <td>All federal bankruptcy filings, aggregate statistics, disposition codes, district-level metrics</td>
+            <td>Free download from <a href="https://www.fjc.gov/research/idb">fjc.gov</a></td>
+        </tr>
+        <tr>
+            <td><strong>PACER Case Locator</strong></td>
+            <td>Individual case records, attorney attribution, filing/disposition dates, debtor names</td>
+            <td>Free searches; $0.10/page for documents (capped at $3). <a href="https://pcl.uscourts.gov">pcl.uscourts.gov</a></td>
+        </tr>
+        <tr>
+            <td><strong>RECAP Archive</strong></td>
+            <td>Crowd-sourced mirror of PACER documents via CourtListener</td>
+            <td>Free. <a href="https://www.courtlistener.com/recap/">courtlistener.com/recap</a></td>
+        </tr>
+    </table>
+
+    <h3>Derived metrics</h3>
+
+    <p>The screening tools calculate the following metrics from the raw data:</p>
+
+    <ul>
+        <li><strong>Dismissal rate</strong> -- percentage of Chapter 13 cases terminating by dismissal, by attorney and by district</li>
+        <li><strong>Prior filer rate</strong> -- percentage of debtors with prior bankruptcy filings in the same jurisdiction</li>
+        <li><strong>Discharge rate</strong> -- percentage of cases reaching successful discharge</li>
+        <li><strong>Dismissal velocity</strong> -- median days from filing to dismissal</li>
+        <li><strong>1328(f) hit rate</strong> -- percentage of prior filer cases where the discharge-to-filing gap falls within the statutory bar window</li>
+    </ul>
+
+    <h2>Methodology</h2>
+
+    <p>The methodology is designed for reproducibility. The core screening tool is a single Python script (<code>screen_1328f.py</code>) that uses only Python 3 standard library modules -- no external dependencies, no pip install.</p>
+
+    <div class="statute-box">
+        <div class="label">Methodology components</div>
+        <ul style="margin-bottom:0">
+            <li><strong>Name matching:</strong> Fuzzy matching on first + last name across PACER CSV exports. Known limitation: false positives from common names. Mitigated by manual verification sampling and cross-referencing with SSN-last-4 where available from petitions.</li>
+            <li><strong>Gap calculation:</strong> Calendar-day computation from prior discharge date to new filing date, compared against statutory windows (4 years for Ch.7/11/12 priors, 2 years for Ch.13 priors).</li>
+            <li><strong>Statistical controls:</strong> District-level medians used as baselines. Attorney-level metrics compared against district norms to identify outliers.</li>
+            <li><strong>Validation:</strong> Hand-verified sample of flagged cases against actual petitions (Question 9) and docket entries.</li>
+        </ul>
+    </div>
+
+    <p>Full methodology documentation is published at <a href="https://1328f.org">1328f.org</a>, including known limitations, edge cases, and areas where the methodology may under- or over-count.</p>
+
+    <h2>How to access the data</h2>
+
+    <div class="example-box">
+        <div class="label">For academic researchers</div>
+        <ol style="margin-bottom:0">
+            <li><strong>FJC IDB data</strong> is freely available at <a href="https://www.fjc.gov/research/idb">fjc.gov/research/idb</a> -- no account required.</li>
+            <li><strong>PACER accounts</strong> are free to create at <a href="https://pacer.uscourts.gov">pacer.uscourts.gov</a>. Researchers affiliated with academic institutions may qualify for <a href="https://www.pacer.gov/ecfcbt/fee-schedule.html">fee exemptions</a>.</li>
+            <li><strong>Screening tools</strong> are MIT-licensed on <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub</a>. Clone the repository, point the screener at your PACER exports, and run locally.</li>
+            <li><strong>RECAP Archive</strong> provides free access to crowd-sourced PACER documents through <a href="https://www.courtlistener.com/recap/">CourtListener</a>.</li>
+        </ol>
+    </div>
+
+    <h2>Research opportunities</h2>
+
+    <p>The dataset and methodology support research in several areas:</p>
+
+    <ul>
+        <li><strong>Consumer bankruptcy outcomes:</strong> Relationship between attorney practices, repeat filing rates, and discharge outcomes</li>
+        <li><strong>Access to justice:</strong> Geographic variation in discharge rates and the role of attorney quality</li>
+        <li><strong>Regulatory effectiveness:</strong> Whether BAPCPA's discharge bar provisions are being enforced as enacted</li>
+        <li><strong>Empirical legal studies:</strong> Cross-district comparison of bankruptcy practice patterns and judicial enforcement</li>
+        <li><strong>Data science applications:</strong> Name matching algorithms, false positive mitigation in legal datasets, and statistical outlier detection</li>
+    </ul>
+
+    <div class="purple-box">
+        <div class="label">Academic collaboration</div>
+        <p style="margin-bottom:0">The project welcomes collaboration with academic researchers. Methodology reports, district-level data summaries, and additional documentation are available at <a href="https://1328f.org">1328f.org</a>. The tools are open source and researchers are free to extend, modify, or build upon the methodology.</p>
+    </div>
+
+    <h2>Tools and resources</h2>
+
+    <div class="tool-grid">
+        <div class="tool-card">
+            <h3><a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub Repository</a></h3>
+            <p>Source code, screener scripts, methodology, and documentation. MIT license.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="dashboard.html">National Dashboard</a></h3>
+            <p>Interactive district-level metrics for all 94 federal bankruptcy districts.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="compare.html">District Comparison</a></h3>
+            <p>Side-by-side comparison of dismissal, discharge, and prior filer rates.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="caselaw.html">Case Law Collection</a></h3>
+            <p>Court decisions interpreting 1328(f) and related discharge bar provisions.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="explainer.html">Statutory Analysis</a></h3>
+            <p>Section 1328(f) framework, timing rules, and Question 9 analysis.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="https://1328f.org">1328f.org Research</a></h3>
+            <p>Full methodology documentation, research reports, and data sources.</p>
+        </div>
+    </div>
+
+    <h2>Legal references</h2>
+
+    <ul>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/1328">11 U.S.C. Section 1328</a> -- Discharge (Chapter 13)</li>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/727">11 U.S.C. Section 727</a> -- Discharge (Chapter 7)</li>
+        <li><a href="https://www.law.cornell.edu/rules/frbp/rule-4004">Fed. R. Bankr. P. 4004</a> -- Grant of discharge</li>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/109">11 U.S.C. Section 109</a> -- Who may be a debtor</li>
+        <li><a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a> -- Federal Judicial Center</li>
+    </ul>
+
+    <div class="footer">
+        <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="caselaw.html">Case Law</a> &middot; <a href="dashboard.html">Dashboard</a> &middot; <a href="glossary.html">Glossary</a></p>
+        <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+        <p style="margin-top:4px"><a href="https://1328f.org">Research</a> &middot; Research and reports at <a href="https://1328f.org">1328f.org</a></p>
+        <p style="margin-top:8px">Last updated: March 2026</p>
+    </div>
+</div>
+</body>
+</html>

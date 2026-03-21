@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Attorneys: Bankruptcy Practice Analytics and Screening Tools</title>
+    <meta name="description" content="Free open-source tools for bankruptcy attorneys to screen districts for Section 1328(f) discharge bar violations, compare attorney performance against baselines, and monitor practice quality.">
+    <meta name="keywords" content="bankruptcy attorney tools, 1328(f) screening, district dismissal rates, attorney performance analytics, PACER screening, bankruptcy practice quality, discharge bar detection">
+    <link rel="canonical" href="https://1328f.com/for-attorneys.html">
+    <meta property="og:title" content="For Attorneys: Bankruptcy Practice Analytics and Screening Tools">
+    <meta property="og:description" content="Free tools for bankruptcy attorneys to screen districts, compare performance, and detect discharge bar violations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1328f.com/for-attorneys.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="For Attorneys: Bankruptcy Practice Analytics and Screening Tools">
+    <meta name="twitter:description" content="Free tools for bankruptcy attorneys to screen districts and compare practice performance.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I screen my district for Section 1328(f) violations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download the open-source screener from GitHub, export PACER Case Locator CSV data for your district, and run the screener locally. It identifies potential discharge bar violations by matching debtor names across cases and checking whether the gap between a prior discharge and a new Chapter 13 filing falls within the statutory window. Results include attorney attribution, gap calculations, and methodological caveats. No data leaves your machine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are dismissal rates calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dismissal rates are calculated from PACER Case Locator data and the FJC Integrated Database. For each attorney, we count the number of Chapter 13 cases that terminated by dismissal versus those that reached discharge or remain pending. Rates are compared against the district median to identify statistical outliers. The methodology accounts for case age, district norms, and filing volume. Full methodology is published at 1328f.org."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I compare my practice against district baselines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The national dashboard shows district-level dismissal rates, prior filer percentages, and discharge rates for all 94 federal bankruptcy districts. State pages break down data by district within each state. You can compare your own practice metrics against these baselines. The screener tool also generates per-attorney summary tables when run on district-level PACER exports."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code {
+            background: var(--surface);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .example-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .example-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+        }
+        .tool-card h3 {
+            font-size: 16px;
+            margin: 0 0 8px;
+        }
+        .tool-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .step-list {
+            counter-reset: steps;
+            list-style: none;
+            margin-left: 0;
+        }
+        .step-list li {
+            counter-increment: steps;
+            padding-left: 36px;
+            position: relative;
+            margin-bottom: 16px;
+        }
+        .step-list li::before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 24px;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .footer a { color: var(--accent); }
+    </style>
+<meta name="last-modified" content="2026-03-21">
+</head>
+<body>
+<div class="container">
+    <div class="breadcrumb"><a href="index.html">Screener</a> / For Attorneys</div>
+
+    <h1>Bankruptcy Practice Analytics and Screening Tools</h1>
+    <p class="subtitle">Open-source tools for screening districts, benchmarking practice quality, and detecting Section 1328(f) discharge bar violations.</p>
+
+    <h2>Why attorneys should screen</h2>
+
+    <p>Section <a href="https://www.law.cornell.edu/uscode/text/11/1328">1328(f)</a> imposes a bright-line discharge bar on repeat Chapter 13 filers. The test requires only three data points: the date of the prior discharge, the date of the new filing, and the chapter of the prior case. No judgment call is needed -- it is arithmetic.</p>
+
+    <p>Yet nationally, there is no systematic enforcement mechanism. Trustees may not check prior filing history. Courts rely on debtor self-reporting via Question 9 on the petition. The result: cases proceed through confirmation and years of plan payments, only for discharge to be denied -- or worse, entered in error.</p>
+
+    <div class="statute-box">
+        <div class="label">The scope</div>
+        <p style="margin-bottom:0">Analysis of 4.9 million bankruptcy cases across 94 federal districts identified 391,951 Chapter 13 cases filed by debtors with prior filings where discharge eligibility was never verified at the docket level. The data is drawn from the FJC Integrated Database and PACER Case Locator exports.</p>
+    </div>
+
+    <h2>How to screen your district</h2>
+
+    <ol class="step-list">
+        <li><strong>Export PACER data.</strong> Use the <a href="https://pcl.uscourts.gov">PACER Case Locator</a> to export CSV data for your district. Filter by attorney name, date range, or case chapter. Searches are free; document pulls are $0.10/page (capped at $3).</li>
+        <li><strong>Download the screener.</strong> Clone or download <code>screen_1328f.py</code> from the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub repository</a>. Python 3 standard library only -- no pip install needed.</li>
+        <li><strong>Run locally.</strong> Point the screener at your CSV exports. It groups cases by debtor name, checks discharge-to-filing gaps against statutory windows, and reports violations with attorney attribution. All processing happens on your machine. No data is transmitted anywhere.</li>
+        <li><strong>Review results.</strong> The screener outputs per-attorney summaries, gap calculations, and methodological caveats. False positives from name matching are flagged for manual verification.</li>
+    </ol>
+
+    <div class="example-box">
+        <div class="label">Quick start</div>
+        <p style="margin-bottom:0"><code>python screen_1328f.py --data-dir ./csv-exports --target Attorney_Name</code><br><br>Add <code>--control OtherAttorney</code> to compare against a control group. Add <code>--output-json results.json</code> for structured output.</p>
+    </div>
+
+    <h2>Benchmarking against district baselines</h2>
+
+    <p>The <a href="dashboard.html">national dashboard</a> provides district-level metrics for all 94 federal bankruptcy districts:</p>
+
+    <ul>
+        <li><strong>Dismissal rates</strong> -- percentage of Chapter 13 cases terminating by dismissal, compared to district median</li>
+        <li><strong>Prior filer rates</strong> -- percentage of debtors with prior bankruptcy filings in the same district</li>
+        <li><strong>Discharge rates</strong> -- percentage of cases reaching successful discharge</li>
+        <li><strong>Dismissal velocity</strong> -- how quickly cases dismiss relative to district norms</li>
+    </ul>
+
+    <p>Each <a href="states/alabama.html">state page</a> breaks down data by district, allowing direct comparison of practice-level metrics against local baselines. Outlier attorneys -- those with dismissal rates significantly above or below the district norm -- are identifiable from the published data.</p>
+
+    <h2>Tools for attorneys</h2>
+
+    <div class="tool-grid">
+        <div class="tool-card">
+            <h3><a href="dashboard.html">National Dashboard</a></h3>
+            <p>Interactive map with district-level dismissal, discharge, and prior filer rates.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="index.html">Screening Map</a></h3>
+            <p>See which districts have been screened and explore state-level data.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="compare.html">District Comparison</a></h3>
+            <p>Compare metrics across districts side by side.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="caselaw.html">Key Case Law</a></h3>
+            <p>Court decisions interpreting 1328(f), including <em>In re Filice</em> and <em>Blendheim</em>.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="explainer.html">1328(f) Explainer</a></h3>
+            <p>Statutory framework, timing rules, and Question 9 analysis.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub Repository</a></h3>
+            <p>Source code, screener scripts, and documentation.</p>
+        </div>
+    </div>
+
+    <h2>Methodology and research</h2>
+
+    <p>Full methodology documentation, research reports, and data sources are published at <a href="https://1328f.org">1328f.org</a>. The methodology covers:</p>
+
+    <ul>
+        <li>Name matching algorithms and false positive mitigation</li>
+        <li>Statistical controls for district-level variation</li>
+        <li>FJC Integrated Database field definitions and limitations</li>
+        <li>PACER Case Locator query strategies for comprehensive screening</li>
+    </ul>
+
+    <h2>Legal references</h2>
+
+    <ul>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/1328">11 U.S.C. Section 1328</a> -- Discharge (Chapter 13)</li>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/727">11 U.S.C. Section 727</a> -- Discharge (Chapter 7)</li>
+        <li><a href="https://www.law.cornell.edu/rules/frbp/rule-4004">Fed. R. Bankr. P. 4004</a> -- Grant of discharge</li>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/707">11 U.S.C. Section 707</a> -- Dismissal of a case</li>
+        <li><a href="caselaw.html">Key case law</a> -- Court decisions on 1328(f) interpretation</li>
+    </ul>
+
+    <div class="footer">
+        <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="caselaw.html">Case Law</a> &middot; <a href="dashboard.html">Dashboard</a> &middot; <a href="glossary.html">Glossary</a></p>
+        <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+        <p style="margin-top:4px"><a href="https://1328f.org">Research</a> &middot; Research and reports at <a href="https://1328f.org">1328f.org</a></p>
+        <p style="margin-top:8px">Last updated: March 2026</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Debtors: Check Your Bankruptcy Discharge Eligibility</title>
+    <meta name="description" content="Free tools to check whether Section 1328(f) bars your Chapter 13 discharge. Plain-English explanation of the discharge bar, eligibility checker, and what to do if you were affected.">
+    <meta name="keywords" content="bankruptcy discharge eligibility, 1328(f) check, am I barred from discharge, Chapter 13 discharge denied, repeat bankruptcy filing, debtor rights">
+    <link rel="canonical" href="https://1328f.com/for-debtors.html">
+    <meta property="og:title" content="For Debtors: Check Your Bankruptcy Discharge Eligibility">
+    <meta property="og:description" content="Free tools to check whether Section 1328(f) bars your Chapter 13 discharge. Plain-English explanation and eligibility checker.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1328f.com/for-debtors.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="For Debtors: Check Your Bankruptcy Discharge Eligibility">
+    <meta name="twitter:description" content="Free tools to check whether Section 1328(f) bars your Chapter 13 discharge.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I check my own case for a Section 1328(f) discharge bar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The eligibility checker at 1328f.com/check.html lets you enter two dates -- the date of your prior discharge and the date of your current Chapter 13 filing -- and tells you instantly whether the statutory bar applies. You do not need a PACER account to use the checker. If you want to screen multiple cases or review attorney records, you can download the open-source screener tool and run it on PACER CSV exports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my attorney did not tell me about 1328(f)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An attorney has a professional duty to investigate your filing history before filing a new bankruptcy case. Question 9 on the bankruptcy petition asks specifically about prior filings. If your attorney filed a case that was barred under Section 1328(f) without informing you, that may constitute a violation of professional conduct rules. You should consult an independent attorney and consider filing a complaint with your state bar association."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it mean if my case is discharge-barred?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your Chapter 13 case is barred under Section 1328(f), it means you cannot receive a discharge at the end of your repayment plan. You filed the case, paid attorney fees and filing fees, and may be making monthly payments for 3 to 5 years -- but you will not receive the debt relief that discharge provides. Your debts remain enforceable after the case closes. This is why attorney screening matters: a barred case wastes your time and money."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .cta-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 12px;
+            text-decoration: none;
+        }
+        .cta-btn:hover { opacity: 0.9; text-decoration: none; }
+        .warning-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .warning-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+        }
+        .tool-card h3 {
+            font-size: 16px;
+            margin: 0 0 8px;
+        }
+        .tool-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .footer a { color: var(--accent); }
+    </style>
+<meta name="last-modified" content="2026-03-21">
+</head>
+<body>
+<div class="container">
+    <div class="breadcrumb"><a href="index.html">Screener</a> / For Debtors</div>
+
+    <h1>Check Your Bankruptcy Discharge Eligibility</h1>
+    <p class="subtitle">Free tools to find out whether a prior bankruptcy could block your Chapter 13 discharge.</p>
+
+    <h2>What is Section 1328(f)?</h2>
+
+    <p>When you file Chapter 13 bankruptcy, the goal is a <strong>discharge</strong> -- a court order that eliminates qualifying debts after you complete your repayment plan. But federal law contains a rule that can block that discharge if you filed bankruptcy before.</p>
+
+    <p><a href="https://www.law.cornell.edu/uscode/text/11/1328">Section 1328(f)</a> of the Bankruptcy Code says:</p>
+
+    <ul>
+        <li>If you received a <strong>Chapter 7, 11, or 12 discharge within 4 years</strong> before filing your current Chapter 13 case, you cannot receive a Chapter 13 discharge.</li>
+        <li>If you received a <strong>Chapter 13 discharge within 2 years</strong> before filing your current Chapter 13 case, you cannot receive a Chapter 13 discharge.</li>
+    </ul>
+
+    <p>The filing itself is not blocked. You can still file the case and receive automatic stay protection. But at the end of your 3-to-5-year repayment plan, you will not get the debt relief you were counting on. Your debts remain enforceable.</p>
+
+    <div class="statute-box">
+        <div class="label">Why this matters to you</div>
+        <p style="margin-bottom:0">If 1328(f) applies to your case, you may be paying attorney fees, filing fees, and monthly plan payments for years with no discharge at the end. The screener tools on this site let you check whether the bar applies -- for free, in seconds.</p>
+    </div>
+
+    <div class="cta-box">
+        <div class="label">Check your eligibility now</div>
+        <p style="margin-bottom:0">Enter two dates and get an instant answer. No account required.</p>
+        <a href="check.html" class="cta-btn">Open Eligibility Checker</a>
+    </div>
+
+    <h2>What to do if you think you were affected</h2>
+
+    <p>If you believe your Chapter 13 case is discharge-barred and your attorney did not inform you before filing:</p>
+
+    <ol>
+        <li><strong>Document everything.</strong> Save copies of your petition (especially Question 9, which asks about prior filings), fee agreements, and any communications with your attorney about prior cases.</li>
+        <li><strong>Consult an independent attorney.</strong> A different bankruptcy attorney or a legal malpractice attorney can evaluate your situation. Many offer free initial consultations.</li>
+        <li><strong>Contact your state bar association.</strong> Every state has a process for filing complaints about attorney conduct. Failing to check filing history before filing a case may violate professional conduct rules.</li>
+        <li><strong>Contact Legal Aid.</strong> If you cannot afford an independent attorney, your local Legal Aid office may be able to help. Find yours at <a href="https://www.lsc.gov/about-lsc/what-legal-aid/get-legal-help">lsc.gov</a>.</li>
+    </ol>
+
+    <div class="warning-box">
+        <div class="label">Important</div>
+        <p style="margin-bottom:0">This site provides information and screening tools, not legal advice. Every situation is different. The eligibility checker and screener identify <em>potential</em> bars based on publicly available data. Consult a licensed attorney for advice about your specific case.</p>
+    </div>
+
+    <h2>Free tools for debtors</h2>
+
+    <div class="tool-grid">
+        <div class="tool-card">
+            <h3><a href="check.html">Eligibility Checker</a></h3>
+            <p>Enter two dates, get an instant answer. No account needed.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="explainer.html">1328(f) Explainer</a></h3>
+            <p>Plain-English walkthrough of the discharge bar and how it works.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="glossary.html">Bankruptcy Glossary</a></h3>
+            <p>50+ bankruptcy terms explained in plain English.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="can-i-file-bankruptcy-again.html">Can I File Again?</a></h3>
+            <p>All waiting periods for repeat filings in one place.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="how-long-between-bankruptcies.html">Waiting Periods</a></h3>
+            <p>Complete table of time limits between filings by chapter.</p>
+        </div>
+        <div class="tool-card">
+            <h3><a href="what-is-a-super-discharge.html">Super Discharge</a></h3>
+            <p>Why Chapter 13 discharge is broader than Chapter 7.</p>
+        </div>
+    </div>
+
+    <h2>Legal references</h2>
+
+    <ul>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/1328">11 U.S.C. Section 1328</a> -- Discharge (Chapter 13)</li>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/727">11 U.S.C. Section 727</a> -- Discharge (Chapter 7)</li>
+        <li><a href="https://www.law.cornell.edu/uscode/text/11/362">11 U.S.C. Section 362</a> -- Automatic stay</li>
+        <li><a href="caselaw.html">Key case law</a> -- Court decisions interpreting Section 1328(f)</li>
+        <li><a href="https://www.uscourts.gov/services-forms/bankruptcy/bankruptcy-basics">Bankruptcy Basics</a> -- U.S. Courts</li>
+    </ul>
+
+    <div class="footer">
+        <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="caselaw.html">Case Law</a> &middot; <a href="dashboard.html">Dashboard</a> &middot; <a href="glossary.html">Glossary</a></p>
+        <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+        <p style="margin-top:4px"><a href="https://1328f.org">Research</a> &middot; Research and reports at <a href="https://1328f.org">1328f.org</a></p>
+        <p style="margin-top:8px">Last updated: March 2026</p>
+    </div>
+</div>
+</body>
+</html>
