@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankruptcy Timeline: What Happens After You File</title>
+    <meta name="description" content="Interactive visual timeline of what happens after you file Chapter 7 or Chapter 13 bankruptcy. Day-by-day milestones from filing through discharge and case closure.">
+    <meta name="keywords" content="bankruptcy timeline, Chapter 7 timeline, Chapter 13 timeline, after filing bankruptcy, bankruptcy process, 341 meeting, discharge timeline, how long does bankruptcy take">
+    <link rel="canonical" href="https://1328f.com/timeline.html">
+    <meta property="og:title" content="Bankruptcy Timeline: What Happens After You File">
+    <meta property="og:description" content="Visual day-by-day timeline of what happens after filing Chapter 7 or Chapter 13 bankruptcy. From automatic stay through discharge.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://1328f.com/timeline.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bankruptcy Timeline: What Happens After You File">
+    <meta name="twitter:description" content="Visual timeline of Chapter 7 and Chapter 13 bankruptcy milestones from filing through discharge.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does Chapter 7 bankruptcy take from filing to discharge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical Chapter 7 bankruptcy takes about 4 to 6 months from filing to discharge. The 341 meeting of creditors occurs 21-40 days after filing. Creditors have 60 days after the 341 meeting to object. If no objections are filed, discharge is usually entered about 60-90 days after the 341 meeting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does Chapter 13 bankruptcy take from filing to discharge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chapter 13 bankruptcy takes 3 to 5 years from filing to discharge. The plan must be confirmed within about 45-90 days of filing, and the debtor makes monthly payments to the trustee for the duration of the plan. Discharge is entered after the final payment and completion of a financial management course."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the automatic stay and when does it start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The automatic stay is a federal injunction under 11 U.S.C. Section 362 that begins immediately when a bankruptcy petition is filed — Day 0. It stops most collection actions, lawsuits, wage garnishments, repossessions, and foreclosures. No separate motion is needed; it is automatic upon filing."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Tab switcher */
+        .tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 32px;
+            border-bottom: 2px solid var(--border);
+        }
+        .tab {
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            border: none;
+            background: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .tab:hover {
+            color: var(--text);
+        }
+        .tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Timeline track */
+        .timeline-panel { display: none; }
+        .timeline-panel.active { display: block; }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0 20px 0;
+        }
+
+        /* Vertical line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--border);
+            border-radius: 2px;
+        }
+
+        /* Milestone */
+        .milestone {
+            position: relative;
+            padding-left: 68px;
+            margin-bottom: 36px;
+        }
+        .milestone:last-child { margin-bottom: 0; }
+
+        /* Dot */
+        .milestone::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 6px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 3px solid var(--accent);
+            z-index: 1;
+        }
+
+        /* Dot color variants */
+        .milestone.start::before { border-color: var(--green); background: var(--green); }
+        .milestone.action::before { border-color: var(--accent); }
+        .milestone.warning::before { border-color: var(--yellow); }
+        .milestone.complete::before { border-color: var(--green); }
+        .milestone.final::before { border-color: var(--green); background: var(--green); }
+
+        .milestone-time {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .milestone.start .milestone-time { color: var(--green); }
+        .milestone.warning .milestone-time { color: var(--yellow); }
+        .milestone.complete .milestone-time,
+        .milestone.final .milestone-time { color: var(--green); }
+
+        .milestone-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .milestone-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .milestone-desc a {
+            color: var(--accent);
+        }
+
+        /* Statute tag */
+        .statute-tag {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--text-muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+
+        /* Duration bar (visual indicator for Ch.13 long payment period) */
+        .duration-bar {
+            margin-top: 10px;
+            background: var(--border);
+            border-radius: 4px;
+            height: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .duration-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--green));
+        }
+
+        /* Summary boxes */
+        .summary-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .summary-box h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+        }
+        .summary-row:last-child { border-bottom: none; }
+        .summary-label { color: var(--text-muted); }
+        .summary-value { font-weight: 600; }
+
+        /* Info box */
+        .info-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .info-box.warn {
+            border-left-color: var(--yellow);
+        }
+
+        /* CTA links */
+        .cta-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .cta-link {
+            display: inline-block;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: border-color 0.2s;
+        }
+        .cta-link:hover {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .container { padding: 20px 0 40px; }
+            .tab { padding: 10px 16px; font-size: 14px; }
+            .milestone { padding-left: 56px; margin-bottom: 28px; }
+            .timeline::before { left: 22px; }
+            .milestone::before { left: 14px; width: 18px; height: 18px; }
+            .milestone-title { font-size: 16px; }
+            .summary-row { flex-direction: column; gap: 2px; }
+        }
+    </style>
+<meta name="last-modified" content="2026-03-21">
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="index.html">Screener</a> / <a href="explainer.html">Explainer</a> / Bankruptcy Timeline
+</div>
+
+<h1>Bankruptcy Timeline: What Happens After You File</h1>
+<p class="subtitle">A step-by-step visual guide to Chapter 7 and Chapter 13 bankruptcy, from the moment you file through discharge and case closure.</p>
+
+<div class="info-box">
+    <strong>Note:</strong> These are typical timelines. Your case may vary depending on your district, the complexity of your assets, creditor objections, and other factors. This is not legal advice &mdash; consult a licensed attorney for guidance on your specific situation.
+</div>
+
+<!-- Tab switcher -->
+<div class="tabs">
+    <button class="tab active" onclick="switchTab('ch7')" id="tab-ch7">Chapter 7</button>
+    <button class="tab" onclick="switchTab('ch13')" id="tab-ch13">Chapter 13</button>
+</div>
+
+<!-- ==================== CHAPTER 7 TIMELINE ==================== -->
+<div class="timeline-panel active" id="panel-ch7">
+
+<div class="summary-box">
+    <h3>Chapter 7 at a Glance</h3>
+    <div class="summary-row">
+        <span class="summary-label">Total duration</span>
+        <span class="summary-value">4 &ndash; 6 months</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Monthly payments</span>
+        <span class="summary-value">None</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Result</span>
+        <span class="summary-value">Most unsecured debts eliminated</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Eligibility</span>
+        <span class="summary-value">Must pass the <a href="glossary.html#means-test">means test</a></span>
+    </div>
+</div>
+
+<div class="timeline">
+
+    <div class="milestone start">
+        <div class="milestone-time">Day 0</div>
+        <div class="milestone-title">Petition Filed &mdash; Automatic Stay Begins</div>
+        <div class="milestone-desc">
+            The moment your bankruptcy petition is filed with the court, the <a href="glossary.html#automatic-stay">automatic stay</a> takes effect. All collection calls, lawsuits, wage garnishments, repossessions, and foreclosures must stop immediately. No separate motion is needed &mdash; it is automatic under federal law.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 362</span>
+    </div>
+
+    <div class="milestone action">
+        <div class="milestone-time">Days 1 &ndash; 14</div>
+        <div class="milestone-title">Creditors Notified &amp; Trustee Assigned</div>
+        <div class="milestone-desc">
+            The court assigns a Chapter 7 trustee to your case and sends official notice to all listed creditors. The trustee's job is to review your assets and determine whether any non-exempt property can be sold to pay creditors. In most consumer cases, there are no assets to liquidate (called a "no-asset" case).
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 341 &bull; Fed. R. Bankr. P. 2002</span>
+    </div>
+
+    <div class="milestone warning">
+        <div class="milestone-time">Days 21 &ndash; 40</div>
+        <div class="milestone-title">341 Meeting of Creditors</div>
+        <div class="milestone-desc">
+            You appear (often by phone or video) for the <a href="glossary.html#341-meeting">341 meeting</a>. The trustee asks questions under oath about your finances, assets, income, and the accuracy of your petition. Creditors may attend and ask questions, but they rarely do. The meeting typically lasts 5 to 15 minutes.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 341(a)</span>
+    </div>
+
+    <div class="milestone action">
+        <div class="milestone-time">Days 30 &ndash; 60</div>
+        <div class="milestone-title">Creditor Objection Deadline</div>
+        <div class="milestone-desc">
+            Creditors have 60 days after the first date set for the 341 meeting to file objections to your <a href="glossary.html#discharge">discharge</a>. Common objections include allegations of fraud, concealed assets, or debts that the creditor argues should not be discharged. If no objections are filed, your case moves toward discharge.
+        </div>
+        <span class="statute-tag">Fed. R. Bankr. P. 4004(a)</span>
+    </div>
+
+    <div class="milestone action">
+        <div class="milestone-time">Days 60 &ndash; 90</div>
+        <div class="milestone-title">Trustee Completes Review</div>
+        <div class="milestone-desc">
+            The trustee finishes reviewing your case. In a no-asset case, the trustee files a report of no distribution. If there are non-exempt assets, the trustee liquidates them and distributes proceeds to creditors according to the priority rules in the Bankruptcy Code.
+        </div>
+    </div>
+
+    <div class="milestone complete">
+        <div class="milestone-time">Days 90 &ndash; 120</div>
+        <div class="milestone-title">Discharge Entered</div>
+        <div class="milestone-desc">
+            The court enters a discharge order, permanently eliminating your personal liability for most <a href="glossary.html#unsecured-debt">unsecured debts</a> &mdash; credit cards, medical bills, personal loans, and other qualifying obligations. Certain debts survive bankruptcy, including most student loans, child support, alimony, and recent tax debts.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 727</span>
+    </div>
+
+    <div class="milestone final">
+        <div class="milestone-time">Day 120+</div>
+        <div class="milestone-title">Case Closed</div>
+        <div class="milestone-desc">
+            After discharge is entered and all administrative matters are resolved, the court closes the case. Your bankruptcy will appear on your credit report for 10 years from the filing date, but many people begin rebuilding credit immediately. The automatic stay ends when the case is closed.
+        </div>
+    </div>
+
+</div><!-- /timeline -->
+
+<div class="info-box warn">
+    <strong>Repeat filer?</strong> If you received a Chapter 7 discharge within the past 8 years, you may not be eligible for another Chapter 7 discharge under <a href="explainer.html">Section 727(a)(8)</a>. Use the <a href="check.html">discharge bar checker</a> or <a href="how-long-between-bankruptcies.html">time calculator</a> to find out.
+</div>
+
+</div><!-- /panel-ch7 -->
+
+
+<!-- ==================== CHAPTER 13 TIMELINE ==================== -->
+<div class="timeline-panel" id="panel-ch13">
+
+<div class="summary-box">
+    <h3>Chapter 13 at a Glance</h3>
+    <div class="summary-row">
+        <span class="summary-label">Total duration</span>
+        <span class="summary-value">3 &ndash; 5 years</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Monthly payments</span>
+        <span class="summary-value">Yes &mdash; to Chapter 13 trustee</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Result</span>
+        <span class="summary-value">Remaining qualifying debts discharged after plan</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Key advantage</span>
+        <span class="summary-value">Keep property, catch up on mortgage/car payments</span>
+    </div>
+</div>
+
+<div class="timeline">
+
+    <div class="milestone start">
+        <div class="milestone-time">Day 0</div>
+        <div class="milestone-title">Petition Filed &mdash; Automatic Stay Begins</div>
+        <div class="milestone-desc">
+            Your Chapter 13 petition is filed and the <a href="glossary.html#automatic-stay">automatic stay</a> takes effect immediately. Collection actions, foreclosures, repossessions, and garnishments must stop. You must begin making plan payments to the trustee within 30 days of filing, even before the plan is confirmed.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 362 &bull; 11 U.S.C. &sect; 1326(a)(1)</span>
+    </div>
+
+    <div class="milestone warning">
+        <div class="milestone-time">Days 21 &ndash; 40</div>
+        <div class="milestone-title">341 Meeting of Creditors</div>
+        <div class="milestone-desc">
+            The <a href="glossary.html#341-meeting">341 meeting</a> works the same as in Chapter 7. The Chapter 13 trustee reviews your petition, income, and proposed repayment plan. Creditors can attend and ask questions. The trustee may request additional documents such as tax returns, pay stubs, or bank statements.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 341(a)</span>
+    </div>
+
+    <div class="milestone action">
+        <div class="milestone-time">Days 45 &ndash; 90</div>
+        <div class="milestone-title">Plan Confirmation Hearing</div>
+        <div class="milestone-desc">
+            The court holds a hearing to decide whether to confirm (approve) your proposed repayment plan. The trustee and creditors may object if the plan does not meet legal requirements &mdash; for example, if it does not pay <a href="glossary.html#priority-debt">priority debts</a> in full, or if the payment amount does not reflect your <a href="glossary.html#disposable-income">disposable income</a>. Your attorney may need to modify the plan before confirmation.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 1325</span>
+    </div>
+
+    <div class="milestone complete">
+        <div class="milestone-time">Day 90+</div>
+        <div class="milestone-title">Plan Confirmed</div>
+        <div class="milestone-desc">
+            Once confirmed, the plan becomes binding on you, the trustee, and all creditors. You continue making monthly payments to the trustee, who distributes the funds to your creditors according to the plan. The plan length is typically 36 months (below-median income) or 60 months (above-median income).
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 1327</span>
+    </div>
+
+    <div class="milestone action">
+        <div class="milestone-time">Years 1 &ndash; 3 (or 1 &ndash; 5)</div>
+        <div class="milestone-title">Monthly Payments to Trustee</div>
+        <div class="milestone-desc">
+            This is the longest phase. You make regular monthly payments to the Chapter 13 trustee for the full duration of your plan. The trustee pays your creditors &mdash; secured creditors (mortgage, car loans) first, then priority debts (taxes, support), then <a href="glossary.html#unsecured-debt">unsecured creditors</a> with whatever remains. If your income changes significantly, you may be able to modify the plan.
+        </div>
+        <div class="duration-bar"><div class="duration-bar-fill" style="width: 85%;"></div></div>
+        <span class="statute-tag">11 U.S.C. &sect; 1326 &bull; 11 U.S.C. &sect; 1329</span>
+    </div>
+
+    <div class="milestone action">
+        <div class="milestone-time">After Final Payment</div>
+        <div class="milestone-title">Financial Management Course</div>
+        <div class="milestone-desc">
+            Before receiving a discharge, you must complete an approved financial management course (sometimes called the "second course" or "debtor education"). This is separate from the pre-filing credit counseling. The course provider files a certificate with the court. Most courses take about 2 hours and cost $10 &ndash; $50.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 1328(g)</span>
+    </div>
+
+    <div class="milestone complete">
+        <div class="milestone-time">After Course Completion</div>
+        <div class="milestone-title">Discharge Entered</div>
+        <div class="milestone-desc">
+            The court enters a discharge order eliminating your remaining qualifying unsecured debts. Chapter 13 discharge covers some debts that Chapter 7 does not (this broader protection is sometimes called the <a href="what-is-a-super-discharge.html">super discharge</a>). The discharge is the legal finish line &mdash; the reason you filed in the first place.
+        </div>
+        <span class="statute-tag">11 U.S.C. &sect; 1328(a)</span>
+    </div>
+
+    <div class="milestone final">
+        <div class="milestone-time">Shortly After Discharge</div>
+        <div class="milestone-title">Case Closed</div>
+        <div class="milestone-desc">
+            The trustee files a final report and the court closes the case. Chapter 13 bankruptcy appears on your credit report for 7 years from the filing date (compared to 10 years for Chapter 7). Your debts are behind you.
+        </div>
+    </div>
+
+</div><!-- /timeline -->
+
+<div class="info-box warn">
+    <strong>Repeat filer?</strong> If you received a prior discharge, you may be barred from a Chapter 13 discharge under <a href="explainer.html">Section 1328(f)</a>: 4 years after a Ch.7/11/12 discharge, or 2 years after a prior Ch.13 discharge. Use the <a href="check.html">discharge bar checker</a> to find out.
+</div>
+
+</div><!-- /panel-ch13 -->
+
+
+<!-- ==================== COMPARISON ==================== -->
+<h2>Chapter 7 vs. Chapter 13: Side by Side</h2>
+
+<div class="summary-box">
+    <div class="summary-row">
+        <span class="summary-label">Duration</span>
+        <span class="summary-value" style="text-align:right">Ch.7: 4&ndash;6 months &bull; Ch.13: 3&ndash;5 years</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Monthly payments</span>
+        <span class="summary-value" style="text-align:right">Ch.7: No &bull; Ch.13: Yes</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Keep property</span>
+        <span class="summary-value" style="text-align:right">Ch.7: Exempt only &bull; Ch.13: Yes (while paying)</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Credit report</span>
+        <span class="summary-value" style="text-align:right">Ch.7: 10 years &bull; Ch.13: 7 years</span>
+    </div>
+    <div class="summary-row">
+        <span class="summary-label">Repeat filing bar</span>
+        <span class="summary-value" style="text-align:right">Ch.7: 8 years &bull; Ch.13: 2&ndash;4 years</span>
+    </div>
+</div>
+
+<p>For a detailed comparison, see <a href="compare.html">Chapter 7 vs. Chapter 13: Full Comparison</a>.</p>
+
+
+<!-- ==================== RELATED TOOLS ==================== -->
+<h2>Related Tools</h2>
+
+<div class="cta-links">
+    <a class="cta-link" href="check.html">Discharge Bar Checker</a>
+    <a class="cta-link" href="how-long-between-bankruptcies.html">Time Between Bankruptcies</a>
+    <a class="cta-link" href="explainer.html">Section 1328(f) Explainer</a>
+    <a class="cta-link" href="glossary.html">Bankruptcy Glossary</a>
+    <a class="cta-link" href="can-i-file-bankruptcy-again.html">Can I File Again?</a>
+    <a class="cta-link" href="compare.html">Ch.7 vs. Ch.13 Comparison</a>
+</div>
+
+
+<div class="footer">
+    <p>This page is part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. Data sourced from publicly available PACER records and the FJC Integrated Database. This is not legal advice.</p>
+    <p style="margin-top:8px"><a href="https://1328f.org">Research</a> &middot; Research and reports at <a href="https://1328f.org">1328f.org</a></p>
+    <p style="margin-top:8px">Last updated: March 2026</p>
+</div>
+
+</div><!-- /container -->
+
+<script>
+function switchTab(chapter) {
+    // Update tabs
+    document.getElementById('tab-ch7').classList.remove('active');
+    document.getElementById('tab-ch13').classList.remove('active');
+    document.getElementById('tab-' + chapter).classList.add('active');
+    // Update panels
+    document.getElementById('panel-ch7').classList.remove('active');
+    document.getElementById('panel-ch13').classList.remove('active');
+    document.getElementById('panel-' + chapter).classList.add('active');
+    // Track in GA4
+    if (typeof gtag === 'function') {
+        gtag('event', 'timeline_tab_switch', { chapter: chapter });
+    }
+}
+
+// Allow linking directly to a tab via hash
+if (window.location.hash === '#ch13') {
+    switchTab('ch13');
+} else if (window.location.hash === '#ch7') {
+    switchTab('ch7');
+}
+</script>
+
+</body>
+</html>
