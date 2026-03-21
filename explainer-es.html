@@ -416,6 +416,66 @@
     <li><a href="https://www.fjc.gov/research/idb">Base de Datos Integrada del FJC</a> -- Datos fuente para el analisis nacional (en ingles)</li>
 </ul>
 
+<!-- Citar Esta Pagina -->
+<style>
+    .cite-section { margin: 48px 0 0; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); overflow: hidden; }
+    .cite-toggle { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: none; border: none; color: var(--text-muted); font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
+    .cite-toggle:hover { color: var(--text); }
+    .cite-toggle .chevron { display: inline-block; transition: transform 0.25s ease; font-size: 12px; }
+    .cite-section.open .cite-toggle .chevron { transform: rotate(180deg); }
+    .cite-body { display: none; padding: 0 20px 20px; }
+    .cite-section.open .cite-body { display: block; }
+    .cite-format { margin-bottom: 16px; }
+    .cite-format:last-child { margin-bottom: 0; }
+    .cite-label { font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .cite-row { display: flex; align-items: stretch; gap: 0; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+    .cite-text { flex: 1; padding: 10px 14px; background: var(--bg); color: var(--text); font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 13px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+    .cite-copy-btn { display: flex; align-items: center; justify-content: center; width: 52px; min-width: 52px; background: var(--border); border: none; color: var(--text-muted); font-size: 13px; cursor: pointer; transition: background 0.2s, color 0.2s; flex-shrink: 0; }
+    .cite-copy-btn:hover { background: var(--accent); color: #fff; }
+    .cite-copy-btn.copied { background: var(--green); color: #fff; }
+</style>
+<div class="cite-section" id="citeSectionEs">
+    <button class="cite-toggle" onclick="document.getElementById('citeSectionEs').classList.toggle('open')">
+        <span>Citar Esta Pagina</span>
+        <span class="chevron">&#9660;</span>
+    </button>
+    <div class="cite-body">
+        <div class="cite-format">
+            <div class="cite-label">Bluebook</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeBluebookEs"><i>Seccion 1328(f) Explicada: Impedimento de Descarga por Bancarrota</i>, 1328f.com (mar. 2026), https://1328f.com/explainer-es.html.</div>
+                <button class="cite-copy-btn" onclick="copyCiteEs('citeBluebookEs', this)">Copiar</button>
+            </div>
+        </div>
+        <div class="cite-format">
+            <div class="cite-label">APA (7a ed.)</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeAPAEs"><i>Seccion 1328(f) explicada: Impedimento de descarga por bancarrota</i>. (2026, marzo). 1328f.com. https://1328f.com/explainer-es.html</div>
+                <button class="cite-copy-btn" onclick="copyCiteEs('citeAPAEs', this)">Copiar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function copyCiteEs(id, btn) {
+    var el = document.getElementById(id);
+    var text = el.innerText || el.textContent;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() { showCopiedEs(btn); });
+    } else {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta); showCopiedEs(btn);
+    }
+}
+function showCopiedEs(btn) {
+    var orig = btn.textContent;
+    btn.textContent = '\u2713'; btn.classList.add('copied');
+    setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+}
+</script>
+
 <div class="footer">
     <p>Esta pagina es parte del <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, un proyecto de codigo abierto. Datos obtenidos de registros publicos de PACER y la Base de Datos Integrada del FJC. Esto no es asesoria legal.</p>
     <p style="margin-top:8px"><a href="https://1328f.org">Investigacion</a> &middot; Investigacion e informes en <a href="https://1328f.org">1328f.org</a></p>

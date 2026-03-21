@@ -109,9 +109,21 @@ Cases are deduplicated by PACER case ID. Joint cases ("John Smith and Jane Smith
 - "Discharged despite bar" cases may have legitimate explanations (hardship discharge, court waiver)
 - The bar prevents **discharge**, not filing -- an open case is not necessarily an error yet
 
-## Live Map
+## Resources
 
-**[View the national map](https://ilikemath9999.github.io/bankruptcy-discharge-screener/)** -- see which districts have been screened and what the numbers look like.
+| Resource | Link |
+|----------|------|
+| National Screener Map | [1328f.com](https://1328f.com) |
+| Section 1328(f) Explainer | [1328f.com/explainer](https://1328f.com/explainer.html) |
+| Eligibility Checker | [1328f.com/check](https://1328f.com/check.html) |
+| Interactive Dashboard | [1328f.com/dashboard](https://1328f.com/dashboard.html) |
+| Case Law Reference | [1328f.com/caselaw](https://1328f.com/caselaw.html) |
+| Statute Comparison | [1328f.com/compare](https://1328f.com/compare.html) |
+| Bankruptcy Glossary | [1328f.com/glossary](https://1328f.com/glossary.html) |
+| State-by-State Data | [1328f.com/states/](https://1328f.com/states/missouri.html) (55 states) |
+| Research & Reports | [1328f.org](https://1328f.org) |
+| Research Library | [1328f.org/research](https://1328f.org/research/) |
+| Methodology | [1328f.org/methodology](https://1328f.org/methodology/) |
 
 The map updates as volunteers screen new districts. Every row is independently generated from public PACER data.
 
