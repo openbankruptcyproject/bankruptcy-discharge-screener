@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13 Failure Rate — National Statistics and What They Mean</title>
+    <meta name="description" content="48% of Chapter 13 bankruptcy cases are dismissed before discharge. National statistics from 4.9 million cases across 94 federal districts — why cases fail, geographic variation, and what it means for debtors.">
+    <meta name="keywords" content="chapter 13 failure rate, chapter 13 dismissal rate, chapter 13 success rate, chapter 13 completion rate, bankruptcy failure rate, chapter 13 statistics, how many chapter 13 cases fail">
+    <link rel="canonical" href="https://1328f.com/chapter-13-failure-rate.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chapter 13 Failure Rate — National Statistics and What They Mean">
+    <meta property="og:description" content="48% of Chapter 13 cases are dismissed before discharge. National data from 4.9 million cases — why cases fail, geographic variation, and what failure costs debtors.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://1328f.com/chapter-13-failure-rate.html">
+    <meta property="og:image" content="https://1328f.com/og-image.png">
+    <meta property="og:site_name" content="1328f.com">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 13 Failure Rate — National Statistics and What They Mean">
+    <meta name="twitter:description" content="48% of Chapter 13 cases are dismissed before discharge. National data from 4.9 million cases across 94 federal districts.">
+    <meta name="twitter:image" content="https://1328f.com/og-image.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Chapter 13 failure rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Approximately 48% of Chapter 13 bankruptcy cases are dismissed before the debtor receives a discharge. This means nearly half of all people who enter a Chapter 13 repayment plan do not complete it. The statistic comes from analysis of 4.9 million cases filed across 94 federal districts using data from the FJC Integrated Database and PACER. Only cases with at least 3 years of maturity are counted, since Chapter 13 plans typically run 3 to 5 years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do so many Chapter 13 cases fail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chapter 13 cases fail for several reasons: missed monthly plan payments (the most common cause), failure to file required documents like tax returns or financial management certificates, failure to pay the filing fee, income changes that make the plan unaffordable, and trustee motions to dismiss for plan defaults. Some cases also fail because the debtor's attorney filed a plan that was never realistic — proposing payments the debtor could not sustain, or failing to account for all secured debts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when a Chapter 13 case is dismissed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a Chapter 13 case is dismissed, the automatic stay lifts and creditors can resume collection activity immediately. The debtor receives no discharge, meaning all debts survive in full. Attorney fees already paid are generally not refundable. Any payments made through the plan to secured creditors may be applied to the debt, but the debtor loses the structured repayment framework. The dismissal also appears on credit reports. If the debtor files again too soon after a prior discharge, they may be barred from receiving discharge under Section 1328(f)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Chapter 13 worth it if half of cases fail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 48% national failure rate is an average — outcomes vary dramatically by district, attorney, and individual circumstances. In some districts, the completion rate exceeds 90%, while in others fewer than 10% of cases reach discharge. The quality of legal representation matters significantly: attorneys who file complete petitions, propose realistic plans, and maintain communication with clients see much higher completion rates. Chapter 13 can be worth it when the plan is properly structured, but debtors should ask their attorney about their personal completion rate before filing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which states have the highest Chapter 13 failure rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chapter 13 failure rates vary by federal judicial district, not by state. Dismissal rates range from approximately 3% in some districts to over 90% in others. Districts in the South tend to have higher filing volumes and higher failure rates. The variation is driven by local court culture, trustee practices, the quality of debtor's counsel, and economic conditions. You can explore dismissal rates by district using the interactive dashboard at 1328f.com."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--red);
+            line-height: 1.1;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        .stat-row {
+            display: flex;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .stat-card {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-card .num {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .warning-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .warning-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .red-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--red);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .red-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .green-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .green-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            color: var(--text-muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .cta-box a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 24px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cta-box a:hover { opacity: 0.9; text-decoration: none; }
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 14px;
+            text-align: center;
+        }
+        .footer a { color: var(--text-muted); }
+        .footer a:hover { color: var(--accent); }
+        @media (max-width: 600px) {
+            h1 { font-size: 26px; }
+            .stat-number { font-size: 42px; }
+            .stat-row { flex-direction: column; }
+            .stat-card .num { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb"><a href="index.html">Screener</a> / Chapter 13 Failure Rate</div>
+
+<h1>Chapter 13 Failure Rate</h1>
+<p class="subtitle">National statistics from 4.9 million cases across 94 federal districts -- what the data shows, why cases fail, and what it means for debtors.</p>
+
+<div class="stat-box">
+    <div class="stat-number">48%</div>
+    <div class="stat-label">of Chapter 13 cases are dismissed before the debtor receives a discharge</div>
+</div>
+
+<div class="stat-row">
+    <div class="stat-card">
+        <div class="num">4.9M</div>
+        <div class="label">Cases analyzed</div>
+    </div>
+    <div class="stat-card">
+        <div class="num">94</div>
+        <div class="label">Federal districts</div>
+    </div>
+    <div class="stat-card">
+        <div class="num">3-90%</div>
+        <div class="label">Range by district</div>
+    </div>
+</div>
+
+<h2>The national picture</h2>
+
+<p>Chapter 13 is a court-supervised repayment plan that typically lasts 3 to 5 years. The debtor makes monthly payments to a trustee, who distributes the money to creditors according to the plan. At the end, the court grants a discharge -- an order that wipes out remaining eligible debts.</p>
+
+<p>Nearly half of all Chapter 13 cases never reach that point. Analysis of 4.9 million cases from the <a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a> and PACER shows a national dismissal rate of approximately 48%. These are cases that were terminated before the debtor completed the plan and received a discharge.</p>
+
+<p>This is not a new problem. The failure rate has been remarkably stable for decades, hovering between 40% and 55% depending on the time period and methodology. What has changed is our ability to measure it at the district level, where the variation is dramatic.</p>
+
+<div class="statute-box">
+    <div class="label">Data source</div>
+    <p style="margin-bottom:0">All statistics on this page are derived from the FJC Integrated Database (public federal court records) and PACER (the federal judiciary's electronic case management system). Only cases with at least 3 years of maturity are counted in outcome calculations, since Chapter 13 plans need time to reach completion or failure. Cases still pending are excluded.</p>
+</div>
+
+<h2>Why Chapter 13 cases fail</h2>
+
+<p>Cases are dismissed -- terminated without a discharge -- for several categories of reasons. Most relate to the debtor's inability to sustain the plan, but some reflect problems that existed before the case was ever filed.</p>
+
+<h3>Missed plan payments</h3>
+<p>The most common cause of Chapter 13 failure. Debtors must make monthly payments to the trustee for 3 to 5 years. A job loss, medical emergency, car breakdown, or any sustained income disruption can make the payments impossible. The trustee files a motion to dismiss, and unless the debtor can cure the default or modify the plan, the case is over.</p>
+
+<h3>Failure to file required documents</h3>
+<p>After filing the initial petition, debtors must submit tax returns, pay stubs, financial management certificates, and other documents within strict deadlines. Missing a deadline can result in dismissal -- sometimes before the debtor even makes a first plan payment. In some districts, deficiency-driven dismissals account for a significant share of all failures.</p>
+
+<h3>Failure to pay the filing fee</h3>
+<p>The Chapter 13 filing fee is $338. Courts allow debtors to pay in installments, but missing an installment payment can result in dismissal. Some cases are dismissed within weeks of filing for this reason alone.</p>
+
+<h3>Unrealistic plans</h3>
+<p>Some Chapter 13 plans are structured in ways that make completion unlikely from the start. Plans that consume too large a share of disposable income, fail to account for all secured debts, or rely on income projections that cannot be sustained set the debtor up for failure. The quality of the attorney who drafts the plan has a measurable effect on whether the case survives.</p>
+
+<h3>Trustee motions to dismiss</h3>
+<p>Chapter 13 trustees monitor plan compliance and file motions to dismiss when debtors fall behind. Some trustees are more aggressive than others. In districts with higher trustee enforcement activity, dismissal rates tend to be higher -- but so do the completion rates for cases that survive the first year, because weak cases are weeded out early.</p>
+
+<h2>Geographic variation</h2>
+
+<p>The national 48% average masks enormous variation across the 94 federal bankruptcy districts. Dismissal rates range from approximately 3% in some districts to over 90% in others.</p>
+
+<div class="warning-box">
+    <div class="label">The range</div>
+    <p style="margin-bottom:0">The lowest-dismissal districts complete more than 90% of Chapter 13 cases. The highest-dismissal districts complete fewer than 10%. A debtor's odds of success depend significantly on <em>where</em> they file -- not just on their financial situation.</p>
+</div>
+
+<p>Several factors drive geographic variation:</p>
+
+<ul>
+    <li><strong>Local court culture</strong> -- Some courts enforce filing deadlines strictly; others give debtors more time to cure deficiencies.</li>
+    <li><strong>Trustee practices</strong> -- Trustee enforcement styles vary. Some trustees work with debtors to modify plans; others move quickly to dismiss.</li>
+    <li><strong>Attorney quality</strong> -- In districts dominated by high-volume practices that file incomplete petitions and unrealistic plans, failure rates are higher.</li>
+    <li><strong>Economic conditions</strong> -- Districts in areas with higher unemployment, lower wages, or more income volatility see more plan defaults.</li>
+    <li><strong>Filing volume patterns</strong> -- Some districts have disproportionately high Chapter 13 filing rates (relative to Chapter 7), which can indicate that debtors are being steered into Chapter 13 when Chapter 7 would be more appropriate.</li>
+</ul>
+
+<div class="cta-box">
+    <p>Explore Chapter 13 dismissal rates by district on the interactive map.</p>
+    <a href="dashboard.html">Open the Dashboard</a>
+</div>
+
+<h2>What failure means for debtors</h2>
+
+<p>When a Chapter 13 case is dismissed, the consequences go beyond losing the case. The debtor pays real costs for a process that delivers nothing.</p>
+
+<table>
+    <tr>
+        <th>Consequence</th>
+        <th>Detail</th>
+    </tr>
+    <tr>
+        <td style="font-weight:600;">Attorney fees lost</td>
+        <td>Chapter 13 attorney fees typically range from $2,500 to $6,000. Most is paid through the plan and is not refundable after dismissal.</td>
+    </tr>
+    <tr>
+        <td style="font-weight:600;">Debts survive</td>
+        <td>All debts that would have been discharged remain in full. The debtor is back where they started, minus the fees paid.</td>
+    </tr>
+    <tr>
+        <td style="font-weight:600;">Credit damage</td>
+        <td>The bankruptcy filing appears on credit reports for 7 years from the filing date -- whether or not the case was completed.</td>
+    </tr>
+    <tr>
+        <td style="font-weight:600;">Automatic stay lifts</td>
+        <td>The court order that stopped creditor collection activity (wage garnishment, repossession, foreclosure) ends immediately upon dismissal.</td>
+    </tr>
+    <tr>
+        <td style="font-weight:600;">Potential discharge bar</td>
+        <td>If the debtor received a prior discharge, a dismissed case resets the clock. Filing again may trigger a <a href="discharge-bar.html">discharge bar</a> under Section 1328(f), preventing the debtor from getting relief in a future case.</td>
+    </tr>
+</table>
+
+<div class="red-box">
+    <div class="label">The compounding cost</div>
+    <p style="margin-bottom:0">A debtor who files Chapter 13, pays attorney fees and plan payments for a year, then has the case dismissed has typically spent $5,000 to $10,000 with nothing to show for it. If they file again, they pay again. Some debtors go through this cycle multiple times.</p>
+</div>
+
+<h2>The enforcement gap</h2>
+
+<p>When debtors with a prior discharge file Chapter 13 again, federal law imposes waiting periods before they can receive another discharge. Section 1328(f) bars discharge if the prior case was too recent -- 2 years for a prior Chapter 13 discharge, 4 years for a prior Chapter 7 discharge.</p>
+
+<p>Screening of 4.9 million cases found <strong>391,951 prior filers who received discharge with zero eligibility verification</strong>. No federal court system automatically checks whether a new filer is barred from discharge. The burden falls entirely on the debtor's attorney to review prior filing history -- and on the trustee to catch what counsel misses.</p>
+
+<p>In a 7-district sample, 264 cases were confirmed as falling within the 1328(f) window. Of those, 114 received a discharge despite the statutory bar. These debtors may face future consequences -- including revocation of the discharge -- while believing their debts were eliminated.</p>
+
+<div class="statute-box">
+    <div class="label">Why this matters for failure rates</div>
+    <p style="margin-bottom:0">A debtor who files a discharge-barred case cannot get a discharge even if they complete the plan. They go through 3 to 5 years of payments and receive nothing at the end. These cases inflate the failure rate in a way that is entirely preventable -- if someone had checked before filing.</p>
+</div>
+
+<h2>Methodology</h2>
+
+<p>The 48% figure and all district-level statistics use time-adjusted methodology:</p>
+
+<ul>
+    <li><strong>Only matured cases are counted.</strong> Chapter 13 plans run 3 to 5 years. Counting cases filed last year would skew the data toward dismissals (early failures show up quickly; completions take years). Only cases with at least 3 years since filing are included in outcome calculations.</li>
+    <li><strong>Pending cases are excluded.</strong> Cases still open and active are not counted as failures or successes.</li>
+    <li><strong>Converted cases are tracked separately.</strong> A Chapter 13 case converted to Chapter 7 is not the same as a dismissal -- the debtor may still receive a discharge under a different chapter.</li>
+    <li><strong>Data sources are public.</strong> The <a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a> provides case-level data for all federal bankruptcy courts. PACER provides docket-level detail for verification. Both are public.</li>
+</ul>
+
+<p>The source code for all analysis is open-source and available on <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub</a>.</p>
+
+<h2>Explore your district</h2>
+
+<p>The national failure rate is an average. What matters is the rate in <em>your</em> district -- and whether the attorney you are considering has a track record of completing cases.</p>
+
+<div class="cta-box">
+    <p>Look up dismissal rates, filing volumes, and discharge statistics for any of the 94 federal bankruptcy districts.</p>
+    <a href="dashboard.html">District Dashboard</a>
+</div>
+
+<h2>Related guides</h2>
+
+<ul>
+    <li><a href="bankruptcy-dismissed-vs-discharged.html">Dismissed vs. Discharged</a> -- What each outcome means and why it matters</li>
+    <li><a href="discharge-bar.html">Discharge Bar</a> -- The federal waiting periods that prevent repeat discharges</li>
+    <li><a href="can-i-file-bankruptcy-again.html">Can I File Bankruptcy Again?</a> -- Time limits and eligibility rules</li>
+    <li><a href="how-long-between-bankruptcies.html">How Long Between Bankruptcies?</a> -- All waiting periods in one table</li>
+    <li><a href="what-is-a-super-discharge.html">What Is a Super Discharge?</a> -- Why losing Chapter 13 discharge is especially costly</li>
+    <li><a href="compare.html">Compare All Bars</a> -- Side-by-side comparison of all discharge and filing bars</li>
+    <li><a href="glossary.html">Glossary</a> -- Bankruptcy terms explained in plain language</li>
+</ul>
+
+<h2>Further reading</h2>
+
+<ul>
+    <li><a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a> -- Federal Judicial Center public case data</li>
+    <li><a href="https://www.law.cornell.edu/uscode/text/11/1328">11 U.S.C. Section 1328</a> -- Discharge (Chapter 13)</li>
+    <li><a href="https://www.law.cornell.edu/uscode/text/11/1307">11 U.S.C. Section 1307</a> -- Conversion or dismissal (Chapter 13)</li>
+    <li><a href="https://www.uscourts.gov/services-forms/bankruptcy/bankruptcy-basics/chapter-13-bankruptcy-basics">Chapter 13 Bankruptcy Basics</a> -- U.S. Courts</li>
+    <li><a href="https://1328f.org/reports/chapter-13-dismissal-rates">Chapter 13 Dismissal Rates Report</a> -- 1328f.org detailed analysis</li>
+</ul>
+
+<div class="footer">
+    <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="caselaw.html">Case Law</a> &middot; <a href="dashboard.html">Dashboard</a></p>
+    <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+    <p style="margin-top:8px">Last updated: March 2026</p>
+</div>
+
+</div>
+<div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1rem;margin:1.5rem 0"><p style="color:#8b949e;font-size:0.8rem;margin-bottom:0.5rem">Related guides:</p> <a href="/discharge-bar.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Discharge Bar</a> <a href="/can-i-file-bankruptcy-again.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Can I File Again?</a> <a href="/how-long-between-bankruptcies.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">How Long Between?</a> <a href="/bankruptcy-dismissed-vs-discharged.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Dismissed vs Discharged</a> <a href="/what-is-a-super-discharge.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Super Discharge</a> <a href="/compare.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Compare All Bars</a> <a href="/glossary.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Glossary</a></div>
+<p style="text-align:center;margin-top:1.5rem;font-size:0.8rem"><a href="https://1328f.org/support/" style="color:#484f58">Support this research</a> | <a href="https://1328f.org" style="color:#484f58">1328f.org</a></p>
+</body>
+</html>

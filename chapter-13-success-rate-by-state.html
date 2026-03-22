@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13 Success Rate by State — District-Level Bankruptcy Data</title>
+    <meta name="description" content="Chapter 13 success rate by state and federal district. National average ~52% discharge rate. See which districts have the highest and lowest Chapter 13 completion rates, backed by public PACER data across 94 judicial districts.">
+    <meta name="keywords" content="chapter 13 success rate by state, chapter 13 completion rate, chapter 13 discharge rate by state, bankruptcy success rate, chapter 13 statistics by state, chapter 13 failure rate">
+    <link rel="canonical" href="https://1328f.com/chapter-13-success-rate-by-state.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chapter 13 Success Rate by State — District-Level Bankruptcy Data">
+    <meta property="og:description" content="Chapter 13 success rates vary dramatically by federal district. National average ~52%. See the data for all 94 districts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://1328f.com/chapter-13-success-rate-by-state.html">
+    <meta property="og:image" content="https://1328f.com/og-image.png">
+    <meta property="og:site_name" content="1328f.com">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 13 Success Rate by State — District-Level Bankruptcy Data">
+    <meta name="twitter:description" content="Chapter 13 success rates vary dramatically by federal district. National average ~52%. See the data for all 94 districts.">
+    <meta name="twitter:image" content="https://1328f.com/og-image.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What state has the highest Chapter 13 success rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Federal bankruptcy operates by judicial district, not state. The District of Massachusetts has the highest Chapter 13 success rate at approximately 96.7%, followed by the Eastern District of New York at 95.4% and the Northern District of Ohio at 93.0%. These districts have strong local practices around plan feasibility screening and debtor support that contribute to high completion rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What state has the lowest Chapter 13 success rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Western District of Tennessee has the lowest Chapter 13 success rate at approximately 54.4%, meaning nearly half of all Chapter 13 cases filed there end in dismissal rather than discharge. The Southern District of Texas follows at 65.4%. States with multiple districts can have dramatically different rates within the same state — success depends on local court culture and practitioner standards, not state law."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do Chapter 13 success rates vary so much by state?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chapter 13 success rates vary because of differences in local court culture, trustee practices, plan confirmation standards, and attorney practices. Some districts require more thorough plan feasibility analysis before confirmation. Others have trustee offices that provide more support to debtors during the plan period. Attorney experience and caseload size also play a significant role — districts with very high-volume practices tend to have lower success rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Chapter 13 success rate calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chapter 13 success rate is calculated as the percentage of closed cases that resulted in a discharge (successful completion of the repayment plan) versus those that were dismissed (terminated without completing the plan). A case that converts to Chapter 7 and receives a discharge there is generally counted separately. The national average Chapter 13 success rate is approximately 52%, meaning roughly half of all Chapter 13 cases filed nationally result in dismissal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I find Chapter 13 statistics for my district?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can find district-level Chapter 13 statistics on the 1328f.com interactive dashboard, which covers all 94 federal judicial districts using public PACER data. The U.S. Courts also publish aggregate bankruptcy statistics through the Administrative Office of the U.S. Courts. For individual attorney track records, PACER (Public Access to Court Electronic Records) is the official source, though it requires an account."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #c5c8c6;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #d29922;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 12px;
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .stat-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .stat-box .big-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #f0f6fc;
+            line-height: 1.2;
+        }
+        .warning-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--yellow);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .warning-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .example-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .example-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .red-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--red);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .red-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            color: var(--text-muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        ul, ol { margin: 0 0 16px 24px; }
+        li { margin-bottom: 8px; }
+        .cta-box {
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .cta-box a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 24px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .cta-box a:hover { opacity: 0.9; text-decoration: none; }
+        .rate-high { color: var(--green); font-weight: 600; }
+        .rate-mid { color: var(--yellow); font-weight: 600; }
+        .rate-low { color: var(--red); font-weight: 600; }
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            h2 { font-size: 19px; }
+            .stat-box .big-number { font-size: 28px; }
+            table { font-size: 13px; }
+            th, td { padding: 8px 8px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="/">Screener</a> / Success Rate by State
+</div>
+
+<h1>Chapter 13 Success Rate by State</h1>
+<p class="subtitle">District-level discharge and dismissal data from public PACER records across all 94 federal judicial districts.</p>
+
+<div class="stat-box">
+    <div class="label">National Average</div>
+    <div class="big-number">~52% of Chapter 13 cases reach discharge</div>
+    <p style="margin-top:8px;margin-bottom:0">The remaining ~48% are dismissed before completion. This means nearly half of all people who file Chapter 13 bankruptcy do not receive the debt relief they were seeking.</p>
+</div>
+
+<h2>Why "by State" Is Misleading</h2>
+
+<p>When people search for the Chapter 13 success rate in their state, what they actually need is their <strong>federal judicial district</strong>. The United States is divided into 94 judicial districts, and bankruptcy courts operate at the district level, not the state level.</p>
+
+<p>This matters because states with multiple districts often have dramatically different outcomes. For example, a person filing Chapter 13 in the Eastern District of Missouri (St. Louis area) faces a different success rate than someone filing in the Western District of Missouri (Kansas City area) -- even though both are in the same state.</p>
+
+<p>The table below shows success rates by district, sorted from highest to lowest.</p>
+
+<h2>Chapter 13 Success Rates by District</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>District</th>
+            <th>Cases</th>
+            <th>Success Rate</th>
+            <th>Failure Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>D. Massachusetts</td>
+            <td>1,441</td>
+            <td class="rate-high">96.7%</td>
+            <td>3.3%</td>
+        </tr>
+        <tr>
+            <td>E.D. New York</td>
+            <td>1,087</td>
+            <td class="rate-high">95.4%</td>
+            <td>4.6%</td>
+        </tr>
+        <tr>
+            <td>N.D. Ohio</td>
+            <td>4,214</td>
+            <td class="rate-high">93.0%</td>
+            <td>7.0%</td>
+        </tr>
+        <tr>
+            <td>C.D. California</td>
+            <td>5,938</td>
+            <td class="rate-high">91.1%</td>
+            <td>8.9%</td>
+        </tr>
+        <tr>
+            <td>S.D. Indiana</td>
+            <td>1,419</td>
+            <td class="rate-high">90.1%</td>
+            <td>9.9%</td>
+        </tr>
+        <tr>
+            <td>E.D. Missouri</td>
+            <td>4,526</td>
+            <td class="rate-high">88.4%</td>
+            <td>11.6%</td>
+        </tr>
+        <tr>
+            <td>D. Kansas</td>
+            <td>41,718</td>
+            <td class="rate-high">87.4%</td>
+            <td>12.6%</td>
+        </tr>
+        <tr>
+            <td>W.D. Missouri</td>
+            <td>42,275</td>
+            <td class="rate-mid">82.3%</td>
+            <td>17.7%</td>
+        </tr>
+        <tr>
+            <td>D. New Jersey</td>
+            <td>1,647</td>
+            <td class="rate-mid">81.7%</td>
+            <td>18.3%</td>
+        </tr>
+        <tr>
+            <td>N.D. Illinois</td>
+            <td>7,390</td>
+            <td class="rate-mid">80.5%</td>
+            <td>19.5%</td>
+        </tr>
+        <tr>
+            <td>E.D. Wisconsin</td>
+            <td>1,520</td>
+            <td class="rate-mid">78.9%</td>
+            <td>21.1%</td>
+        </tr>
+        <tr>
+            <td>M.D. Florida</td>
+            <td>5,699</td>
+            <td class="rate-mid">78.2%</td>
+            <td>21.8%</td>
+        </tr>
+        <tr>
+            <td>S.D. Florida</td>
+            <td>43,932</td>
+            <td class="rate-low">74.4%</td>
+            <td>25.6%</td>
+        </tr>
+        <tr>
+            <td>S.D. Texas</td>
+            <td>30,412</td>
+            <td class="rate-low">65.4%</td>
+            <td>34.6%</td>
+        </tr>
+        <tr>
+            <td>W.D. Tennessee</td>
+            <td>1,306</td>
+            <td class="rate-low">54.4%</td>
+            <td>45.6%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size:13px;color:var(--text-muted)">Source: Public PACER data. Cases screened across all 94 federal judicial districts. The table above shows a representative sample -- <a href="dashboard.html">view the full interactive dashboard</a> for all districts.</p>
+
+<div class="cta-box">
+    <strong>Find your district's success rate</strong><br>
+    The interactive dashboard covers all 94 federal judicial districts with sortable columns, searchable data, and downloadable results.
+    <br><a href="dashboard.html">Open the Dashboard</a>
+</div>
+
+<h2>The Highest Success Rate Districts</h2>
+
+<div class="example-box">
+    <div class="label">Top performers</div>
+    <p style="margin-bottom:0"><strong>D. Massachusetts: 96.7%</strong> -- Out of 1,441 cases screened, only 3.3% ended in dismissal. The Eastern District of New York (95.4%), Northern District of Ohio (93.0%), and Central District of California (91.1%) also show success rates well above the national average.</p>
+</div>
+
+<p>Districts with high success rates tend to share several characteristics:</p>
+<ul>
+    <li><strong>Rigorous feasibility screening</strong> -- Plans are more carefully reviewed before confirmation, filtering out cases that are unlikely to succeed</li>
+    <li><strong>Active trustee engagement</strong> -- Trustees work with debtors to address problems during the plan rather than immediately moving to dismiss</li>
+    <li><strong>Experienced practitioners</strong> -- Higher barriers to entry mean attorneys handling cases tend to have more specialized experience</li>
+    <li><strong>Lower caseloads per attorney</strong> -- Attorneys carry manageable caseloads that allow for individualized attention</li>
+</ul>
+
+<h2>The Lowest Success Rate Districts</h2>
+
+<div class="red-box">
+    <div class="label">Lowest performers</div>
+    <p style="margin-bottom:0"><strong>W.D. Tennessee: 54.4%</strong> -- Nearly half of all Chapter 13 cases end in dismissal. The Southern District of Texas (65.4%) and Southern District of Florida (74.4%) also fall well below the national average.</p>
+</div>
+
+<p>Districts with low success rates often share different characteristics:</p>
+<ul>
+    <li><strong>High-volume filing practices</strong> -- Some districts have practitioners filing hundreds or thousands of cases annually, which can reduce the attention given to each case</li>
+    <li><strong>Less rigorous confirmation standards</strong> -- Plans may be confirmed more quickly with less scrutiny of feasibility</li>
+    <li><strong>Bare petition filing patterns</strong> -- Cases are filed with minimal documentation, with missing schedules and plans added later (or never)</li>
+    <li><strong>Structural economic factors</strong> -- Lower median incomes, less stable employment, and higher cost of living relative to wages</li>
+</ul>
+
+<h2>Same State, Different Outcomes</h2>
+
+<p>Missouri illustrates why "by state" data is incomplete. The Eastern District of Missouri (St. Louis) has an 88.4% success rate, while the Western District of Missouri (Kansas City) has an 82.3% success rate. Same state law, same bankruptcy code, but a 6-point gap in outcomes.</p>
+
+<p>This pattern repeats across the country. Florida has three districts with success rates ranging from 74.4% (Southern) to 78.2% (Middle). Texas ranges from 65.4% (Southern) to rates in the 80s in other districts. The district you file in matters more than the state you live in.</p>
+
+<h2>What Predicts Chapter 13 Success?</h2>
+
+<p>Research and data analysis point to several factors that correlate with whether a Chapter 13 case will reach discharge:</p>
+
+<h3>Plan feasibility at filing</h3>
+<p>Cases filed with complete schedules, accurate income projections, and realistic expense estimates are significantly more likely to succeed. Cases filed as "bare petitions" -- with only the petition and no supporting documents -- have much higher dismissal rates.</p>
+
+<h3>Attorney experience and caseload</h3>
+<p>The attorney handling the case is one of the strongest predictors of outcome. Attorneys with manageable caseloads and specialized bankruptcy experience tend to achieve higher discharge rates. Extremely high-volume practices -- those filing hundreds of cases per year -- tend to have higher dismissal rates, often because they cannot provide individualized attention to each case.</p>
+
+<h3>District confirmation standards</h3>
+<p>Districts that require more thorough feasibility analysis before confirming a plan tend to have higher success rates. While this may create more work upfront, it filters out plans that were unlikely to succeed, saving debtors from years of payments followed by dismissal.</p>
+
+<h3>Post-confirmation support</h3>
+<p>Whether the debtor has access to support after confirmation -- from their attorney, the trustee, or community resources -- affects whether they can navigate the 3-5 year plan period successfully. Life changes (job loss, medical emergencies, divorce) are common during this period.</p>
+
+<div class="warning-box">
+    <div class="label">Important context</div>
+    <p style="margin-bottom:0">A high success rate does not automatically mean a district is "better." Some districts may have lower filing volumes because attorneys screen clients more carefully before filing, while others may accept more borderline cases, lowering the overall rate but serving more people. The data shows outcomes, not intent.</p>
+</div>
+
+<h2>How to Check Your District</h2>
+
+<p>If you are considering Chapter 13 bankruptcy, the most useful number is not your state's average -- it is your specific district's success rate and, ideally, the track record of the attorney you are considering hiring.</p>
+
+<ol>
+    <li><strong>Find your district</strong> -- Use the <a href="dashboard.html">interactive dashboard</a> to look up your federal judicial district</li>
+    <li><strong>Check district-level data</strong> -- See the discharge rate, dismissal rate, and case volume for your district</li>
+    <li><strong>Browse state pages</strong> -- Visit the <a href="states/">state-by-state breakdown</a> for additional detail on your jurisdiction</li>
+    <li><strong>Research your attorney</strong> -- PACER (pacer.uscourts.gov) is the public system where all federal bankruptcy filings are recorded. You can look up any attorney's case history.</li>
+</ol>
+
+<div class="cta-box">
+    <strong>Explore the full dataset</strong><br>
+    The dashboard includes all 94 federal districts with sortable success rates, case volumes, and dismissal patterns.
+    <br><a href="dashboard.html">View All Districts</a>
+</div>
+
+<h2>Additional Resources</h2>
+
+<ul>
+    <li><a href="bankruptcy-dismissed-vs-discharged.html">Dismissed vs. Discharged</a> -- What the difference means for your case</li>
+    <li><a href="chapter-13.html">Chapter 13 Overview</a> -- How the repayment plan process works</li>
+    <li><a href="before-you-file.html">Before You File</a> -- What to know before starting a bankruptcy case</li>
+    <li><a href="https://1328f.org/chapter-13-dismissal-rates/">Chapter 13 Dismissal Rates Report</a> -- Detailed research on dismissal patterns and contributing factors</li>
+    <li><a href="https://www.uscourts.gov/services-forms/bankruptcy">U.S. Courts -- Bankruptcy</a> -- Official federal court bankruptcy resources</li>
+    <li><a href="https://www.law.cornell.edu/uscode/text/11/chapter-13">11 U.S.C. Chapter 13</a> -- Full text of the Chapter 13 statute</li>
+</ul>
+
+<div class="footer">
+    <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="caselaw.html">Case Law</a> &middot; <a href="dashboard.html">Dashboard</a></p>
+    <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+    <p style="margin-top:8px">Last updated: March 2026</p>
+</div>
+
+</div>
+<div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1rem;margin:1.5rem 0;max-width:760px;margin-left:auto;margin-right:auto"><p style="color:#8b949e;font-size:0.8rem;margin-bottom:0.5rem">Related guides:</p> <a href="/can-i-file-bankruptcy-again.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Can I File Again?</a> <a href="/how-long-between-bankruptcies.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">How Long Between?</a> <a href="/what-is-a-super-discharge.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Super Discharge</a> <a href="/bankruptcy-dismissed-vs-discharged.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Dismissed vs Discharged</a> <a href="/chapter-13-success-rate-by-state.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Success Rate by State</a> <a href="/compare.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Compare All Bars</a> <a href="/glossary.html" style="display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.6rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e">Glossary</a></div>
+<p style="text-align:center;margin-top:1.5rem;font-size:0.8rem"><a href="https://1328f.org/support/" style="color:#484f58">Support this research</a> | <a href="https://1328f.org" style="color:#484f58">1328f.org</a></p>
+</body>
+</html>
