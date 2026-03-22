@@ -32,7 +32,7 @@ th,td{padding:0.6rem 0.75rem;border-bottom:1px solid #30363d;font-size:0.9rem}
 .cta a{background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;display:inline-block;margin:0.5rem}
 .cta a:hover{text-decoration:none;opacity:0.9}
 .other-states{margin-top:1.5rem}
-.other-states a{display:inline-block;margin:0.2rem 0.3rem;padding:0.2rem 0.5rem;background:#161b22;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e}
+.other-states a{display:inline-block;margin:0.2rem 0.3rem;padding:0.5rem 0.75rem;background:#161b22;border:1px solid #30363d;border-radius:4px;font-size:0.8rem;color:#8b949e}
 .other-states a:hover{border-color:#58a6ff;color:#58a6ff;text-decoration:none}
 @media(max-width:600px){.container{padding:1rem}.stat-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
@@ -40,51 +40,75 @@ th,td{padding:0.6rem 0.75rem;border-bottom:1px solid #30363d;font-size:0.9rem}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"New Jersey Bankruptcy Statistics","description":"Chapter 13 bankruptcy filing and outcome data for New Jersey","creator":{"@type":"Organization","name":"1328f.org"},"license":"https://creativecommons.org/publicdomain/zero/1.0/","temporalCoverage":"2008/2024","spatialCoverage":{"@type":"Place","name":"New Jersey"},"distribution":{"@type":"DataDownload","encodingFormat":"text/html","contentUrl":"https://1328f.com/states/new-jersey.html"}}</script>
 </head>
 <body>
-<nav style="background:#0d1117;border-bottom:1px solid #30363d;padding:0.5rem 1rem;text-align:center;font-size:0.78rem;line-height:1.9;">
-  <strong style="color:#f0f6fc;margin-right:0.4rem">Tools:</strong>
-  <a href="../check.html" style="margin:0 0.3rem">Eligibility Checker</a>
-  <a href="../compare.html" style="margin:0 0.3rem">Compare All Bars</a>
-  <a href="../dashboard.html" style="margin:0 0.3rem">Dashboard</a>
-  <a href="../timeline.html" style="margin:0 0.3rem">Timeline</a>
-  <span style="color:#30363d;margin:0 0.25rem">|</span>
-  <strong style="color:#f0f6fc;margin:0 0.4rem">Learn:</strong>
-  <a href="../explainer.html" style="margin:0 0.3rem">1328(f) Explained</a>
-  <a href="../discharge-bar.html" style="margin:0 0.3rem">Discharge Bar</a>
-  <a href="../727a8-discharge-bar.html" style="margin:0 0.3rem">727(a)(8) Bar</a>
-  <a href="../109g-filing-bar.html" style="margin:0 0.3rem">109(g) Bar</a>
-  <a href="../can-i-file-bankruptcy-again.html" style="margin:0 0.3rem">Can I File Again?</a>
-  <a href="../how-long-between-bankruptcies.html" style="margin:0 0.3rem">How Long Between?</a>
-  <span style="color:#30363d;margin:0 0.25rem">|</span>
-  <a href="../chapter-7.html" style="margin:0 0.3rem">Ch. 7</a>
-  <a href="../chapter-11.html" style="margin:0 0.3rem">Ch. 11</a>
-  <a href="../chapter-12.html" style="margin:0 0.3rem">Ch. 12</a>
-  <a href="../chapter-13.html" style="margin:0 0.3rem">Ch. 13</a>
-  <span style="color:#30363d;margin:0 0.25rem">|</span>
-  <strong style="color:#f0f6fc;margin:0 0.4rem">Statutes:</strong>
-  <a href="../section-362-automatic-stay.html" style="margin:0 0.3rem">&sect;362</a>
-  <a href="../section-506-secured-claims.html" style="margin:0 0.3rem">&sect;506</a>
-  <a href="../section-523-nondischargeable-debts.html" style="margin:0 0.3rem">&sect;523</a>
-  <a href="../section-727-chapter-7-discharge.html" style="margin:0 0.3rem">&sect;727</a>
-  <a href="../section-1325-plan-confirmation.html" style="margin:0 0.3rem">&sect;1325</a>
+<style>
+#site-nav{background:#0d1117;border-bottom:1px solid #30363d;padding:0.5rem 1rem;text-align:center;font-size:0.78rem;line-height:1.9}
+#site-nav a{margin:0 0.3rem}
+#site-nav .sep{color:#30363d;margin:0 0.25rem}
+#site-nav .nav-label{color:#f0f6fc;margin:0 0.4rem;font-weight:700}
+#site-nav .nav-label:first-child{margin-right:0.4rem}
+.nav-toggle{display:none;background:none;border:1px solid #30363d;color:#c9d1d9;font-size:1.2rem;padding:0.4rem 0.75rem;border-radius:4px;cursor:pointer;line-height:1}
+.nav-toggle:focus-visible{outline:2px solid #58a6ff;outline-offset:2px}
+.nav-links{display:inline}
+@media(max-width:768px){
+.nav-toggle{display:inline-block;margin:0.25rem 0}
+.nav-links{display:none;text-align:left;padding:0.5rem 0}
+.nav-links.open{display:block}
+.nav-links a{display:block;padding:0.6rem 1rem;margin:0;font-size:0.9rem;min-height:44px;line-height:1.6;border-bottom:1px solid #21262d}
+.nav-links a:hover,.nav-links a:focus{background:#161b22}
+.nav-links .sep{display:none}
+.nav-links br{display:none}
+.nav-links .nav-label{display:block;padding:0.5rem 1rem 0.2rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#8b949e;margin:0}
+}
+</style>
+<nav id="site-nav" aria-label="Site navigation">
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">&#9776; Menu</button>
+  <div class="nav-links" id="nav-links">
+<strong class="nav-label">Tools:</strong>
+  <ahref="../check.html">Eligibility Checker</a>
+  <ahref="../compare.html">Compare All Bars</a>
+  <ahref="../dashboard.html">Dashboard</a>
+  <ahref="../timeline.html">Timeline</a>
+  <span class="sep">|</span>
+  <strong class="nav-label">Learn:</strong>
+  <ahref="../explainer.html">1328(f) Explained</a>
+  <ahref="../discharge-bar.html">Discharge Bar</a>
+  <ahref="../727a8-discharge-bar.html">727(a)(8) Bar</a>
+  <ahref="../109g-filing-bar.html">109(g) Bar</a>
+  <ahref="../can-i-file-bankruptcy-again.html">Can I File Again?</a>
+  <ahref="../how-long-between-bankruptcies.html">How Long Between?</a>
+  <span class="sep">|</span>
+  <ahref="../chapter-7.html">Ch. 7</a>
+  <ahref="../chapter-11.html">Ch. 11</a>
+  <ahref="../chapter-12.html">Ch. 12</a>
+  <ahref="../chapter-13.html">Ch. 13</a>
+  <span class="sep">|</span>
+  <strong class="nav-label">Statutes:</strong>
+  <ahref="../section-362-automatic-stay.html">&sect;362</a>
+  <ahref="../section-506-secured-claims.html">&sect;506</a>
+  <ahref="../section-523-nondischargeable-debts.html">&sect;523</a>
+  <ahref="../section-727-chapter-7-discharge.html">&sect;727</a>
+  <ahref="../section-1325-plan-confirmation.html">&sect;1325</a>
   <br>
-  <strong style="color:#f0f6fc;margin:0 0.4rem">Data:</strong>
-  <a href="../chapter-13-failure-rate.html" style="margin:0 0.3rem">Failure Rates</a>
-  <a href="../chapter-13-success-rate-by-state.html" style="margin:0 0.3rem">Success by State</a>
-  <a href="../caselaw.html" style="margin:0 0.3rem">Case Law</a>
-  <span style="color:#30363d;margin:0 0.25rem">|</span>
-  <strong style="color:#f0f6fc;margin:0 0.4rem">For:</strong>
-  <a href="../for-debtors.html" style="margin:0 0.3rem">Debtors</a>
-  <a href="../for-attorneys.html" style="margin:0 0.3rem">Attorneys</a>
-  <a href="../for-trustees.html" style="margin:0 0.3rem">Trustees</a>
-  <a href="../for-judges.html" style="margin:0 0.3rem">Judges</a>
-  <a href="../for-researchers.html" style="margin:0 0.3rem">Researchers</a>
-  <span style="color:#30363d;margin:0 0.25rem">|</span>
-  <a href="../glossary.html" style="margin:0 0.3rem">Glossary</a>
-  <a href="../before-you-file.html" style="margin:0 0.3rem">Before You File</a>
-  <a href="../reading.html" style="margin:0 0.3rem">Reading List</a>
-  <span style="color:#30363d;margin:0 0.25rem">|</span>
-  <a href="https://1328f.org/support/" style="margin:0 0.3rem;color:#238636;font-weight:600">Support This Research</a>
+  <strong class="nav-label">Data:</strong>
+  <ahref="../chapter-13-failure-rate.html">Failure Rates</a>
+  <ahref="../chapter-13-success-rate-by-state.html">Success by State</a>
+  <ahref="../caselaw.html">Case Law</a>
+  <span class="sep">|</span>
+  <strong class="nav-label">For:</strong>
+  <ahref="../for-debtors.html">Debtors</a>
+  <ahref="../for-attorneys.html">Attorneys</a>
+  <ahref="../for-trustees.html">Trustees</a>
+  <ahref="../for-judges.html">Judges</a>
+  <ahref="../for-researchers.html">Researchers</a>
+  <span class="sep">|</span>
+  <ahref="../glossary.html">Glossary</a>
+  <ahref="../before-you-file.html">Before You File</a>
+  <ahref="../reading.html">Reading List</a>
+  <span class="sep">|</span>
+  <a href="https://1328f.org/support/" style="color:#238636;font-weight:600">Support This Research</a>
+  </div>
 </nav>
+<script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
 <div class="container">
 <div class="breadcrumb"><a href="https://1328f.com">Screener</a> / <a href="https://1328f.com/dashboard.html">Dashboard</a> / New Jersey</div>
 <h1><span class="accent">New Jersey</span> Bankruptcy Statistics</h1>
@@ -101,7 +125,7 @@ th,td{padding:0.6rem 0.75rem;border-bottom:1px solid #30363d;font-size:0.9rem}
 
 <h2 style="color:#f0f6fc;font-size:1.2rem;margin:1.5rem 0 0.5rem">Districts in New Jersey</h2>
 <table>
-<thead><tr><th>District</th><th>Cases Filed</th><th>Dismissal Rate</th><th>Prior Filers</th><th>Prior Discharge Rate</th><th>Screening Status</th></tr></thead>
+<thead><tr><th scope="col">District</th><th scope="col">Cases Filed</th><th scope="col">Dismissal Rate</th><th scope="col">Prior Filers</th><th scope="col">Prior Discharge Rate</th><th scope="col">Screening Status</th></tr></thead>
 <tbody><tr>
           <td>D. New Jersey</td>
           <td>119,583</td>
