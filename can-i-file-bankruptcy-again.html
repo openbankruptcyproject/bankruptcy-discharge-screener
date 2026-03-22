@@ -329,9 +329,80 @@
     <p>Screening of 4.9 million Chapter 13 cases found 391,951 prior filers who received discharge with zero eligibility verification. In a 7-district sample, 264 were confirmed violations within the 1328(f) window — 114 received a discharge despite the bar. Question 9 relies on accurate disclosure and manual review -- when it fails, the debtor pays the price.</p>
 </div>
 
+<h2 id="calculator">Check your waiting period</h2>
+
+<p>Enter your prior case details to see when you're eligible to file again and receive a discharge.</p>
+
+<div class="statute-box" style="margin:20px 0;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+    <div>
+      <label style="font-size:13px; color:var(--text-muted); display:block; margin-bottom:4px;">Prior case chapter</label>
+      <select id="calc-prior" style="width:100%; padding:10px; background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:4px; font-size:15px;">
+        <option value="">Select...</option>
+        <option value="7">Chapter 7</option>
+        <option value="11">Chapter 11</option>
+        <option value="12">Chapter 12</option>
+        <option value="13">Chapter 13</option>
+      </select>
+    </div>
+    <div>
+      <label style="font-size:13px; color:var(--text-muted); display:block; margin-bottom:4px;">New case chapter</label>
+      <select id="calc-new" style="width:100%; padding:10px; background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:4px; font-size:15px;">
+        <option value="">Select...</option>
+        <option value="7">Chapter 7</option>
+        <option value="13">Chapter 13</option>
+      </select>
+    </div>
+  </div>
+  <div style="margin-bottom:16px;">
+    <label style="font-size:13px; color:var(--text-muted); display:block; margin-bottom:4px;">Prior case filing date</label>
+    <input type="date" id="calc-date" style="width:100%; max-width:250px; padding:10px; background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:4px; font-size:15px;">
+  </div>
+  <button onclick="calcWait()" style="padding:10px 24px; background:var(--accent); color:#fff; border:none; border-radius:4px; font-size:15px; font-weight:600; cursor:pointer;">Calculate</button>
+  <div id="calc-result" style="margin-top:16px; display:none;"></div>
+</div>
+
+<script>
+function calcWait() {
+  var prior = document.getElementById('calc-prior').value;
+  var newCh = document.getElementById('calc-new').value;
+  var dateStr = document.getElementById('calc-date').value;
+  var el = document.getElementById('calc-result');
+  if (!prior || !newCh || !dateStr) { el.style.display='block'; el.innerHTML='<p style="color:#f85149;">Please fill in all fields.</p>'; return; }
+  var years = 0, statute = '';
+  if (newCh === '7') {
+    if (prior === '7' || prior === '11') { years = 8; statute = 'Section 727(a)(8)'; }
+    else if (prior === '12' || prior === '13') { years = 6; statute = 'Section 727(a)(9)'; }
+  } else if (newCh === '13') {
+    if (prior === '13') { years = 2; statute = 'Section 1328(f)(2)'; }
+    else { years = 4; statute = 'Section 1328(f)(1)'; }
+  }
+  var filed = new Date(dateStr + 'T00:00:00');
+  var eligible = new Date(filed);
+  eligible.setFullYear(eligible.getFullYear() + years);
+  var today = new Date(); today.setHours(0,0,0,0);
+  var barred = today < eligible;
+  var dateOpts = { year:'numeric', month:'long', day:'numeric' };
+  var eligStr = eligible.toLocaleDateString('en-US', dateOpts);
+  var html = '<div style="padding:16px; border-radius:6px; background:' + (barred ? '#1a0000' : '#001a00') + '; border:1px solid ' + (barred ? '#f85149' : '#3fb950') + ';">';
+  html += '<div style="font-size:20px; font-weight:700; color:' + (barred ? '#f85149' : '#3fb950') + '; margin-bottom:8px;">' + (barred ? 'BARRED FROM DISCHARGE' : 'ELIGIBLE FOR DISCHARGE') + '</div>';
+  html += '<p style="color:#c5c8c6; margin-bottom:4px;"><strong>Waiting period:</strong> ' + years + ' years (' + statute + ')</p>';
+  html += '<p style="color:#c5c8c6; margin-bottom:4px;"><strong>Earliest eligible filing date:</strong> ' + eligStr + '</p>';
+  if (barred) {
+    var diff = Math.ceil((eligible - today) / (1000*60*60*24));
+    html += '<p style="color:#f85149; margin-top:8px;">' + diff + ' days remaining before you can receive a discharge in a new ' + (newCh==='7'?'Chapter 7':'Chapter 13') + ' case.</p>';
+  } else {
+    html += '<p style="color:#3fb950; margin-top:8px;">The waiting period has passed. You may be eligible for discharge in a new ' + (newCh==='7'?'Chapter 7':'Chapter 13') + ' case.</p>';
+  }
+  html += '<p style="color:#484f58; font-size:12px; margin-top:12px;">This calculator checks statutory waiting periods only. Other factors may affect eligibility. This is not legal advice.</p>';
+  html += '</div>';
+  el.style.display = 'block'; el.innerHTML = html;
+}
+</script>
+
 <div class="cta-box">
     <p>Check whether a prior discharge bars your current Chapter 13 case.</p>
-    <a href="check.html">Use the Eligibility Checker</a>
+    <a href="check.html">Use the Full Eligibility Checker</a>
 </div>
 
 <h2>Related resources</h2>
