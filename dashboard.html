@@ -205,6 +205,17 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 }
 .export-btn:hover { background: #3b82f6; color: #fff; }
 
+/* ── CSV download button ─────────────────── */
+.csv-btn {
+    position: absolute; bottom: 82px; left: 240px; z-index: 1000;
+    padding: 8px 16px; border: 1px solid #484f58; border-radius: 6px;
+    background: rgba(22,27,34,0.95); color: #8b949e; font-size: 12px;
+    font-weight: 600; cursor: pointer; backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-decoration: none; display: inline-block;
+}
+.csv-btn:hover { background: #21262d; color: #c9d1d9; }
+
 /* ── Methodology button + panel ───────────── */
 .method-btn {
     position: absolute; bottom: 82px; left: 120px; z-index: 1000;
@@ -295,6 +306,25 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Chapter 13 Bankruptcy Statistics by Federal District",
+  "description": "District-level Chapter 13 bankruptcy case outcomes including dismissal rates, discharge rates, and prior filer counts across 94 federal judicial districts. Derived from 4.9 million cases in the FJC Integrated Database and PACER records.",
+  "url": "https://1328f.com/dashboard.html",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {"@type": "Organization", "name": "1328f.com"},
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "text/csv",
+    "contentUrl": "https://1328f.com/data/district-statistics.csv"
+  },
+  "temporalCoverage": "2006/2026",
+  "spatialCoverage": "United States",
+  "keywords": ["bankruptcy", "Chapter 13", "dismissal rate", "discharge rate", "federal courts", "PACER", "FJC"]
+}
+</script>
 </head>
 <body>
 <div id="map"></div>
@@ -325,6 +355,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 <button class="export-btn" id="exportBtn" title="Download CSV of current layer data">Export CSV</button>
 
 <button class="method-btn" id="methodBtn" title="Show methodology">Methodology</button>
+<a class="csv-btn" href="data/district-statistics.csv" download title="Download full district statistics dataset">&#11015; Dataset CSV</a>
 <div class="method-panel" id="methodPanel">
     <button class="method-close" id="methodClose">&times;</button>
     <h3>Methodology</h3>
