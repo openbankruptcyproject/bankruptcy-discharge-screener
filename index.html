@@ -12,6 +12,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bankruptcy Discharge Screener - National Map</title>
+  <meta name="description" content="Free tool screening 391,951 bankruptcy cases across 94 federal districts for Section 1328(f) discharge eligibility. Open-source, no login required.">
+  <link rel="canonical" href="https://1328f.com/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bankruptcy Discharge Screener - National Map">
+  <meta property="og:description" content="Free tool screening 391,951 bankruptcy cases across 94 federal districts for Section 1328(f) discharge eligibility. Open-source, no login required.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://1328f.com/">
+  <meta property="og:image" content="https://1328f.com/og-image.png">
+  <meta property="og:site_name" content="1328f.com">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bankruptcy Discharge Screener - National Map">
+  <meta name="twitter:description" content="Free tool screening 391,951 cases across 94 districts for Section 1328(f) discharge eligibility.">
+  <meta name="twitter:image" content="https://1328f.com/og-image.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -561,7 +576,6 @@
       #us-map .state-label { font-size: 8px; }
     }
   </style>
-<meta name="last-modified" content="2026-03-21">
 </head>
 <body>
 <a href="#data-table" class="skip-link">Skip to data table</a>
@@ -804,6 +818,162 @@ cd bankruptcy-discharge-screener</div>
   </form>
   <p class="signup-note">No spam. Only district updates. Unsubscribe anytime.</p>
 </div>
+
+<!-- Cite This Page -->
+<style>
+    .cite-section {
+        margin: 48px 0 0;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        overflow: hidden;
+    }
+    .cite-toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: color 0.2s;
+    }
+    .cite-toggle:hover { color: var(--text); }
+    .cite-toggle .chevron {
+        display: inline-block;
+        transition: transform 0.25s ease;
+        font-size: 12px;
+    }
+    .cite-section.open .cite-toggle .chevron {
+        transform: rotate(180deg);
+    }
+    .cite-body {
+        display: none;
+        padding: 0 20px 20px;
+    }
+    .cite-section.open .cite-body {
+        display: block;
+    }
+    .cite-format {
+        margin-bottom: 16px;
+    }
+    .cite-format:last-child {
+        margin-bottom: 0;
+    }
+    .cite-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-bottom: 6px;
+    }
+    .cite-row {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+    }
+    .cite-text {
+        flex: 1;
+        padding: 10px 14px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        font-size: 13px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+    .cite-copy-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        min-width: 52px;
+        background: var(--border);
+        border: none;
+        color: var(--text-muted);
+        font-size: 13px;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        flex-shrink: 0;
+    }
+    .cite-copy-btn:hover {
+        background: var(--accent);
+        color: #fff;
+    }
+    .cite-copy-btn.copied {
+        background: var(--green);
+        color: #fff;
+    }
+</style>
+
+<div class="cite-section" id="citeSection">
+    <button class="cite-toggle" onclick="document.getElementById('citeSection').classList.toggle('open')" aria-expanded="false" aria-controls="citeBody">
+        <span>Cite This Tool</span>
+        <span class="chevron">&#9660;</span>
+    </button>
+    <div class="cite-body" id="citeBody">
+        <div class="cite-format">
+            <div class="cite-label">Bluebook</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeBluebook">Daniel Brown, <i>Bankruptcy Discharge Screener: National Section 1328(f) Map</i>, 1328f.com (Mar. 2026), https://1328f.com.</div>
+                <button class="cite-copy-btn" onclick="copyCite('citeBluebook', this)" title="Copy to clipboard">Copy</button>
+            </div>
+        </div>
+        <div class="cite-format">
+            <div class="cite-label">APA (7th ed.)</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeAPA">Brown, D. (2026, March). <i>Bankruptcy discharge screener: National Section 1328(f) map</i>. 1328f.com. https://1328f.com</div>
+                <button class="cite-copy-btn" onclick="copyCite('citeAPA', this)" title="Copy to clipboard">Copy</button>
+            </div>
+        </div>
+        <div class="cite-format">
+            <div class="cite-label">Chicago (17th ed.)</div>
+            <div class="cite-row">
+                <div class="cite-text" id="citeChicago">Brown, Daniel. "Bankruptcy Discharge Screener: National Section 1328(f) Map." 1328f.com. Last modified March 2026. https://1328f.com.</div>
+                <button class="cite-copy-btn" onclick="copyCite('citeChicago', this)" title="Copy to clipboard">Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function copyCite(id, btn) {
+    var el = document.getElementById(id);
+    var text = el.innerText || el.textContent;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() { showCopied(btn); });
+    } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showCopied(btn);
+    }
+}
+function showCopied(btn) {
+    var orig = btn.textContent;
+    btn.textContent = '\u2713';
+    btn.classList.add('copied');
+    setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+}
+</script>
+<!-- End Cite This Tool -->
 
 <footer>
   Data sourced from publicly available PACER records. Generated by volunteers using open-source tools.<br>
