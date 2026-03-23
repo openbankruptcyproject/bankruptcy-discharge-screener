@@ -43,7 +43,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     backdrop-filter: blur(4px);
 }
 .title-overlay .subtitle {
-    font-size: 11px; font-weight: 400; color: #8b949e; margin-top: 2px;
+    font-size: 11px; font-weight: 400; color: #9eaab6; margin-top: 2px;
 }
 
 /* ── Layer toggle ─────────────────────────── */
@@ -55,7 +55,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 }
 .layer-btn {
     padding: 7px 14px; border: none; background: rgba(22,27,34,0.95);
-    font-size: 11px; font-weight: 500; color: #8b949e; cursor: pointer;
+    font-size: 11px; font-weight: 500; color: #9eaab6; cursor: pointer;
     transition: all 0.15s; border-bottom: 1px solid #30363d;
     backdrop-filter: blur(4px);
     white-space: nowrap; text-align: left;
@@ -107,7 +107,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 }
 .legend-labels {
     display: flex; justify-content: space-between; margin-top: 2px;
-    font-size: 10px; color: #8b949e;
+    font-size: 10px; color: #9eaab6;
 }
 .legend-item {
     display: flex; align-items: center; gap: 6px; margin-top: 6px;
@@ -209,7 +209,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 .csv-btn {
     position: absolute; bottom: 82px; left: 240px; z-index: 1000;
     padding: 8px 16px; border: 1px solid #484f58; border-radius: 6px;
-    background: rgba(22,27,34,0.95); color: #8b949e; font-size: 12px;
+    background: rgba(22,27,34,0.95); color: #9eaab6; font-size: 12px;
     font-weight: 600; cursor: pointer; backdrop-filter: blur(4px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-decoration: none; display: inline-block;
@@ -220,7 +220,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 .method-btn {
     position: absolute; bottom: 82px; left: 120px; z-index: 1000;
     padding: 8px 16px; border: 1px solid #484f58; border-radius: 6px;
-    background: rgba(22,27,34,0.95); color: #8b949e; font-size: 12px;
+    background: rgba(22,27,34,0.95); color: #9eaab6; font-size: 12px;
     font-weight: 600; cursor: pointer; backdrop-filter: blur(4px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -273,7 +273,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
 }
 .leaflet-popup-tip { background: #161b22 !important; }
-.leaflet-popup-close-button { color: #8b949e !important; }
+.leaflet-popup-close-button { color: #9eaab6 !important; }
 .leaflet-popup-close-button:hover { color: #f0f6fc !important; }
 
 /* ── Sparkline ─────────────────────────────── */
@@ -281,7 +281,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     margin-top: 8px; padding-top: 6px; border-top: 1px solid #30363d;
 }
 .sparkline-container .spark-label {
-    font-size: 10px; color: #8b949e; margin-bottom: 2px;
+    font-size: 10px; color: #9eaab6; margin-bottom: 2px;
 }
 .sparkline-container svg { display: block; }
 </style>
@@ -325,6 +325,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
   "keywords": ["bankruptcy", "Chapter 13", "dismissal rate", "discharge rate", "federal courts", "PACER", "FJC"]
 }
 </script>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
 <style>
@@ -344,7 +345,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 .nav-links a:hover,.nav-links a:focus{background:#161b22}
 .nav-links .sep{display:none}
 .nav-links br{display:none}
-.nav-links .nav-label{display:block;padding:0.5rem 1rem 0.2rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#8b949e;margin:0}
+.nav-links .nav-label{display:block;padding:0.5rem 1rem 0.2rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#9eaab6;margin:0}
 }
 </style>
 <nav id="site-nav" aria-label="Site navigation">
@@ -708,7 +709,7 @@ function buildPopup(code, s, yearKey) {
 
     var h = '<div style="min-width:300px;max-width:380px;font-family:system-ui,sans-serif;font-size:13px;background:#161b22;color:#c9d1d9;padding:4px;">';
     h += '<div style="font-weight:700;font-size:16px;margin-bottom:2px;color:#f0f6fc;">' + m.name + '</div>';
-    h += '<div style="color:#8b949e;font-size:11px;margin-bottom:8px;">' + label;
+    h += '<div style="color:#9eaab6;font-size:11px;margin-bottom:8px;">' + label;
 
     // Rank for active layer
     var rankKey = currentLayer + '_rank';
@@ -719,37 +720,37 @@ function buildPopup(code, s, yearKey) {
     h += '<table style="width:100%;border-collapse:collapse;color:#c9d1d9;">';
 
     // Filing stats
-    h += '<tr><td style="padding:2px 8px 2px 0;color:#8b949e;">Total Filed</td><td style="text-align:right;font-weight:600;">' + s.total.toLocaleString() + '</td></tr>';
-    h += '<tr><td style="padding:2px 8px 2px 0;color:#8b949e;">Closed Cases</td><td style="text-align:right;font-weight:600;">' + s.closed.toLocaleString() + '</td></tr>';
+    h += '<tr><td style="padding:2px 8px 2px 0;color:#9eaab6;">Total Filed</td><td style="text-align:right;font-weight:600;">' + s.total.toLocaleString() + '</td></tr>';
+    h += '<tr><td style="padding:2px 8px 2px 0;color:#9eaab6;">Closed Cases</td><td style="text-align:right;font-weight:600;">' + s.closed.toLocaleString() + '</td></tr>';
 
     // Dismissal with national comparison
     if (!s.insufficient_main) {
         var dmDelta = (s.dismiss_rate - nat.dismiss_rate).toFixed(1);
         var dmSign = dmDelta > 0 ? '+' : '';
-        h += '<tr><td style="padding:2px 8px 2px 0;color:#f87171;">Dismissed</td><td style="text-align:right;font-weight:700;color:#f87171;">' + s.dismissed.toLocaleString() + ' (' + s.dismiss_rate + '%) <span style="font-size:10px;color:#8b949e;">' + dmSign + dmDelta + 'pp vs nat.</span></td></tr>';
+        h += '<tr><td style="padding:2px 8px 2px 0;color:#f87171;">Dismissed</td><td style="text-align:right;font-weight:700;color:#f87171;">' + s.dismissed.toLocaleString() + ' (' + s.dismiss_rate + '%) <span style="font-size:10px;color:#9eaab6;">' + dmSign + dmDelta + 'pp vs nat.</span></td></tr>';
         h += '<tr><td style="padding:2px 8px 2px 0;color:#4ade80;">Discharged</td><td style="text-align:right;font-weight:700;color:#4ade80;">' + s.discharged.toLocaleString() + ' (' + s.discharge_rate + '%)</td></tr>';
     } else {
         h += '<tr><td colspan="2" style="padding:3px 0;color:#484f58;font-style:italic;">Insufficient closed cases</td></tr>';
     }
 
     // Prior filers
-    h += '<tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px 2px 0;color:#8b949e;">Prior Filers</td><td style="text-align:right;font-weight:600;">' + s.prior.toLocaleString() + ' (' + s.prior_rate + '%)</td></tr>';
+    h += '<tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px 2px 0;color:#9eaab6;">Prior Filers</td><td style="text-align:right;font-weight:600;">' + s.prior.toLocaleString() + ' (' + s.prior_rate + '%)</td></tr>';
 
     // Discharged despite prior -- the key metric
     if (!s.insufficient_prior) {
         var pdrColor = s.prior_discharge_rate > 40 ? '#f87171' : (s.prior_discharge_rate > 25 ? '#fbbf24' : '#4ade80');
         var pdrDelta = (s.prior_discharge_rate - nat.prior_discharge_rate).toFixed(1);
         var pdrSign = pdrDelta > 0 ? '+' : '';
-        h += '<tr style="background:rgba(251,191,36,0.1);"><td style="padding:2px 8px 2px 0;color:' + pdrColor + ';font-weight:600;">Discharged Despite Prior</td><td style="text-align:right;font-weight:700;color:' + pdrColor + ';">' + s.prior_discharged.toLocaleString() + ' (' + s.prior_discharge_rate + '%) <span style="font-size:10px;color:#8b949e;">' + pdrSign + pdrDelta + 'pp</span></td></tr>';
+        h += '<tr style="background:rgba(251,191,36,0.1);"><td style="padding:2px 8px 2px 0;color:' + pdrColor + ';font-weight:600;">Discharged Despite Prior</td><td style="text-align:right;font-weight:700;color:' + pdrColor + ';">' + s.prior_discharged.toLocaleString() + ' (' + s.prior_discharge_rate + '%) <span style="font-size:10px;color:#9eaab6;">' + pdrSign + pdrDelta + 'pp</span></td></tr>';
     } else {
         h += '<tr><td style="padding:2px 8px 2px 0;color:#484f58;">Discharge-Despite-Prior</td><td style="text-align:right;color:#484f58;font-style:italic;">Insufficient data</td></tr>';
     }
 
     // Pro se
-    h += '<tr><td style="padding:2px 8px 2px 0;color:#8b949e;">Pro Se at Filing</td><td style="text-align:right;">' + s.prose.toLocaleString() + ' (' + s.prose_rate + '%)</td></tr>';
+    h += '<tr><td style="padding:2px 8px 2px 0;color:#9eaab6;">Pro Se at Filing</td><td style="text-align:right;">' + s.prose.toLocaleString() + ' (' + s.prose_rate + '%)</td></tr>';
 
     // Screening status
-    h += '<tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px 2px 0;color:#8b949e;">\u00a71328(f) Verified</td><td style="text-align:right;color:#484f58;font-style:italic;">Not yet screened</td></tr>';
+    h += '<tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px 2px 0;color:#9eaab6;">\u00a71328(f) Verified</td><td style="text-align:right;color:#484f58;font-style:italic;">Not yet screened</td></tr>';
 
     h += '</table>';
 
@@ -759,8 +760,8 @@ function buildPopup(code, s, yearKey) {
     // Year-over-year mini table for this district (last 5 years)
     var miniYears = [2020, 2021, 2022, 2023, 2024];
     h += '<div style="margin-top:6px;padding-top:6px;border-top:1px solid #30363d;">';
-    h += '<div style="font-size:10px;color:#8b949e;margin-bottom:3px;">Recent Years</div>';
-    h += '<table style="width:100%;border-collapse:collapse;font-size:11px;color:#8b949e;">';
+    h += '<div style="font-size:10px;color:#9eaab6;margin-bottom:3px;">Recent Years</div>';
+    h += '<table style="width:100%;border-collapse:collapse;font-size:11px;color:#9eaab6;">';
     h += '<tr><td style="font-weight:600;">Year</td><td style="text-align:right;font-weight:600;">Filed</td><td style="text-align:right;font-weight:600;">Dism%</td><td style="text-align:right;font-weight:600;">Prior Disch%</td></tr>';
     for (var yi = 0; yi < miniYears.length; yi++) {
         var yrKey = String(miniYears[yi]);
@@ -921,8 +922,8 @@ function updateStatsPanel(yearKey, layer) {
         }
         // Conversion-adjusted rate (Ch.13 → Ch.7 discharges not counted above)
         if (layer === 'dismiss_rate' && yearKey === 'all') {
-            h += '<div class="stat-row" style="border-top:1px solid #30363d;padding-top:4px;margin-top:4px;"><span style="font-size:10px;color:#8b949e;">Conv-Adjusted Dism. Rate</span><span class="stat-val" style="font-size:11px;color:#8b949e;">~53.6%</span></div>';
-            h += '<div class="stat-row"><span style="font-size:10px;color:#8b949e;">Prior Filer Discharges</span><span class="stat-val" style="font-size:11px;color:#8b949e;">391,951 of 1,433,059</span></div>';
+            h += '<div class="stat-row" style="border-top:1px solid #30363d;padding-top:4px;margin-top:4px;"><span style="font-size:10px;color:#9eaab6;">Conv-Adjusted Dism. Rate</span><span class="stat-val" style="font-size:11px;color:#9eaab6;">~53.6%</span></div>';
+            h += '<div class="stat-row"><span style="font-size:10px;color:#9eaab6;">Prior Filer Discharges</span><span class="stat-val" style="font-size:11px;color:#9eaab6;">391,951 of 1,433,059</span></div>';
         }
 
         // Prior discharge highlight (always show on prior layers)
@@ -1142,12 +1143,18 @@ updateMap('all', 'prior_discharge_rate');
 
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1.5rem;text-align:center;max-width:900px;margin:2rem auto 0">
   <p style="color:#f0f6fc;font-size:1.1rem;font-weight:600;margin-bottom:0.25rem">PACER cases made free through RECAP: <span id="recap-count" style="color:#58a6ff">0</span> of 37.9 million</p>
-  <p style="color:#8b949e;font-size:0.85rem;margin-bottom:0.75rem">Every document we access becomes permanently free for the next researcher, attorney, or debtor.</p>
+  <p style="color:#9eaab6;font-size:0.85rem;margin-bottom:0.75rem">Every document we access becomes permanently free for the next researcher, attorney, or debtor.</p>
   <div style="background:#21262d;border-radius:6px;height:22px;overflow:hidden;margin:0.75rem auto;max-width:400px"><div style="background:linear-gradient(90deg,#238636,#2ea043);height:100%;width:0%;border-radius:6px;min-width:2px"></div></div>
-  <p style="margin-bottom:0.25rem"><span style="color:#58a6ff;font-size:1.2rem;font-weight:700">$0</span> <span style="color:#8b949e">of</span> <span style="color:#f0f6fc;font-size:1.2rem;font-weight:700">$5,000</span> <span style="color:#8b949e">Q1 PACER research goal</span></p>
-  <p style="color:#8b949e;font-size:0.8rem;margin-bottom:0.75rem">1,500+ hours. No grants, no institutional backing. Donations fund PACER fees and our goal of forming a 501(c)(3) nonprofit for bankruptcy court transparency.</p>
+  <p style="margin-bottom:0.25rem"><span style="color:#58a6ff;font-size:1.2rem;font-weight:700">$0</span> <span style="color:#9eaab6">of</span> <span style="color:#f0f6fc;font-size:1.2rem;font-weight:700">$5,000</span> <span style="color:#9eaab6">Q1 PACER research goal</span></p>
+  <p style="color:#9eaab6;font-size:0.8rem;margin-bottom:0.75rem">1,500+ hours. No grants, no institutional backing. Donations fund PACER fees and our goal of forming a 501(c)(3) nonprofit for bankruptcy court transparency.</p>
   <a href="https://ko-fi.com/ilikemath9999" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Support on Ko-fi</a>
 </div>
 <script>fetch("/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString()}).catch(function(){})</script>
+<footer style="text-align:center;padding:24px 0;font-size:13px;color:#9eaab6;border-top:1px solid #30363d;margin-top:2rem">
+    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">Open Source</a>
+    &nbsp;&middot;&nbsp; <a href="https://1328f.org">Research</a>
+    &nbsp;&middot;&nbsp; No data collected &nbsp;&middot;&nbsp; No cookies
+    <br>Research and reports at <a href="https://1328f.org">1328f.org</a>
+</footer>
 </body>
 </html>

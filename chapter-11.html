@@ -64,11 +64,11 @@
             --surface: #161b22;
             --border: #30363d;
             --text: #e6edf3;
-            --text-muted: #8b949e;
+            --text-muted: #9eaab6;
             --accent: #58a6ff;
             --green: #3fb950;
             --red: #f85149;
-            --yellow: #d29922;
+            --yellow: #e3a835;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -247,6 +247,7 @@
   ]
 }
 </script>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
 <style>
@@ -266,7 +267,7 @@
 .nav-links a:hover,.nav-links a:focus{background:#161b22}
 .nav-links .sep{display:none}
 .nav-links br{display:none}
-.nav-links .nav-label{display:block;padding:0.5rem 1rem 0.2rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#8b949e;margin:0}
+.nav-links .nav-label{display:block;padding:0.5rem 1rem 0.2rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#9eaab6;margin:0}
 }
 </style>
 <nav id="site-nav" aria-label="Site navigation">
@@ -432,12 +433,18 @@
 
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1.5rem;text-align:center;max-width:900px;margin:2rem auto 0">
   <p style="color:#f0f6fc;font-size:1.1rem;font-weight:600;margin-bottom:0.25rem">PACER cases made free through RECAP: <span id="recap-count" style="color:#58a6ff">0</span> of 37.9 million</p>
-  <p style="color:#8b949e;font-size:0.85rem;margin-bottom:0.75rem">Every document we access becomes permanently free for the next researcher, attorney, or debtor.</p>
+  <p style="color:#9eaab6;font-size:0.85rem;margin-bottom:0.75rem">Every document we access becomes permanently free for the next researcher, attorney, or debtor.</p>
   <div style="background:#21262d;border-radius:6px;height:22px;overflow:hidden;margin:0.75rem auto;max-width:400px"><div style="background:linear-gradient(90deg,#238636,#2ea043);height:100%;width:0%;border-radius:6px;min-width:2px"></div></div>
-  <p style="margin-bottom:0.25rem"><span style="color:#58a6ff;font-size:1.2rem;font-weight:700">$0</span> <span style="color:#8b949e">of</span> <span style="color:#f0f6fc;font-size:1.2rem;font-weight:700">$5,000</span> <span style="color:#8b949e">Q1 PACER research goal</span></p>
-  <p style="color:#8b949e;font-size:0.8rem;margin-bottom:0.75rem">1,500+ hours. No grants, no institutional backing. 0 supporters so far.</p>
+  <p style="margin-bottom:0.25rem"><span style="color:#58a6ff;font-size:1.2rem;font-weight:700">$0</span> <span style="color:#9eaab6">of</span> <span style="color:#f0f6fc;font-size:1.2rem;font-weight:700">$5,000</span> <span style="color:#9eaab6">Q1 PACER research goal</span></p>
+  <p style="color:#9eaab6;font-size:0.8rem;margin-bottom:0.75rem">1,500+ hours. No grants, no institutional backing. 0 supporters so far.</p>
   <a href="https://1328f.org/support/" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Fund this research</a>
 </div>
 <script>fetch("/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString()}).catch(function(){})</script>
+<footer style="text-align:center;padding:24px 0;font-size:13px;color:#9eaab6;border-top:1px solid #30363d;margin-top:2rem">
+    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">Open Source</a>
+    &nbsp;&middot;&nbsp; <a href="https://1328f.org">Research</a>
+    &nbsp;&middot;&nbsp; No data collected &nbsp;&middot;&nbsp; No cookies
+    <br>Research and reports at <a href="https://1328f.org">1328f.org</a>
+</footer>
 </body>
 </html>
