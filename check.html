@@ -280,22 +280,6 @@
             .result { padding: 20px 18px; }
         }
     </style>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Section 1328(f) Eligibility Checker",
-        "description": "Free tool to check whether Section 1328(f) bars your Chapter 13 bankruptcy discharge based on prior filing dates.",
-        "url": "https://1328f.com/check.html",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        }
-    }
-    </script>
 <meta name="last-modified" content="2026-03-21">
 <script type="application/ld+json">
 {
@@ -318,6 +302,37 @@
 }
 </script>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Section 1328(f) Discharge Bar Checker",
+  "description": "Free, no-login eligibility checker. Enter two dates to check if Section 1328(f) bars your Chapter 13 discharge. Used by attorneys and debtors nationwide.",
+  "url": "https://1328f.com/check.html",
+  "applicationCategory": "LegalService",
+  "applicationSubCategory": "Bankruptcy Eligibility Calculator",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Modern web browser with JavaScript enabled (Chrome, Firefox, Safari, Edge)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Instant Section 1328(f) eligibility check",
+    "Covers all chapter combinations (7, 11, 12, 13)",
+    "Filing-date-to-filing-date calculation",
+    "No login or personal data required"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "1328f.org",
+    "url": "https://1328f.org"
+  },
+  "isAccessibleForFree": true,
+  "inLanguage": ["en", "es"]
+}
+</script>
 </head>
 <body>
 <style>
@@ -454,6 +469,8 @@
             <ul>
                 <li><a href="explainer.html">What is Section 1328(f)?</a> — Plain-English explanation of the statute</li>
                 <li><a href="index.html">National Screener Dashboard</a> — 391,951 unverified discharges across 94 districts</li>
+                <li><a href="https://1328f.org/about/">About 1328f.org</a> — The independent research project behind this tool</li>
+                <li><a href="https://1328f.org/reports/methodology-1328f-screening/">How we screened 4.9 million cases</a> — Screening methodology on 1328f.org</li>
                 <li><a href="https://www.law.cornell.edu/uscode/text/11/1328" target="_blank" rel="noopener">11 U.S.C. &sect; 1328</a> — Full statutory text (Cornell LII)</li>
                 <li><a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">GitHub Repository</a> — Open-source screener code</li>
             </ul>

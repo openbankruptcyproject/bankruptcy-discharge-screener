@@ -308,26 +308,47 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
   ]
 }
 </script>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "Chapter 13 Bankruptcy Statistics by Federal District",
-  "description": "District-level Chapter 13 bankruptcy case outcomes including dismissal rates, discharge rates, and prior filer counts across 94 federal judicial districts. Derived from 4.9 million cases in the FJC Integrated Database and PACER records.",
+  "name": "National Chapter 13 Bankruptcy Statistics by District",
+  "description": "Interactive dashboard of Chapter 13 bankruptcy statistics across all 94 federal judicial districts. Includes dismissal rates, discharge rates, prior filer data, and attorney performance metrics derived from 4.9 million FJC Integrated Database records and PACER data.",
   "url": "https://1328f.com/dashboard.html",
+  "identifier": "1328f-ch13-district-dashboard",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "creator": {"@type": "Organization", "name": "1328f.com"},
-  "distribution": {
-    "@type": "DataDownload",
-    "encodingFormat": "text/csv",
-    "contentUrl": "https://1328f.com/data/district-statistics.csv"
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "1328f.org",
+    "url": "https://1328f.org"
   },
-  "temporalCoverage": "2006/2026",
-  "spatialCoverage": "United States",
-  "keywords": ["bankruptcy", "Chapter 13", "dismissal rate", "discharge rate", "federal courts", "PACER", "FJC"]
+  "temporalCoverage": "2008/2024",
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "United States",
+    "geo": {
+      "@type": "GeoShape",
+      "description": "All 94 federal bankruptcy court districts"
+    }
+  },
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "Total cases analyzed",
+      "value": "4,900,000+"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Federal districts covered",
+      "value": "94"
+    }
+  ],
+  "measurementTechnique": "Automated analysis of FJC Integrated Database records cross-referenced with PACER docket entries",
+  "keywords": ["bankruptcy", "Chapter 13", "dismissal rates", "discharge rates", "district statistics", "PACER", "FJC"]
 }
 </script>
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
 <style>
