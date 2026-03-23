@@ -63,6 +63,47 @@ if [ $FOUND -eq 1 ]; then
     exit 1
 fi
 
+# ── FACT ACCURACY CHECK ──
+# Catch inflated claims that misrepresent scope of analysis
+echo ""
+echo "Scanning for fact-accuracy issues..."
+
+# "analyzed 4.9 million" — we SCREENED, not analyzed
+ANALYZED=$(grep -rin "analyz.*4\.9 million\|analyz.*4,895" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push")
+if [ -n "$ANALYZED" ]; then
+    echo ""
+    echo "WARNING: 'analyzed 4.9 million' found (should be 'screened'):"
+    echo "$ANALYZED" | head -5
+    FOUND=1
+fi
+
+# "264 cases" without scope qualifier
+UNQUALIFIED_264=$(grep -rin "264 case\|264 barred\|264 violation" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -vi "sample\|verified.*district\|multi-district\|7-district")
+if [ -n "$UNQUALIFIED_264" ]; then
+    echo ""
+    echo "WARNING: '264 cases' without scope qualifier (needs 'sample'/'multi-district'):"
+    echo "$UNQUALIFIED_264" | head -5
+    FOUND=1
+fi
+
+# "114 discharged" without scope qualifier
+UNQUALIFIED_114=$(grep -rin "114.*discharg\|114.*granted" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -vi "sample\|verified.*district\|multi-district\|7-district")
+if [ -n "$UNQUALIFIED_114" ]; then
+    echo ""
+    echo "WARNING: '114 discharged' without scope qualifier:"
+    echo "$UNQUALIFIED_114" | head -5
+    FOUND=1
+fi
+
+# "national analysis" when it's actually a sample
+NATIONAL_CLAIM=$(grep -rin "national analysis.*264\|nationwide.*264\|across.*94.*district.*264" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push")
+if [ -n "$NATIONAL_CLAIM" ]; then
+    echo ""
+    echo "WARNING: '264' presented as national finding:"
+    echo "$NATIONAL_CLAIM" | head -5
+    FOUND=1
+fi
+
 # Check git metadata: author/committer identities
 echo "Scanning git history for identity leaks..."
 BAD_AUTHORS=$(git log --all --format="%an <%ae>" | sort -u | grep -iv "ilikemath9999")
