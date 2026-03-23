@@ -87,7 +87,7 @@ if [ -n "$UNQUALIFIED_264" ]; then
 fi
 
 # "114 discharged" without scope qualifier
-UNQUALIFIED_114=$(grep -rin "114.*discharg\|114.*granted" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -vi "sample\|verified.*district\|multi-district\|7-district")
+UNQUALIFIED_114=$(grep -rin "114.*discharg\|114.*granted" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -vi "sample\|verified.*district\|multi-district\|7-district\|1141")
 if [ -n "$UNQUALIFIED_114" ]; then
     echo ""
     echo "WARNING: '114 discharged' without scope qualifier:"
