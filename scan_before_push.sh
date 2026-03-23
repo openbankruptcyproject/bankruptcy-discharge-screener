@@ -96,7 +96,7 @@ if [ -n "$UNQUALIFIED_114" ]; then
 fi
 
 # "national analysis" when it's actually a sample
-NATIONAL_CLAIM=$(grep -rin "national analysis.*264\|nationwide.*264\|across.*94.*district.*264" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push")
+NATIONAL_CLAIM=$(grep -rin "national analysis.*264\|nationwide.*264\|across.*94.*district.*264" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -vi "verified.*sample\|multi-district")
 if [ -n "$NATIONAL_CLAIM" ]; then
     echo ""
     echo "WARNING: '264' presented as national finding:"

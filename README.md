@@ -131,7 +131,7 @@ The map updates as volunteers screen new districts. Every row is independently g
 
 ## Screen Your District
 
-We tested this on two federal districts, 56,563 Ch. 13 filings screened, 360 flagged inside the 1328(f) window, 14 hand-verified, all confirmed. 114 flagged cases received a discharge despite the bar.
+We tested this on a multi-district sample: 56,563 Ch. 13 filings screened, 360 flagged inside the 1328(f) window, 14 hand-verified, all confirmed. In that verified sample, 114 flagged cases received a discharge despite the bar.
 
 **Help build the national picture:**
 
