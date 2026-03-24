@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://1328f.com/109g-filing-bar-es.html</loc>
     <lastmod>2026-03-23</lastmod>
@@ -2723,5 +2724,69 @@
     <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://1328f.com/chapter-13-dismissal-rate-map.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_dismiss_rate.gif</image:loc>
+      <image:title>Animated Chapter 13 Dismissal Rate Map 2008-2024</image:title>
+      <image:caption>Animated map showing Chapter 13 bankruptcy dismissal rates across 94 federal districts from 2008 to 2024.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_dismiss_rate.png</image:loc>
+      <image:title>Chapter 13 Dismissal Rate Map by Federal District</image:title>
+      <image:caption>Static choropleth map of Chapter 13 bankruptcy dismissal rates across all 94 federal judicial districts.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://1328f.com/pro-se-bankruptcy-rate-map.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_prose_rate.gif</image:loc>
+      <image:title>Animated Pro Se Bankruptcy Filing Rate Map 2008-2024</image:title>
+      <image:caption>Animated map showing pro se bankruptcy filing rates by federal district from 2008 to 2024.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_prose_rate.png</image:loc>
+      <image:title>Pro Se Bankruptcy Filing Rate Map by Federal District</image:title>
+      <image:caption>Static map of pro se bankruptcy filing rates across 94 federal judicial districts.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://1328f.com/repeat-bankruptcy-filer-map.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_prior_rate.gif</image:loc>
+      <image:title>Animated Repeat Bankruptcy Filer Rate Map 2008-2024</image:title>
+      <image:caption>Animated map showing repeat bankruptcy filer rates by federal district from 2008 to 2024.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_repeat_volume.gif</image:loc>
+      <image:title>Animated Repeat Bankruptcy Filing Volume Map 2008-2024</image:title>
+      <image:caption>Animated map showing repeat bankruptcy filing volume by federal district from 2008 to 2024.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://1328f.com/bankruptcy-discharge-rate-map.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_prior_discharge_rate.gif</image:loc>
+      <image:title>Animated Prior Filer Discharge Rate Map 2008-2024</image:title>
+      <image:caption>Animated map showing discharge rates for repeat bankruptcy filers by federal district from 2008 to 2024.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://1328f.com/animated_map_prior_discharge_rate.png</image:loc>
+      <image:title>Prior Filer Bankruptcy Discharge Rate Map by Federal District</image:title>
+      <image:caption>Static map of discharge rates for repeat bankruptcy filers across 94 federal judicial districts.</image:caption>
+    </image:image>
   </url>
 </urlset>
