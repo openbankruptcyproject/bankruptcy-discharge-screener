@@ -11,6 +11,19 @@
   gtag('js', new Date());
   gtag('config', 'G-RV60F9WDXN');
 </script>
+<script>
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href*="uscourts.gov"]');
+  if (link) {
+    gtag('event', 'outbound_click', {
+      event_category: 'credential_verification',
+      event_label: link.href,
+      page_path: location.pathname,
+      transport_type: 'beacon'
+    });
+  }
+});
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Section 109(g) — The 180-Day Bankruptcy Filing Bar Explained</title>
