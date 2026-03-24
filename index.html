@@ -1705,5 +1705,6 @@ function showCopied(btn) {
   <a href="https://1328f.org/support/" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Fund this research</a>
 </div>
 <script>fetch("/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString()}).catch(function(){})</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&a.href&&a.href.indexOf('uscourts.gov/rules-policies')!==-1){gtag('event','rules_suggestion_click',{link_url:a.href,page_path:location.pathname})}})</script>
 </body>
 </html>
