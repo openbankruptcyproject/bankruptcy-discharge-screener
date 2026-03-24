@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13 Dismissal Rate Map — Animated by District, 2008-2024</title>
+    <meta name="description" content="Animated map showing Chapter 13 bankruptcy dismissal rates across all 94 federal districts from 2008 to 2024. Watch how failure rates shift over time. Data from 4.9 million cases.">
+    <meta name="keywords" content="chapter 13 dismissal rate map, bankruptcy dismissal rate by state, chapter 13 failure rate map, bankruptcy map, chapter 13 statistics map, bankruptcy rate by district">
+    <link rel="canonical" href="https://1328f.com/chapter-13-dismissal-rate-map.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chapter 13 Dismissal Rate Map — Animated by District, 2008-2024">
+    <meta property="og:description" content="Animated map showing Chapter 13 bankruptcy dismissal rates across 94 federal districts from 2008 to 2024.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://1328f.com/chapter-13-dismissal-rate-map.html">
+    <meta property="og:image" content="https://1328f.com/animated_map_dismiss_rate.png">
+    <meta property="og:site_name" content="1328f.com">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 13 Dismissal Rate Map — Animated by District">
+    <meta name="twitter:description" content="Watch Chapter 13 dismissal rates shift across 94 federal districts from 2008 to 2024. Data from 4.9M cases.">
+    <meta name="twitter:image" content="https://1328f.com/animated_map_dismiss_rate.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://1328f.com/animated_map_dismiss_rate.gif",
+      "name": "Chapter 13 Dismissal Rate Map by Federal District, 2008-2024",
+      "description": "Animated choropleth map showing Chapter 13 bankruptcy dismissal rates across all 94 federal judicial districts from 2008 to 2024, with rates ranging from under 10% to over 80%.",
+      "creator": { "@type": "Organization", "name": "1328f.com" },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "acquireLicensePage": "https://1328f.com/chapter-13-dismissal-rate-map.html"
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #9eaab6;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --yellow: #e3a835;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--red);
+            line-height: 1.1;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        .statute-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .statute-box .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .map-figure {
+            margin: 24px 0;
+            text-align: center;
+        }
+        .map-figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .map-figure figcaption {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        .footer a { color: var(--accent); }
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .stat-number { font-size: 42px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb"><a href="index.html">1328f.com</a> &rsaquo; <a href="chapter-13-failure-rate.html">Failure Rate</a> &rsaquo; Dismissal Rate Map</div>
+
+<h1>Chapter 13 Dismissal Rate Map</h1>
+<p class="subtitle">Animated view of how Chapter 13 failure rates have shifted across 94 federal districts from 2008 to 2024.</p>
+
+<div class="stat-box">
+    <div class="stat-number">3% to 80%+</div>
+    <div class="stat-label">Range of dismissal rates across federal districts</div>
+</div>
+
+<figure class="map-figure">
+    <picture>
+        <img src="/animated_map_dismiss_rate.gif" alt="Animated map of Chapter 13 bankruptcy dismissal rates across all 94 federal judicial districts from 2008 to 2024, showing rates ranging from under 10 percent in northeastern districts to over 80 percent in parts of the South and Midwest" width="1200" height="800" loading="lazy">
+    </picture>
+    <figcaption>Chapter 13 dismissal rates by federal district, animated 2008-2024. Darker colors indicate higher dismissal rates. Data: FJC Integrated Database, 4.9 million cases.</figcaption>
+</figure>
+
+<h2>What this map shows</h2>
+
+<p>Each frame of the animation represents one year of Chapter 13 outcomes. The color of each federal district reflects the percentage of cases that were dismissed without the debtor receiving a discharge. Darker shading means more cases failed.</p>
+
+<p>The geographic pattern is persistent: districts in the South and parts of the Midwest consistently show higher dismissal rates than districts in the Northeast and West Coast. But the map also reveals shifts over time. Some districts have improved significantly, while others have gotten worse. The variation is not random. It reflects differences in local court culture, trustee practices, attorney quality, and economic conditions.</p>
+
+<p>A debtor filing Chapter 13 in one district may have a 90% chance of completing the plan. A debtor with identical finances filing in another district may have less than a 20% chance. The map makes this geographic lottery visible.</p>
+
+<div class="statute-box">
+    <div class="label">Static version</div>
+    <p style="margin-bottom:0">If the animation is not playing, your browser may not support animated GIFs. The image above shows the most recent year's data as a static snapshot.</p>
+</div>
+
+<h2>How to read the data</h2>
+
+<p>Dismissal rate is calculated as the number of Chapter 13 cases closed by dismissal divided by the total number of cases closed in that district for that year. Only cases with at least 3 years of maturity are included, since Chapter 13 plans typically run 3 to 5 years. Cases still pending are excluded to avoid undercounting.</p>
+
+<p>The underlying data comes from the <a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a>, which contains records for every federal bankruptcy case filed since 2008. The database is maintained by the Federal Judicial Center and is freely available to the public.</p>
+
+<h2>Explore the data</h2>
+
+<ul>
+    <li><a href="dashboard.html">District Dashboard</a> — Look up dismissal rates for any of the 94 federal districts</li>
+    <li><a href="chapter-13-failure-rate.html">Chapter 13 Failure Rate</a> — National statistics and what they mean</li>
+    <li><a href="chapter-13-success-rate-by-state.html">Success Rate by State</a> — Which districts have the best completion rates</li>
+    <li><a href="pro-se-bankruptcy-rate-map.html">Pro Se Rate Map</a> — Where debtors file without an attorney</li>
+    <li><a href="repeat-bankruptcy-filer-map.html">Repeat Filer Map</a> — Prior filing rates by district</li>
+</ul>
+
+<div class="footer">
+    <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="dashboard.html">Dashboard</a></p>
+    <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+    <p style="margin-top:8px">Last updated: March 2026</p>
+</div>
+
+</div>
+<footer style="text-align:center;padding:24px 0;font-size:13px;color:#9eaab6;border-top:1px solid #30363d;margin-top:2rem">
+    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">Open Source</a>
+    &nbsp;&middot;&nbsp; <a href="https://1328f.org">Research</a>
+    &nbsp;&middot;&nbsp; No personal data collected
+<br><span style="font-size:11px">This site provides general information only and does not constitute legal advice.</span>
+</footer>
+</body>
+</html>

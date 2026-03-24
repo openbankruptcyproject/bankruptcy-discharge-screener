@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RV60F9WDXN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeat Bankruptcy Filer Map — Prior Filing Rates by District</title>
+    <meta name="description" content="Animated maps showing repeat bankruptcy filing rates and volumes across 94 federal districts. See where debtors file multiple times and how prior filing history varies by region.">
+    <meta name="keywords" content="repeat bankruptcy filer, file bankruptcy again, prior bankruptcy filing rate, serial bankruptcy filer, bankruptcy refiling statistics, how many times can you file bankruptcy">
+    <link rel="canonical" href="https://1328f.com/repeat-bankruptcy-filer-map.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Repeat Bankruptcy Filer Map — Prior Filing Rates by District">
+    <meta property="og:description" content="Where do debtors file bankruptcy more than once? Animated maps of repeat filing rates across 94 federal districts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://1328f.com/repeat-bankruptcy-filer-map.html">
+    <meta property="og:image" content="https://1328f.com/animated_map_prior_rate.png">
+    <meta property="og:site_name" content="1328f.com">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Repeat Bankruptcy Filer Map — Prior Filing Rates by District">
+    <meta name="twitter:description" content="Animated maps of repeat bankruptcy filing rates and volumes across all 94 federal districts, 2008-2024.">
+    <meta name="twitter:image" content="https://1328f.com/animated_map_prior_rate.png">
+    <script type="application/ld+json">
+    [{
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://1328f.com/animated_map_prior_rate.gif",
+      "name": "Prior Bankruptcy Filing Rate Map by Federal District, 2008-2024",
+      "description": "Animated choropleth map showing the percentage of bankruptcy cases where the debtor had at least one prior filing, across all 94 federal judicial districts from 2008 to 2024.",
+      "creator": { "@type": "Organization", "name": "1328f.com" },
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },{
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://1328f.com/animated_map_repeat_volume.gif",
+      "name": "Repeat Bankruptcy Filing Volume Map by Federal District, 2008-2024",
+      "description": "Animated choropleth map showing the absolute volume of repeat bankruptcy filings across all 94 federal judicial districts from 2008 to 2024.",
+      "creator": { "@type": "Organization", "name": "1328f.com" },
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }]
+    </script>
+    <style>
+        :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #e6edf3; --text-muted: #9eaab6; --accent: #58a6ff; --green: #3fb950; --red: #f85149; --yellow: #e3a835; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 0 20px; }
+        .container { max-width: 760px; margin: 0 auto; padding: 40px 0 80px; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 { font-size: 32px; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+        .subtitle { color: var(--text-muted); font-size: 16px; margin-bottom: 32px; }
+        h2 { font-size: 22px; font-weight: 600; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        p { margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .statute-box { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 20px 24px; margin: 24px 0; border-radius: 6px; font-size: 15px; }
+        .statute-box .label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; }
+        .map-figure { margin: 24px 0; text-align: center; }
+        .map-figure img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+        .map-figure figcaption { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+        .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); text-align: center; }
+        .footer a { color: var(--accent); }
+        @media (max-width: 600px) { h1 { font-size: 24px; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="breadcrumb"><a href="index.html">1328f.com</a> &rsaquo; Maps &rsaquo; Repeat Filers</div>
+
+<h1>Repeat Bankruptcy Filer Map</h1>
+<p class="subtitle">Where debtors file more than once, and how repeat filing patterns vary across 94 federal districts.</p>
+
+<h2>Prior filing rate</h2>
+
+<p>The first map shows the percentage of cases in each district where the debtor had at least one prior bankruptcy filing. A high prior filing rate suggests that debtors in that district are cycling through the system repeatedly, often without completing a plan.</p>
+
+<figure class="map-figure">
+    <picture>
+        <img src="/animated_map_prior_rate.gif" alt="Animated map of prior bankruptcy filing rates across all 94 federal judicial districts from 2008 to 2024, showing the percentage of new cases where the debtor had previously filed bankruptcy, ranging from under 10 percent to over 50 percent" width="1200" height="800" loading="lazy">
+    </picture>
+    <figcaption>Prior filing rate by federal district, animated 2008-2024. Percentage of cases where the debtor had at least one previous bankruptcy filing. Data: FJC Integrated Database.</figcaption>
+</figure>
+
+<div class="statute-box">
+    <div class="label">Why repeat filing matters</div>
+    <p style="margin-bottom:0">Under 11 U.S.C. Section 1328(f), a debtor who received a Chapter 13 discharge within the past two years cannot receive another. Under Section 727(a)(8), a Chapter 7 discharge bars another for eight years. These waiting periods exist because Congress recognized that repeat filing without completion wastes court resources and harms debtors. The <a href="check.html">discharge bar screener</a> checks these waiting periods automatically.</p>
+</div>
+
+<h2>Repeat filing volume</h2>
+
+<p>The second map shows the absolute volume of repeat filings by district. Districts with both high filing volumes and high prior filing rates represent the largest concentrations of recycling debtors in the federal system.</p>
+
+<figure class="map-figure">
+    <picture>
+        <img src="/animated_map_repeat_volume.gif" alt="Animated map of repeat bankruptcy filing volumes across all 94 federal judicial districts from 2008 to 2024, showing the total number of cases filed by debtors with prior bankruptcy history" width="1200" height="800" loading="lazy">
+    </picture>
+    <figcaption>Repeat filing volume by federal district, animated 2008-2024. Total cases filed by debtors with prior bankruptcy history. Data: FJC Integrated Database.</figcaption>
+</figure>
+
+<p>The volume map reveals that repeat filing is concentrated in a relatively small number of high-volume districts. These districts often share characteristics: high Chapter 13 filing rates, high dismissal rates, and attorney practices that file large numbers of cases with low completion rates. The pattern suggests a system that is cycling the same debtors through repeated filings rather than achieving lasting relief.</p>
+
+<h2>Related maps</h2>
+
+<ul>
+    <li><a href="chapter-13-dismissal-rate-map.html">Dismissal Rate Map</a> — Chapter 13 failure rates by district</li>
+    <li><a href="pro-se-bankruptcy-rate-map.html">Pro Se Rate Map</a> — Self-represented filing rates</li>
+    <li><a href="bankruptcy-discharge-rate-map.html">Discharge Rate Map</a> — Prior discharge rates by district</li>
+    <li><a href="can-i-file-bankruptcy-again.html">Can I File Bankruptcy Again?</a> — Time limits and eligibility</li>
+    <li><a href="discharge-bar.html">Discharge Bar</a> — Federal waiting periods explained</li>
+</ul>
+
+<div class="footer">
+    <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="dashboard.html">Dashboard</a></p>
+    <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+    <p style="margin-top:8px">Last updated: March 2026</p>
+</div>
+
+</div>
+<footer style="text-align:center;padding:24px 0;font-size:13px;color:#9eaab6;border-top:1px solid #30363d;margin-top:2rem">
+    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">Open Source</a>
+    &nbsp;&middot;&nbsp; <a href="https://1328f.org">Research</a>
+    &nbsp;&middot;&nbsp; No personal data collected
+<br><span style="font-size:11px">This site provides general information only and does not constitute legal advice.</span>
+</footer>
+</body>
+</html>
