@@ -1,0 +1,10 @@
+# Allowlist for sensitive term false positives in public repo.
+# Format: filepath_glob|term
+# filepath_glob uses shell glob syntax (matched against relative path from repo root).
+# term is the exact blocklist entry that should be suppressed for matching files.
+# Lines starting with # are comments. Blank lines are ignored.
+
+# Public federal judge pages — these names overlap with blocklist entries
+# but refer to unrelated public judges, not case-specific individuals.
+judges/*|Pappas
+judges/*|Fink
