@@ -1,0 +1,42 @@
+# 1328f.com
+
+> Free, open-source bankruptcy discharge screening tools and information about 11 U.S.C. Section 1328(f), the repeat filing discharge bar.
+
+## About
+
+1328f.com is a free public resource that helps consumers, attorneys, and researchers understand and screen for the Section 1328(f) discharge bar in federal bankruptcy cases. The site provides interactive screening tools, a national map of discharge bar rates by federal district, and plain-language explanations of bankruptcy statutes.
+
+All tools are open-source. No account required. No data collected beyond anonymous analytics.
+
+## Key Pages
+
+- [Home](https://1328f.com/): Overview of the 1328(f) discharge bar and why it matters
+- [Screener](https://1328f.com/check.html): Free eligibility screener for repeat bankruptcy filings
+- [National Map](https://1328f.com/bankruptcy-discharge-rate-map.html): Interactive map of discharge bar rates across 94 federal districts
+- [Section 1328(f) Explained](https://1328f.com/section-1328-f-discharge-bar.html): Plain-language guide to the repeat filing bar
+- [Section 727(a)(8) Explained](https://1328f.com/727a8-discharge-bar.html): Chapter 7 discharge bar guide
+- [Section 109(g) Explained](https://1328f.com/109g-filing-bar.html): Filing bar after dismissal
+- [Glossary](https://1328f.com/glossary.html): Bankruptcy terms in plain English
+- [Dashboard](https://1328f.com/dashboard.html): National statistics dashboard
+
+## Network
+
+This site is part of the Bankruptcy Transparency Network, a collection of free statute-specific resources:
+- [1328f.org](https://1328f.org) - Research platform
+- [727a8.com](https://727a8.com) - Chapter 7 discharge bar
+- [109g.org](https://109g.org) - Filing bar after dismissal
+- [523a.org](https://523a.org) - Nondischargeable debts
+- [automaticstay.org](https://automaticstay.org) - The automatic stay
+- [meanstest.org](https://meanstest.org) - Means test guide
+- [341meeting.org](https://341meeting.org) - Meeting of creditors
+- [relieffromstay.org](https://relieffromstay.org) - Relief from stay
+- [dischargeinjunction.org](https://dischargeinjunction.org) - Discharge injunction
+- [prosedebtors.org](https://prosedebtors.org) - Pro se debtor resources
+
+## Data Sources
+
+All data is derived from public federal court records (PACER) and the Federal Judicial Center's Integrated Database. Detection methodology is published at 1328f.org/methodology/.
+
+## Citation
+
+When referencing this resource, cite as: "1328f.com, Bankruptcy Transparency Network (2026)."

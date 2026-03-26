@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://1328f.com/sitemap.xml
+
+# AI/LLM crawlers -- structured site summary at /llms.txt
+# https://1328f.com/llms.txt
