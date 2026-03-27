@@ -1,0 +1,27 @@
+PACER is the electronic filing system for every federal court in the United States. It was built in the 1990s and it looks like it. Every document filed in every federal case goes through PACER. Motions, orders, petitions, hearing notices, everything.
+
+It costs $0.10 per page to view anything. That doesn't sound like a lot until you realize that a single bankruptcy case can have 50-100 docket entries, each one linking to a multi-page PDF. Pulling the full record on one case can cost $15-30. If you're trying to research patterns across hundreds of cases, you're looking at hundreds of dollars. To read public records. Filed in public courts. Funded by taxpayers.
+
+PACER brought in over $150 million per year at its peak. For access to documents that are, by law, public records. There's been litigation about this for over a decade. The courts keep winning because the fee is technically authorized by statute, even though the original law said fees should only cover the cost of providing access, not generate a surplus. The courts have been running a profit center off public records for 25 years.
+
+Here's the part nobody talks about.
+
+Every single bankruptcy court in the country publishes a free, unauthenticated RSS feed. No login. No API key. No paywall. Just XML. The URL follows a predictable pattern across all 94 bankruptcy courts. Every new docket entry shows up in near-real-time. New cases filed, motions, orders, dismissals, discharges, hearing notices. The text of the entry, the case number, the timestamp. All of it.
+
+The feeds roll every 24 hours or so. If you don't poll and store the entries, they disappear. But if you set up a simple script to check the feed once or twice a day and dump everything into a database, you now have a permanent, growing record of every filing in whatever courts you're watching. For free. Forever.
+
+I've been doing this for a few months. Three courts, polled daily. The database is about 15MB. Every entry includes the case number, the docket text, the filing date, and enough metadata to cross-reference against other public data sources. The whole setup is a few hundred lines of Python using nothing but standard library modules. urllib fetches the XML, ElementTree parses it, sqlite3 stores it. No dependencies. Runs on Task Scheduler.
+
+What you can do with this data once you have it accumulating is where it gets interesting. You can track specific cases and get alerts when something new is filed. You can cross-reference an attorney's entire portfolio and watch their cases in real time. You can detect new filings the day they happen and screen them against public records for red flags. You can compute dismissal rates, time-to-dismissal, and outcome patterns across thousands of cases. All from the free feed. The only time you need to touch PACER and pay the $0.10/page is when you actually want to read a specific document.
+
+The thing that gets me is that these feeds aren't hidden. They're not a hack or an exploit or a loophole. The courts publish them intentionally as part of their e-government transparency mandate. There's just no documentation, no directory, and no advertising. The Administrative Office of the US Courts doesn't mention them anywhere prominent. The courts don't link to them from their homepages. You basically have to already know they exist to find them.
+
+Meanwhile, commercial legal research platforms charge hundreds to thousands per month for monitoring services that pull from these same feeds (among other sources) and repackage the data behind a subscription. Bloomberg Law, Lex Machina, RECAP/CourtListener. Some of them are great tools. But the raw data underneath is sitting there for free and has been for years.
+
+PACER itself was supposed to get a major overhaul. The courts announced a "next generation" system years ago. It's been delayed repeatedly. The current interface still uses CGI scripts from the early 2000s. The login now requires login.gov with MFA, which is fine for security but the underlying system is the same legacy infrastructure bolted to a modern auth layer.
+
+Free RECAP (a browser extension from Free Law Project) does great work by crowdsourcing document uploads so that once someone pays to view a document, it becomes free for everyone afterward. But that's a patch on a broken model, not a fix. The base assumption that citizens should pay per-page to read their own court records is the problem.
+
+94 bankruptcy courts. All publishing free RSS feeds. Exposed to anyone with a browser and a URL. Almost nobody outside of a handful of legal tech developers knows they exist. And the courts charge $0.10 a page for the same information in a different format.
+
+That's the state of public records access in the federal court system in 2026.

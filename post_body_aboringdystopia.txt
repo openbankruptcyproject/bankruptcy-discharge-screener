@@ -1,0 +1,15 @@
+The US federal court system makes over $150 million a year charging citizens $0.10 per page to read their own public court records. The system is called PACER. It was built in the 1990s and still runs on CGI scripts from the early 2000s. Every document filed in every federal case goes through it. Motions, orders, petitions, hearing notices. All of it behind a paywall.
+
+Pulling the full record on a single bankruptcy case can cost $15-30. If you're trying to research patterns across hundreds of cases, you're looking at hundreds of dollars. To read public records filed in public courts funded by taxpayers. There's been litigation about this for over a decade. A class action settlement in 2024 returned $100 million to users who were overcharged. The courts had been using the fee revenue to fund unrelated projects, which the law never authorized. They kept charging anyway.
+
+Here's the part that gets me. Every single bankruptcy court in the country quietly publishes a free RSS feed with every new docket entry. No login. No API key. No paywall. Just XML. The URL follows a predictable pattern across all 94 bankruptcy courts. Every new filing shows up in near-real-time. New cases, motions, orders, dismissals, discharges, hearing notices. The text of the entry, the case number, the timestamp.
+
+The feeds roll every 24 hours. If you don't catch them, they're gone. But if you poll them once a day and store the entries in a database, you have a permanent growing record of every filing in whatever courts you're watching. For free. Forever. I've been doing this for a few months. Three courts, polled daily. Database is about 15MB. The whole setup is a few hundred lines of Python.
+
+These feeds aren't hidden. They're not a hack or an exploit. The courts publish them intentionally as part of their e-government transparency mandate. There's just no documentation, no directory, and no advertising. The Administrative Office of the US Courts doesn't mention them anywhere prominent. You have to already know they exist to find them.
+
+Meanwhile, commercial legal research platforms charge hundreds to thousands per month for monitoring services that pull from these same feeds and repackage the data behind a subscription. The raw data is sitting there for free and has been for years.
+
+So the federal court system charges citizens to read public records, publishes the same data for free through a back channel nobody knows about, made $150 million a year doing it, got sued for overcharging, lost, and kept the system exactly the same.
+
+That's public records access in America in 2026.

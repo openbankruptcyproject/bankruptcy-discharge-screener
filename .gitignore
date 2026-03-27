@@ -6,7 +6,3 @@ __pycache__/
 *.pyc
 .env
 results/
-.sensitive_terms
-*.txt
-REDDIT_*
-freelaw_*

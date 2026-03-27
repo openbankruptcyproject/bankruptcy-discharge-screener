@@ -1,0 +1,15 @@
+YSK that before you hire a bankruptcy attorney, you can check their entire case history for free in about 10 minutes using a public federal database.
+
+Why YSK: Most people pick a bankruptcy attorney based on Google ads, a free consultation, and gut feeling. There's no reliable Yelp for lawyers. Google reviews are gamed. Avvo ratings are paid. The state bar only tells you if someone has been publicly disciplined, which is like checking if a restaurant got shut down by the health department. It only catches the worst of the worst.
+
+But the federal court system has a free public search tool called the PACER Case Locator at pcl.uscourts.gov. You create an account in about 2 minutes, search by attorney name, and it pulls up every bankruptcy case they've ever filed. The chapter, the filing date, and how the case ended. Dismissed, discharged, still open. All of it. You can download the results as a spreadsheet.
+
+What to look for: filter the outcomes column and count the dismissals versus the discharges. Chapter 13 cases fail a lot in general. National completion rates are around 33-40%. So even a good attorney will have plenty of dismissals. But there's a big gap between a 50% dismissal rate and an 85% dismissal rate. If you're looking at someone with 200 cases and 170 of them were tossed, that's not bad luck. That's a pattern.
+
+Other things that jump out: how many cases they file per month (2-3 is normal, 10+ is a volume operation), how fast cases get dismissed (if a bunch are dying at 3-6 months something is going wrong early), and whether the same clients keep showing up with the same attorney over and over.
+
+A dismissed bankruptcy is not free for the client. They still paid the retainer. Their credit still took the hit. If they were in Chapter 13, they might have been making payments for months before the case fell apart. Filing fees alone are $338 for Chapter 13. Attorney retainers run $3,500 to $5,000. That money is gone whether the case works or not.
+
+This is a screening tool, not a verdict. A high dismissal rate could mean the attorney takes on harder cases or practices in a tough district. Context matters. But if you're comparing two attorneys and one has a 45% dismissal rate and the other has an 80% dismissal rate, that's worth asking about in the consultation.
+
+The data has been public the whole time. Nobody tells people it exists. 10 minutes at pcl.uscourts.gov before you sign anything.

@@ -1,49 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RV60F9WDXN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RV60F9WDXN');
-</script>
-<script>
-document.addEventListener('click', function(e) {
-  var link = e.target.closest('a[href*="uscourts.gov"]');
-  if (link) {
-    gtag('event', 'outbound_click', {
-      event_category: 'credential_verification',
-      event_label: link.href,
-      page_path: location.pathname,
-      transport_type: 'beacon'
-    });
-  }
-});
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1328f.com - Free Bankruptcy Discharge Screener | 94 Districts, 391K+ Cases</title>
-  <meta name="description" content="Screen 391,951 bankruptcy cases across all 94 federal districts for Section 1328(f) discharge eligibility. Free, open-source, no login. Interactive national map.">
-  <link rel="canonical" href="https://1328f.com/">
-  <link rel="alternate" hreflang="en" href="https://1328f.com/">
-  <link rel="alternate" hreflang="es" href="https://1328f.com/index-es.html">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <!-- Open Graph -->
-  <meta property="og:title" content="1328f.com - Free Bankruptcy Discharge Screener | 94 Districts, 391K+ Cases">
-  <meta property="og:description" content="Screen 391,951 cases across all 94 federal districts for Section 1328(f) discharge eligibility. Free, open-source, no login.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://1328f.com/">
-  <meta property="og:image" content="https://1328f.com/og-image.png">
-  <meta property="og:site_name" content="1328f.com">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="1328f.com - Free Bankruptcy Discharge Screener | 391K+ Cases">
-  <meta name="twitter:description" content="Screen 391,951 cases across 94 federal districts for Section 1328(f) discharge eligibility. Free, open-source.">
-  <meta name="twitter:image" content="https://1328f.com/og-image.png">
+  <title>Bankruptcy Discharge Screener - National Map</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -54,38 +14,6 @@ document.addEventListener('click', function(e) {
     }
     a { color: #58a6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    a:focus-visible, button:focus-visible, th:focus-visible {
-      outline: 2px solid #58a6ff;
-      outline-offset: 2px;
-    }
-    .signup-form input[type="email"]:focus-visible {
-      outline: 2px solid #58a6ff;
-      outline-offset: -1px;
-    }
-    .filter-info button:focus-visible { outline: 2px solid #58a6ff; outline-offset: 2px; }
-    .vol-close:focus-visible { outline: 2px solid #58a6ff; outline-offset: 2px; }
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      z-index: 9999;
-      padding: 1rem;
-      background: #238636;
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .skip-link:focus {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      width: auto;
-      height: auto;
-      overflow: visible;
-    }
     code {
       background: #161b22;
       padding: 0.15em 0.4em;
@@ -106,7 +34,7 @@ document.addEventListener('click', function(e) {
       margin-bottom: 0.5rem;
     }
     header .subtitle {
-      color: #9eaab6;
+      color: #8b949e;
       font-size: 1rem;
       max-width: 700px;
       margin: 0 auto;
@@ -136,7 +64,7 @@ document.addEventListener('click', function(e) {
     }
     .stat .label {
       font-size: 0.8rem;
-      color: #9eaab6;
+      color: #8b949e;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -182,7 +110,7 @@ document.addEventListener('click', function(e) {
       filter: brightness(1.3);
     }
     #us-map .state-path.screened { fill: #238636; }
-    #us-map .state-path.cases-loaded { fill: #e3a835; }
+    #us-map .state-path.cases-loaded { fill: #d29922; }
     #us-map .state-path.f2-data { fill: #1a3a5c; }
     #us-map .state-path.no-data { fill: #21262d; }
     #us-map .state-path.active {
@@ -191,7 +119,7 @@ document.addEventListener('click', function(e) {
       filter: brightness(1.4);
     }
     #us-map .state-label {
-      fill: #848d97;
+      fill: #484f58;
       font-size: 11px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-weight: 600;
@@ -201,8 +129,8 @@ document.addEventListener('click', function(e) {
     }
     #us-map .state-label.on-screened { fill: #ffffff; }
     #us-map .state-label.on-loaded { fill: #000000; }
-    #us-map .state-label.on-f2data { fill: #93c5fd; }
-    #us-map .state-label.on-nodata { fill: #848d97; }
+    #us-map .state-label.on-f2data { fill: #58a6ff; }
+    #us-map .state-label.on-nodata { fill: #484f58; }
 
     /* Tooltip */
     .map-tooltip {
@@ -225,7 +153,7 @@ document.addEventListener('click', function(e) {
       font-size: 0.9rem;
     }
     .map-tooltip .tt-detail {
-      color: #9eaab6;
+      color: #8b949e;
       margin-top: 2px;
     }
 
@@ -235,7 +163,7 @@ document.addEventListener('click', function(e) {
       gap: 1.5rem;
       margin-top: 0.75rem;
       font-size: 0.8rem;
-      color: #9eaab6;
+      color: #8b949e;
     }
     .map-legend span {
       display: flex;
@@ -249,7 +177,7 @@ document.addEventListener('click', function(e) {
       display: inline-block;
     }
     .legend-dot.green { background: #238636; }
-    .legend-dot.yellow { background: #e3a835; }
+    .legend-dot.yellow { background: #d29922; }
     .legend-dot.blue { background: #1a3a5c; }
     .legend-dot.gray { background: #21262d; border: 1px solid #30363d; }
 
@@ -257,7 +185,7 @@ document.addEventListener('click', function(e) {
     .filter-info {
       text-align: center;
       padding: 0.75rem;
-      color: #9eaab6;
+      color: #8b949e;
       font-size: 0.9rem;
       min-height: 2.5rem;
     }
@@ -305,7 +233,7 @@ document.addEventListener('click', function(e) {
     .no-data {
       text-align: center;
       padding: 2rem;
-      color: #848d97;
+      color: #484f58;
       font-style: italic;
     }
 
@@ -352,7 +280,7 @@ document.addEventListener('click', function(e) {
       margin-bottom: 0.5rem;
     }
     .step p {
-      color: #9eaab6;
+      color: #8b949e;
       font-size: 0.9rem;
     }
 
@@ -373,7 +301,7 @@ document.addEventListener('click', function(e) {
       margin-bottom: 0.25rem;
     }
     .volunteer-panel .vol-subtitle {
-      color: #9eaab6;
+      color: #8b949e;
       font-size: 0.9rem;
       margin-bottom: 1.5rem;
     }
@@ -383,7 +311,7 @@ document.addEventListener('click', function(e) {
       right: 1rem;
       background: none;
       border: 1px solid #30363d;
-      color: #9eaab6;
+      color: #8b949e;
       width: 28px;
       height: 28px;
       border-radius: 4px;
@@ -426,7 +354,7 @@ document.addEventListener('click', function(e) {
       flex-shrink: 0;
     }
     .vol-step p {
-      color: #9eaab6;
+      color: #8b949e;
       font-size: 0.88rem;
       margin-left: 32px;
     }
@@ -452,7 +380,7 @@ document.addEventListener('click', function(e) {
       top: 50%;
       transform: translateY(-50%);
       font-size: 0.7rem;
-      color: #848d97;
+      color: #484f58;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     .vol-cmd.copied::after { content: 'copied!'; color: #238636; }
@@ -482,69 +410,11 @@ document.addEventListener('click', function(e) {
     }
     .screen-btn:hover { background: #2ea043; }
 
-    /* Email signup */
-    .signup-section {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .signup-section h3 {
-      color: #f0f6fc;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-    .signup-section p {
-      color: #9eaab6;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-    .signup-form {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .signup-form input[type="email"] {
-      padding: 0.6rem 1rem;
-      border: 1px solid #30363d;
-      border-radius: 6px;
-      background: #0d1117;
-      color: #c9d1d9;
-      font-size: 0.95rem;
-      width: 280px;
-      outline: none;
-    }
-    .signup-form input[type="email"]:focus {
-      border-color: #58a6ff;
-    }
-    .signup-form button {
-      padding: 0.6rem 1.2rem;
-      background: #238636;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      font-weight: 500;
-    }
-    .signup-form button:hover {
-      background: #2ea043;
-    }
-    .signup-note {
-      color: #848d97;
-      font-size: 0.75rem;
-      margin-top: 0.75rem;
-    }
-
     /* Footer */
     footer {
       text-align: center;
       padding: 2rem;
-      color: #848d97;
+      color: #484f58;
       font-size: 0.85rem;
       border-top: 1px solid #21262d;
     }
@@ -557,7 +427,7 @@ document.addEventListener('click', function(e) {
     }
     .changelog summary {
       cursor: pointer;
-      color: #9eaab6;
+      color: #8b949e;
       font-size: 0.95rem;
       padding: 0.5rem 0;
     }
@@ -573,12 +443,12 @@ document.addEventListener('click', function(e) {
       font-size: 0.9rem;
     }
     .changelog .version-date {
-      color: #848d97;
+      color: #484f58;
       font-size: 0.8rem;
       margin-left: 0.5rem;
     }
     .changelog .version p {
-      color: #9eaab6;
+      color: #8b949e;
       font-size: 0.85rem;
       margin: 0.25rem 0;
     }
@@ -593,226 +463,8 @@ document.addEventListener('click', function(e) {
       #us-map .state-label { font-size: 8px; }
     }
   </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Screener",
-      "item": "https://1328f.com/"
-    }
-  ]
-}
-</script>
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Section 1328(f) Discharge Bar Screener",
-  "url": "https://1328f.com",
-  "description": "Free tool to screen bankruptcy cases for Section 1328(f) discharge eligibility bars using 4.9 million public court records",
-  "publisher": {
-    "@type": "Organization",
-    "name": "1328f.org",
-    "url": "https://1328f.org"
-  },
-  "inLanguage": ["en", "es"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Section 1328(f) Discharge Bar Screener",
-  "description": "Free, open-source tool that screens bankruptcy cases for Section 1328(f) discharge eligibility bars. Runs entirely in the browser using sql.js to query 4.9 million FJC records. No server, no login, no personal data collected.",
-  "url": "https://1328f.com",
-  "applicationCategory": "LegalService",
-  "applicationSubCategory": "Bankruptcy Screening Tool",
-  "operatingSystem": "Any (web browser)",
-  "browserRequirements": "Modern web browser with JavaScript enabled (Chrome, Firefox, Safari, Edge)",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "featureList": [
-    "Screen any federal bankruptcy case for Section 1328(f) discharge bars",
-    "Cross-reference prior filings across 94 federal districts",
-    "Client-side processing via sql.js — no data sent to any server",
-    "Open-source (GitHub)",
-    "No account or login required",
-    "No personal information collected"
-  ],
-  "author": {
-    "@type": "Organization",
-    "name": "1328f.org",
-    "url": "https://1328f.org"
-  },
-  "isAccessibleForFree": true,
-  "inLanguage": ["en", "es"],
-  "screenshot": "https://1328f.org/og-image.png"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "1328f.org",
-  "alternateName": "1328(f) Research Project",
-  "url": "https://1328f.org",
-  "logo": "https://1328f.org/og-image.png",
-  "description": "Independent research organization analyzing consumer bankruptcy outcomes using public federal court data. Maintains open-source screening tools and publishes empirical reports on Section 1328(f) enforcement, attorney performance, and systemic patterns in bankruptcy case outcomes.",
-  "foundingDate": "2026",
-  "sameAs": [
-    "https://github.com/ilikemath9999/bankruptcy-discharge-screener",
-    "https://1328f.com"
-  ],
-  "knowsAbout": [
-    "Bankruptcy law",
-    "Section 1328(f)",
-    "PACER",
-    "Federal Judicial Center",
-    "Consumer bankruptcy",
-    "Attorney performance metrics",
-    "Discharge bar enforcement"
-  ],
-  "publishingPrinciples": "https://1328f.org/methodology/"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I file bankruptcy again?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, but federal law imposes waiting periods between filings. Chapter 7 after Chapter 7 requires 8 years. Chapter 13 after Chapter 13 requires 2 years. Chapter 7 after Chapter 13 requires 6 years. Chapter 13 after Chapter 7 requires 4 years. These are measured from filing date to filing date. Use our free eligibility screener at 1328f.com to check your specific situation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long between bankruptcies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The waiting period depends on the chapter combination. The shortest is 2 years (Chapter 13 to Chapter 13) and the longest is 8 years (Chapter 7 to Chapter 7). These periods are set by Sections 727(a)(8), 727(a)(9), and 1328(f) of the Bankruptcy Code. Filing before the waiting period expires means the court must deny your discharge."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a bankruptcy discharge bar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A discharge bar is a statutory provision that prevents a bankruptcy court from granting a discharge. The three main discharge bars are Section 727(a)(8) (8-year bar on Chapter 7 after Chapter 7), Section 727(a)(9) (6-year bar on Chapter 7 after Chapter 13), and Section 1328(f) (bars on Chapter 13 discharge within 4 years of a Chapter 7 or 2 years of a Chapter 13). Courts are supposed to verify eligibility before granting discharge, but data shows 391,951 cases received discharge with zero verification."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the Chapter 13 failure rate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nationally, approximately 48% of Chapter 13 bankruptcy cases are dismissed before the debtor receives a discharge. Rates vary dramatically by district -- from under 25% in some districts to over 80% in others. Common reasons include inability to maintain plan payments, failure to file required documents, and conversion to Chapter 7. See district-level data at 1328f.com."
-      }
-    }
-  ]
-}
-</script>
 </head>
 <body>
-<a href="#data-table" class="skip-link">Skip to data table</a>
-
-<style>
-#site-nav{background:#0d1117;border-bottom:1px solid #30363d;padding:0.5rem 1rem;text-align:center;font-size:0.78rem;line-height:1.9}
-#site-nav a{margin:0 0.3rem}
-#site-nav .sep{color:#30363d;margin:0 0.25rem}
-#site-nav .nav-label{color:#f0f6fc;margin:0 0.4rem;font-weight:700}
-#site-nav .nav-label:first-child{margin-right:0.4rem}
-.nav-toggle{display:none;background:none;border:1px solid #30363d;color:#c9d1d9;font-size:1.2rem;padding:0.4rem 0.75rem;border-radius:4px;cursor:pointer;line-height:1}
-.nav-toggle:focus-visible{outline:2px solid #58a6ff;outline-offset:2px}
-.nav-links{display:inline}
-@media(max-width:768px){
-.nav-toggle{display:inline-block;margin:0.25rem 0}
-.nav-links{display:none;text-align:left;padding:0.5rem 0}
-.nav-links.open{display:block}
-.nav-links a{display:block;padding:0.6rem 1rem;margin:0;font-size:0.9rem;min-height:44px;line-height:1.6;border-bottom:1px solid #21262d}
-.nav-links a:hover,.nav-links a:focus{background:#161b22}
-.nav-links .sep{display:none}
-.nav-links br{display:none}
-.nav-links .nav-label{display:block;padding:0.5rem 1rem 0.2rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#9eaab6;margin:0}
-}
-</style>
-<nav id="site-nav" aria-label="Site navigation">
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">&#9776; Menu</button>
-  <div class="nav-links" id="nav-links">
-<strong class="nav-label">Tools:</strong>
-  <a href="check.html">Eligibility Checker</a>
-  <a href="compare.html">Compare All Bars</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="check-attorney.html">Check Attorney</a>
-  <a href="timeline.html">Timeline</a>
-  <span class="sep">|</span>
-  <strong class="nav-label">Learn:</strong>
-  <a href="explainer.html">1328(f) Explained</a>
-  <a href="discharge-bar.html">Discharge Bar</a>
-  <a href="727a8-discharge-bar.html">727(a)(8) Bar</a>
-  <a href="109g-filing-bar.html">109(g) Bar</a>
-  <a href="can-i-file-bankruptcy-again.html">Can I File Again?</a>
-  <a href="how-long-between-bankruptcies.html">How Long Between?</a>
-  <span class="sep">|</span>
-  <a href="chapter-7.html">Ch. 7</a>
-  <a href="chapter-11.html">Ch. 11</a>
-  <a href="chapter-12.html">Ch. 12</a>
-  <a href="chapter-13.html">Ch. 13</a>
-  <span class="sep">|</span>
-  <strong class="nav-label">Statutes:</strong>
-  <a href="section-362-automatic-stay.html">&sect;362</a>
-  <a href="section-506-secured-claims.html">&sect;506</a>
-  <a href="section-523-nondischargeable-debts.html">&sect;523</a>
-  <a href="section-727-chapter-7-discharge.html">&sect;727</a>
-  <a href="section-1325-plan-confirmation.html">&sect;1325</a>
-  <a href="section-341-meeting-of-creditors.html">&sect;341</a>
-  <a href="section-524-discharge-injunction.html">&sect;524</a>
-  <a href="section-547-preferences.html">&sect;547</a>
-  <a href="section-548-fraudulent-transfers.html">&sect;548</a>
-  <a href="section-707-chapter-7-dismissal.html">&sect;707</a>
-  <a href="section-1141-chapter-11-discharge.html">&sect;1141</a>
-  <a href="section-1322-plan-contents.html">&sect;1322</a>
-  <br>
-  <strong class="nav-label">Browse:</strong> <a href="/districts/">Districts</a>
-  <a href="/states/">States</a>
-  <a href="/judges/">Judges</a>
-  <span class="sep">|</span>
-  <strong class="nav-label">Data:</strong>
-  <a href="chapter-13-failure-rate.html">Failure Rates</a>
-  <a href="chapter-13-success-rate-by-state.html">Success by State</a>
-  <a href="caselaw.html">Case Law</a>
-  <span class="sep">|</span>
-  <strong class="nav-label">For:</strong>
-  <a href="for-debtors.html">Debtors</a>
-  <a href="for-attorneys.html">Attorneys</a>
-  <a href="for-trustees.html">Trustees</a>
-  <a href="for-judges.html">Judges</a>
-  <a href="for-researchers.html">Researchers</a>
-  <span class="sep">|</span>
-  <a href="glossary.html">Glossary</a>
-  <a href="before-you-file.html">Before You File</a>
-  <a href="reading.html">Reading List</a>
-  <a href="bankruptcy-myths.html">Myths</a>
-  <a href="bankruptcy-concealment.html">Concealment</a>
-  <span class="sep">|</span>
-  <a href="https://1328f.org/support/" style="color:#238636;font-weight:600">Support This Research</a>
-  
-  <span class="sep">|</span>
-  <a href="index-es.html" class="lang-toggle" hreflang="es" style="font-weight:600">Español</a>
-</div>
-</nav>
-<script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
 
 <header>
   <h1>Bankruptcy Discharge Screener</h1>
@@ -823,8 +475,6 @@ document.addEventListener('click', function(e) {
     <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Volunteer Guide</a>
   </p>
 </header>
-
-
 
 <div class="stats-bar">
   <div class="stat">
@@ -849,19 +499,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 
-<div style="background:linear-gradient(135deg,#0d2137,#122a44);border:1px solid #1f4068;border-radius:6px;padding:1rem 1.5rem;margin:0 auto 1.5rem;max-width:900px;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap">
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"/></svg>
-  <span style="color:#f0f6fc;font-size:0.9rem"><strong>Cited by the federal judiciary</strong> &mdash; This tool's data was accepted by the Advisory Committee on Bankruptcy Rules as <a href="https://www.uscourts.gov/rules-policies/records-and-archives-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a></span>
-</div>
-
 <div class="container">
 
   <div class="map-section">
     <h2 class="section-title">Coverage</h2>
     <div class="svg-map-container">
-      <svg id="us-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-label="Interactive map of United States showing bankruptcy screening status by state. Click a state to filter the data table.">
-        <title>Bankruptcy case screening map by state</title>
-        <desc>States are colored by screening status: green for screened, yellow for cases loaded, blue for filing data available, gray for no data yet.</desc>
+      <svg id="us-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
         <path id="HI" class="state-path" d="M233,519.3L235,515.7L237.2,515.4L237.6,516.2L235.5,519.3L233,519.3zM243.2,515.5L249.4,518.1L251.5,517.8L253.1,513.9L252.4,510.5L248.2,510L244.2,511.8L243.2,515.5zM273.9,525.6L277.7,531.1L280.1,530.7L281.2,530.3L282.7,531.5L286.4,531.4L287.4,529.9L284.4,528.2L282.5,524.4L280.4,520.9L274.6,523.8L273.9,525.6zM294.1,534.5L295.4,532.5L300.1,533.5L300.8,533L306.9,533.6L306.6,534.9L304,536.4L299.6,536.1L294.1,534.5zM299.5,539.6L301.4,543.5L304.5,542.4L304.8,540.8L303.2,538.7L299.5,538.3L299.5,539.6zM306.4,538.5L308.7,535.6L313.4,538L317.7,539.1L322.1,541.9L322.1,543.8L318.6,545.6L313.7,546.6L311.3,545.1L306.4,538.5zM323.1,554L324.7,552.7L328.1,554.3L335.7,557.9L339.1,560L340.7,562.4L342.6,566.8L346.7,569.4L346.4,570.7L342.5,573.9L338.3,575.4L336.8,574.7L333.8,576.5L331.3,579.7L329.1,582.6L327.3,582.5L323.7,579.9L323.4,575.4L324.1,572.9L322.4,567.3L320.3,565.5L320.2,562.9L322.4,561.9L324.5,558.9L325,557.9L323.4,556.1L323.1,554z"/>
         <path id="AK" class="state-path" d="M158,453.6L157.7,539L159.3,540L162.4,540.1L163.8,539L166.4,539L166.6,541.9L173.5,548.7L174,551.3L177.4,549.3L178.1,549.2L178.4,546.1L179.9,544.5L181,544.3L182.9,542.9L186,545L186.6,547.9L188.6,549L189.7,551.4L193.6,553.2L197,559.2L199.7,563.1L202,565.8L203.5,569.5L208.5,571.3L213.6,573.4L214.6,577.8L215.1,580.9L214.1,584.2L212.3,586.5L210.7,585.7L209.3,582.6L206.5,581.2L204.7,580L203.9,580.9L205.4,583.6L205.6,587.3L204.4,587.8L202.5,585.9L200.4,584.6L200.9,586.2L202.2,588L201.4,588.8 C 201.4,588.8 200.5,588.5 200.1,587.8 C 199.6,587.2 198,584.4 198,584.4L197,582.1 C 197,582.1 196.7,583.4 196,583.1 C 195.4,582.8 194.7,581.7 194.7,581.7L196.5,579.7L195,578.3L195,573.3L194.2,573.3L193.4,576.6L192.3,577.1L191.3,573.4L190.7,569.7L189.9,569.2L190.2,574.9L190.2,576L188.7,574.7L185.2,568.7L183.1,568.2L182.4,564.5L180.8,561.6L179.2,560.5L179.2,558.2L181.3,556.9L180.8,556.6L178.2,557.2L174.8,554.8L172.3,551.9L167.4,549.3L163.4,546.7L164.7,543.5L164.7,541.9L162.9,543.5L160,544.6L156.2,543.5L150.6,541.1L145.1,541.1L144.4,541.6L138,537.7L135.9,537.4L133.1,531.5L129.6,531.9L126,533.3L126.5,537.9L127.6,534.9L128.6,535.3L127.1,539.6L130.4,536.9L131,538.5L127.1,542.9L125.9,542.5L125.4,540.6L124.1,539.8L122.8,540.9L120,539.1L117,541.2L115.2,543.3L111.8,545.4L107.1,545.3L106.6,543.2L110.3,542.5L110.3,541.2L108.1,540.6L109,538.2L111.3,534.3L111.3,532.5L111.5,531.7L115.8,529.4L116.8,530.7L119.6,530.7L118.3,528.2L114.5,527.8L109.5,530.6L107.1,534L105.3,536.6L104.2,538.8L100,540.3L96.9,542.9L96.6,544.5L98.9,545.4L99.7,547.6L96.9,550.8L90.5,555L82.7,559.2L80.6,560.3L75.3,561.5L69.9,563.7L71.7,565L70.2,566.5L69.8,567.6L67,566.6L63.8,566.8L63,569.1L62,569.1L62.3,566.6L58.8,567.9L55.9,568.9L52.5,567.6L49.6,569.5L46.3,569.5L44.2,570.8L42.6,571.6L40.5,571.3L37.9,570.2L35.6,570.8L34.7,571.8L33.1,570.7L33.1,568.7L36.1,567.4L42.4,568.1L46.8,566.5L48.9,564.4L51.8,563.7L53.6,562.9L56.3,563.1L58,564.4L58.9,564L61.2,561.3L64.3,560.3L67.7,559.7L69,559.4L69.6,559.8L70.4,559.8L71.7,556.1L75.7,554.7L77.7,550.9L79.9,546.4L81.6,545L81.9,542.4L80.3,543.7L76.9,544.3L76.2,541.9L74.9,541.6L74,542.5L73.8,545.4L72.3,545.3L70.9,539.5L69.6,540.8L68.5,540.3L68.1,538.3L64.1,538.5L62,539.6L59.4,539.3L60.9,537.9L61.4,535.3L60.7,533.3L62.2,532.4L63.5,532.2L62.8,530.4L62.8,526L61.8,525.1L61,526.5L54.9,526.5L53.4,525.2L52.8,521.4L50.7,517.8L50.7,516.8L52.8,516L52.9,513.9L54.1,512.8L53.3,512.3L52,512.8L50.8,510L51.8,505L56.3,501.8L58.9,500.2L60.9,496.5L63.6,495.2L66.2,496.3L66.5,498.7L69,498.4L72.2,496L73.8,496.6L74.8,497.3L76.4,497.3L78.7,496L79.5,491.6 C 79.5,491.6 79.8,488.7 80.4,488.2 C 81.1,487.7 81.4,487.3 81.4,487.3L80.3,485.3L77.7,486.1L74.4,486.9L72.5,486.4L69,484.7L63.9,484.5L60.4,480.8L60.9,476.9L61.5,474.5L59.4,472.7L57.5,469L58,468.2L64.7,467.7L66.8,467.7L67.8,468.7L68.5,468.7L68.3,467L72.2,466.4L74.8,466.7L76.2,467.9L74.8,470L74.3,471.4L77,473L82,474.8L83.8,473.8L81.6,469.5L80.6,466.2L81.6,465.4L78.2,463.5L77.7,462.4L78.2,460.7L77.4,456.9L74.4,452.2L72,448L74.9,446L78.2,446L79.9,446.7L84.1,446.5L87.9,443L89,439.9L92.7,437.5L94.3,438.4L97.1,437.8L100.8,435.7L101.9,435.5L102.9,436.3L107.4,436.2L110.2,433.1L111.3,433.1L114.9,435.5L116.8,437.6L116.3,438.8L117,439.9L118.6,438.3L122.5,438.6L122.8,442.3L124.7,443.8L131.8,444.4L138.1,448.6L139.6,447.6L144.8,450.2L146.9,449.6L148.8,448.8L153.7,450.7L158,453.6zM42.9,482.6L45,487.9L44.9,488.9L42,488.5L40.2,484.5L38.4,483L36,483L35.8,480.5L37.6,478L38.7,480.5L40.2,481.9L42.9,482.6zM40.3,516L44.1,516.8L47.8,517.8L48.6,518.8L47,522.5L43.9,522.3L40.5,518.8L40.3,516zM19.6,502L20.8,504.5L21.9,506.2L20.8,507L18.7,503.9L18.7,502L19.6,502zM5.9,575L9.3,572.8L12.7,571.8L15.3,572.1L15.8,573.7L17.7,574.2L19.6,572.3L19.3,570.7L22.1,570L25,572.6L23.8,574.4L19.5,575.5L16.7,575L13,573.9L8.7,575.4L7,575.7L5.9,575zM54.9,570.5L56.5,572.4L58.6,570.8L57.2,569.5L54.9,570.5zM57.8,573.6L58.9,571.3L61,571.6L60.2,573.6L57.8,573.6zM81.4,571.6L82.9,573.4L83.8,572.3L83,570.3L81.4,571.6zM90.1,559.2L91.3,565L94.2,565.8L99.2,562.9L103.5,560.3L101.9,557.9L102.4,555.5L100.3,556.8L97.4,556L99,554.8L101,555.6L104.8,553.9L105.3,552.4L102.9,551.6L103.7,549.7L101,551.6L96.3,555.1L91.4,558.1L90.1,559.2zM132.5,539.3L134.9,537.9L133.9,536.1L132.2,537L132.5,539.3z"/>
         <path id="FL" class="state-path" d="M759.8,439.1L762,446.4L765.8,456.2L771.1,465.5L774.8,471.8L779.7,477.3L783.7,481L785.3,484L784.2,485.3L783.4,486.5L786.3,494L789.2,496.9L791.8,502.2L795.3,508L799.9,516.3L801.2,523.9L801.7,535.9L802.3,537.6L802,541L799.5,542.3L799.9,544.3L799.2,546.2L799.5,548.6L800,550.6L797.3,553.8L794.2,555.3L790.3,555.4L788.9,557L786.5,558L785.2,557.5L784,556.5L783.7,553.6L782.9,550.2L779.5,545.1L775.9,542.8L772.1,542.5L771.3,543.8L768.2,539.4L767.5,535.9L765,531.8L763.2,530.7L761.6,532.8L759.8,532.5L757.7,527.4L754.8,523.6L751.9,518.2L749.3,515.2L745.7,511.4L747.8,509L751.1,503.5L750.9,501.9L746.4,500.9L744.7,501.6L745.1,502.2L747.7,503.2L746.2,507.7L745.4,508.2L743.6,504.2L742.3,499.3L742,496.6L743.5,491.9L743.5,482.3L740.4,478.6L739.1,475.6L733.9,474.3L732,473.6L730.4,471L727,469.4L725.8,466L723.1,465L720.7,461.3L716.5,459.9L713.5,458.4L711,458.4L706.9,459.2L706.8,461.2L707.6,462.1L707.1,463.3L704,463.1L700.3,466.7L696.7,468.6L692.9,468.6L689.6,469.9L689.3,467.1L687.7,465.2L684.8,464.1L683.2,462.6L675.1,458.7L667.5,457L663.1,457.6L657.1,458.1L651.1,460.2L647.7,460.8L647.4,452.8L644.8,450.8L643.1,449L643.4,446L653.6,444.7L679.1,441.8L685.9,441.1L691.3,441.4L693.9,445.3L695.4,446.7L703.5,447.2L714.3,446.6L735.8,445.3L741.3,444.6L746.4,444.8L746.8,447.7L749,448.6L749.3,443.9L747.7,439.8L749,438.3L754.6,438.8L759.8,439.1zM772.3,571.5L774.7,570.9L776,570.6L777.5,568.3L779.8,566.6L781.1,567.1L782.8,567.5L783.2,568.5L779.7,569.7L775.5,571.2L773.2,572.4L772.3,571.5zM785.8,566.5L787,567.5L789.8,565.4L795.1,561.2L798.8,557.4L801.3,550.7L802.3,549L802.5,545.6L801.7,546.1L800.8,548.9L799.3,553.6L796.1,558.8L791.7,563L788.3,565L785.8,566.5z"/>
@@ -934,14 +577,14 @@ document.addEventListener('click', function(e) {
       <table id="data-table">
         <thead>
           <tr>
-            <th data-col="court_id" scope="col">District <span class="arrow"></span></th>
-            <th data-col="state" scope="col">State <span class="arrow"></span></th>
-            <th data-col="total_filed" data-type="num" scope="col">Total Filed <span class="arrow"></span></th>
-            <th data-col="dismiss_rate" data-type="num" scope="col">Dismiss % <span class="arrow"></span></th>
-            <th data-col="prior_filers" data-type="num" scope="col">Prior Filers <span class="arrow"></span></th>
-            <th data-col="prior_discharge_rate" data-type="num" scope="col">Prior Disch. % <span class="arrow"></span></th>
-            <th data-col="prior_discharged" data-type="num" scope="col">Unchecked <span class="arrow"></span></th>
-            <th data-col="screening_status" scope="col">Verified <span class="arrow"></span></th>
+            <th data-col="court_id">District <span class="arrow"></span></th>
+            <th data-col="state">State <span class="arrow"></span></th>
+            <th data-col="total_filed" data-type="num">Total Filed <span class="arrow"></span></th>
+            <th data-col="dismiss_rate" data-type="num">Dismiss % <span class="arrow"></span></th>
+            <th data-col="prior_filers" data-type="num">Prior Filers <span class="arrow"></span></th>
+            <th data-col="prior_discharge_rate" data-type="num">Prior Disch. % <span class="arrow"></span></th>
+            <th data-col="prior_discharged" data-type="num">Unchecked <span class="arrow"></span></th>
+            <th data-col="screening_status">Verified <span class="arrow"></span></th>
           </tr>
         </thead>
         <tbody id="table-body"></tbody>
@@ -953,8 +596,8 @@ document.addEventListener('click', function(e) {
     </div>
   </div>
 
-  <div class="volunteer-panel" id="volunteer-panel" role="dialog" aria-modal="true" aria-labelledby="vol-title">
-    <button class="vol-close" id="vol-close" type="button" aria-label="Close screening panel">&times;</button>
+  <div class="volunteer-panel" id="volunteer-panel">
+    <button class="vol-close" id="vol-close">&times;</button>
     <h2 id="vol-title">Screen: District Name</h2>
     <div class="vol-subtitle" id="vol-subtitle">Court code &middot; Annual Ch.13 filings</div>
     <div class="vol-steps">
@@ -988,7 +631,7 @@ cd bankruptcy-discharge-screener</div>
 
   <div class="contribute">
     <h2>Screen a District</h2>
-    <p style="color:#9eaab6;margin-bottom:1rem;">Click any blue district in the table above to get step-by-step instructions, or follow the quick-start below.</p>
+    <p style="color:#8b949e;margin-bottom:1rem;">Click any blue district in the table above to get step-by-step instructions, or follow the quick-start below.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -1008,27 +651,6 @@ cd bankruptcy-discharge-screener</div>
     </div>
   </div>
 
-  <div class="contribute" style="border-color: #1a3a5c;">
-    <h2>Why This Exists</h2>
-    <p style="color:#9eaab6;">Federal bankruptcy courts are required to verify discharge eligibility before entering discharge orders. In practice, they don't. The procedural rule governing discharges — <a href="https://www.uscourts.gov/sites/default/files/document/25-bk-n_suggestion_from_hon._rebeccca_connelly_and_hon._ben_kahn_-_rule_4004.pdf">Fed. R. Bankr. P. 4004</a> — currently forces courts to grant discharges when no one files a timely objection, even if the debtor is categorically ineligible under a <a href="discharge-bar.html" style="color:#58a6ff">discharge bar</a> — Sections 727(a)(8), 727(a)(9), or 1328(f).</p>
-    <p style="color:#9eaab6;">In <em>In re Filice</em>, 580 B.R. 259 (Bankr. E.D. Cal. 2018), Judge Christopher Klein found this conflict head-on: a debtor received two Chapter 7 discharges within eight years because the clerk followed Rule 4004(c) literally. The error went undetected for six years. Judge Klein held that Rule 4004 is invalid to the extent it conflicts with the Bankruptcy Code, and vacated the discharge under Rule 60(a).</p>
-    <p style="color:#9eaab6;">In November 2025, Judges Rebecca B. Connelly and Benjamin Kahn submitted <a href="https://www.uscourts.gov/sites/default/files/document/25-bk-n_suggestion_from_hon._rebeccca_connelly_and_hon._ben_kahn_-_rule_4004.pdf">Rules Suggestion 26-BK-3</a> proposing amendments to Rule 4004 that would require courts to screen for discharge eligibility as a ministerial duty — the same thing this tool does. The Advisory Committee on Bankruptcy Rules is currently considering the proposal.</p>
-    <p style="color:#9eaab6;">This screener exists because the rule hasn't been fixed yet. Until it is, anyone with a free PACER account can check what the courts aren't checking.</p>
-  </div>
-
-  <div class="contribute" style="border-color: #1a3a5c;">
-    <h2>Common Questions</h2>
-    <p style="color:#9eaab6;">If you're researching a repeat filing, these guides cover the rules that determine eligibility:</p>
-    <ul style="color:#9eaab6;margin:0.75rem 0;padding-left:1.5rem;list-style:disc;">
-      <li><a href="can-i-file-bankruptcy-again.html" style="color:#58a6ff">Can I file bankruptcy again?</a> &mdash; waiting periods for every chapter combination, with a free eligibility checker.</li>
-      <li><a href="how-long-between-bankruptcies.html" style="color:#58a6ff">How long between bankruptcies?</a> &mdash; the 2, 4, 6, and 8-year federal bars explained in plain English.</li>
-      <li><a href="chapter-13-failure-rate.html" style="color:#58a6ff">Chapter 13 failure rate by district</a> &mdash; 48% national dismissal rate, with data for all 94 districts.</li>
-      <li><a href="discharge-bar.html" style="color:#58a6ff">What is a discharge bar?</a> &mdash; Sections 727(a)(8), 727(a)(9), and 1328(f) determine when a court must deny discharge.</li>
-      <li><a href="727a8-discharge-bar.html" style="color:#58a6ff">Section 727(a)(8) &amp; 727(a)(9) bars</a> &mdash; the Chapter 7 time bars, including the 6-year exception for 100% unsecured repayment.</li>
-      <li><a href="109g-filing-bar.html" style="color:#58a6ff">Section 109(g) filing bar</a> &mdash; the 180-day bar after voluntary dismissal or willful failure to appear.</li>
-    </ul>
-  </div>
-
 </div>
 
 <div class="changelog">
@@ -1044,13 +666,13 @@ cd bankruptcy-discharge-screener</div>
     <div class="version">
       <span class="version-tag">v1.2</span>
       <span class="version-date">2026-03-17</span>
-      <p>Rules Committee submission enclosed. Cover letter to AOUSC supporting <a href="https://www.uscourts.gov/rules-policies/records-and-archives-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a> (Connelly/Kahn Rule 4004 amendment). Accepted by the Advisory Committee on Bankruptcy Rules. Dashboard and open-source tool referenced as supporting data.</p>
+      <p>Rules Committee submission enclosed. Cover letter to AOUSC supporting Suggestion 25-BK-N (Connelly/Kahn Rule 4004 amendment). Dashboard and open-source tool referenced as supporting data.</p>
     </div>
 
     <div class="version">
       <span class="version-tag">v1.1</span>
       <span class="version-date">2026-03-15</span>
-      <p>Section 1328(f) methodology corrected: filing-to-filing measurement per In re Blendheim, 803 F.3d 477 (9th Cir. 2015). Prior version used discharge-to-filing. National total: 391,951 zero-verification discharges. Verified 7-district sample: 264 unique cases / 114 discharged (was 321/141 before Blendheim correction).</p>
+      <p>Section 1328(f) methodology corrected: filing-to-filing measurement per In re Blendheim, 803 F.3d 477 (9th Cir. 2015). Prior version used discharge-to-filing. Corrected totals: 264 unique cases / 114 discharged in multi-district sample (was 321/141).</p>
     </div>
 
     <div class="version">
@@ -1062,285 +684,9 @@ cd bankruptcy-discharge-screener</div>
   </details>
 </div>
 
-<div class="signup-section">
-  <h3>Get notified when we add your district</h3>
-  <p>We're expanding coverage across all 94 federal bankruptcy courts. Drop your email and we'll let you know when new districts go live.</p>
-  <form class="signup-form" action="https://formspree.io/f/xkoqeyzw" method="POST">
-    <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address for screening notifications">
-    <input type="hidden" name="_subject" value="New screener signup">
-    <button type="submit">Notify me</button>
-  </form>
-  <p class="signup-note">No spam. Only district updates. Unsubscribe anytime.</p>
-</div>
-
-<!-- Cite This Page -->
-<style>
-    .cite-section {
-        margin: 48px 0 0;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        background: var(--surface);
-        overflow: hidden;
-    }
-    .cite-toggle {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 14px 20px;
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        font-family: inherit;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: color 0.2s;
-    }
-    .cite-toggle:hover { color: var(--text); }
-    .cite-toggle .chevron {
-        display: inline-block;
-        transition: transform 0.25s ease;
-        font-size: 12px;
-    }
-    .cite-section.open .cite-toggle .chevron {
-        transform: rotate(180deg);
-    }
-    .cite-body {
-        display: none;
-        padding: 0 20px 20px;
-    }
-    .cite-section.open .cite-body {
-        display: block;
-    }
-    .cite-format {
-        margin-bottom: 16px;
-    }
-    .cite-format:last-child {
-        margin-bottom: 0;
-    }
-    .cite-label {
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
-        margin-bottom: 6px;
-    }
-    .cite-row {
-        display: flex;
-        align-items: stretch;
-        gap: 0;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid var(--border);
-    }
-    .cite-text {
-        flex: 1;
-        padding: 10px 14px;
-        background: var(--bg);
-        color: var(--text);
-        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-        font-size: 13px;
-        line-height: 1.5;
-        white-space: pre-wrap;
-        word-break: break-word;
-    }
-    .cite-copy-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 52px;
-        min-width: 52px;
-        background: var(--border);
-        border: none;
-        color: var(--text-muted);
-        font-size: 13px;
-        cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-        flex-shrink: 0;
-    }
-    .cite-copy-btn:hover {
-        background: var(--accent);
-        color: #fff;
-    }
-    .cite-copy-btn.copied {
-        background: var(--green);
-        color: #fff;
-    }
-</style>
-
-<div class="cite-section" id="citeSection">
-    <button class="cite-toggle" onclick="document.getElementById('citeSection').classList.toggle('open')" aria-expanded="false" aria-controls="citeBody">
-        <span>Cite This Tool</span>
-        <span class="chevron">&#9660;</span>
-    </button>
-    <div class="cite-body" id="citeBody">
-        <div class="cite-format">
-            <div class="cite-label">Bluebook</div>
-            <div class="cite-row">
-                <div class="cite-text" id="citeBluebook">1328f.com, <i>Bankruptcy Discharge Screener: National Section 1328(f) Map</i> (Mar. 2026), https://1328f.com.</div>
-                <button class="cite-copy-btn" onclick="copyCite('citeBluebook', this)" title="Copy to clipboard">Copy</button>
-            </div>
-        </div>
-        <div class="cite-format">
-            <div class="cite-label">APA (7th ed.)</div>
-            <div class="cite-row">
-                <div class="cite-text" id="citeAPA">1328f.com. (2026, March). <i>Bankruptcy discharge screener: National Section 1328(f) map</i>. https://1328f.com</div>
-                <button class="cite-copy-btn" onclick="copyCite('citeAPA', this)" title="Copy to clipboard">Copy</button>
-            </div>
-        </div>
-        <div class="cite-format">
-            <div class="cite-label">Chicago (17th ed.)</div>
-            <div class="cite-row">
-                <div class="cite-text" id="citeChicago">1328f.com. "Bankruptcy Discharge Screener: National Section 1328(f) Map." Last modified March 2026. https://1328f.com.</div>
-                <button class="cite-copy-btn" onclick="copyCite('citeChicago', this)" title="Copy to clipboard">Copy</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-function copyCite(id, btn) {
-    var el = document.getElementById(id);
-    var text = el.innerText || el.textContent;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function() { showCopied(btn); });
-    } else {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        showCopied(btn);
-    }
-}
-function showCopied(btn) {
-    var orig = btn.textContent;
-    btn.textContent = '\u2713';
-    btn.classList.add('copied');
-    setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
-}
-</script>
-<!-- End Cite This Tool -->
-
-
-<div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1rem 1.5rem;text-align:center;max-width:600px;margin:2rem auto 1rem">
-<p style="color:#9eaab6;font-size:0.85rem;margin:0 0 0.5rem">Go deeper: read our <a href="https://1328f.org/reports/">published research reports</a>, explore the <a href="https://1328f.org/methodology/">methodology</a> behind this screener, or check the <a href="https://1328f.org/watch/">Docket Watch</a> for enforcement developments.</p>
-</div>
-<div style="background:#161b22;border:1px solid #238636;border-radius:6px;padding:1rem 1.5rem;text-align:center;max-width:600px;margin:2rem auto 1rem">
-<p style="color:#e6edf3;margin:0 0 0.5rem;font-size:0.95rem">This tool is free and open-source. Donations fund PACER access fees and our goal of forming a 501(c)(3) nonprofit for bankruptcy court transparency.</p>
-<a href="https://ko-fi.com/ilikemath9999" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Support on Ko-fi</a>
-</div>
-
-<!-- Guides & Resources Section -->
-<style>
-.guides-section{max-width:1100px;margin:2.5rem auto 0;padding:0 2rem}
-.guides-section h2{color:#f0f6fc;font-size:1.3rem;margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:1px solid #21262d}
-.guides-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem}
-.guides-group h3{color:#9eaab6;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
-.guides-group ul{list-style:none;padding:0;margin:0}
-.guides-group li{margin-bottom:0.25rem}
-.guides-group a{color:#58a6ff;font-size:0.85rem;text-decoration:none}
-.guides-group a:hover{text-decoration:underline}
-</style>
-<div class="guides-section">
-  <h2>Guides &amp; Resources</h2>
-  <div class="guides-grid">
-    <div class="guides-group">
-      <h3>Filing Again</h3>
-      <ul>
-        <li><a href="can-i-file-bankruptcy-again.html">Can I File Again?</a></li>
-        <li><a href="can-you-file-bankruptcy-twice.html">Filing Twice</a></li>
-        <li><a href="how-long-between-bankruptcies.html">Time Between Filings</a></li>
-        <li><a href="how-often-can-you-file-bankruptcy.html">Filing Frequency</a></li>
-        <li><a href="second-bankruptcy-filing.html">Second Filing</a></li>
-        <li><a href="bankruptcy-refiling-waiting-period.html">Waiting Periods</a></li>
-        <li><a href="how-long-after-chapter-7-can-i-file-chapter-13.html">Ch.7 to Ch.13</a></li>
-      </ul>
-    </div>
-    <div class="guides-group">
-      <h3>Chapter 13</h3>
-      <ul>
-        <li><a href="why-do-chapter-13-cases-fail.html">Why Cases Fail</a></li>
-        <li><a href="chapter-13-failure-rate.html">Failure Rate</a></li>
-        <li><a href="chapter-13-completion-rate.html">Completion Rate</a></li>
-        <li><a href="how-long-does-chapter-13-take.html">How Long?</a></li>
-        <li><a href="can-i-keep-my-car-in-chapter-13.html">Keep My Car?</a></li>
-        <li><a href="what-happens-when-bankruptcy-is-dismissed.html">Dismissal</a></li>
-        <li><a href="bankruptcy-dismissed-vs-discharged.html">Dismissed vs Discharged</a></li>
-      </ul>
-    </div>
-    <div class="guides-group">
-      <h3>Discharge &amp; Debts</h3>
-      <ul>
-        <li><a href="discharge-bar.html">Discharge Bar Guide</a></li>
-        <li><a href="what-debts-are-not-dischargeable.html">Non-Dischargeable Debts</a></li>
-        <li><a href="what-happens-after-chapter-7-discharge.html">After Discharge</a></li>
-        <li><a href="can-creditors-collect-after-discharge.html">Creditor Collection</a></li>
-        <li><a href="what-is-a-super-discharge.html">Super Discharge</a></li>
-        <li><a href="how-long-does-bankruptcy-stay-on-credit.html">Credit Impact</a></li>
-      </ul>
-    </div>
-    <div class="guides-group">
-      <h3>Getting Started</h3>
-      <ul>
-        <li><a href="how-much-does-bankruptcy-cost.html">Cost</a></li>
-        <li><a href="do-i-need-a-lawyer-for-bankruptcy.html">Need a Lawyer?</a></li>
-        <li><a href="how-to-find-a-bankruptcy-lawyer.html">Find a Lawyer</a></li>
-        <li><a href="what-to-do-if-bankruptcy-lawyer-not-responding.html">Lawyer Not Responding</a></li>
-        <li><a href="what-is-the-means-test.html">Means Test</a></li>
-        <li><a href="can-i-keep-my-house-in-bankruptcy.html">Keep My House?</a></li>
-      </ul>
-    </div>
-    <div class="guides-group">
-      <h3>Key Concepts</h3>
-      <ul>
-        <li><a href="what-is-the-automatic-stay.html">Automatic Stay</a></li>
-        <li><a href="what-is-a-bare-petition.html">Bare Petitions</a></li>
-        <li><a href="what-happens-at-341-meeting.html">341 Meeting</a></li>
-        <li><a href="videos.html">Videos</a></li>
-      </ul>
-    </div>
-    <div class="guides-group">
-      <h3>Browse &amp; Maps</h3>
-      <ul>
-        <li><a href="districts/">Browse by District</a></li>
-        <li><a href="judges/">Browse by Judge</a></li>
-        <li><a href="states/">Browse by State</a></li>
-        <li><a href="bankruptcy-discharge-rate-map.html">Discharge Rate Map</a></li>
-        <li><a href="chapter-13-dismissal-rate-map.html">Dismissal Rate Map</a></li>
-        <li><a href="pro-se-bankruptcy-rate-map.html">Pro Se Rate Map</a></li>
-        <li><a href="repeat-bankruptcy-filer-map.html">Repeat Filer Map</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <footer>
   Data sourced from publicly available PACER records. Generated by volunteers using open-source tools.<br>
   No personal information is collected or displayed. All analysis runs locally on your machine.
-  <br><br>
-  <a href="https://1328f.org">Research</a> &middot; Research and reports at <a href="https://1328f.org">1328f.org</a>
-<p style="margin-top:0.5rem;"><a href="https://www.law.cornell.edu/uscode/text/11/1328" style="color:#484f58;">Full statute text: 11 U.S.C. Section 1328 (Cornell Law)</a></p>
-<div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
-<strong>Bankruptcy Transparency Network:</strong>
-<a href="https://automaticstay.org">automaticstay.org</a> |
-<a href="https://meanstest.org">meanstest.org</a> |
-<a href="https://341meeting.org">341meeting.org</a> |
-<a href="https://523a.org">523a.org</a> |
-<a href="https://109g.org">109g.org</a> |
-<a href="https://727a8.com">727a8.com</a> |
-<a href="https://relieffromstay.org">relieffromstay.org</a> |
-<a href="https://dischargeinjunction.com">dischargeinjunction.com</a> |
-<a href="https://prosedebtors.org">prosedebtors.org</a>
-</div>
-<br><span style="font-size:11px">This site provides general information only and does not constitute legal advice. No attorney-client relationship is created by using this tool. Consult a licensed attorney for advice on your specific situation.</span>
 </footer>
 
 <script>
@@ -1387,7 +733,7 @@ function showCopied(btn) {
     .then(function(d) { data = d.districts; render(); })
     .catch(function() {
       document.getElementById('table-body').innerHTML =
-        '<tr><td colspan="8" style="text-align:center;color:#848d97;">Could not load data. If testing locally, run: python -m http.server</td></tr>';
+        '<tr><td colspan="8" style="text-align:center;color:#484f58;">Could not load data. If testing locally, run: python -m http.server</td></tr>';
     });
 
   function render() {
@@ -1483,7 +829,6 @@ function showCopied(btn) {
         else if (stateStatus[st] === 'f2-data') txt.classList.add('on-f2data');
         else txt.classList.add('on-nodata');
         txt.textContent = st;
-        txt.setAttribute('aria-hidden', 'true');
         svg.appendChild(txt);
       }
 
@@ -1491,19 +836,6 @@ function showCopied(btn) {
       path.onclick = (function(s) {
         return function() { toggleFilter(s); };
       })(st);
-
-      // Keyboard accessibility
-      path.setAttribute('tabindex', '0');
-      path.setAttribute('role', 'button');
-      path.onkeydown = (function(s) {
-        return function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFilter(s); } };
-      })(st);
-
-      // Aria-label for state path
-      var sd = getStateData(st);
-      var totalPD = 0;
-      for (var j = 0; j < sd.districts.length; j++) totalPD += sd.districts[j].prior_discharged || 0;
-      path.setAttribute('aria-label', (STATE_NAMES[st] || st) + '. ' + sd.districts.length + ' district' + (sd.districts.length !== 1 ? 's' : '') + '. ' + totalPD.toLocaleString() + ' prior filers discharged without verification.');
     }
 
     // Setup tooltips
@@ -1569,8 +901,6 @@ function showCopied(btn) {
     var el = document.getElementById('filter-info');
     if (!filterState) {
       el.innerHTML = 'Click a state to filter';
-      var announce = document.getElementById('sr-announce');
-      if (announce) announce.textContent = 'Filter cleared. Showing all districts.';
       return;
     }
     var count = 0;
@@ -1581,23 +911,17 @@ function showCopied(btn) {
     if (count > 0) {
       el.innerHTML = 'Showing ' + name + ' (' + filterState + ') \u2014 ' + count + ' district' +
         (count !== 1 ? 's' : '') +
-        ' <button class="clear-filter-btn">Clear</button>';
+        ' <button id="clear-filter-btn">Clear</button>';
     } else {
       el.innerHTML = 'No data for ' + name + ' (' + filterState + ') yet' +
-        ' <button class="clear-filter-btn">Clear</button>';
+        ' <button id="clear-filter-btn">Clear</button>';
     }
-    el.querySelector('.clear-filter-btn').addEventListener('click', function() {
+    document.getElementById('clear-filter-btn').addEventListener('click', function() {
       filterState = null;
       colorMap();
       table();
       filterInfo();
     });
-    var announce = document.getElementById('sr-announce');
-    if (announce) {
-      announce.textContent = filterState
-        ? 'Filtered to ' + (STATE_NAMES[filterState] || filterState) + '. ' + count + ' district' + (count !== 1 ? 's' : '') + ' shown.'
-        : 'Filter cleared. Showing all districts.';
-    }
   }
 
   function table() {
@@ -1635,7 +959,7 @@ function showCopied(btn) {
         '<td class="num">' + (d.prior_filers ? d.prior_filers.toLocaleString() : '-') + '</td>' +
         '<td class="num">' + (d.prior_discharge_rate != null ? d.prior_discharge_rate + '%' : '-') + '</td>' +
         '<td class="num">' + (d.prior_discharged ? d.prior_discharged.toLocaleString() : '-') + '</td>' +
-        '<td>' + (d.verified_violations != null ? 'Yes' : '<button type="button" class="screen-btn" onclick="showVolunteer(\'' + d.court_id + '\')">Screen this</button>') + '</td>' +
+        '<td>' + (d.verified_violations != null ? 'Yes' : '<button class="screen-btn" onclick="showVolunteer(\'' + d.court_id + '\')">Screen this</button>') + '</td>' +
         '</tr>';
     }
     tbody.innerHTML = html;
@@ -1646,32 +970,18 @@ function showCopied(btn) {
       var arrow = ths[i].querySelector('.arrow');
       arrow.textContent = (ths[i].getAttribute('data-col') === sortCol)
         ? (sortAsc ? ' \u25B2' : ' \u25BC') : '';
-      ths[i].removeAttribute('aria-sort');
-      if (ths[i].getAttribute('data-col') === sortCol) {
-        ths[i].setAttribute('aria-sort', sortAsc ? 'ascending' : 'descending');
-      }
     }
   }
 
   // Column sort
   var ths = document.querySelectorAll('th[data-col]');
   for (var i = 0; i < ths.length; i++) {
-    ths[i].setAttribute('tabindex', '0');
-    ths[i].setAttribute('role', 'columnheader button');
     ths[i].addEventListener('click', (function(th) {
       return function() {
         var col = th.getAttribute('data-col');
         if (sortCol === col) { sortAsc = !sortAsc; }
         else { sortCol = col; sortAsc = (col === 'court_id' || col === 'state'); }
         table();
-      };
-    })(ths[i]));
-    ths[i].addEventListener('keydown', (function(th) {
-      return function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          th.click();
-        }
       };
     })(ths[i]));
   }
@@ -1713,26 +1023,10 @@ function showCopied(btn) {
 
     panel.classList.add('visible');
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    var closeBtn = document.getElementById('vol-close');
-    if (closeBtn) closeBtn.focus();
   };
 
   document.getElementById('vol-close').addEventListener('click', function() {
     document.getElementById('volunteer-panel').classList.remove('visible');
-    // Return focus to the button that opened the panel
-    var btns = document.querySelectorAll('.screen-btn');
-    if (btns.length > 0) btns[0].focus();
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      var panel = document.getElementById('volunteer-panel');
-      if (panel && panel.classList.contains('visible')) {
-        panel.classList.remove('visible');
-        var btns = document.querySelectorAll('.screen-btn');
-        if (btns.length > 0) btns[0].focus();
-      }
-    }
   });
 
   // Copy-to-clipboard for command blocks
@@ -1745,23 +1039,14 @@ function showCopied(btn) {
       });
     });
   });
-
-  // Keyboard accessibility for copy-to-clipboard
-  document.querySelectorAll('.vol-cmd').forEach(function(el) {
-    el.setAttribute('tabindex', '0');
-    el.setAttribute('role', 'button');
-    el.setAttribute('aria-label', 'Copy command: ' + el.textContent.trim());
-    el.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        el.click();
-      }
-    });
-  });
 })();
 </script>
 
-<div id="sr-announce" aria-live="polite" aria-atomic="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"></div>
+<div style="background:#161b22;border:1px solid #238636;border-radius:6px;padding:1rem 1.5rem;text-align:center;max-width:600px;margin:2rem auto 1rem">
+<p style="color:#e6edf3;margin:0 0 0.5rem;font-size:0.95rem">This tool is free and open-source. Donations fund PACER access fees and our goal of forming a 501(c)(3) nonprofit for bankruptcy court transparency.</p>
+<a href="https://ko-fi.com/ilikemath9999" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Support on Ko-fi</a>
+</div>
+
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1.5rem;text-align:center;max-width:900px;margin:2rem auto 0">
   <p style="color:#f0f6fc;font-size:1.1rem;font-weight:600;margin-bottom:0.25rem">PACER cases made free through RECAP: <span id="recap-count" style="color:#58a6ff">0</span> of 37.9 million</p>
   <p style="color:#9eaab6;font-size:0.85rem;margin-bottom:0.75rem">Every document we access becomes permanently free for the next researcher, attorney, or debtor.</p>
@@ -1771,6 +1056,5 @@ function showCopied(btn) {
   <a href="https://1328f.org/support/" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Fund this research</a>
 </div>
 <script>fetch("/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString()}).catch(function(){})</script>
-<script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&a.href&&a.href.indexOf('uscourts.gov/rules-policies')!==-1){gtag('event','rules_suggestion_click',{link_url:a.href,page_path:location.pathname})}})</script>
 </body>
 </html>

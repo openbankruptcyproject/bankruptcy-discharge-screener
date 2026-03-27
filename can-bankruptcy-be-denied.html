@@ -375,8 +375,7 @@ document.addEventListener('click', function(e) {
   <a href="check.html">Eligibility Checker</a>
   <a href="compare.html">Compare All Bars</a>
   <a href="dashboard.html">Dashboard</a>
-  <a href="check-attorney.html">Check Attorney</a>
-  <a href="timeline.html">Timeline</a>
+<a href="timeline.html">Timeline</a>
   <span class="sep">|</span>
   <strong class="nav-label">Learn:</strong>
   <a href="explainer.html">1328(f) Explained</a>
@@ -710,7 +709,8 @@ document.addEventListener('click', function(e) {
 
 <div class="green-box">
     <div class="label">Choosing an attorney</div>
-    <p>Look for an attorney who focuses on bankruptcy (not one who does it occasionally along with family law and real estate), who takes time to review your situation before filing, and who files complete petitions rather than bare petitions that risk dismissal for missing documents. Ask how many bankruptcy cases they handle per year and what their clients' success rate is. High-volume practices that rush through paperwork are a leading cause of preventable dismissals. You can <a href="check-attorney.html">check an attorney's track record</a> using federal court data.</p>
+    <p>Look for an attorney who focuses on bankruptcy (not one who does it occasionally along with family law and real estate), who takes time to review your situation before filing, and who files complete petitions rather than bare petitions that risk dismissal for missing documents. Ask how many bankruptcy cases they handle per year and what their clients' success rate is. High-volume practices that rush through paperwork are a leading cause of preventable dismissals. You can
+using federal court data.</p>
 </div>
 
 <h3>Understand the Filing Bars Before You File</h3>
@@ -841,6 +841,20 @@ document.addEventListener('click', function(e) {
     <p style="margin-top: 8px">Data source: Federal Judicial Center Integrated Database. <a href="index.html">Back to Screener</a></p>
 </div>
 
+<div style="background:#161b22;border:1px solid #238636;border-radius:6px;padding:1rem 1.5rem;text-align:center;max-width:600px;margin:2rem auto 1rem">
+<p style="color:#e6edf3;margin:0 0 0.5rem;font-size:0.95rem">This tool is free and open-source. Donations fund PACER access fees and our goal of forming a 501(c)(3) nonprofit for bankruptcy court transparency.</p>
+<a href="https://ko-fi.com/ilikemath9999" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Support on Ko-fi</a>
+</div>
+
+<div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1.5rem;text-align:center;max-width:900px;margin:2rem auto 0">
+  <p style="color:#f0f6fc;font-size:1.1rem;font-weight:600;margin-bottom:0.25rem">PACER cases made free through RECAP: <span id="recap-count" style="color:#58a6ff">0</span> of 37.9 million</p>
+  <p style="color:#9eaab6;font-size:0.85rem;margin-bottom:0.75rem">Every document we access becomes permanently free for the next researcher, attorney, or debtor.</p>
+  <div style="background:#21262d;border-radius:6px;height:22px;overflow:hidden;margin:0.75rem auto;max-width:400px"><div style="background:linear-gradient(90deg,#238636,#2ea043);height:100%;width:0%;border-radius:6px;min-width:2px"></div></div>
+  <p style="margin-bottom:0.25rem"><span style="color:#58a6ff;font-size:1.2rem;font-weight:700">$0</span> <span style="color:#9eaab6">of</span> <span style="color:#f0f6fc;font-size:1.2rem;font-weight:700">$5,000</span> <span style="color:#9eaab6">Q1 PACER research goal</span></p>
+  <p style="color:#9eaab6;font-size:0.8rem;margin-bottom:0.75rem">1,500+ hours. No grants, no institutional backing. 0 supporters so far.</p>
+  <a href="https://1328f.org/support/" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Fund this research</a>
+</div>
+<script>fetch("/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString()}).catch(function(){})</script>
 </div>
 </body>
 </html>
