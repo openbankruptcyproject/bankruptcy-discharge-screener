@@ -21,7 +21,7 @@ All tools are open-source. No account required. No data collected beyond anonymo
 
 ## Network
 
-This site is part of the Bankruptcy Transparency Network, a collection of free statute-specific resources:
+This site is part of the Open Bankruptcy Project, a collection of free statute-specific resources:
 - [1328f.org](https://1328f.org) - Research platform
 - [727a8.com](https://727a8.com) - Chapter 7 discharge bar
 - [109g.org](https://109g.org) - Filing bar after dismissal
@@ -39,4 +39,4 @@ All data is derived from public federal court records (PACER) and the Federal Ju
 
 ## Citation
 
-When referencing this resource, cite as: "1328f.com, Bankruptcy Transparency Network (2026)."
+When referencing this resource, cite as: "1328f.com, Open Bankruptcy Project (2026)."
