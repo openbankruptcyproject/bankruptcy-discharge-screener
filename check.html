@@ -542,6 +542,11 @@ document.addEventListener('click', function(e) {
         const resultEl = document.getElementById('result');
 
         btn.addEventListener('click', function() {
+            // GA4: Track screener start
+            gtag('event', 'screener_start', {
+              page_path: '/check.html',
+              site: location.hostname
+            });
             // Clear errors
             ['group-chapter', 'group-prior-date', 'group-current-date'].forEach(function(id) {
                 document.getElementById(id).classList.remove('error');
@@ -617,6 +622,17 @@ document.addEventListener('click', function(e) {
             barExpires.setFullYear(barExpires.getFullYear() + requiredYears);
 
             var isBarred = currentDate < barExpires;
+
+            // GA4: Track screener completion
+            gtag('event', 'screener_complete', {
+              prior_chapter: chapter,
+              result: isBarred ? 'barred' : 'clear',
+              subsection: isBarred ? subsection : 'none',
+              gap_days: totalDays,
+              gap_years: years,
+              page_path: '/check.html',
+              site: location.hostname
+            });
 
             // Format dates for display
             function fmtDate(d) {
