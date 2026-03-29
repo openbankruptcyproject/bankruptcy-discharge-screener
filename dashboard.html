@@ -40,7 +40,7 @@ document.addEventListener('click', function(e) {
 <meta name="twitter:title" content="Bankruptcy Statistics by District -- National Chapter 13 Dashboard">
 <meta name="twitter:description" content="Interactive map of Chapter 13 bankruptcy statistics for all 94 federal districts.">
 <meta name="twitter:image" content="https://1328f.com/og-image.png">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></link>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -365,6 +365,44 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "391,951",
+      "description": "Interactive map of Chapter 13 bankruptcy statistics by district. Dismissal rates, discharge rates, and prior filer data for all 94 federal judicial districts. F",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project",
+        "url": "https://1328f.org"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "mainEntityOfPage": "https://1328f.com/dashboard.html"
+    },
+    {
+      "@type": "WebPage",
+      "name": "391,951",
+      "url": "https://1328f.com/dashboard.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <style>
@@ -451,7 +489,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 <script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
 
 <div style="background:linear-gradient(135deg,#0d2137,#122a44);border:1px solid #1f4068;border-radius:6px;padding:0.6rem 1.2rem;margin:1rem auto;max-width:900px;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap">
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"/></svg>
+  <svg width="18" height="18" viewbox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"></path></svg>
   <span style="color:#f0f6fc;font-size:0.85rem"><strong>Cited by the federal judiciary</strong> &mdash; This tool's data was accepted by the Advisory Committee on Bankruptcy Rules as <a href="https://www.uscourts.gov/rules-policies/records-and-archives-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a></span>
 </div>
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:0.6rem 1.2rem;margin:0 auto 1rem;max-width:900px;text-align:center;font-size:0.85rem;color:#9eaab6">
@@ -478,7 +516,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
 <div class="legend-panel" id="legendPanel"></div>
 
 <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search district or state..." />
+    <input type="text" id="searchInput" placeholder="Search district or state..."></input>
 </div>
 
 <div class="top10-panel" id="top10Panel"></div>
@@ -496,7 +534,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     </div>
     <div class="method-section">
         <h4>Scope</h4>
-        <p>Chapter 13 cases filed FY 2008&ndash;2024 (post-BAPCPA). 4,895,163 unique cases across 94 federal districts. Mature cohort (FY 2008&ndash;2019, sufficient time for plan completion): 4,060,721 cases, 55.9% dismissal rate (51.3% conversion-adjusted).</p>
+        <p>Chapter 13 cases filed FY 2008&ndash;2024 (post-BAPCPA). 4,895,163 unique cases across 94 federal districts. Mature cohort (FY 2008&ndash;2019, sufficient time for plan completion): 4,060,721 cases, 55.9% <a href="https://dismissalrate.org" title="Bankruptcy Dismissal Rates -- Open Bankruptcy Project" target="_blank" rel="noopener">dismissal rate</a> (51.3% conversion-adjusted).</p>
     </div>
     <div class="method-section">
         <h4>Layers 1&ndash;4: FJC Aggregate Metrics</h4>
@@ -517,7 +555,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
         <h4>Known Limitations</h4>
         <p><b>Maturation bias:</b> Cases filed after FY 2019 have not had sufficient time to complete a 3&ndash;5 year Ch.13 plan. Recent-year dismissal rates are artificially inflated because the only closed cases are early failures. The &ldquo;All Years&rdquo; aggregate is reliable because older cohorts have fully resolved. Year-by-year trends after 2019 should be interpreted with this caveat.</p>
         <p><b>Conversions:</b> 368,997 cases filed as Ch.13 and converted to Ch.7 received a discharge but are counted as Ch.7 outcomes in the FJC data. If these are included as Ch.13 successes, the national dismissal rate adjusts from 58.3% to approximately 53.6%. The dashboard uses the FJC&rsquo;s current-chapter classification (crntchp), which excludes these conversions from the Ch.13 discharge count.</p>
-        <p><b>Pro se attrition:</b> The pro se rate reflects status at filing. Many pro se cases dismiss before the 341 meeting, so the surviving pro se rate at confirmation is substantially lower than at filing.</p>
+        <p><b>Pro se attrition:</b> The pro se rate reflects status at filing. Many pro se cases dismiss before the <a href="https://341meeting.org" title="341 Meeting of Creditors -- Open Bankruptcy Project" target="_blank" rel="noopener">341 meeting</a>, so the surviving pro se rate at confirmation is substantially lower than at filing.</p>
     </div>
     <div class="method-section">
         <h4>What This Means</h4>
@@ -525,7 +563,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     </div>
     <div class="method-section">
         <h4>Screening Tool</h4>
-        <p>The &sect;1328(f) discharge bar screener is open source and available for any district to run against their own docket data. Source code and documentation at the public repository.</p>
+        <p>The &sect;1328(f) <a href="https://dischargebar.org" title="Bankruptcy Discharge Bar -- Open Bankruptcy Project" target="_blank" rel="noopener">discharge bar</a> screener is open source and available for any district to run against their own docket data. Source code and documentation at the public repository.</p>
     </div>
 </div>
 
@@ -533,7 +571,7 @@ body { font-family: system-ui, -apple-system, sans-serif; overflow: hidden; back
     <button class="play-btn" id="playBtn" title="Auto-play">&#9654;</button>
     <div class="year-label" id="yearLabel">All Years</div>
     <div class="slider-container">
-        <input type="range" id="yearSlider" min="0" max="17" value="0" step="1" />
+        <input type="range" id="yearSlider" min="0" max="17" value="0" step="1"></input>
         <div class="slider-ticks" id="sliderTicks"></div>
     </div>
 </div>

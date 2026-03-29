@@ -394,6 +394,27 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Bankruptcy Discharge Bar",
+      "url": "https://1328f.com/discharge-bar.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <style>
@@ -483,7 +504,7 @@ document.addEventListener('click', function(e) {
 <script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
 
 <div style="background:linear-gradient(135deg,#0d2137,#122a44);border:1px solid #1f4068;border-radius:6px;padding:0.6rem 1.2rem;margin:1rem auto;max-width:900px;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap">
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"/></svg>
+  <svg width="18" height="18" viewbox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"></path></svg>
   <span style="color:#f0f6fc;font-size:0.85rem"><strong>Cited by the federal judiciary</strong> &mdash; This tool's data was accepted by the Advisory Committee on Bankruptcy Rules as <a href="https://www.uscourts.gov/rules-policies/records-and-archives-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a></span>
 </div>
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:0.6rem 1.2rem;margin:0 auto 1rem;max-width:900px;text-align:center;font-size:0.85rem;color:#9eaab6">
@@ -497,7 +518,7 @@ document.addEventListener('click', function(e) {
 </div>
 
 <h1>Bankruptcy Discharge Bar</h1>
-<p class="subtitle">A bankruptcy discharge bar is a federal law that prevents you from receiving a discharge in a new bankruptcy case if you filed too soon after a prior discharge. Four statutes set waiting periods of 2, 4, 6, or 8 years depending on the chapters involved. The bar does not stop you from filing -- it stops you from getting debt relief at the end.</p>
+<p class="subtitle">A bankruptcy <a href="https://dischargebar.org" title="Bankruptcy Discharge Bar -- Open Bankruptcy Project" target="_blank" rel="noopener">discharge bar</a> is a federal law that prevents you from receiving a discharge in a new bankruptcy case if you filed too soon after a prior discharge. Four statutes set waiting periods of 2, 4, 6, or 8 years depending on the chapters involved. The bar does not stop you from filing -- it stops you from getting debt relief at the end.</p>
 
 <h2>What is a discharge bar?</h2>
 
@@ -549,7 +570,7 @@ document.addEventListener('click', function(e) {
     </tr>
 </table>
 
-<p style="font-size:14px; color:var(--text-muted);">*Section 727(a)(9) has exceptions: the 6-year bar does not apply if the prior Ch. 13 plan paid 100% of unsecured claims, or paid at least 70% under a plan proposed in good faith with best effort.</p>
+<p style="font-size:14px; color:var(--text-muted);">*<a href="https://727a8.com" title="Section 727 Chapter 7 Discharge -- Open Bankruptcy Project" target="_blank" rel="noopener">Section 727</a>(a)(9) has exceptions: the 6-year bar does not apply if the prior Ch. 13 plan paid 100% of unsecured claims, or paid at least 70% under a plan proposed in good faith with best effort.</p>
 
 <div class="statute-box">
     <div class="label">How the clock works</div>
@@ -562,7 +583,7 @@ document.addEventListener('click', function(e) {
 
 <h3>727(a)(9) -- The 6-year bar</h3>
 
-<p>If you received a Chapter 12 or Chapter 13 discharge, you must wait 6 years before receiving a Chapter 7 discharge. There are two exceptions: if your prior Chapter 13 plan paid unsecured creditors in full (100%), or paid at least 70% and the plan was proposed in good faith with best effort, the 6-year bar does not apply.</p>
+<p>If you received a Chapter 12 or Chapter 13 discharge, you must wait 6 years before receiving a Chapter 7 discharge. There are two exceptions: if your prior <a href="https://chapter13plan.org" title="Chapter 13 Repayment Plan -- Open Bankruptcy Project" target="_blank" rel="noopener">Chapter 13 plan</a> paid unsecured creditors in full (100%), or paid at least 70% and the plan was proposed in good faith with best effort, the 6-year bar does not apply.</p>
 
 <h3>1328(f)(1) -- The 4-year bar</h3>
 

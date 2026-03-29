@@ -114,6 +114,44 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "What Happens After a Chapter 7 Discharge?",
+      "description": "After Chapter 7 discharge, most debts are eliminated and creditors cannot collect. The filing stays on your credit report for 10 years. Learn what to expect.",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project",
+        "url": "https://1328f.org"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "mainEntityOfPage": "https://1328f.com/what-happens-after-chapter-7-discharge.html"
+    },
+    {
+      "@type": "WebPage",
+      "name": "What Happens After a Chapter 7 Discharge?",
+      "url": "https://1328f.com/what-happens-after-chapter-7-discharge.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <style>
@@ -200,7 +238,7 @@ document.addEventListener('click', function(e) {
 <script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
 
 <div style="background:linear-gradient(135deg,#0d2137,#122a44);border:1px solid #1f4068;border-radius:6px;padding:0.6rem 1.2rem;margin:1rem auto;max-width:900px;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap">
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"/></svg>
+  <svg width="18" height="18" viewbox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"></path></svg>
   <span style="color:#f0f6fc;font-size:0.85rem"><strong>Cited by the federal judiciary</strong> &mdash; This tool's data was accepted by the Advisory Committee on Bankruptcy Rules as <a href="https://www.uscourts.gov/rules-policies/records-and-archives-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a></span>
 </div>
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:0.6rem 1.2rem;margin:0 auto 1rem;max-width:900px;text-align:center;font-size:0.85rem;color:#9eaab6">
@@ -218,7 +256,7 @@ document.addEventListener('click', function(e) {
 
 <h2>The discharge order</h2>
 
-<p>A Chapter 7 discharge is a court order that permanently eliminates your legal obligation to pay most debts. Under <a href="section-524-discharge-injunction.html">Section 524</a>, the discharge operates as an injunction prohibiting creditors from taking any action to collect discharged debts -- including calls, letters, lawsuits, or wage garnishment.</p>
+<p>A Chapter 7 discharge is a court order that permanently eliminates your legal obligation to pay most debts. Under <a href="section-524-discharge-injunction.html">Section 524</a>, the discharge operates as an injunction prohibiting creditors from taking any action to collect discharged debts -- including calls, letters, lawsuits, or <a href="https://garnishedwages.org" title="Wage Garnishment and Bankruptcy -- Open Bankruptcy Project" target="_blank" rel="noopener">wage garnishment</a>.</p>
 
 <p>The discharge order is typically entered approximately 60-90 days after the <a href="what-happens-at-341-meeting.html">341 meeting of creditors</a>, and roughly 3-4 months after filing. According to federal court records, the vast majority of Chapter 7 cases (above 95%) result in discharge.</p>
 
@@ -240,7 +278,7 @@ document.addEventListener('click', function(e) {
 <p>Certain debts are <a href="what-debts-are-not-dischargeable.html">not dischargeable</a> under <a href="section-523-nondischargeable-debts.html">Section 523</a>:</p>
 
 <ul>
-    <li>Student loans (unless you prove "undue hardship" in a separate proceeding)</li>
+    <li>Student loans (unless you prove "<a href="https://bankruptcyhardship.org" title="Undue Hardship in Bankruptcy -- Open Bankruptcy Project" target="_blank" rel="noopener">undue hardship</a>" in a separate proceeding)</li>
     <li>Recent income taxes (generally taxes due within the last 3 years)</li>
     <li>Child support and alimony (domestic support obligations)</li>
     <li>Debts from fraud, embezzlement, or willful injury</li>
@@ -268,7 +306,7 @@ document.addEventListener('click', function(e) {
     <li>Reporting discharged debts as "owed" to credit bureaus (they should show as "discharged in bankruptcy")</li>
 </ul>
 
-<p>If a creditor violates the discharge injunction, you may file a motion for contempt with the bankruptcy court. See <a href="can-creditors-collect-after-discharge.html">Can Creditors Collect After Discharge?</a> for more details.</p>
+<p>If a creditor violates the <a href="https://dischargeinjunction.org" title="Discharge Injunction -- Open Bankruptcy Project" target="_blank" rel="noopener">discharge injunction</a>, you may file a motion for contempt with the bankruptcy court. See <a href="can-creditors-collect-after-discharge.html">Can Creditors Collect After Discharge?</a> for more details.</p>
 
 <h2>Property you kept</h2>
 

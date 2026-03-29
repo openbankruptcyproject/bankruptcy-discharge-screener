@@ -174,6 +174,61 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Chapter 13 Dismissal Rate Map",
+      "description": "Animated map showing Chapter 13 bankruptcy dismissal rates across all 94 federal districts from 2008 to 2024. Watch how failure rates shift over time. Data from",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project",
+        "url": "https://1328f.org"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "mainEntityOfPage": "https://1328f.com/chapter-13-dismissal-rate-map.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://1328f.org"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Chapter 13 Dismissal Rate Map",
+          "item": "https://1328f.com/chapter-13-dismissal-rate-map.html"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Chapter 13 Dismissal Rate Map",
+      "url": "https://1328f.com/chapter-13-dismissal-rate-map.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -210,13 +265,13 @@ document.addEventListener('click', function(e) {
 
 <h2>How to read the data</h2>
 
-<p>Dismissal rate is calculated as the number of Chapter 13 cases closed by dismissal divided by the total number of cases closed in that district for that year. Only cases with at least 3 years of maturity are included, since Chapter 13 plans typically run 3 to 5 years. Cases still pending are excluded to avoid undercounting.</p>
+<p><a href="https://dismissalrate.org" title="Bankruptcy Dismissal Rates -- Open Bankruptcy Project" target="_blank" rel="noopener">Dismissal rate</a> is calculated as the number of Chapter 13 cases closed by dismissal divided by the total number of cases closed in that district for that year. Only cases with at least 3 years of maturity are included, since Chapter 13 plans typically run 3 to 5 years. Cases still pending are excluded to avoid undercounting.</p>
 
 <p>The underlying data comes from the <a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a>, which contains records for every federal bankruptcy case filed since 2008. The database is maintained by the Federal Judicial Center and is freely available to the public.</p>
 
 <h2>Why dismissal rates matter for debtors</h2>
 
-<p>A Chapter 13 dismissal is not a neutral outcome. When a case is dismissed, the debtor loses the protection of the automatic stay, which means creditors can resume collection actions, repossessions, and foreclosures. The debtor has spent months making plan payments through the trustee, but those payments are typically refunded to the debtor minus any distributions already made to creditors. The filing fee of $338 is not refundable. Attorney fees, which can range from $2,500 to $5,000 for Chapter 13, are usually paid through the plan and may not be fully recoverable.</p>
+<p>A Chapter 13 dismissal is not a neutral outcome. When a case is dismissed, the debtor loses the protection of the <a href="https://automaticstay.org" title="Automatic Stay in Bankruptcy -- Open Bankruptcy Project" target="_blank" rel="noopener">automatic stay</a>, which means creditors can resume collection actions, repossessions, and foreclosures. The debtor has spent months making plan payments through the trustee, but those payments are typically refunded to the debtor minus any distributions already made to creditors. The filing fee of $338 is not refundable. Attorney fees, which can range from $2,500 to $5,000 for Chapter 13, are usually paid through the plan and may not be fully recoverable.</p>
 
 <p>For debtors facing foreclosure or vehicle repossession, a dismissed Chapter 13 case can be devastating. The debtor may have entered bankruptcy specifically to cure a mortgage arrearage or protect a car from repossession. If the case is dismissed before those payments are completed, the debtor is back where they started, minus the filing fee and any attorney retainer, and potentially further behind on payments.</p>
 

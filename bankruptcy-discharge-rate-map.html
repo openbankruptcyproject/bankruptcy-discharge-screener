@@ -79,6 +79,61 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Bankruptcy Discharge Rate Map",
+      "description": "Animated map showing prior discharge rates for bankruptcy filers across 94 federal districts. See where repeat filers previously received a discharge versus whe",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project",
+        "url": "https://1328f.org"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "mainEntityOfPage": "https://1328f.com/bankruptcy-discharge-rate-map.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://1328f.org"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bankruptcy Discharge Rate Map",
+          "item": "https://1328f.com/bankruptcy-discharge-rate-map.html"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Bankruptcy Discharge Rate Map",
+      "url": "https://1328f.com/bankruptcy-discharge-rate-map.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -105,12 +160,12 @@ document.addEventListener('click', function(e) {
 
 <div class="statute-box">
     <div class="label">Connection to discharge bars</div>
-    <p style="margin-bottom:0">Under 11 U.S.C. Section 1328(f), a debtor who received a Chapter 13 discharge within two years cannot receive another. This means the prior discharge rate directly affects how many repeat filers face a discharge bar. The <a href="check.html">screener</a> checks these bars automatically using public case records.</p>
+    <p style="margin-bottom:0">Under 11 U.S.C. <a href="https://section1328.org" title="Section 1328 Discharge -- Open Bankruptcy Project" target="_blank" rel="noopener">Section 1328</a>(f), a debtor who received a Chapter 13 discharge within two years cannot receive another. This means the prior discharge rate directly affects how many repeat filers face a <a href="https://dischargebar.org" title="Bankruptcy Discharge Bar -- Open Bankruptcy Project" target="_blank" rel="noopener">discharge bar</a>. The <a href="check.html">screener</a> checks these bars automatically using public case records.</p>
 </div>
 
 <h2>What the prior discharge rate reveals</h2>
 
-<p>The prior discharge rate among repeat filers is one of the clearest indicators of whether a district's bankruptcy system is producing lasting results. When a debtor completes a Chapter 13 plan and receives discharge, the process worked as intended: debts were restructured, creditors received payments, and the debtor emerged with a fresh start. When that debtor returns to bankruptcy court years later, it typically reflects new financial difficulty rather than a failure of the system.</p>
+<p>The prior discharge rate among repeat filers is one of the clearest indicators of whether a district's bankruptcy system is producing lasting results. When a debtor completes a <a href="https://chapter13plan.org" title="Chapter 13 Repayment Plan -- Open Bankruptcy Project" target="_blank" rel="noopener">Chapter 13 plan</a> and receives discharge, the process worked as intended: debts were restructured, creditors received payments, and the debtor emerged with a fresh start. When that debtor returns to bankruptcy court years later, it typically reflects new financial difficulty rather than a failure of the system.</p>
 
 <p>By contrast, districts where most repeat filers were previously dismissed are experiencing debtor recycling. These are cases where the initial filing failed, often within the first year, and the debtor is trying again. In some districts, the same debtor may file three, four, or five times before either achieving discharge or giving up entirely. Each failed filing costs the debtor a filing fee (currently $338 for Chapter 13), often an additional attorney retainer, and months of uncertainty.</p>
 

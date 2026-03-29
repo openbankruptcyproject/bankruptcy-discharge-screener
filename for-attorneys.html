@@ -279,6 +279,83 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "Bankruptcy Practice Analytics and Screening Tools",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "text": "window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-RV60F9WDXN');\n\n\ndocument.addEventListener('click', function(e) {\n"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "text": "Download the screener. Clone or download screen_1328f.py from the GitHub repository. Python 3 standard library only -- no pip install needed."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "text": "Run locally. Point the screener at your CSV exports. It groups cases by debtor name, checks discharge-to-filing gaps against statutory windows, and reports violations with attorney attribution. All pr"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "text": "Review results. The screener outputs per-attorney summaries, gap calculations, and methodological caveats. False positives from name matching are flagged for manual verification."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "text": "Dismissal rates -- percentage of Chapter 13 cases terminating by dismissal, compared to district median"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "text": "Prior filer rates -- percentage of debtors with prior bankruptcy filings in the same district"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "text": "Discharge rates -- percentage of cases reaching successful discharge"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 8,
+          "text": "Dismissal velocity -- how quickly cases dismiss relative to district norms"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 9,
+          "text": "Name matching algorithms and false positive mitigation"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 10,
+          "text": "Statistical controls for district-level variation"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Bankruptcy Practice Analytics and Screening Tools",
+      "url": "https://1328f.com/for-attorneys.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <style>
@@ -372,7 +449,7 @@ document.addEventListener('click', function(e) {
     <div class="breadcrumb"><a href="index.html">Screener</a> / For Attorneys</div>
 
     <h1>Bankruptcy Practice Analytics and Screening Tools</h1>
-    <p class="subtitle">Open-source tools for screening districts, benchmarking practice quality, and detecting Section 1328(f) discharge bar violations.</p>
+    <p class="subtitle">Open-source tools for screening districts, benchmarking practice quality, and detecting <a href="https://section1328.org" title="Section 1328 Discharge -- Open Bankruptcy Project" target="_blank" rel="noopener">Section 1328</a>(f) <a href="https://dischargebar.org" title="Bankruptcy Discharge Bar -- Open Bankruptcy Project" target="_blank" rel="noopener">discharge bar</a> violations.</p>
 
     <h2>Why attorneys should screen</h2>
 

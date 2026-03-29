@@ -8,3 +8,7 @@
 # but refer to unrelated public judges, not case-specific individuals.
 judges/*|Pappas
 judges/*|Fink
+
+# Sitemap URLs reference judge page paths -- same false positives
+sitemap.xml|Pappas
+sitemap.xml|Fink

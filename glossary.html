@@ -360,6 +360,27 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Bankruptcy Glossary",
+      "url": "https://1328f.com/glossary.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <style>
@@ -449,7 +470,7 @@ document.addEventListener('click', function(e) {
 <script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
 
 <div style="background:linear-gradient(135deg,#0d2137,#122a44);border:1px solid #1f4068;border-radius:6px;padding:0.6rem 1.2rem;margin:1rem auto;max-width:900px;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap">
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"/></svg>
+  <svg width="18" height="18" viewbox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"></path></svg>
   <span style="color:#f0f6fc;font-size:0.85rem"><strong>Cited by the federal judiciary</strong> &mdash; This tool's data was accepted by the Advisory Committee on Bankruptcy Rules as <a href="https://www.uscourts.gov/rules-policies/records-and-archives-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a></span>
 </div>
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:0.6rem 1.2rem;margin:0 auto 1rem;max-width:900px;text-align:center;font-size:0.85rem;color:#9eaab6">
@@ -523,7 +544,7 @@ document.addEventListener('click', function(e) {
 <div class="term" id="adequate-protection">
     <span class="permalink" onclick="copyLink('adequate-protection')" title="Copy link to this term">&#128279;</span>
     <h3>Adequate Protection <span class="statute">11 U.S.C. &sect; 361</span></h3>
-    <p>The protection provided to a secured creditor to compensate for the decrease in value of their collateral during the bankruptcy case. Adequate protection can take the form of cash payments, additional liens, or other relief. A creditor seeking to lift the automatic stay often argues that they lack adequate protection of their interest in the collateral.</p>
+    <p>The protection provided to a secured creditor to compensate for the decrease in value of their collateral during the bankruptcy case. Adequate protection can take the form of cash payments, additional liens, or other relief. A creditor seeking to lift the <a href="https://automaticstay.org" title="Automatic Stay in Bankruptcy -- Open Bankruptcy Project" target="_blank" rel="noopener">automatic stay</a> often argues that they lack adequate protection of their interest in the collateral.</p>
     <div class="links">
         <a href="https://www.law.cornell.edu/uscode/text/11/361" class="statute-link">11 U.S.C. &sect; 361</a>
     </div>
@@ -533,7 +554,7 @@ document.addEventListener('click', function(e) {
     <span class="permalink" onclick="copyLink('automatic-stay')" title="Copy link to this term">&#128279;</span>
     <h3>Automatic Stay <span class="statute">11 U.S.C. &sect; 362</span></h3>
     <p>A powerful federal injunction that takes effect the instant a bankruptcy petition is filed. It stops most collection actions, lawsuits, wage garnishments, repossessions, foreclosures, and creditor harassment. Creditors who knowingly violate the stay can face sanctions, contempt, and may be required to pay damages (for individuals, under <a href="https://www.law.cornell.edu/uscode/text/11/362">Section 362(k)</a>).</p>
-    <p>The stay remains in effect until the case is closed, dismissed, or the debtor receives a discharge &mdash; unless a creditor obtains court permission to proceed (relief from stay).</p>
+    <p>The stay remains in effect until the case is closed, dismissed, or the debtor receives a discharge &mdash; unless a creditor obtains court permission to proceed (<a href="https://relieffromstay.org" title="Relief from Automatic Stay -- Open Bankruptcy Project" target="_blank" rel="noopener">relief from stay</a>).</p>
     <p>Learn more at <a href="https://automaticstay.org">automaticstay.org</a> -- part of the Open Bankruptcy Project.</p>
     <div class="links">
         <a href="https://www.law.cornell.edu/uscode/text/11/362" class="statute-link">11 U.S.C. &sect; 362</a>
@@ -547,7 +568,7 @@ document.addEventListener('click', function(e) {
     <span class="permalink" onclick="copyLink('bapcpa')" title="Copy link to this term">&#128279;</span>
     <h3>BAPCPA</h3>
     <div class="aka">Bankruptcy Abuse Prevention and Consumer Protection Act of 2005</div>
-    <p>A major overhaul of U.S. bankruptcy law signed in April 2005 and effective October 17, 2005. BAPCPA introduced the <a href="#means-test">means test</a> for Chapter 7, mandatory <a href="#credit-counseling">credit counseling</a>, the <a href="#section-1328f">Section 1328(f)</a> discharge bar for repeat filers, and the <a href="#section-727a8">Section 727(a)(8)</a> time bar for Chapter 7. It was the most significant change to bankruptcy law since the Bankruptcy Reform Act of 1978.</p>
+    <p>A major overhaul of U.S. bankruptcy law signed in April 2005 and effective October 17, 2005. BAPCPA introduced the <a href="#means-test">means test</a> for Chapter 7, mandatory <a href="#credit-counseling">credit counseling</a>, the <a href="#section-1328f">Section 1328(f)</a> <a href="https://dischargebar.org" title="Bankruptcy Discharge Bar -- Open Bankruptcy Project" target="_blank" rel="noopener">discharge bar</a> for repeat filers, and the <a href="#section-727a8">Section 727(a)(8)</a> time bar for Chapter 7. It was the most significant change to bankruptcy law since the Bankruptcy Reform Act of 1978.</p>
     <div class="links">
         <a href="https://www.law.cornell.edu/uscode/text/11" class="statute-link">Title 11, U.S. Code</a>
     </div>

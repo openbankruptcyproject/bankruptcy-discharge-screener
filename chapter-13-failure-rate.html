@@ -334,6 +334,44 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Chapter 13 Failure Rate",
+      "description": "48% of Chapter 13 bankruptcy cases are dismissed before discharge. National statistics from 4.9 million cases across 94 federal districts -- why cases fail, geo",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project",
+        "url": "https://1328f.org"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "mainEntityOfPage": "https://1328f.com/chapter-13-failure-rate.html"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Chapter 13 Failure Rate",
+      "url": "https://1328f.com/chapter-13-failure-rate.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <style>
@@ -455,9 +493,9 @@ document.addEventListener('click', function(e) {
 
 <h2>The national picture</h2>
 
-<p>Chapter 13 is a court-supervised repayment plan that typically lasts 3 to 5 years. The debtor makes monthly payments to a trustee, who distributes the money to creditors according to the plan. At the end, the court grants a discharge -- an order that wipes out remaining eligible debts.</p>
+<p>Chapter 13 is a court-supervised <a href="https://chapter13plan.org" title="Chapter 13 Repayment Plan -- Open Bankruptcy Project" target="_blank" rel="noopener">repayment plan</a> that typically lasts 3 to 5 years. The debtor makes monthly payments to a trustee, who distributes the money to creditors according to the plan. At the end, the court grants a discharge -- an order that wipes out remaining eligible debts.</p>
 
-<p>Nearly half of all Chapter 13 cases never reach that point. Analysis of 4.9 million cases from the <a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a> and PACER shows a national dismissal rate of approximately 48%. These are cases that were terminated before the debtor completed the plan and received a discharge.</p>
+<p>Nearly half of all Chapter 13 cases never reach that point. Analysis of 4.9 million cases from the <a href="https://www.fjc.gov/research/idb">FJC Integrated Database</a> and PACER shows a national <a href="https://dismissalrate.org" title="Bankruptcy Dismissal Rates -- Open Bankruptcy Project" target="_blank" rel="noopener">dismissal rate</a> of approximately 48%. These are cases that were terminated before the debtor completed the plan and received a discharge.</p>
 
 <p>This is not a new problem. The failure rate has been remarkably stable for decades, hovering between 40% and 55% depending on the time period and methodology. What has changed is our ability to measure it at the district level, where the variation is dramatic.</p>
 
@@ -533,7 +571,7 @@ document.addEventListener('click', function(e) {
         <td>The bankruptcy filing appears on credit reports for 7 years from the filing date -- whether or not the case was completed.</td>
     </tr>
     <tr>
-        <td style="font-weight:600;">Automatic stay lifts</td>
+        <td style="font-weight:600;"><a href="https://automaticstay.org" title="Automatic Stay in Bankruptcy -- Open Bankruptcy Project" target="_blank" rel="noopener">Automatic stay</a> lifts</td>
         <td>The court order that stopped creditor collection activity (wage garnishment, repossession, foreclosure) ends immediately upon dismissal.</td>
     </tr>
     <tr>

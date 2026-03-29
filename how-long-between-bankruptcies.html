@@ -308,6 +308,44 @@ document.addEventListener('click', function(e) {
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How Long Between Bankruptcies?",
+      "description": "Complete guide to waiting periods between bankruptcy filings. Covers the 8-year rule, 6-year rule, 4-year rule, and 2-year rule under Sections 727(a)(8), 727(a)",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open Bankruptcy Project",
+        "url": "https://1328f.org"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "mainEntityOfPage": "https://1328f.com/how-long-between-bankruptcies.html"
+    },
+    {
+      "@type": "WebPage",
+      "name": "How Long Between Bankruptcies?",
+      "url": "https://1328f.com/how-long-between-bankruptcies.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".quick-answer",
+          "h1",
+          ".summary",
+          "p:first-of-type"
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <style>
@@ -394,7 +432,7 @@ document.addEventListener('click', function(e) {
 <script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
 
 <div style="background:linear-gradient(135deg,#0d2137,#122a44);border:1px solid #1f4068;border-radius:6px;padding:0.6rem 1.2rem;margin:1rem auto;max-width:900px;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap">
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"/></svg>
+  <svg width="18" height="18" viewbox="0 0 20 20" fill="none" style="flex-shrink:0"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.77 5.06 16.1 6 10.6 2 6.71l5.61-.87L10 1z" fill="#f0c14b"></path></svg>
   <span style="color:#f0f6fc;font-size:0.85rem"><strong>Cited by the federal judiciary</strong> &mdash; This tool's data was accepted by the Advisory Committee on Bankruptcy Rules as <a href="https://www.uscourts.gov/rules-policies/records-and-archives-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a></span>
 </div>
 <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:0.6rem 1.2rem;margin:0 auto 1rem;max-width:900px;text-align:center;font-size:0.85rem;color:#9eaab6">
@@ -509,7 +547,7 @@ document.addEventListener('click', function(e) {
 
 <h2>The 180-day filing bar: Section 109(g)</h2>
 
-<p>Separate from the discharge waiting periods, <a href="https://www.law.cornell.edu/uscode/text/11/109">Section 109(g)</a> bars <strong>filing itself</strong> for 180 days if a prior case was dismissed for failure to comply with court orders, or if the debtor voluntarily dismissed after a creditor moved for stay relief. This prevents abuse of the automatic stay through serial filing and dismissing.</p>
+<p>Separate from the discharge waiting periods, <a href="https://www.law.cornell.edu/uscode/text/11/109">Section 109(g)</a> bars <strong>filing itself</strong> for 180 days if a prior case was dismissed for failure to comply with court orders, or if the debtor voluntarily dismissed after a creditor moved for stay relief. This prevents abuse of the <a href="https://automaticstay.org" title="Automatic Stay in Bankruptcy -- Open Bankruptcy Project" target="_blank" rel="noopener">automatic stay</a> through serial filing and dismissing.</p>
 
 <h2>What if the prior case was dismissed (not discharged)?</h2>
 
@@ -517,7 +555,7 @@ document.addEventListener('click', function(e) {
 
 <div class="warning-box">
     <div class="label">Common mistake</div>
-    <p>Some attorneys count from discharge date instead of filing date, or confuse the different waiting periods for different chapter combinations. This error can result in a client spending years in a Chapter 13 repayment plan that can never end in discharge. Our screening of 4.9 million cases found 391,951 prior filers discharged with zero eligibility verification. In a 7-district sample, 264 were confirmed 1328(f) violations -- 114 received a discharge despite the bar.</p>
+    <p>Some attorneys count from discharge date instead of filing date, or confuse the different waiting periods for different chapter combinations. This error can result in a client spending years in a Chapter 13 <a href="https://chapter13plan.org" title="Chapter 13 Repayment Plan -- Open Bankruptcy Project" target="_blank" rel="noopener">repayment plan</a> that can never end in discharge. Our screening of 4.9 million cases found 391,951 prior filers discharged with zero eligibility verification. In a 7-district sample, 264 were confirmed 1328(f) violations -- 114 received a discharge despite the bar.</p>
 </div>
 
 <h2 id="calculator">Calculate your waiting period</h2>
@@ -602,7 +640,7 @@ function calcWait() {
     <li><a href="can-i-file-bankruptcy-again.html">Can I File Bankruptcy Again?</a> -- Overview of repeat filing rules</li>
     <li><a href="what-is-a-super-discharge.html">What Is a Super Discharge?</a> -- Why the Chapter 13 discharge is broader than Chapter 7</li>
     <li><a href="bankruptcy-dismissed-vs-discharged.html">Dismissed vs. Discharged</a> -- What each outcome means</li>
-    <li><a href="explainer.html">Section 1328(f) Explained</a> -- Deep dive on the Chapter 13 discharge bar</li>
+    <li><a href="explainer.html">Section 1328(f) Explained</a> -- Deep dive on the Chapter 13 <a href="https://dischargebar.org" title="Bankruptcy Discharge Bar -- Open Bankruptcy Project" target="_blank" rel="noopener">discharge bar</a></li>
 
     <li><a href="can-you-file-bankruptcy-twice.html">Can You File Bankruptcy Twice?</a></li>
 </ul>
