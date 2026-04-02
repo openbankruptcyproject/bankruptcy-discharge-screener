@@ -472,7 +472,14 @@
       .map-legend { gap: 0.8rem; font-size: 0.7rem; }
       #us-map .state-label { font-size: 8px; }
     }
-  </style>
+  
+.faq-section { margin: 2rem 0; }
+.faq-section h2 { color: var(--accent, #58a6ff); font-size: 1.4rem; margin-bottom: 1rem; }
+.faq-item { background: var(--surface, #161b22); border: 1px solid var(--border, #30363d);
+  border-radius: 8px; margin: 0.75rem 0; padding: 1rem 1.5rem; }
+.faq-item h3 { color: var(--text, #e6edf3); font-size: 1rem; margin-bottom: 0.5rem; }
+.faq-item p { color: var(--text-muted, #9eaab6); font-size: 0.95rem; margin: 0; }
+</style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Organization", "name": "Open Bankruptcy Project", "url": "https://1328f.org", "description": "Free, open-source bankruptcy court transparency tools and research.", "foundingDate": "2026-03-27", "areaServed": "US", "nonprofitStatus": "Nonprofit501c3", "sameAs": ["https://1328f.com", "https://1328f.org"]}
 </script>
@@ -558,6 +565,51 @@
 <meta name="twitter:title" content="Bankruptcy Discharge Screener - National Map">
 <meta name="twitter:description" content="Free bankruptcy discharge eligibility screener. Check Section 1328(f) waiting periods across all 94 federal districts. 4.9M cases screened.">
 <meta name="twitter:image" content="https://openbankruptcyproject.org/og-default.svg">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {
+      "@type": "Question",
+      "name": "Can I file bankruptcy again?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but federal law imposes waiting periods between filings under 11 U.S.C. Section 1328(f) and Section 727(a)(8)-(9). The waiting period depends on which chapter you filed previously and which chapter you want to file next. Periods range from two to eight years measured from filing date to filing date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long between Chapter 7 filings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You must wait eight years between Chapter 7 filings to receive a discharge. The period runs from the filing date of your prior Chapter 7 to the filing date of your new Chapter 7 under 11 U.S.C. Section 727(a)(8). Filing before eight years bars your discharge entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long between Chapter 13 filings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You must wait two years between Chapter 13 filings to receive a discharge. The period runs from the filing date of your prior Chapter 13 to the filing date of your new Chapter 13 under 11 U.S.C. Section 1328(f)(2). A prior Chapter 7 requires a four-year wait before a Chapter 13 discharge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 8-year rule for Chapter 7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The eight-year rule under 11 U.S.C. Section 727(a)(8) bars a Chapter 7 discharge if you received a prior Chapter 7 discharge within eight years of the new filing date. The clock runs filing-to-filing per In re Blendheim, 803 F.3d 477 (9th Cir. 2015), not discharge-to-filing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 1328(f) block my discharge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Section 1328(f) blocks a Chapter 13 discharge if you received a prior discharge too recently. A prior Chapter 7 discharge within four years blocks it under Section 1328(f)(1). A prior Chapter 13 discharge within two years blocks it under Section 1328(f)(2). Both periods are measured filing date to filing date."
+      }
+    }
+]}
+</script>
 </head>
 <body>
 <div class="obp-banner" style="background:#151b23;border-bottom:1px solid #252d38;padding:8px 16px;text-align:center;font-size:0.82rem;color:#7d8590;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
@@ -785,6 +837,31 @@ cd bankruptcy-discharge-screener</div>
     </div>
 
   </details>
+</div>
+
+
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>Can I file bankruptcy again?</h3>
+    <p>Yes, but federal law imposes waiting periods between filings under 11 U.S.C. Section 1328(f) and Section 727(a)(8)-(9). The waiting period depends on which chapter you filed previously and which chapter you want to file next. Periods range from two to eight years measured from filing date to filing date.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How long between Chapter 7 filings?</h3>
+    <p>You must wait eight years between Chapter 7 filings to receive a discharge. The period runs from the filing date of your prior Chapter 7 to the filing date of your new Chapter 7 under 11 U.S.C. Section 727(a)(8). Filing before eight years bars your discharge entirely.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How long between Chapter 13 filings?</h3>
+    <p>You must wait two years between Chapter 13 filings to receive a discharge. The period runs from the filing date of your prior Chapter 13 to the filing date of your new Chapter 13 under 11 U.S.C. Section 1328(f)(2). A prior Chapter 7 requires a four-year wait before a Chapter 13 discharge.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What is the 8-year rule for Chapter 7?</h3>
+    <p>The eight-year rule under 11 U.S.C. Section 727(a)(8) bars a Chapter 7 discharge if you received a prior Chapter 7 discharge within eight years of the new filing date. The clock runs filing-to-filing per In re Blendheim, 803 F.3d 477 (9th Cir. 2015), not discharge-to-filing.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Does 1328(f) block my discharge?</h3>
+    <p>Section 1328(f) blocks a Chapter 13 discharge if you received a prior discharge too recently. A prior Chapter 7 discharge within four years blocks it under Section 1328(f)(1). A prior Chapter 13 discharge within two years blocks it under Section 1328(f)(2). Both periods are measured filing date to filing date.</p>
+  </div>
 </div>
 
 <footer>
