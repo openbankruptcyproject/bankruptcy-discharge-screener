@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Open Bankruptcy Project -- SCALES Collaboration Briefing</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 15px; line-height: 1.65; color: #1a1a1a; background: #fafafa; }
+.container { max-width: 820px; margin: 0 auto; padding: 40px 24px 60px; }
+header { text-align: center; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 3px solid #1a3a5c; }
+header h1 { font-size: 26px; font-weight: 700; color: #1a3a5c; margin-bottom: 4px; }
+header .subtitle { font-size: 15px; color: #555; margin-top: 8px; }
+header .date { font-size: 13px; color: #888; margin-top: 4px; }
+h2 { font-size: 19px; font-weight: 700; color: #1a3a5c; margin: 36px 0 16px; padding-bottom: 6px; border-bottom: 1px solid #ddd; }
+h3 { font-size: 16px; font-weight: 600; color: #2a2a2a; margin: 20px 0 10px; }
+p { margin-bottom: 14px; }
+ul, ol { margin: 0 0 16px 24px; }
+li { margin-bottom: 8px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 20px 0 28px; }
+.stat-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px; text-align: center; }
+.stat-card .number { font-size: 28px; font-weight: 700; color: #1a3a5c; display: block; }
+.stat-card .label { font-size: 13px; color: #666; margin-top: 4px; }
+.highlight-box { background: #f0f4f8; border-left: 4px solid #1a3a5c; padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; }
+.highlight-box p { margin-bottom: 0; }
+.timeline { position: relative; padding-left: 24px; margin: 16px 0 24px; }
+.timeline::before { content: ''; position: absolute; left: 6px; top: 4px; bottom: 4px; width: 2px; background: #ccd; }
+.timeline .event { position: relative; margin-bottom: 16px; }
+.timeline .event::before { content: ''; position: absolute; left: -21px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: #1a3a5c; border: 2px solid #fff; }
+.timeline .event .date-label { font-size: 12px; font-weight: 600; color: #1a3a5c; text-transform: uppercase; }
+.timeline .event .desc { font-size: 14px; color: #333; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+th { background: #f5f7fa; font-weight: 600; color: #1a3a5c; font-size: 13px; }
+tr:last-child td { border-bottom: none; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 2px solid #1a3a5c; text-align: center; font-size: 13px; color: #888; }
+.footer a { color: #1a3a5c; text-decoration: none; }
+.tag { display: inline-block; background: #e8eef4; color: #1a3a5c; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+a { color: #1a3a5c; }
+.section-intro { font-size: 15px; color: #444; font-style: italic; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>Open Bankruptcy Project</h1>
+<div class="subtitle">SCALES Collaboration Briefing</div>
+<div class="date">Prepared April 2, 2026</div>
+</header>
+
+<h2>What We Built</h2>
+
+<p>The Open Bankruptcy Project started when a Chapter 11 debtor in Kansas City taught himself Python to investigate his own attorney. It grew into a national-scale court data research platform -- built entirely on publicly available federal court records, including PACER data accessed through infrastructure that SCALES helped make possible.</p>
+
+<div class="stat-grid">
+<div class="stat-card">
+<span class="number">4.9M</span>
+<span class="label">FJC cases loaded (all 94 districts)</span>
+</div>
+<div class="stat-card">
+<span class="number">347</span>
+<span class="label">Python analysis tools</span>
+</div>
+<div class="stat-card">
+<span class="number">139</span>
+<span class="label">Educational domains</span>
+</div>
+<div class="stat-card">
+<span class="number">2,353</span>
+<span class="label">Pages of free legal information</span>
+</div>
+</div>
+
+<h2>The Discovery That Started It All</h2>
+
+<p>Using FJC public release data (37.9M rows, both the IDB main and supplementary files), we cross-referenced two fields that had never been systematically compared: prior filing history and case disposition.</p>
+
+<div class="highlight-box">
+<p><strong>Finding:</strong> 391,951 bankruptcy cases involving prior filers received a discharge with no evidence of 11 U.S.C. &sect; 1328(f) eligibility verification. This represents 27.4% of all prior filers with known dispositions -- a national compliance gap hiding in the government's own data.</p>
+</div>
+
+<p>The aggregate data showing the problem is free (FJC). The verification data that would confirm actual violations is behind the PACER paywall. That's the access-to-justice problem in one example: a federal rules committee is now acting on data that requires paid access to verify.</p>
+
+<h2>Policy Impact</h2>
+
+<div class="timeline">
+<div class="event">
+<div class="date-label">March 17, 2026</div>
+<div class="desc">Submitted suggestion to Advisory Committee on Bankruptcy Rules via uscourts.gov public comment process</div>
+</div>
+<div class="event">
+<div class="date-label">March 23, 2026</div>
+<div class="desc"><strong>Accepted as No. 26-BK-3</strong> -- forwarded to Advisory Committee and Standing Committee chairs and reporters. Proposes Rule 4004 amendment requiring discharge eligibility verification.</div>
+</div>
+<div class="event">
+<div class="date-label">March 27, 2026</div>
+<div class="desc">Published on uscourts.gov under "Pending Suggestions," listed as 26-BK-3, Rule 4004, pending consideration.</div>
+</div>
+</div>
+
+<p>A non-lawyer used publicly available court data to identify a systemic compliance gap, and a federal rules committee accepted it for formal consideration. That pipeline -- from raw PACER data to policy action -- is what OBP exists to replicate at scale.</p>
+
+<h2>The Toolkit</h2>
+
+<p class="section-intro">All tools are open-source Python, running against SQLite databases built from FJC and PACER data.</p>
+
+<table>
+<tr><th>Capability</th><th>What It Does</th></tr>
+<tr><td><strong>Attorney Scorecard</strong></td><td>Multi-dimensional analysis of any bankruptcy attorney: dismissal rates, timing patterns, fee extraction, client outcomes vs. district norms</td></tr>
+<tr><td><strong>Blind Outlier Detection</strong></td><td>Identifies statistical anomalies without specifying a target -- the tool finds the outliers, not the user</td></tr>
+<tr><td><strong>ML Mill Probability</strong></td><td>Random forest classifier trained on known mill indicators: case volume, dismissal timing, fee patterns, prior-filer rates</td></tr>
+<tr><td><strong>District Comparison</strong></td><td>Benchmarks any attorney or firm against their district's baseline across 15+ metrics</td></tr>
+<tr><td><strong>1328(f) Screener</strong></td><td>Live web tool (1328f.com) -- checks individual cases for discharge eligibility violations. Ranking nationally for "bankruptcy discharge screener"</td></tr>
+<tr><td><strong>Deep Docket Mining</strong></td><td>Automated PACER docket analysis: extracts fees, timelines, dispositions, and attorney behavior patterns from raw HTML</td></tr>
+<tr><td><strong>National Audit Tool</strong></td><td>9-screen Madoff-inspired audit across all 94 districts: identifies firms with high volume + high dismissal + high fees simultaneously</td></tr>
+</table>
+
+<h2>The Bankruptcy Transparency Network</h2>
+
+<p>139 domains. 2,353 pages. Zero hosting cost (all GitHub Pages). Built in under three weeks. Every major bankruptcy statute, concept, and consumer question has a dedicated educational site with FAQ schema, cross-links, and plain-language explanations.</p>
+
+<p>Key properties:</p>
+<ul>
+<li><strong>openbankruptcyproject.org</strong> -- institutional home, 501(c)(3) pending</li>
+<li><strong>1328f.com</strong> -- live discharge eligibility screener (client-side sql.js, no server needed)</li>
+<li><strong>1328f.org</strong> -- research platform with methodology, datasets, and district analysis</li>
+<li><strong>chapter7vs13.org</strong> -- 50K monthly search volume educational hub</li>
+</ul>
+
+<p>Google Analytics (3/26 - 4/2): <strong>6,007 sessions from 5,992 users</strong> in the first 7 days of tracking. Peak day: 1,320 sessions.</p>
+
+<h2>Where SCALES and OBP Intersect</h2>
+
+<div class="highlight-box">
+<p>OBP is a use case that demonstrates the full SCALES thesis: free court data, enriched with computational tools, in the hands of the public, producing policy outcomes.</p>
+</div>
+
+<table>
+<tr><th>SCALES Mission</th><th>OBP Implementation</th></tr>
+<tr><td>Make federal court records free</td><td>1328(f) screener serves free case lookups; all tools open-source</td></tr>
+<tr><td>Enrich records with NLP/AI</td><td>347 Python tools extract structured data from raw PACER filings</td></tr>
+<tr><td>Enable systematic research</td><td>4.9M-case FJC database; reproducible methodology anyone can run</td></tr>
+<tr><td>Bridge research and policy</td><td>26-BK-3 accepted by federal rules committee</td></tr>
+<tr><td>People-first court data framework</td><td>139 consumer-facing educational sites translating court data into plain language</td></tr>
+</table>
+
+<h2>Academic Engagement</h2>
+
+<ul>
+<li><strong>Jonah Gelbach</strong> (UC Berkeley Law) -- reviewed methodology, validated the statistical approach, discussed co-authorship on 1328(f) paper</li>
+<li><strong>26-BK-3</strong> -- published on uscourts.gov, pending consideration by the Advisory Committee on Bankruptcy Rules</li>
+<li><strong>Google.org Impact Challenge</strong> -- application pending</li>
+<li><strong>Free Law Project / RECAP</strong> -- 492 cases, 3,007 files prepared for contribution to the public archive</li>
+</ul>
+
+<h2>Research Opportunities</h2>
+
+<ol>
+<li><strong>National 1328(f) verification study</strong> -- the 391,951 figure identifies the pool; systematic PACER docket pulls would determine actual violation counts by district. Publishable, policy-relevant, and directly tied to 26-BK-3.</li>
+<li><strong>Attorney behavior pattern analysis</strong> -- OBP's toolkit detects statistical outliers at the attorney level. SCALES' NLP enrichment could automate extraction of fee data, motion patterns, and outcome distributions at national scale.</li>
+<li><strong>State court expansion</strong> -- OBP's methodology is federal-only today. SCALES' state court work (Georgia, Washington) opens a dimension where the same consumer protection gaps likely exist but have never been measured.</li>
+<li><strong>People-first data framework validation</strong> -- OBP's 139-domain network is a live experiment in translating court data for public consumption. Usage data from 6,000+ users in the first week could inform SCALES' own accessibility research.</li>
+</ol>
+
+<h2>About the Builder</h2>
+
+<p>The founder of OBP is a small business owner in Kansas City with no law degree, no CS degree, and no academic affiliation. He taught himself Python in 2024 while navigating a Chapter 11 bankruptcy as a pro se debtor. He built the entire platform -- 347 tools, 4.9 million cases, 139 domains, a federal rules suggestion -- in under 12 months, working nights and weekends while running his business and managing an active bankruptcy case.</p>
+
+<div class="footer">
+<p>Open Bankruptcy Project &bull; <a href="https://openbankruptcyproject.org">openbankruptcyproject.org</a> &bull; 501(c)(3) pending</p>
+<p style="margin-top: 8px;">This briefing is private and not indexed. Prepared for academic collaboration discussion.</p>
+</div>
+
+</div>
+</body>
+</html>
