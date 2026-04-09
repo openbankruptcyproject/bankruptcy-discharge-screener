@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTWLM223G7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-FTWLM223G7");gtag("config","G-053Z64N82F");</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bankruptcy Data Explorer -- Compare Districts, States & Trends | 4.9M Cases [2026]</title>
+<meta name="description" content="Interactive bankruptcy statistics explorer. Compare any two federal districts side-by-side, view filing trends by year, and see state-level rollups. Free, open-source data from 4.9M cases across 94 districts.">
+<link rel="canonical" href="https://1328f.com/explore.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="Bankruptcy Data Explorer -- Compare Districts, States & Trends">
+<meta property="og:description" content="Interactive tool to compare bankruptcy statistics across all 94 federal districts. Filing trends, dismissal rates, discharge rates, and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1328f.com/explore.html">
+<meta property="og:image" content="https://1328f.com/og-image.png">
+<meta property="og:site_name" content="1328f.com -- Open Bankruptcy Project">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bankruptcy Data Explorer -- Compare Districts & Trends">
+<meta name="twitter:description" content="Interactive tool to compare bankruptcy statistics across all 94 federal districts.">
+<meta name="twitter:image" content="https://1328f.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bankruptcy Data Explorer",
+  "description": "Interactive bankruptcy statistics explorer for comparing districts, viewing trends, and analyzing state-level data across 94 federal districts and 4.9 million cases.",
+  "url": "https://1328f.com/explore.html",
+  "applicationCategory": "ReferenceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": {
+    "@type": "Organization",
+    "name": "Open Bankruptcy Project",
+    "url": "https://openbankruptcyproject.org"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "1328f.com",
+    "url": "https://1328f.com"
+  }
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0d1117; color: #c9d1d9; line-height: 1.6;
+}
+a { color: #58a6ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+header {
+  background: #161b22; border-bottom: 1px solid #30363d;
+  padding: 1.5rem 2rem; text-align: center;
+}
+header h1 { color: #f0f6fc; font-size: 1.6rem; margin-bottom: 0.3rem; }
+header .subtitle { color: #8b949e; font-size: 0.95rem; max-width: 700px; margin: 0 auto; }
+header .links { margin-top: 0.6rem; }
+header .links a { margin: 0 0.5rem; font-size: 0.9rem; }
+
+/* Tabs */
+.tabs {
+  display: flex; justify-content: center; gap: 0;
+  background: #161b22; border-bottom: 1px solid #30363d;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  padding: 0.7rem 1.5rem; border: none; background: transparent;
+  color: #8b949e; font-size: 0.9rem; cursor: pointer;
+  border-bottom: 2px solid transparent; transition: all 0.15s;
+  font-family: inherit;
+}
+.tab-btn:hover { color: #c9d1d9; background: #21262d; }
+.tab-btn.active { color: #58a6ff; border-bottom-color: #58a6ff; font-weight: 600; }
+
+/* Tab panels */
+.tab-panel { display: none; max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; }
+.tab-panel.active { display: block; }
+
+/* Section headings */
+.section-title {
+  color: #f0f6fc; font-size: 1.2rem; margin-bottom: 1rem;
+  padding-bottom: 0.4rem; border-bottom: 1px solid #21262d;
+}
+
+/* Dropdowns & inputs */
+select, input[type="text"] {
+  background: #0d1117; color: #c9d1d9; border: 1px solid #30363d;
+  padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.9rem;
+  font-family: inherit; width: 100%; max-width: 340px;
+}
+select:focus, input[type="text"]:focus { outline: none; border-color: #58a6ff; }
+label { color: #8b949e; font-size: 0.85rem; display: block; margin-bottom: 0.3rem; }
+
+/* Comparison layout */
+.compare-controls {
+  display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+  align-items: flex-end;
+}
+.compare-col { flex: 1; min-width: 280px; }
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 700px) { .compare-grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+  padding: 1.25rem; position: relative;
+}
+.card h3 {
+  color: #f0f6fc; font-size: 1rem; margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem; border-bottom: 1px solid #21262d;
+}
+.stat-row {
+  display: flex; justify-content: space-between; padding: 0.3rem 0;
+  font-size: 0.9rem; border-bottom: 1px solid rgba(48,54,61,0.5);
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: #8b949e; }
+.stat-val { color: #f0f6fc; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat-val.red { color: #f87171; }
+.stat-val.green { color: #4ade80; }
+.stat-val.blue { color: #58a6ff; }
+.stat-val.amber { color: #fbbf24; }
+.delta { font-size: 0.75rem; color: #8b949e; margin-left: 0.4rem; }
+.delta.better { color: #4ade80; }
+.delta.worse { color: #f87171; }
+
+/* SVG chart */
+.chart-container { margin-top: 1rem; }
+.chart-container svg { width: 100%; height: auto; display: block; }
+.chart-legend {
+  display: flex; gap: 1.2rem; flex-wrap: wrap;
+  margin-top: 0.5rem; font-size: 0.8rem; color: #8b949e;
+}
+.legend-dot {
+  display: inline-block; width: 10px; height: 10px;
+  border-radius: 50%; margin-right: 4px; vertical-align: middle;
+}
+
+/* Trend controls */
+.trend-controls {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  margin-bottom: 1rem; align-items: flex-end;
+}
+.trend-controls .field { min-width: 200px; }
+.metric-pills {
+  display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.3rem;
+}
+.pill {
+  padding: 0.3rem 0.7rem; border: 1px solid #30363d; border-radius: 20px;
+  background: transparent; color: #8b949e; font-size: 0.8rem;
+  cursor: pointer; transition: all 0.15s; font-family: inherit;
+}
+.pill:hover { border-color: #58a6ff; color: #c9d1d9; }
+.pill.active { background: #58a6ff; color: #fff; border-color: #58a6ff; }
+
+/* State rollup table */
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.9rem;
+}
+th {
+  background: #161b22; color: #f0f6fc; padding: 0.6rem 0.75rem;
+  text-align: left; border-bottom: 2px solid #30363d;
+  cursor: pointer; user-select: none; white-space: nowrap;
+  font-size: 0.85rem;
+}
+th:hover { color: #58a6ff; }
+th .arrow { margin-left: 4px; font-size: 0.65rem; }
+td {
+  padding: 0.55rem 0.75rem; border-bottom: 1px solid #21262d;
+}
+tr:hover td { background: #161b22; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Search */
+.search-box { margin-bottom: 1rem; }
+.search-results { margin-top: 0.5rem; }
+.search-result {
+  padding: 0.6rem 0.75rem; border-bottom: 1px solid #21262d;
+  cursor: pointer; transition: background 0.1s;
+}
+.search-result:hover { background: #161b22; }
+.search-result .name { color: #f0f6fc; font-weight: 600; }
+.search-result .meta { color: #8b949e; font-size: 0.8rem; }
+
+/* Loading */
+.loading {
+  text-align: center; padding: 3rem; color: #484f58; font-style: italic;
+}
+
+/* Footer */
+footer {
+  text-align: center; padding: 1.5rem 2rem; color: #484f58;
+  font-size: 0.8rem; border-top: 1px solid #21262d; margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header { padding: 1rem; }
+  header h1 { font-size: 1.2rem; }
+  .tab-panel { padding: 1rem; }
+  .tab-btn { padding: 0.5rem 0.8rem; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Bankruptcy Data Explorer</h1>
+  <p class="subtitle">Compare districts, view filing trends, and explore state-level statistics across 94 federal districts and 4.9 million Chapter 13 cases.</p>
+  <div class="links">
+    <a href="/">Screener</a>
+    <a href="/dashboard.html">Map</a>
+    <a href="/for-researchers.html">Research</a>
+    <a href="https://github.com/openbankruptcyproject" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="compare">District Comparison</button>
+  <button class="tab-btn" data-tab="trends">Year Trends</button>
+  <button class="tab-btn" data-tab="states">State Rollup</button>
+  <button class="tab-btn" data-tab="search">Search</button>
+</div>
+
+<!-- ====== COMPARE TAB ====== -->
+<div class="tab-panel active" id="panel-compare">
+  <h2 class="section-title">District Comparison</h2>
+  <p style="color:#8b949e;font-size:0.85rem;margin-bottom:1rem;">Select two districts to compare their bankruptcy statistics side by side.</p>
+  <div class="compare-controls">
+    <div class="compare-col">
+      <label for="dist-a">District A</label>
+      <select id="dist-a"><option value="">-- Select district --</option></select>
+    </div>
+    <div class="compare-col">
+      <label for="dist-b">District B</label>
+      <select id="dist-b"><option value="">-- Select district --</option></select>
+    </div>
+  </div>
+  <div id="compare-result"></div>
+</div>
+
+<!-- ====== TRENDS TAB ====== -->
+<div class="tab-panel" id="panel-trends">
+  <h2 class="section-title">Filing Trends by Year</h2>
+  <p style="color:#8b949e;font-size:0.85rem;margin-bottom:1rem;">View how bankruptcy filings have changed over time for any district or nationally.</p>
+  <div class="trend-controls">
+    <div class="field">
+      <label for="trend-dist">District</label>
+      <select id="trend-dist"><option value="NATIONAL">-- National Total --</option></select>
+    </div>
+    <div class="field">
+      <label>Metric</label>
+      <div class="metric-pills">
+        <button class="pill active" data-metric="total">Total Filings</button>
+        <button class="pill" data-metric="ch13">Ch. 13</button>
+        <button class="pill" data-metric="ch7">Ch. 7</button>
+        <button class="pill" data-metric="ch11">Ch. 11</button>
+        <button class="pill" data-metric="all">All Chapters</button>
+      </div>
+    </div>
+  </div>
+  <div id="trend-chart" class="card">
+    <div class="loading">Loading trend data...</div>
+  </div>
+  <div id="trend-table-wrap" style="margin-top:1rem;"></div>
+</div>
+
+<!-- ====== STATES TAB ====== -->
+<div class="tab-panel" id="panel-states">
+  <h2 class="section-title">State Rollup</h2>
+  <p style="color:#8b949e;font-size:0.85rem;margin-bottom:1rem;">Aggregate bankruptcy statistics for each state (all districts combined). Click a column header to sort.</p>
+  <div class="table-wrap">
+    <table id="state-table">
+      <thead>
+        <tr>
+          <th data-col="state">State <span class="arrow"></span></th>
+          <th data-col="districts"># Dist. <span class="arrow"></span></th>
+          <th data-col="total_filed">Total Filed <span class="arrow"></span></th>
+          <th data-col="closed">Closed <span class="arrow"></span></th>
+          <th data-col="discharged">Discharged <span class="arrow"></span></th>
+          <th data-col="dismissed">Dismissed <span class="arrow"></span></th>
+          <th data-col="dismiss_rate">Dismiss % <span class="arrow"></span></th>
+          <th data-col="prior_filers">Prior Filers <span class="arrow"></span></th>
+          <th data-col="prior_rate">Prior % <span class="arrow"></span></th>
+          <th data-col="prior_discharge_rate">Prior Disch % <span class="arrow"></span></th>
+        </tr>
+      </thead>
+      <tbody id="state-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ====== SEARCH TAB ====== -->
+<div class="tab-panel" id="panel-search">
+  <h2 class="section-title">Search Districts</h2>
+  <p style="color:#8b949e;font-size:0.85rem;margin-bottom:1rem;">Search for any federal district by name, state, or court code.</p>
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="e.g. Kansas, California, S.D.N.Y., Northern District...">
+  </div>
+  <div id="search-results" class="search-results"></div>
+  <div id="search-detail"></div>
+</div>
+
+<footer>
+  Data sourced from FJC Integrated Database (4.9M Ch.13 cases, FY2008-2024) and U.S. Courts Statistics.<br>
+  Built by the <a href="https://openbankruptcyproject.org">Open Bankruptcy Project</a>.
+  No personal information is collected or displayed.
+  <p style="margin-top:0.5rem;">This site provides general information, not legal advice. Consult a qualified attorney for your specific situation.</p>
+</footer>
+
+<script src="/btn-engage.js" defer></script>
+<script>
+(function() {
+  'use strict';
+
+  // ── State name map ──────────────────────────────
+  var STATE_NAMES = {
+    'AL':'Alabama','AK':'Alaska','AZ':'Arizona','AR':'Arkansas','CA':'California',
+    'CO':'Colorado','CT':'Connecticut','DE':'Delaware','FL':'Florida','GA':'Georgia',
+    'HI':'Hawaii','ID':'Idaho','IL':'Illinois','IN':'Indiana','IA':'Iowa',
+    'KS':'Kansas','KY':'Kentucky','LA':'Louisiana','ME':'Maine','MD':'Maryland',
+    'MA':'Massachusetts','MI':'Michigan','MN':'Minnesota','MS':'Mississippi','MO':'Missouri',
+    'MT':'Montana','NE':'Nebraska','NV':'Nevada','NH':'New Hampshire','NJ':'New Jersey',
+    'NM':'New Mexico','NY':'New York','NC':'North Carolina','ND':'North Dakota','OH':'Ohio',
+    'OK':'Oklahoma','OR':'Oregon','PA':'Pennsylvania','RI':'Rhode Island','SC':'South Carolina',
+    'SD':'South Dakota','TN':'Tennessee','TX':'Texas','UT':'Utah','VT':'Vermont',
+    'VA':'Virginia','WA':'Washington','WV':'West Virginia','WI':'Wisconsin','WY':'Wyoming',
+    'DC':'District of Columbia'
+  };
+
+  // ── Data holders ────────────────────────────────
+  var districts = [];
+  var districtMap = {};
+  var yearTrends = null;
+  var stateSort = { col: 'total_filed', asc: false };
+
+  // ── Load data ───────────────────────────────────
+  var distReady = fetch('districts.json')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      districts = d.districts;
+      for (var i = 0; i < districts.length; i++) {
+        districtMap[districts[i].court_id] = districts[i];
+      }
+    });
+
+  var trendReady = fetch('data/year-trends.json')
+    .then(function(r) { return r.json(); })
+    .then(function(d) { yearTrends = d; })
+    .catch(function() { yearTrends = null; });
+
+  Promise.all([distReady, trendReady]).then(init);
+
+  // ── Tab switching ───────────────────────────────
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.tab-panel');
+  for (var i = 0; i < tabBtns.length; i++) {
+    tabBtns[i].addEventListener('click', (function(btn) {
+      return function() {
+        for (var j = 0; j < tabBtns.length; j++) tabBtns[j].classList.remove('active');
+        for (var j = 0; j < tabPanels.length; j++) tabPanels[j].classList.remove('active');
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.getAttribute('data-tab')).classList.add('active');
+        if (typeof gtag === 'function') {
+          gtag('event', 'explore_tab', { tab_name: btn.getAttribute('data-tab') });
+        }
+      };
+    })(tabBtns[i]));
+  }
+
+  // ── Init ────────────────────────────────────────
+  function init() {
+    populateDropdowns();
+    renderStateTable();
+    setupSearch();
+    setupTrends();
+    setupCompare();
+  }
+
+  // ── Populate dropdowns ──────────────────────────
+  function populateDropdowns() {
+    var sorted = districts.slice().sort(function(a, b) {
+      return a.name.localeCompare(b.name);
+    });
+    var selects = [
+      document.getElementById('dist-a'),
+      document.getElementById('dist-b'),
+      document.getElementById('trend-dist')
+    ];
+    for (var i = 0; i < sorted.length; i++) {
+      var d = sorted[i];
+      var opt = '<option value="' + d.court_id + '">' + d.name + ' (' + d.state + ')</option>';
+      for (var j = 0; j < selects.length; j++) {
+        selects[j].insertAdjacentHTML('beforeend', opt);
+      }
+    }
+  }
+
+  // ── Utility ─────────────────────────────────────
+  function fmt(n) {
+    if (n == null) return '--';
+    return n.toLocaleString();
+  }
+  function pct(n) {
+    if (n == null) return '--';
+    return n.toFixed(1) + '%';
+  }
+
+  // ══════════════════════════════════════════════════
+  // COMPARE
+  // ══════════════════════════════════════════════════
+  function setupCompare() {
+    document.getElementById('dist-a').addEventListener('change', renderCompare);
+    document.getElementById('dist-b').addEventListener('change', renderCompare);
+  }
+
+  function renderCompare() {
+    var aId = document.getElementById('dist-a').value;
+    var bId = document.getElementById('dist-b').value;
+    var container = document.getElementById('compare-result');
+
+    if (!aId && !bId) {
+      container.innerHTML = '<p class="loading">Select two districts to compare.</p>';
+      return;
+    }
+
+    var a = aId ? districtMap[aId] : null;
+    var b = bId ? districtMap[bId] : null;
+
+    var html = '<div class="compare-grid">';
+    if (a) html += buildCompareCard(a, b);
+    if (b) html += buildCompareCard(b, a);
+    html += '</div>';
+
+    if (a && b) {
+      html += buildDeltaTable(a, b);
+    }
+
+    container.innerHTML = html;
+  }
+
+  function buildCompareCard(d, other) {
+    var h = '<div class="card"><h3>' + d.name + ' (' + d.state + ')</h3>';
+    var rows = [
+      ['Total Ch.13 Filed', fmt(d.total_filed), null],
+      ['Closed Cases', fmt(d.closed), null],
+      ['Discharged', fmt(d.discharged), 'green'],
+      ['Dismissed', fmt(d.dismissed), 'red'],
+      ['Dismissal Rate', pct(d.dismiss_rate), d.dismiss_rate > 50 ? 'red' : 'green'],
+      ['Prior Filers', fmt(d.prior_filers), null],
+      ['Prior Filer Rate', pct(d.prior_rate), null],
+      ['Prior Filer Discharge Rate', pct(d.prior_discharge_rate), d.prior_discharge_rate > 40 ? 'red' : (d.prior_discharge_rate > 25 ? 'amber' : 'green')],
+      ['Pro Se Rate', pct(d.pro_se_rate), null],
+      ['Ch.13 Completion Rate (BAPCPA)', pct(d.bapcpa_ch13_completion_rate), null],
+      ['2025 Total Filings', fmt(d.official_filings_2025), null],
+      ['2025 YoY Change', d.official_yoy_change_pct != null ? (d.official_yoy_change_pct > 0 ? '+' : '') + d.official_yoy_change_pct + '%' : '--', null]
+    ];
+    for (var i = 0; i < rows.length; i++) {
+      var cls = rows[i][2] ? ' ' + rows[i][2] : '';
+      h += '<div class="stat-row"><span class="stat-label">' + rows[i][0] + '</span>';
+      h += '<span class="stat-val' + cls + '">' + rows[i][1];
+      if (other && i === 4 && d.dismiss_rate != null && other.dismiss_rate != null) {
+        var delta = d.dismiss_rate - other.dismiss_rate;
+        h += '<span class="delta ' + (delta > 0 ? 'worse' : 'better') + '">' + (delta > 0 ? '+' : '') + delta.toFixed(1) + 'pp</span>';
+      }
+      if (other && i === 7 && d.prior_discharge_rate != null && other.prior_discharge_rate != null) {
+        var delta = d.prior_discharge_rate - other.prior_discharge_rate;
+        h += '<span class="delta ' + (delta > 0 ? 'worse' : 'better') + '">' + (delta > 0 ? '+' : '') + delta.toFixed(1) + 'pp</span>';
+      }
+      h += '</span></div>';
+    }
+    h += '</div>';
+    return h;
+  }
+
+  function buildDeltaTable(a, b) {
+    var metrics = [
+      { label: 'Dismissal Rate', key: 'dismiss_rate', unit: '%', higher: 'worse' },
+      { label: 'Prior Filer Discharge Rate', key: 'prior_discharge_rate', unit: '%', higher: 'worse' },
+      { label: 'Prior Filer Rate', key: 'prior_rate', unit: '%', higher: 'neutral' },
+      { label: 'Pro Se Rate', key: 'pro_se_rate', unit: '%', higher: 'neutral' },
+      { label: 'Total Filed', key: 'total_filed', unit: '', higher: 'neutral' },
+      { label: 'BAPCPA Completion Rate', key: 'bapcpa_ch13_completion_rate', unit: '%', higher: 'better' }
+    ];
+
+    var h = '<div class="card" style="margin-top:1.5rem;">';
+    h += '<h3>Head-to-Head: ' + a.name + ' vs ' + b.name + '</h3>';
+    h += '<table style="width:100%;"><thead><tr>';
+    h += '<th>Metric</th><th style="text-align:right;">' + a.name + '</th><th style="text-align:right;">' + b.name + '</th><th style="text-align:right;">Difference</th>';
+    h += '</tr></thead><tbody>';
+
+    for (var i = 0; i < metrics.length; i++) {
+      var m = metrics[i];
+      var va = a[m.key], vb = b[m.key];
+      var diff = (va != null && vb != null) ? va - vb : null;
+      var diffClass = '';
+      if (diff != null && m.higher === 'worse') diffClass = diff > 0 ? 'worse' : 'better';
+      if (diff != null && m.higher === 'better') diffClass = diff > 0 ? 'better' : 'worse';
+
+      h += '<tr>';
+      h += '<td>' + m.label + '</td>';
+      h += '<td class="num">' + (va != null ? (m.unit === '%' ? va.toFixed(1) + '%' : fmt(va)) : '--') + '</td>';
+      h += '<td class="num">' + (vb != null ? (m.unit === '%' ? vb.toFixed(1) + '%' : fmt(vb)) : '--') + '</td>';
+      h += '<td class="num"><span class="delta ' + diffClass + '">';
+      if (diff != null) {
+        h += (diff > 0 ? '+' : '') + (m.unit === '%' ? diff.toFixed(1) + 'pp' : fmt(Math.round(diff)));
+      } else {
+        h += '--';
+      }
+      h += '</span></td></tr>';
+    }
+    h += '</tbody></table></div>';
+    return h;
+  }
+
+  // ══════════════════════════════════════════════════
+  // YEAR TRENDS
+  // ══════════════════════════════════════════════════
+  var currentMetric = 'total';
+
+  function setupTrends() {
+    document.getElementById('trend-dist').addEventListener('change', renderTrend);
+    var pills = document.querySelectorAll('.pill[data-metric]');
+    for (var i = 0; i < pills.length; i++) {
+      pills[i].addEventListener('click', (function(pill) {
+        return function() {
+          var allPills = document.querySelectorAll('.pill[data-metric]');
+          for (var j = 0; j < allPills.length; j++) allPills[j].classList.remove('active');
+          pill.classList.add('active');
+          currentMetric = pill.getAttribute('data-metric');
+          renderTrend();
+        };
+      })(pills[i]));
+    }
+    renderTrend();
+  }
+
+  function renderTrend() {
+    var chartEl = document.getElementById('trend-chart');
+    var tableEl = document.getElementById('trend-table-wrap');
+
+    if (!yearTrends) {
+      chartEl.innerHTML = '<div class="loading">Year trend data not available.</div>';
+      tableEl.innerHTML = '';
+      return;
+    }
+
+    var distId = document.getElementById('trend-dist').value;
+    var data = distId === 'NATIONAL' ? yearTrends.national : (yearTrends.districts[distId] || null);
+    var distName = distId === 'NATIONAL' ? 'National Total' : (districtMap[distId] ? districtMap[distId].name : distId);
+
+    if (!data) {
+      chartEl.innerHTML = '<div class="loading">No trend data available for this district.</div>';
+      tableEl.innerHTML = '';
+      return;
+    }
+
+    var years = yearTrends.years;
+    var metricKey = currentMetric;
+
+    // Build series
+    var series = [];
+    if (metricKey === 'all') {
+      series = [
+        { key: 't', label: 'Total', color: '#58a6ff' },
+        { key: '7', label: 'Ch. 7', color: '#4ade80' },
+        { key: '13', label: 'Ch. 13', color: '#f87171' },
+        { key: '11', label: 'Ch. 11', color: '#fbbf24' }
+      ];
+    } else if (metricKey === 'ch13') {
+      series = [{ key: '13', label: 'Ch. 13 Filings', color: '#f87171' }];
+    } else if (metricKey === 'ch7') {
+      series = [{ key: '7', label: 'Ch. 7 Filings', color: '#4ade80' }];
+    } else if (metricKey === 'ch11') {
+      series = [{ key: '11', label: 'Ch. 11 Filings', color: '#fbbf24' }];
+    } else {
+      series = [{ key: 't', label: 'Total Filings', color: '#58a6ff' }];
+    }
+
+    // Extract values -- only years with data
+    var validYears = [];
+    var allVals = [];
+    for (var yi = 0; yi < years.length; yi++) {
+      var yr = String(years[yi]);
+      if (data[yr]) validYears.push(years[yi]);
+    }
+    for (var si = 0; si < series.length; si++) {
+      series[si].values = [];
+      for (var vi = 0; vi < validYears.length; vi++) {
+        var yr = String(validYears[vi]);
+        var val = data[yr] ? (data[yr][series[si].key] || 0) : null;
+        series[si].values.push(val);
+        if (val != null && val > 0) allVals.push(val);
+      }
+    }
+
+    if (allVals.length === 0 || validYears.length === 0) {
+      chartEl.innerHTML = '<div class="loading">No data for selected metric.</div>';
+      tableEl.innerHTML = '';
+      return;
+    }
+
+    // SVG chart
+    var w = 800, h = 320, padL = 70, padR = 20, padT = 20, padB = 40;
+    var chartW = w - padL - padR, chartH = h - padT - padB;
+    var maxVal = Math.max.apply(null, allVals) * 1.1;
+    if (maxVal === 0) maxVal = 100;
+
+    var svg = '<svg viewBox="0 0 ' + w + ' ' + h + '" xmlns="http://www.w3.org/2000/svg">';
+
+    // Grid lines
+    var numGrid = 5;
+    for (var gi = 0; gi <= numGrid; gi++) {
+      var gy = padT + chartH - (gi / numGrid) * chartH;
+      var gval = (gi / numGrid) * maxVal;
+      svg += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (w - padR) + '" y2="' + gy + '" stroke="#21262d" stroke-width="1"/>';
+      svg += '<text x="' + (padL - 8) + '" y="' + (gy + 4) + '" text-anchor="end" fill="#8b949e" font-size="11">' + formatAxisLabel(gval) + '</text>';
+    }
+
+    // X-axis labels
+    for (var yi = 0; yi < validYears.length; yi++) {
+      var x = padL + (yi / (validYears.length - 1 || 1)) * chartW;
+      svg += '<text x="' + x + '" y="' + (h - 8) + '" text-anchor="middle" fill="#8b949e" font-size="11">' + validYears[yi] + '</text>';
+    }
+
+    // Draw lines
+    for (var si = 0; si < series.length; si++) {
+      var s = series[si];
+      var pathParts = [];
+      var dots = '';
+      var first = true;
+      for (var vi = 0; vi < validYears.length; vi++) {
+        var yr = String(validYears[vi]);
+        var val = data[yr] ? (data[yr][s.key] || 0) : null;
+        if (val == null) { first = true; continue; }
+        var x = padL + (vi / (validYears.length - 1 || 1)) * chartW;
+        var y = padT + chartH - (val / maxVal) * chartH;
+        if (first) { pathParts.push('M' + x.toFixed(1) + ',' + y.toFixed(1)); first = false; }
+        else { pathParts.push('L' + x.toFixed(1) + ',' + y.toFixed(1)); }
+        dots += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3.5" fill="' + s.color + '" stroke="#0d1117" stroke-width="1.5">';
+        dots += '<title>' + validYears[vi] + ': ' + fmt(val) + '</title></circle>';
+      }
+      svg += '<path d="' + pathParts.join('') + '" fill="none" stroke="' + s.color + '" stroke-width="2.5" stroke-linejoin="round"/>';
+      svg += dots;
+    }
+
+    svg += '</svg>';
+
+    // Legend
+    var legend = '<div class="chart-legend">';
+    for (var si = 0; si < series.length; si++) {
+      legend += '<span><span class="legend-dot" style="background:' + series[si].color + ';"></span>' + series[si].label + '</span>';
+    }
+    legend += '</div>';
+
+    chartEl.innerHTML = '<h3 style="color:#f0f6fc;font-size:1rem;margin-bottom:0.5rem;">' + distName + '</h3>' + svg + legend;
+
+    // Data table below chart
+    var thtml = '<div class="card"><table><thead><tr><th>Year</th>';
+    for (var si = 0; si < series.length; si++) {
+      thtml += '<th style="text-align:right;">' + series[si].label + '</th>';
+    }
+    thtml += '<th style="text-align:right;">YoY Change</th></tr></thead><tbody>';
+    for (var vi = 0; vi < validYears.length; vi++) {
+      var yr = String(validYears[vi]);
+      var prevYr = String(validYears[vi] - 1);
+      thtml += '<tr><td>' + validYears[vi] + '</td>';
+      for (var si = 0; si < series.length; si++) {
+        var val = data[yr] ? (data[yr][series[si].key] || 0) : null;
+        thtml += '<td class="num">' + (val != null ? fmt(val) : '--') + '</td>';
+      }
+      var curVal = data[yr] ? (data[yr][series[0].key] || 0) : null;
+      var prevVal = data[prevYr] ? (data[prevYr][series[0].key] || 0) : null;
+      if (curVal != null && prevVal != null && prevVal > 0) {
+        var yoy = ((curVal - prevVal) / prevVal * 100);
+        var yoyCls = yoy > 0 ? 'red' : 'green';
+        thtml += '<td class="num"><span class="stat-val ' + yoyCls + '">' + (yoy > 0 ? '+' : '') + yoy.toFixed(1) + '%</span></td>';
+      } else {
+        thtml += '<td class="num">--</td>';
+      }
+      thtml += '</tr>';
+    }
+    thtml += '</tbody></table></div>';
+    tableEl.innerHTML = thtml;
+  }
+
+  function formatAxisLabel(val) {
+    if (val >= 1000000) return (val / 1000000).toFixed(1) + 'M';
+    if (val >= 1000) return (val / 1000).toFixed(0) + 'K';
+    return Math.round(val).toString();
+  }
+
+  // ══════════════════════════════════════════════════
+  // STATE ROLLUP
+  // ══════════════════════════════════════════════════
+  function renderStateTable() {
+    var stateData = {};
+    for (var i = 0; i < districts.length; i++) {
+      var d = districts[i];
+      var st = d.state;
+      if (!stateData[st]) {
+        stateData[st] = {
+          state: STATE_NAMES[st] || st,
+          abbr: st,
+          districts: 0,
+          total_filed: 0,
+          closed: 0,
+          discharged: 0,
+          dismissed: 0,
+          prior_filers: 0,
+          prior_discharged: 0,
+          prior_closed: 0
+        };
+      }
+      var s = stateData[st];
+      s.districts++;
+      s.total_filed += d.total_filed || 0;
+      s.closed += d.closed || 0;
+      s.discharged += d.discharged || 0;
+      s.dismissed += d.dismissed || 0;
+      s.prior_filers += d.prior_filers || 0;
+      s.prior_discharged += d.prior_discharged || 0;
+      s.prior_closed += d.prior_closed || 0;
+    }
+
+    var stateArr = [];
+    for (var st in stateData) {
+      var s = stateData[st];
+      s.dismiss_rate = s.closed > 0 ? (s.dismissed / s.closed * 100) : null;
+      s.prior_rate = s.total_filed > 0 ? (s.prior_filers / s.total_filed * 100) : null;
+      s.prior_discharge_rate = s.prior_closed > 0 ? (s.prior_discharged / s.prior_closed * 100) : null;
+      stateArr.push(s);
+    }
+
+    renderStateRows(stateArr);
+
+    var ths = document.querySelectorAll('#state-table th');
+    for (var i = 0; i < ths.length; i++) {
+      ths[i].addEventListener('click', (function(th) {
+        return function() {
+          var col = th.getAttribute('data-col');
+          if (stateSort.col === col) stateSort.asc = !stateSort.asc;
+          else { stateSort.col = col; stateSort.asc = col === 'state'; }
+          renderStateRows(stateArr);
+        };
+      })(ths[i]));
+    }
+  }
+
+  function renderStateRows(stateArr) {
+    var col = stateSort.col;
+    var asc = stateSort.asc;
+    stateArr.sort(function(a, b) {
+      var va = a[col], vb = b[col];
+      if (va == null && vb == null) return 0;
+      if (va == null) return 1;
+      if (vb == null) return -1;
+      if (typeof va === 'string') return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+      return asc ? va - vb : vb - va;
+    });
+
+    var html = '';
+    for (var i = 0; i < stateArr.length; i++) {
+      var s = stateArr[i];
+      var drCls = s.dismiss_rate > 50 ? ' red' : ' green';
+      var pdrCls = s.prior_discharge_rate > 40 ? ' red' : (s.prior_discharge_rate > 25 ? ' amber' : ' green');
+
+      html += '<tr>';
+      html += '<td><strong>' + s.state + '</strong> (' + s.abbr + ')</td>';
+      html += '<td class="num">' + s.districts + '</td>';
+      html += '<td class="num">' + fmt(s.total_filed) + '</td>';
+      html += '<td class="num">' + fmt(s.closed) + '</td>';
+      html += '<td class="num">' + fmt(s.discharged) + '</td>';
+      html += '<td class="num">' + fmt(s.dismissed) + '</td>';
+      html += '<td class="num"><span class="stat-val' + drCls + '">' + pct(s.dismiss_rate) + '</span></td>';
+      html += '<td class="num">' + fmt(s.prior_filers) + '</td>';
+      html += '<td class="num">' + pct(s.prior_rate) + '</td>';
+      html += '<td class="num"><span class="stat-val' + pdrCls + '">' + pct(s.prior_discharge_rate) + '</span></td>';
+      html += '</tr>';
+    }
+    document.getElementById('state-tbody').innerHTML = html;
+
+    var ths = document.querySelectorAll('#state-table th');
+    for (var i = 0; i < ths.length; i++) {
+      var arrow = ths[i].querySelector('.arrow');
+      if (ths[i].getAttribute('data-col') === stateSort.col) {
+        arrow.textContent = stateSort.asc ? '\u25B2' : '\u25BC';
+      } else {
+        arrow.textContent = '';
+      }
+    }
+  }
+
+  // ══════════════════════════════════════════════════
+  // SEARCH
+  // ══════════════════════════════════════════════════
+  function setupSearch() {
+    var input = document.getElementById('search-input');
+    input.addEventListener('input', function() {
+      var q = input.value.toLowerCase().trim();
+      renderSearchResults(q);
+    });
+  }
+
+  function renderSearchResults(q) {
+    var resultsEl = document.getElementById('search-results');
+    var detailEl = document.getElementById('search-detail');
+
+    if (!q || q.length < 2) {
+      resultsEl.innerHTML = '';
+      detailEl.innerHTML = '';
+      return;
+    }
+
+    var matches = [];
+    for (var i = 0; i < districts.length; i++) {
+      var d = districts[i];
+      var searchable = (d.name + ' ' + d.state + ' ' + (STATE_NAMES[d.state] || '') + ' ' + d.court_id).toLowerCase();
+      if (searchable.indexOf(q) >= 0) {
+        matches.push(d);
+      }
+    }
+
+    if (matches.length === 0) {
+      resultsEl.innerHTML = '<p class="loading">No districts match "' + q + '".</p>';
+      detailEl.innerHTML = '';
+      return;
+    }
+
+    var html = '';
+    for (var i = 0; i < matches.length && i < 20; i++) {
+      var d = matches[i];
+      html += '<div class="search-result" data-id="' + d.court_id + '">';
+      html += '<span class="name">' + d.name + '</span>';
+      html += '<span class="meta"> -- ' + (STATE_NAMES[d.state] || d.state) + ' -- ';
+      html += fmt(d.total_filed) + ' filed, ' + pct(d.dismiss_rate) + ' dismissed';
+      html += '</span></div>';
+    }
+    if (matches.length > 20) {
+      html += '<p style="color:#484f58;padding:0.5rem;font-size:0.85rem;">...and ' + (matches.length - 20) + ' more. Refine your search.</p>';
+    }
+    resultsEl.innerHTML = html;
+
+    var items = resultsEl.querySelectorAll('.search-result');
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener('click', (function(item) {
+        return function() {
+          var id = item.getAttribute('data-id');
+          showDistrictDetail(id);
+        };
+      })(items[i]));
+    }
+  }
+
+  function showDistrictDetail(courtId) {
+    var d = districtMap[courtId];
+    if (!d) return;
+
+    var detailEl = document.getElementById('search-detail');
+    var h = '<div class="card" style="margin-top:1rem;">';
+    h += '<h3>' + d.name + ' (' + (STATE_NAMES[d.state] || d.state) + ')</h3>';
+
+    var rows = [
+      ['Court Code', d.court_id],
+      ['Total Ch.13 Filed (2008-2024)', fmt(d.total_filed)],
+      ['Closed Cases', fmt(d.closed)],
+      ['Discharged', '<span class="stat-val green">' + fmt(d.discharged) + '</span>'],
+      ['Dismissed', '<span class="stat-val red">' + fmt(d.dismissed) + '</span>'],
+      ['Dismissal Rate', '<span class="stat-val ' + (d.dismiss_rate > 50 ? 'red' : 'green') + '">' + pct(d.dismiss_rate) + '</span>'],
+      ['Prior Filers', fmt(d.prior_filers) + ' (' + pct(d.prior_rate) + ')'],
+      ['Prior Filer Discharge Rate', '<span class="stat-val ' + (d.prior_discharge_rate > 40 ? 'red' : d.prior_discharge_rate > 25 ? 'amber' : 'green') + '">' + pct(d.prior_discharge_rate) + '</span>'],
+      ['Pro Se Rate', pct(d.pro_se_rate)],
+      ['BAPCPA Ch.13 Completion Rate', pct(d.bapcpa_ch13_completion_rate)],
+      ['2025 Total Filings', fmt(d.official_filings_2025)],
+      ['2025 Ch.7', fmt(d.official_ch7_2025)],
+      ['2025 Ch.13', fmt(d.official_ch13_2025)],
+      ['2025 Ch.13 Share', pct(d.official_ch13_rate_2025)],
+      ['2025 YoY Change', d.official_yoy_change_pct != null ? (d.official_yoy_change_pct > 0 ? '+' : '') + d.official_yoy_change_pct + '%' : '--']
+    ];
+
+    for (var i = 0; i < rows.length; i++) {
+      h += '<div class="stat-row"><span class="stat-label">' + rows[i][0] + '</span>';
+      h += '<span class="stat-val">' + rows[i][1] + '</span></div>';
+    }
+
+    h += '</div>';
+
+    h += '<div style="margin-top:0.75rem;font-size:0.85rem;">';
+    h += '<a href="javascript:void(0)" id="detail-compare-link">Compare this district</a>';
+    h += ' -- ';
+    h += '<a href="javascript:void(0)" id="detail-trend-link">View trends</a>';
+    h += '</div>';
+
+    detailEl.innerHTML = h;
+
+    document.getElementById('detail-compare-link').addEventListener('click', function() {
+      document.getElementById('dist-a').value = courtId;
+      document.querySelectorAll('.tab-btn')[0].click();
+      document.getElementById('dist-a').dispatchEvent(new Event('change'));
+    });
+    document.getElementById('detail-trend-link').addEventListener('click', function() {
+      document.getElementById('trend-dist').value = courtId;
+      document.querySelectorAll('.tab-btn')[1].click();
+      document.getElementById('trend-dist').dispatchEvent(new Event('change'));
+    });
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'explore_search_select', { district: d.court_id, district_name: d.name });
+    }
+  }
+
+})();
+</script>
+<script>fetch("/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString()}).catch(function(){})</script>
+</body>
+</html>
