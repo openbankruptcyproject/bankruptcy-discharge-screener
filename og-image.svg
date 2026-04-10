@@ -1,18 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <rect width="1200" height="630" fill="#0d1117"/>
-  <rect x="0" y="530" width="1200" height="100" fill="#161b22"/>
-  <line x1="0" y1="530" x2="1200" y2="530" stroke="#30363d" stroke-width="1"/>
-  <text x="600" y="260" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="72" font-weight="700">
-    <tspan fill="#58a6ff">1328f</tspan><tspan fill="#f0f6fc">.com</tspan>
-  </text>
-  <text x="600" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="32" fill="#8b949e">
-    Bankruptcy Discharge Screener
-  </text>
-  <text x="600" y="588" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="24" fill="#8b949e">
-    <tspan fill="#58a6ff">4.9M</tspan><tspan> Cases</tspan>
-    <tspan dx="30" fill="#30363d">|</tspan>
-    <tspan dx="30" fill="#58a6ff">94</tspan><tspan> Districts</tspan>
-    <tspan dx="30" fill="#30363d">|</tspan>
-    <tspan dx="30">Open Source</tspan>
-  </text>
+  <!-- Section symbol accent -->
+  <text x="600" y="105" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="50" fill="#58a6ff">&#xa7;</text>
+  <!-- Refiling timeline dots -->
+  <g transform="translate(300,140)">
+    <circle cx="0" cy="0" r="4" fill="#58a6ff"/>
+    <line x1="4" y1="0" x2="146" y2="0" stroke="#30363d" stroke-width="1"/>
+    <circle cx="150" cy="0" r="4" fill="#58a6ff"/>
+    <line x1="154" y1="0" x2="296" y2="0" stroke="#30363d" stroke-width="1"/>
+    <circle cx="300" cy="0" r="4" fill="#58a6ff"/>
+    <line x1="304" y1="0" x2="446" y2="0" stroke="#30363d" stroke-width="1"/>
+    <circle cx="450" cy="0" r="4" fill="#58a6ff"/>
+    <line x1="454" y1="0" x2="596" y2="0" stroke="#30363d" stroke-width="1"/>
+    <circle cx="600" cy="0" r="4" fill="#58a6ff"/>
+  </g>
+  <text x="600" y="230" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="52" font-weight="bold" fill="#e6edf3">1328(f) Screener</text>
+  <text x="600" y="290" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="26" fill="#58a6ff">Check Bankruptcy Refiling Eligibility Instantly</text>
+  <rect x="250" y="320" width="700" height="2" fill="#30363d"/>
+  <text x="600" y="380" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="20" fill="#7d8590">11 U.S.C. 1328(f) -- Discharge Eligibility Calculator</text>
+  <text x="600" y="560" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="16" fill="#484f58">Open Bankruptcy Project</text>
+  <text x="600" y="585" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="14" fill="#484f58">1328f.com</text>
 </svg>
