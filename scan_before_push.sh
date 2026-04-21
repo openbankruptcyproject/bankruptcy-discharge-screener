@@ -137,7 +137,7 @@ if [ -n "$UNQUALIFIED_264" ]; then
     FOUND=1
 fi
 
-UNQUALIFIED_114=$(grep -rin "114.*discharg\|114.*granted" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -v "ld+json" | grep -v "application/ld" | grep -vi "sample\|verified.*district\|multi-district\|7-district\|Courts Granted")
+UNQUALIFIED_114=$(grep -rinE "\b114\b.*discharg|\b114\b.*granted" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -v "ld+json" | grep -v "application/ld" | grep -vi "sample\|verified.*district\|multi-district\|7-district\|Courts Granted|section-1141\|section-114 \|§1141\|section 1141")
 if [ -n "$UNQUALIFIED_114" ]; then
     echo ""
     echo "WARNING: '114 discharged' without scope qualifier:"
@@ -145,7 +145,7 @@ if [ -n "$UNQUALIFIED_114" ]; then
     FOUND=1
 fi
 
-NATIONAL_CLAIM=$(grep -rin "national analysis.*264\|nationwide.*264\|across.*94.*district.*264" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push")
+NATIONAL_CLAIM=$(grep -rin "national analysis.*264\|nationwide.*264\|across.*94.*district.*264" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -vi "sample\|verified.*district\|multi-district\|7-district")
 if [ -n "$NATIONAL_CLAIM" ]; then
     echo ""
     echo "WARNING: findings presented as national when scope is a sample:"
