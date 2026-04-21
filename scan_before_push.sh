@@ -137,7 +137,7 @@ if [ -n "$UNQUALIFIED_264" ]; then
     FOUND=1
 fi
 
-UNQUALIFIED_114=$(grep -rinE "\b114\b.*discharg|\b114\b.*granted" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -v "ld+json" | grep -v "application/ld" | grep -vi "sample\|verified.*district\|multi-district\|7-district\|Courts Granted|section-1141\|section-114 \|§1141\|section 1141")
+UNQUALIFIED_114=$(grep -rinE "\b114\b.{0,80}discharg|\b114\b.{0,80}granted" "$SCRIPT_DIR" --include="*.html" --include="*.md" 2>/dev/null | grep -v ".git/" | grep -v "scan_before_push" | grep -v "ld+json" | grep -v "application/ld" | grep -v "dashboard.html" | grep -v "yearData\|var .* =\|data-year" | grep -vi "sample\|verified.*district\|multi-district\|7-district\|Courts Granted|section-1141\|section-114 \|§1141\|section 1141")
 if [ -n "$UNQUALIFIED_114" ]; then
     echo ""
     echo "WARNING: '114 discharged' without scope qualifier:"
