@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chapter 7 Means Test Calculator — 2026 State Medians — 1328f.com</title>
+<meta name="description" content="Free Chapter 7 bankruptcy means test calculator. Compare household income to your state median. Fast first-pass screen before filing.">
+<link rel="canonical" href="https://1328f.com/tools/means-test-calculator.html">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTWLM223G7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('set','allow_ad_personalization_signals',false);gtag('config','G-FTWLM223G7');gtag('config','G-053Z64N82F');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.6}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:720px;margin:0 auto;padding:2rem}
+.breadcrumb{color:#9eaab6;font-size:0.85rem;margin-bottom:1rem}
+.breadcrumb a{color:#9eaab6}
+h1{font-size:1.8rem;margin-bottom:0.5rem;color:#f0f6fc}
+.subtitle{color:#9eaab6;margin-bottom:2rem}
+.calc{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem}
+label{display:block;margin:1rem 0 0.3rem;font-weight:600;color:#f0f6fc}
+select,input{width:100%;padding:0.6rem 0.8rem;background:#0d1117;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:1rem;font-family:inherit}
+button{background:#238636;color:#fff;padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;margin-top:1.5rem}
+.result{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-top:1.5rem;display:none}
+.result.show{display:block}
+.verdict{font-size:1.2rem;font-weight:700;padding:0.8rem;border-radius:6px;margin:1rem 0;text-align:center}
+.pass{background:rgba(63,185,80,0.12);color:#3fb950;border:1px solid #3fb950}
+.fail{background:rgba(248,81,73,0.12);color:#f85149;border:1px solid #f85149}
+.disclaimer{font-size:0.8rem;color:#8b949e;padding:1rem;background:#161b22;border-radius:6px;margin-top:1.5rem}
+.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #30363d;color:#9eaab6;font-size:0.85rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; Means Test Calculator</div>
+<h1>Chapter 7 Means Test Calculator</h1>
+<p class="subtitle">First-pass comparison against your state median income. If you pass, Chapter 7 is presumed appropriate. All math in your browser — no data sent.</p>
+
+<div class="calc">
+<label for="state">State</label>
+<select id="state"><option value="">-- Select state --</option></select>
+
+<label for="household">Household Size</label>
+<select id="household">
+<option value="1">1 person</option>
+<option value="2">2 people</option>
+<option value="3">3 people</option>
+<option value="4">4 people</option>
+<option value="5">5 people</option>
+<option value="6">6 people</option>
+<option value="7">7 people</option>
+<option value="8">8 people</option>
+</select>
+
+<label for="income">Current Monthly Gross Income ($)</label>
+<input type="number" id="income" placeholder="e.g., 4500" min="0" step="100">
+<p style="font-size:0.85rem;color:#9eaab6;margin-top:0.3rem">6-month average of ALL household income before taxes. Include wages, business income, rental income, pension, unemployment, interest/dividends. Excludes Social Security.</p>
+
+<button onclick="calc()">Run Means Test</button>
+</div>
+
+<div id="result" class="result"></div>
+
+<div class="disclaimer">
+<strong>Disclaimer:</strong> 2024 state median income figures used. Actual current-period medians may have adjusted. "Passing" the median-income test means Chapter 7 is presumed appropriate — the case can still be challenged on bad-faith grounds. Failing the median test does NOT mean Chapter 7 is blocked — you may still qualify by completing the full Form 122A-2 with itemized expense deductions. This is a first-pass screen, not legal advice.
+</div>
+
+<div class="footer">
+<p>Part of the <strong>Open Bankruptcy Project</strong>. <a href="/">Re-Filing Screener</a> &middot; <a href="/tools/">All Tools</a> &middot; <a href="https://meanstest.org">meanstest.org</a></p>
+</div>
+</div>
+
+<script>
+// 2024 U.S. Trustee state median income figures, 1-8 household size (annual, pre-tax)
+// Source: UST published tables, effective Nov 1, 2024
+const MEDIANS = {
+  AL:[57789,70775,81234,99158,108758,118358,127958,137558],
+  AK:[74928,103519,107921,118925,128525,138125,147725,157325],
+  AZ:[65770,85217,90960,111144,120744,130344,139944,149544],
+  AR:[51986,66069,76552,94131,103731,113331,122931,132531],
+  CA:[76635,101579,112186,130717,140317,149917,159517,169117],
+  CO:[75969,100197,112358,137322,146922,156522,166122,175722],
+  CT:[81094,105082,126093,157108,166708,176308,185908,195508],
+  DE:[67973,91111,101552,118731,128331,137931,147531,157131],
+  DC:[82019,115829,130758,176957,186557,196157,205757,215357],
+  FL:[62871,80322,91123,108519,118119,127719,137319,146919],
+  GA:[63471,82720,95018,114283,123883,133483,143083,152683],
+  HI:[75719,92843,111395,130061,139661,149261,158861,168461],
+  ID:[61594,76672,84706,105057,114657,124257,133857,143457],
+  IL:[67769,88133,104583,126075,135675,145275,154875,164475],
+  IN:[61719,78706,90694,109983,119583,129183,138783,148383],
+  IA:[63353,82400,91533,112158,121758,131358,140958,150558],
+  KS:[62064,84153,94586,112919,122519,132119,141719,151319],
+  KY:[57439,72833,86719,104297,113897,123497,133097,142697],
+  LA:[56003,72033,86461,104672,114272,123872,133472,143072],
+  ME:[66031,88383,99083,118908,128508,138108,147708,157308],
+  MD:[84853,107322,122833,148786,158386,167986,177586,187186],
+  MA:[86697,110247,131233,166458,176058,185658,195258,204858],
+  MI:[62519,79664,95283,116500,126100,135700,145300,154900],
+  MN:[74053,97400,116786,140117,149717,159317,168917,178517],
+  MS:[50528,64019,78669,94786,104386,113986,123586,133186],
+  MO:[60578,77808,90161,108997,118597,128197,137797,147397],
+  MT:[64569,77544,86569,106647,116247,125847,135447,145047],
+  NE:[62783,82250,94347,115583,125183,134783,144383,153983],
+  NV:[63528,80764,87564,110708,120308,129908,139508,149108],
+  NH:[79736,101753,125069,146394,155994,165594,175194,184794],
+  NJ:[80775,104833,129094,156697,166297,175897,185497,195097],
+  NM:[56253,71944,79461,99647,109247,118847,128447,138047],
+  NY:[69128,89083,105883,131322,140922,150522,160122,169722],
+  NC:[60944,78764,91261,111044,120644,130244,139844,149444],
+  ND:[69983,90769,110369,130772,140372,149972,159572,169172],
+  OH:[61764,78958,95500,117144,126744,136344,145944,155544],
+  OK:[57783,72058,85458,101297,110897,120497,130097,139697],
+  OR:[67808,85397,99522,119931,129531,139131,148731,158331],
+  PA:[64783,82161,100500,122069,131669,141269,150869,160469],
+  RI:[70878,88919,113658,143694,153294,162894,172494,182094],
+  SC:[60036,75558,86519,105886,115486,125086,134686,144286],
+  SD:[64431,85153,97583,114697,124297,133897,143497,153097],
+  TN:[59911,73994,87769,105083,114683,124283,133883,143483],
+  TX:[61883,80117,92319,108294,117894,127494,137094,146694],
+  UT:[74219,83033,95772,112050,121650,131250,140850,150450],
+  VT:[67536,83378,98697,117469,127069,136669,146269,155869],
+  VA:[73508,94000,110447,133769,143369,152969,162569,172169],
+  WA:[77544,94908,108875,131161,140761,150361,159961,169561],
+  WV:[55164,68378,83444,96197,105797,115397,124997,134597],
+  WI:[63856,83750,99569,121386,130986,140586,150186,159786],
+  WY:[66322,82150,94208,113408,123008,132608,142208,151808]
+};
+const NAMES={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'D.C.',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+const sel=document.getElementById('state');
+Object.keys(NAMES).sort().forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=NAMES[k];sel.appendChild(o)});
+
+function calc(){
+  const s=sel.value,hh=+document.getElementById('household').value,monthly=+document.getElementById('income').value;
+  if(!s||!monthly){alert('Fill state + income');return}
+  const annual=monthly*12;
+  const med=MEDIANS[s][Math.min(hh-1,7)];
+  const pass=annual<=med;
+  const diff=annual-med;
+  const r=document.getElementById('result');
+  let html=`<h2 style="color:#f0f6fc;margin-bottom:1rem">Result</h2>
+<div style="padding:0.8rem;background:#0d1117;border-radius:6px;margin-bottom:1rem;font-family:ui-monospace,monospace">
+<div>Annual income: $${annual.toLocaleString()}</div>
+<div>${NAMES[s]} median (household of ${hh}): $${med.toLocaleString()}</div>
+<div>Difference: ${diff>=0?'+':''}$${diff.toLocaleString()}</div>
+</div>`;
+  if(pass){
+    html+=`<div class="verdict pass">PASS: below median</div>
+<p>Chapter 7 is <strong>presumed appropriate</strong> for your household. No further means-test calculation needed.</p>
+<p style="margin-top:1rem">Next: <a href="/">run the 1328(f) screener</a> to check refiling eligibility, or review <a href="/state-statutes/${NAMES[s].toLowerCase().replace(/ /g,'-')}/707b-means-test-dismissal.html">§707(b) rules for ${NAMES[s]}</a>.</p>`;
+  } else {
+    html+=`<div class="verdict fail">ABOVE MEDIAN: Form 122A-2 required</div>
+<p>You are above the ${NAMES[s]} median. Chapter 7 is NOT automatically blocked — you must complete the full means test (Form 122A-2) with itemized expense deductions. If your "disposable income" under that form is below the statutory thresholds ($9,075 over 60 months or 25% of unsecured debt), you still pass.</p>
+<p style="margin-top:1rem">Alternative: <a href="/state-statutes/${NAMES[s].toLowerCase().replace(/ /g,'-')}/1322-chapter-13-plan.html">Chapter 13 in ${NAMES[s]}</a> is available for above-median filers with a 5-year plan.</p>`;
+  }
+  r.innerHTML=html;r.classList.add('show');
+}
+</script>
+</body>
+</html>

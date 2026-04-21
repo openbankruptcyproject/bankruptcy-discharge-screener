@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bankruptcy Exemption Calculator — How Much Property You Can Keep — 1328f.com</title>
+<meta name="description" content="Free bankruptcy exemption calculator. Enter your state and property values to see how much of your home equity, vehicle, retirement, and household goods are protected under federal and state exemptions.">
+<link rel="canonical" href="https://1328f.com/tools/exemption-calculator.html">
+<meta property="og:title" content="Bankruptcy Exemption Calculator | 1328f.com">
+<meta property="og:description" content="Enter your state + property values. See what bankruptcy exemptions protect.">
+<meta property="og:url" content="https://1328f.com/tools/exemption-calculator.html">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTWLM223G7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());
+gtag('set','allow_ad_personalization_signals',false);gtag('config','G-FTWLM223G7');gtag('config','G-053Z64N82F');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.6}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:800px;margin:0 auto;padding:2rem}
+.breadcrumb{color:#9eaab6;font-size:0.85rem;margin-bottom:1rem}
+.breadcrumb a{color:#9eaab6}
+h1{font-size:1.8rem;margin-bottom:0.5rem;color:#f0f6fc}
+.subtitle{color:#9eaab6;margin-bottom:2rem}
+.calc{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin:1.5rem 0}
+label{display:block;margin:1rem 0 0.3rem;font-weight:600;color:#f0f6fc}
+select,input{width:100%;padding:0.6rem 0.8rem;background:#0d1117;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:1rem;font-family:inherit}
+select:focus,input:focus{outline:none;border-color:#58a6ff}
+button{background:#238636;color:#fff;padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;margin-top:1.5rem}
+button:hover{background:#2ea043}
+.result{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-top:1.5rem;display:none}
+.result.show{display:block}
+.stat{display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid #30363d}
+.stat:last-child{border-bottom:none;font-weight:700;padding-top:1rem}
+.stat .label{color:#9eaab6}
+.stat .val{color:#f0f6fc;font-family:ui-monospace,monospace}
+.stat .val.protected{color:#3fb950}
+.stat .val.exposed{color:#f85149}
+.disclaimer{font-size:0.8rem;color:#8b949e;padding:1rem;background:#161b22;border-radius:6px;margin-top:1.5rem}
+.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #30363d;color:#9eaab6;font-size:0.85rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; Exemption Calculator</div>
+<h1>Bankruptcy Exemption Calculator</h1>
+<p class="subtitle">See how much of your property is protected under bankruptcy exemptions. All calculations run in your browser — no data sent.</p>
+
+<div class="calc">
+<label for="state">State of Residence (required for 730 days)</label>
+<select id="state">
+<option value="">-- Select your state --</option>
+</select>
+
+<label for="homestead_equity">Home Equity ($)</label>
+<input type="number" id="homestead_equity" placeholder="e.g., 85000" min="0" step="100">
+
+<label for="vehicle_equity">Vehicle Equity ($)</label>
+<input type="number" id="vehicle_equity" placeholder="e.g., 5000" min="0" step="100">
+
+<label for="household_goods">Household Goods Value ($)</label>
+<input type="number" id="household_goods" placeholder="e.g., 12000" min="0" step="100">
+
+<label for="retirement">Retirement Account Balance ($)</label>
+<input type="number" id="retirement" placeholder="e.g., 35000" min="0" step="100">
+
+<label for="cash">Cash / Bank Accounts ($)</label>
+<input type="number" id="cash" placeholder="e.g., 2000" min="0" step="100">
+
+<button onclick="calc()">Calculate Protected vs. Exposed</button>
+</div>
+
+<div id="result" class="result">
+<h2 style="color:#f0f6fc;margin-bottom:1rem">Results</h2>
+<div id="breakdown"></div>
+<p style="margin-top:1rem;color:#9eaab6;font-size:0.88rem">See the full <a href="https://bankruptcyexemptionsbystate.com/states/" id="state-link">state-specific exemption guide</a> for the statutory citations and full protection amounts.</p>
+</div>
+
+<div class="disclaimer">
+<strong>Disclaimer:</strong> Exemption amounts in this calculator are 2024-2025 estimates. Actual amounts vary by state, are periodically adjusted for inflation, and may have married-filing doublers or homestead declarations required. Tenancy-by-the-entirety property, spousal-owned assets, and trust-held property may have additional protections. This calculator is educational — not legal advice. For your specific situation, consult a licensed bankruptcy attorney in your state.
+</div>
+
+<div class="footer">
+<p>Part of the <strong>Open Bankruptcy Project</strong> network. <a href="/">Re-Filing Screener</a> &middot; <a href="/state-statutes/">State Statutes</a> &middot; <a href="/paa/">FAQ</a></p>
+</div>
+</div>
+
+<script>
+// Estimated homestead / vehicle / wildcard / household-goods / retirement exemption amounts by state (2024-2025)
+// All amounts in USD, applicable to single filers. Married filing jointly typically doubles these in most states.
+// Sources: state statutes, 11 U.S.C. §522(d) federal set, NACBA exemption chart 2024
+const EXEMPTIONS = {
+  AL:{homestead:16450,vehicle:8000,household:8000,retirement:999999,wildcard:1000,federal:false},
+  AK:{homestead:84000,vehicle:5125,household:5125,retirement:999999,wildcard:0,federal:false},
+  AZ:{homestead:400000,vehicle:15000,household:8300,retirement:999999,wildcard:300,federal:false},
+  AR:{homestead:999999,vehicle:1200,household:2000,retirement:999999,wildcard:800,federal:true},
+  CA:{homestead:700000,vehicle:7500,household:8725,retirement:999999,wildcard:31950,federal:false},
+  CO:{homestead:250000,vehicle:10000,household:6000,retirement:999999,wildcard:0,federal:false},
+  CT:{homestead:250000,vehicle:7000,household:999999,retirement:999999,wildcard:1000,federal:true},
+  DE:{homestead:125000,vehicle:15000,household:25000,retirement:999999,wildcard:1000,federal:false},
+  DC:{homestead:999999,vehicle:6575,household:13650,retirement:999999,wildcard:1025,federal:true},
+  FL:{homestead:999999,vehicle:1000,household:4000,retirement:999999,wildcard:1000,federal:false},
+  GA:{homestead:21500,vehicle:5000,household:5000,retirement:999999,wildcard:1200,federal:false},
+  HI:{homestead:30000,vehicle:2575,household:999999,retirement:999999,wildcard:0,federal:true},
+  ID:{homestead:175000,vehicle:10000,household:7500,retirement:999999,wildcard:1500,federal:false},
+  IL:{homestead:15000,vehicle:2400,household:15000,retirement:999999,wildcard:4000,federal:false},
+  IN:{homestead:22750,vehicle:0,household:10250,retirement:999999,wildcard:12100,federal:false},
+  IA:{homestead:999999,vehicle:7000,household:7000,retirement:999999,wildcard:1000,federal:false},
+  KS:{homestead:999999,vehicle:20000,household:15000,retirement:999999,wildcard:0,federal:false},
+  KY:{homestead:5000,vehicle:2500,household:3000,retirement:999999,wildcard:1000,federal:true},
+  LA:{homestead:35000,vehicle:7500,household:999999,retirement:999999,wildcard:0,federal:false},
+  ME:{homestead:47500,vehicle:7500,household:7500,retirement:999999,wildcard:400,federal:false},
+  MD:{homestead:25150,vehicle:0,household:0,retirement:999999,wildcard:6000,federal:false},
+  MA:{homestead:500000,vehicle:7500,household:15000,retirement:999999,wildcard:1000,federal:true},
+  MI:{homestead:46125,vehicle:3875,household:4125,retirement:999999,wildcard:0,federal:true},
+  MN:{homestead:480000,vehicle:6000,household:11250,retirement:999999,wildcard:1350,federal:true},
+  MS:{homestead:75000,vehicle:0,household:10000,retirement:999999,wildcard:0,federal:false},
+  MO:{homestead:15000,vehicle:3000,household:3000,retirement:999999,wildcard:600,federal:false},
+  MT:{homestead:350000,vehicle:2500,household:4500,retirement:999999,wildcard:0,federal:false},
+  NE:{homestead:60000,vehicle:5000,household:3000,retirement:999999,wildcard:5000,federal:false},
+  NV:{homestead:605000,vehicle:15000,household:12000,retirement:999999,wildcard:10000,federal:false},
+  NH:{homestead:120000,vehicle:10000,household:3500,retirement:999999,wildcard:1000,federal:true},
+  NJ:{homestead:0,vehicle:0,household:1000,retirement:999999,wildcard:1000,federal:true},
+  NM:{homestead:60000,vehicle:4000,household:500,retirement:999999,wildcard:500,federal:true},
+  NY:{homestead:179950,vehicle:4825,household:11975,retirement:999999,wildcard:1150,federal:true},
+  NC:{homestead:35000,vehicle:3500,household:5000,retirement:999999,wildcard:5000,federal:false},
+  ND:{homestead:100000,vehicle:2950,household:5000,retirement:999999,wildcard:10000,federal:false},
+  OH:{homestead:161375,vehicle:4450,household:13400,retirement:999999,wildcard:1475,federal:false},
+  OK:{homestead:999999,vehicle:7500,household:999999,retirement:999999,wildcard:0,federal:false},
+  OR:{homestead:50000,vehicle:10000,household:3000,retirement:999999,wildcard:400,federal:true},
+  PA:{homestead:0,vehicle:0,household:0,retirement:999999,wildcard:300,federal:true},
+  RI:{homestead:500000,vehicle:12000,household:9600,retirement:999999,wildcard:6500,federal:true},
+  SC:{homestead:68400,vehicle:6750,household:5400,retirement:999999,wildcard:6750,federal:false},
+  SD:{homestead:999999,vehicle:6000,household:6000,retirement:999999,wildcard:0,federal:false},
+  TN:{homestead:5000,vehicle:0,household:10000,retirement:999999,wildcard:10000,federal:false},
+  TX:{homestead:999999,vehicle:50000,household:50000,retirement:999999,wildcard:0,federal:false},
+  UT:{homestead:42700,vehicle:3000,household:500,retirement:999999,wildcard:0,federal:false},
+  VT:{homestead:125000,vehicle:2500,household:8700,retirement:999999,wildcard:400,federal:true},
+  VA:{homestead:25000,vehicle:6000,household:5000,retirement:999999,wildcard:5000,federal:false},
+  WA:{homestead:125000,vehicle:3250,household:6500,retirement:999999,wildcard:3000,federal:true},
+  WV:{homestead:35000,vehicle:5000,household:400,retirement:999999,wildcard:900,federal:false},
+  WI:{homestead:75000,vehicle:4000,household:12000,retirement:999999,wildcard:5000,federal:true},
+  WY:{homestead:20000,vehicle:10000,household:4000,retirement:999999,wildcard:0,federal:false},
+};
+const STATE_NAMES = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'D.C.',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+
+const sel=document.getElementById('state');
+Object.keys(STATE_NAMES).sort().forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=STATE_NAMES[k];sel.appendChild(o)});
+
+function fmt(n){return n>=999999?'Unlimited':'$'+n.toLocaleString()}
+function apply(val,exempt){const v=val||0,e=exempt||0;return{protected:Math.min(v,e),exposed:Math.max(0,v-e)}}
+
+function calc(){
+  const s=sel.value;
+  if(!s){alert('Select a state first');return}
+  const ex=EXEMPTIONS[s];
+  const inputs={home:+document.getElementById('homestead_equity').value||0,vehicle:+document.getElementById('vehicle_equity').value||0,household:+document.getElementById('household_goods').value||0,retirement:+document.getElementById('retirement').value||0,cash:+document.getElementById('cash').value||0};
+  const home=apply(inputs.home,ex.homestead),veh=apply(inputs.vehicle,ex.vehicle),hh=apply(inputs.household,ex.household),ret=apply(inputs.retirement,ex.retirement),cash=apply(inputs.cash,ex.wildcard);
+  const totProtected=home.protected+veh.protected+hh.protected+ret.protected+cash.protected;
+  const totExposed=home.exposed+veh.exposed+hh.exposed+ret.exposed+cash.exposed;
+  const totValue=inputs.home+inputs.vehicle+inputs.household+inputs.retirement+inputs.cash;
+
+  const rows=[
+    ['Home equity',inputs.home,home.protected,home.exposed,fmt(ex.homestead)+' exempt'],
+    ['Vehicle equity',inputs.vehicle,veh.protected,veh.exposed,fmt(ex.vehicle)+' exempt'],
+    ['Household goods',inputs.household,hh.protected,hh.exposed,fmt(ex.household)+' exempt'],
+    ['Retirement',inputs.retirement,ret.protected,ret.exposed,'Fully protected (ERISA)'],
+    ['Cash (wildcard)',inputs.cash,cash.protected,cash.exposed,fmt(ex.wildcard)+' wildcard']
+  ];
+  let html='<div style="margin-bottom:1rem;color:#9eaab6;font-size:0.85rem">State: <strong style="color:#f0f6fc">'+STATE_NAMES[s]+'</strong>'+(ex.federal?' (may opt for federal exemptions)':' (state-only)')+'</div>';
+  for(const r of rows){
+    if(r[1]===0)continue;
+    html+='<div class="stat"><span class="label">'+r[0]+' '+r[4]+'</span><span><span class="val protected">'+fmt(r[2])+' kept</span>'+(r[3]>0?' <span class="val exposed">'+fmt(r[3])+' exposed</span>':'')+'</span></div>';
+  }
+  html+='<div class="stat"><span class="label">TOTAL VALUE</span><span class="val">'+fmt(totValue)+'</span></div>';
+  html+='<div class="stat"><span class="label">PROTECTED</span><span class="val protected">'+fmt(totProtected)+'</span></div>';
+  html+='<div class="stat"><span class="label">EXPOSED (at risk in Ch.7)</span><span class="val '+(totExposed>0?'exposed':'protected')+'">'+fmt(totExposed)+'</span></div>';
+  document.getElementById('breakdown').innerHTML=html;
+  document.getElementById('state-link').href='https://bankruptcyexemptionsbystate.com/states/'+STATE_NAMES[s].toLowerCase().replace(/ /g,'-')+'.html';
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

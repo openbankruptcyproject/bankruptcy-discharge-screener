@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Credit Rebuild Timeline After Bankruptcy — 24 Month Plan — 1328f.com</title>
+<meta name="description" content="Free interactive credit rebuild timeline after bankruptcy. 24-month month-by-month action plan with expected FICO score trajectory.">
+<link rel="canonical" href="https://1328f.com/tools/credit-rebuild-timeline.html">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTWLM223G7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('set','allow_ad_personalization_signals',false);gtag('config','G-FTWLM223G7');gtag('config','G-053Z64N82F');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.6}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:780px;margin:0 auto;padding:2rem}
+.breadcrumb{color:#9eaab6;font-size:0.85rem;margin-bottom:1rem}
+.breadcrumb a{color:#9eaab6}
+h1{font-size:1.8rem;margin-bottom:0.5rem;color:#f0f6fc}
+.subtitle{color:#9eaab6;margin-bottom:2rem}
+.calc{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-bottom:2rem}
+label{display:block;margin:0.8rem 0 0.3rem;font-weight:600;color:#f0f6fc}
+input,select{width:100%;padding:0.6rem 0.8rem;background:#0d1117;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:1rem;font-family:inherit}
+button{background:#238636;color:#fff;padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;margin-top:1.5rem}
+.month{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1rem 1.2rem;margin:0.6rem 0}
+.month h3{color:#58a6ff;margin-bottom:0.3rem;font-size:1rem}
+.month .score{float:right;font-family:ui-monospace,monospace;color:#3fb950;font-weight:700}
+.month ul{margin:0.5rem 0 0 1.2rem;color:#c9d1d9;font-size:0.92rem}
+.timeline{display:none}
+.timeline.show{display:block}
+.disclaimer{font-size:0.8rem;color:#8b949e;padding:1rem;background:#161b22;border-radius:6px;margin-top:1.5rem}
+.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #30363d;color:#9eaab6;font-size:0.85rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; Credit Rebuild Timeline</div>
+<h1>Credit Rebuild Timeline After Bankruptcy</h1>
+<p class="subtitle">Month-by-month 24-month plan with expected FICO trajectory. Typical filer recovers 150-200 points within 24 months of discharge.</p>
+
+<div class="calc">
+<label for="chapter">Which Chapter Did You File?</label>
+<select id="chapter">
+<option value="7">Chapter 7 (discharge ~4 months after filing)</option>
+<option value="13">Chapter 13 (discharge after 3-5 year plan)</option>
+</select>
+
+<label for="start">Current FICO Score (or estimate)</label>
+<input type="number" id="start" placeholder="e.g., 520" min="300" max="850" step="5" value="520">
+<p style="font-size:0.85rem;color:#9eaab6;margin-top:0.3rem">Typical post-discharge starting point is 500-560. Check your score at AnnualCreditReport.com (free) or Credit Karma.</p>
+
+<button onclick="build()">Build My 24-Month Timeline</button>
+</div>
+
+<div id="timeline" class="timeline"></div>
+
+<div class="disclaimer">
+<strong>Disclaimer:</strong> Score estimates are based on typical post-bankruptcy trajectories. Individual results vary significantly based on pre-existing credit mix, length of credit history, and discipline with the rebuild plan. Chapter 7 stays on credit reports 10 years from filing date; Chapter 13 stays 7 years. Educational tool, not legal or financial advice.
+</div>
+
+<div class="footer">
+<p>Part of the <strong>Open Bankruptcy Project</strong>. <a href="/">Re-Filing Screener</a> &middot; <a href="/tools/">All Tools</a> &middot; <a href="https://rebuildcreditafterbankruptcy.com">rebuildcreditafterbankruptcy.com</a></p>
+</div>
+</div>
+
+<script>
+const STEPS=[
+  {m:1,score:0,title:"Pull your 3 credit reports",bullets:["Go to AnnualCreditReport.com (free) — get Equifax, Experian, TransUnion reports","Verify every discharged debt shows $0 balance and 'included in bankruptcy' status","File disputes for any account still showing a balance on discharged debts","Freeze all 3 credit reports to prevent new fraud accounts"]},
+  {m:2,score:15,title:"Open a secured credit card",bullets:["Apply to Discover it Secured, Capital One Platinum Secured, or your credit union","Deposit $200-$500 (your credit limit)","Charge ONE small thing per month (gas, groceries under $20)","Set up autopay to pay statement balance in full"]},
+  {m:3,score:25,title:"Add rent + utility reporting",bullets:["Sign up for Experian Boost (free) — reports on-time utility and streaming payments","Consider RentReporters or Rental Kharma to report rent history to bureaus","These add 2-4 years of positive history instantly"]},
+  {m:4,score:35,title:"First FICO check",bullets:["Expect score to increase as secured card's first full month is reported","Use myFICO.com free score (or Credit Karma's VantageScore)","Budget: no new inquiries, keep secured card utilization under 10%"]},
+  {m:6,score:50,title:"Add a credit-builder loan",bullets:["Self, Credit Strong, or your local credit union offer credit-builder loans","Installment loan payments diversify your credit mix (boosts score)","$25-50/month for 12-24 months; money returned at end"]},
+  {m:9,score:75,title:"Apply for a retail store card",bullets:["Target, Kohl's, Amazon Store cards approve easily with established secured card history","Keep utilization low; pay in full monthly","Having 2 revolving accounts + 1 installment gives optimal credit mix"]},
+  {m:12,score:100,title:"Year 1 milestone",bullets:["Typical post-discharge filer reaches 600-650 here","Request credit limit increase on secured card (may graduate to unsecured)","Consider applying for an unsecured credit card (Capital One Quicksilver, Discover)","Pull your reports again; verify all progress"]},
+  {m:15,score:120,title:"Auto financing becomes realistic",bullets:["650+ score qualifies for prime auto loans at most credit unions","Subprime rates available even earlier but avoid 15%+ APRs","If needed: trade-in or sell your current car, finance a modest replacement"]},
+  {m:18,score:140,title:"Consider a second unsecured card",bullets:["Second unsecured card diversifies credit mix further","Chase Freedom Unlimited, Discover it are common post-BK approvals at this stage","Still: pay in full monthly; no revolving balances"]},
+  {m:21,score:160,title:"Refinance bad post-BK debt",bullets:["If you took high-rate post-discharge loans, refinance them now","Target: auto loan under 8%, personal loan under 12%","Shop rates at your credit union first"]},
+  {m:24,score:175,title:"Year 2 milestone — near-prime",bullets:["Typical trajectory: 680-720 by month 24","Mortgage eligibility returns: FHA after 2 years post-Chapter 7, conventional after 4 years","Student loan refinancing becomes available at favorable rates","Continue: low utilization, no new inquiries unless needed, let history age"]}
+];
+function build(){
+  const ch=document.getElementById('chapter').value;
+  const start=+document.getElementById('start').value||520;
+  const t=document.getElementById('timeline');
+  let html=`<h2 style="color:#f0f6fc;margin-bottom:1rem">Your 24-Month Rebuild Plan (Chapter ${ch})</h2>
+<p style="color:#9eaab6;margin-bottom:1.5rem">Starting score: ${start} &middot; Target at month 24: <strong style="color:#3fb950">${start+175}</strong></p>`;
+  for(const s of STEPS){
+    const projected=start+s.score;
+    html+=`<div class="month"><h3>Month ${s.m}: ${s.title} <span class="score">~${projected}</span></h3><ul>`;
+    for(const b of s.bullets)html+=`<li>${b}</li>`;
+    html+=`</ul></div>`;
+  }
+  if(ch==='13'){
+    html+=`<div class="month" style="border-color:#d29922"><h3 style="color:#d29922">Chapter 13 note</h3><p style="font-size:0.9rem;color:#c9d1d9;margin-top:0.3rem">In Chapter 13, the timeline above starts from your DISCHARGE date (plan completion, 3-5 years after filing). During the plan, most filers cannot open new credit without trustee approval. Focus on trustee-approved trade-ins and credit-builder programs during the plan years.</p></div>`;
+  }
+  t.innerHTML=html;t.classList.add('show');
+}
+</script>
+</body>
+</html>

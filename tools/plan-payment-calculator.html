@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chapter 13 Plan Payment Calculator — Monthly Plan Estimate — 1328f.com</title>
+<meta name="description" content="Free Chapter 13 bankruptcy plan payment calculator. Estimate your monthly plan amount based on priority debt, secured arrears, and disposable income.">
+<link rel="canonical" href="https://1328f.com/tools/plan-payment-calculator.html">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTWLM223G7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('set','allow_ad_personalization_signals',false);gtag('config','G-FTWLM223G7');gtag('config','G-053Z64N82F');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.6}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:780px;margin:0 auto;padding:2rem}
+.breadcrumb{color:#9eaab6;font-size:0.85rem;margin-bottom:1rem}
+.breadcrumb a{color:#9eaab6}
+h1{font-size:1.8rem;margin-bottom:0.5rem;color:#f0f6fc}
+.subtitle{color:#9eaab6;margin-bottom:2rem}
+.calc{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem}
+label{display:block;margin:1rem 0 0.3rem;font-weight:600;color:#f0f6fc}
+.hint{font-size:0.85rem;color:#9eaab6;margin:0.3rem 0 0.6rem}
+input,select{width:100%;padding:0.6rem 0.8rem;background:#0d1117;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:1rem;font-family:inherit}
+button{background:#238636;color:#fff;padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;margin-top:1.5rem}
+.result{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-top:1.5rem;display:none}
+.result.show{display:block}
+.row{display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid #30363d}
+.row:last-child{border-bottom:none;font-weight:700;padding-top:1rem;font-size:1.1rem;color:#58a6ff}
+.label{color:#9eaab6}
+.val{font-family:ui-monospace,monospace;color:#f0f6fc}
+.disclaimer{font-size:0.8rem;color:#8b949e;padding:1rem;background:#161b22;border-radius:6px;margin-top:1.5rem}
+.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #30363d;color:#9eaab6;font-size:0.85rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; Plan Payment Calculator</div>
+<h1>Chapter 13 Plan Payment Calculator</h1>
+<p class="subtitle">Estimate your monthly plan payment. The trustee commission (10%) and required priority/secured payments are added on top of any disposable-income commitment.</p>
+
+<div class="calc">
+<label for="length">Plan Length</label>
+<select id="length">
+<option value="36">36 months (3 years, below-median filers)</option>
+<option value="60" selected>60 months (5 years, above-median filers)</option>
+</select>
+
+<label for="priority">Priority Debts ($)</label>
+<p class="hint">Recent taxes, domestic support arrears, federally guaranteed student loans. Must pay in full.</p>
+<input type="number" id="priority" placeholder="e.g., 8000" min="0" step="100">
+
+<label for="arrears">Secured Arrears to Cure ($)</label>
+<p class="hint">Total missed mortgage + car payments you want to catch up on.</p>
+<input type="number" id="arrears" placeholder="e.g., 15000" min="0" step="100">
+
+<label for="unsecured">Unsecured Debt Total ($)</label>
+<p class="hint">Credit cards, medical, personal loans. Only paid to the extent of disposable income or best-interests test.</p>
+<input type="number" id="unsecured" placeholder="e.g., 45000" min="0" step="100">
+
+<label for="disposable">Monthly Disposable Income ($)</label>
+<p class="hint">Above-median: required amount from Form 122A-2 calculation. Below-median: what you can afford after living expenses.</p>
+<input type="number" id="disposable" placeholder="e.g., 400" min="0" step="10">
+
+<label for="best">Non-Exempt Equity / Best-Interests Floor ($)</label>
+<p class="hint">Value of property unprotected by exemptions. Unsecureds must get at least this much over the plan.</p>
+<input type="number" id="best" placeholder="e.g., 0" min="0" step="100">
+
+<button onclick="calc()">Estimate Monthly Payment</button>
+</div>
+
+<div id="result" class="result"></div>
+
+<div class="disclaimer">
+<strong>Disclaimer:</strong> This estimator uses the core Chapter 13 math: priority + arrears + max(disposable × length, non-exempt equity) + 10% trustee commission, divided by plan length. Actual trustee commissions vary 3-10% by district. Unsecured creditor distribution is the residual after priority/secured/trustee are paid. Admin fees, attorney fees, and feasibility constraints may push the required payment higher. Not legal advice. Consult a licensed bankruptcy attorney for plan confirmation.
+</div>
+
+<div class="footer">
+<p>Part of the <strong>Open Bankruptcy Project</strong>. <a href="/">Re-Filing Screener</a> &middot; <a href="/tools/">All Tools</a></p>
+</div>
+</div>
+
+<script>
+function calc(){
+  const L=+document.getElementById('length').value;
+  const prior=+document.getElementById('priority').value||0;
+  const arr=+document.getElementById('arrears').value||0;
+  const unsec=+document.getElementById('unsecured').value||0;
+  const disp=+document.getElementById('disposable').value||0;
+  const best=+document.getElementById('best').value||0;
+
+  // Disposable-income commitment
+  const dispTotal=disp*L;
+  // Unsecured payment floor: max of disposable commitment and best-interests equity
+  const unsecPay=Math.max(dispTotal,best);
+  // Required plan total (before trustee)
+  const planBeforeTrustee=prior+arr+unsecPay;
+  // Trustee 10% of collections, grossed up
+  const trusteeRate=0.10;
+  const planTotal=planBeforeTrustee/(1-trusteeRate);
+  const monthlyPayment=planTotal/L;
+  const toUnsec=unsecPay;
+  const unsecPct=unsec>0?(toUnsec/unsec*100):0;
+
+  const fmt=n=>'$'+Math.round(n).toLocaleString();
+  let html=`<h2 style="color:#f0f6fc;margin-bottom:1rem">Plan Payment Estimate</h2>
+<div class="row"><span class="label">Plan length</span><span class="val">${L} months</span></div>
+<div class="row"><span class="label">Priority debts (full)</span><span class="val">${fmt(prior)}</span></div>
+<div class="row"><span class="label">Secured arrears (cure)</span><span class="val">${fmt(arr)}</span></div>
+<div class="row"><span class="label">Disposable-income commitment</span><span class="val">${fmt(dispTotal)}</span></div>
+<div class="row"><span class="label">Best-interests floor</span><span class="val">${fmt(best)}</span></div>
+<div class="row"><span class="label">→ Unsecured payment (max)</span><span class="val">${fmt(toUnsec)}</span></div>
+<div class="row"><span class="label">Trustee commission (~10%)</span><span class="val">${fmt(planTotal-planBeforeTrustee)}</span></div>
+<div class="row"><span class="label">Plan total</span><span class="val">${fmt(planTotal)}</span></div>
+<div class="row"><span class="label">MONTHLY PAYMENT</span><span class="val">${fmt(monthlyPayment)}</span></div>`;
+  if(unsec>0){
+    html+=`<p style="margin-top:1rem;color:#9eaab6;font-size:0.9rem">Unsecured creditors receive approximately <strong style="color:#f0f6fc">${unsecPct.toFixed(1)}%</strong> of their claims (${fmt(toUnsec)} of ${fmt(unsec)}).</p>`;
+  }
+  document.getElementById('result').innerHTML=html;
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>
