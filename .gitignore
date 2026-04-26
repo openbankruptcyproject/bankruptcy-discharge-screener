@@ -2,6 +2,7 @@
 *.json
 !examples/*.json
 !rss_config.example.json
+!data/counters.json
 __pycache__/
 *.pyc
 .env
