@@ -156,7 +156,7 @@ def load_all_cases(data_dir: Path, attorney_keys: set, display_map: dict,
     if not csv_files:
         print("ERROR: No matching CSV files found.", file=sys.stderr)
         print(f"  Searched: {data_dir}", file=sys.stderr)
-        print(f"  Expected pattern: api_{{LastName_FirstName}}_{{court}}_{{timestamp}}.csv",
+        print("  Expected pattern: api_{LastName_FirstName}_{court}_{timestamp}.csv",
               file=sys.stderr)
         if attorney_keys:
             print(f"  Attorney keys: {', '.join(sorted(attorney_keys))}", file=sys.stderr)
@@ -980,8 +980,8 @@ def format_markdown_report(profile):
     # Volume
     lines.append("### Volume")
     lines.append("")
-    lines.append(f"| Metric | Value |")
-    lines.append(f"|--------|-------|")
+    lines.append("| Metric | Value |")
+    lines.append("|--------|-------|")
     lines.append(f"| Total cases | {vol['total_cases']:,} |")
     lines.append(f"| Date range | {vol['earliest_filing'] or 'N/A'} to {vol['latest_filing'] or 'N/A'} |")
     lines.append(f"| Filing velocity | {vol['filing_velocity_per_year']:.1f} cases/year |")
@@ -1002,8 +1002,8 @@ def format_markdown_report(profile):
     if ch13 > 0:
         lines.append("### Outcomes (Ch. 13)")
         lines.append("")
-        lines.append(f"| Metric | Value |")
-        lines.append(f"|--------|-------|")
+        lines.append("| Metric | Value |")
+        lines.append("|--------|-------|")
         lines.append(f"| Ch. 13 caseload | {ch13:,} |")
         lines.append(f"| Dismissed | {out['ch13_dismissed']:,} ({out['ch13_dismissed_pct']:.1f}%) |")
         lines.append(f"| Discharged | {out['ch13_discharged']:,} ({out['ch13_discharged_pct']:.1f}%) |")
@@ -1016,8 +1016,8 @@ def format_markdown_report(profile):
     if dur['total_dismissed_with_dates'] or dur['total_discharged_with_dates']:
         lines.append("### Case Duration (Ch. 13)")
         lines.append("")
-        lines.append(f"| Metric | Value |")
-        lines.append(f"|--------|-------|")
+        lines.append("| Metric | Value |")
+        lines.append("|--------|-------|")
         lines.append(f"| Median days to dismissal | {int(med_dismiss) if med_dismiss is not None else 'N/A'} (n={dur['total_dismissed_with_dates']}) |")
         lines.append(f"| Median days to discharge | {int(med_discharge) if med_discharge is not None else 'N/A'} (n={dur['total_discharged_with_dates']}) |")
         if dur['total_dismissed_with_dates']:
@@ -1028,8 +1028,8 @@ def format_markdown_report(profile):
     # Statutory
     lines.append("### Statutory Compliance")
     lines.append("")
-    lines.append(f"| Screen | Hits | Rate/1K |")
-    lines.append(f"|--------|------|---------|")
+    lines.append("| Screen | Hits | Rate/1K |")
+    lines.append("|--------|------|---------|")
     lines.append(f"| 1328(f)(1) (4-yr bar) | {stat['f1_hits']} | {stat['f1_rate_per_1k']:.1f} |")
     lines.append(f"| 1328(f)(2) (2-yr bar) | {stat['f2_hits']} | {stat['f2_rate_per_1k']:.1f} |")
     lines.append(f"| 109(g) (180-day refile) | {stat['g_109_hits']} | {stat['g_109_rate_per_1k']:.1f} |")
@@ -1039,8 +1039,8 @@ def format_markdown_report(profile):
     # Repeat debtors
     lines.append("### Debtor Patterns")
     lines.append("")
-    lines.append(f"| Metric | Value |")
-    lines.append(f"|--------|-------|")
+    lines.append("| Metric | Value |")
+    lines.append("|--------|-------|")
     lines.append(f"| Unique debtors | {rep['total_unique_debtors']:,} |")
     lines.append(f"| Debtors with 2+ cases | {rep['debtors_with_2plus_cases']:,} |")
     lines.append(f"| Serial filing rate | {rep['serial_filing_rate_pct']:.1f}% |")

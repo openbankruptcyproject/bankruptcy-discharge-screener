@@ -20,8 +20,6 @@ Dependencies: Python 3.8+ standard library only (no pip install needed)
 import csv
 import json
 import sys
-import os
-import re
 import argparse
 from pathlib import Path
 from datetime import datetime
@@ -329,10 +327,10 @@ def main():
 
     print(f"\nSubmission saved: {out_path}")
     print(f"  {len(profiles)} attorneys across {', '.join(sorted(courts))}")
-    print(f"\nTo add to the lookup page:")
+    print("\nTo add to the lookup page:")
     print(f"  python contribute.py --rebuild --submissions-dir {args.submissions_dir}")
-    print(f"\nOr submit via GitHub issue:")
-    print(f"  https://github.com/ilikemath9999/bankruptcy-discharge-screener/issues/new?template=attorney-report.md")
+    print("\nOr submit via GitHub issue:")
+    print("  https://github.com/ilikemath9999/bankruptcy-discharge-screener/issues/new?template=attorney-report.md")
 
 
 if __name__ == '__main__':

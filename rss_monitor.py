@@ -192,7 +192,7 @@ def load_config():
 
     if not os.path.exists(CONFIG_FILE):
         log(f"No config file at {CONFIG_FILE} — using defaults.")
-        log(f"Copy rss_config.example.json to rss_config.json and customize.")
+        log("Copy rss_config.example.json to rss_config.json and customize.")
         _CONFIG = defaults
         return _CONFIG
 
@@ -395,7 +395,7 @@ def load_portfolio_from_csvs():
 
     if not files:
         log(f"No CSV files found in {csv_path}")
-        log(f"Download CSVs from pcl.uscourts.gov and save them there.")
+        log("Download CSVs from pcl.uscourts.gov and save them there.")
         return {}
 
     portfolio = {}
@@ -1235,7 +1235,7 @@ def show_stats(portfolio):
     target = get_target_attorneys()
     associated = get_associated_attorneys()
     print(f"\n{'=' * 50}")
-    print(f"  Portfolio Statistics")
+    print("  Portfolio Statistics")
     print(f"{'=' * 50}\n")
     print(f"Total cases loaded: {len(portfolio)}")
     by_tier = Counter(v.get('tier', 99) for v in portfolio.values())

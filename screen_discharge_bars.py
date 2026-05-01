@@ -20,7 +20,6 @@ import re
 import os
 import sys
 import glob
-import json
 import argparse
 import statistics
 from datetime import datetime
@@ -333,7 +332,7 @@ def analysis_1a_same_vs_cross(f1_hits, f2_hits, target_canonical, control_canoni
             else:
                 atty_stats[atty]['cross'] += 1
 
-    print(f"  Per-attorney (Target):")
+    print("  Per-attorney (Target):")
     print(f"  {'Attorney':<28} {'Same-Firm':<12} {'Cross-Firm':<12} {'Total':<8}")
     print(f"  {'-'*60}")
     for atty in sorted(atty_stats.keys(), key=lambda k: -(atty_stats[k]['same'] + atty_stats[k]['cross'])):
@@ -347,8 +346,8 @@ def analysis_1a_same_vs_cross(f1_hits, f2_hits, target_canonical, control_canoni
 
     # Same-firm detail listing
     if same_firm:
-        print(f"  Same-firm cases are the most culpable: the filing attorney's own firm")
-        print(f"  handled the prior discharge and should have known about the bar.")
+        print("  Same-firm cases are the most culpable: the filing attorney's own firm")
+        print("  handled the prior discharge and should have known about the bar.")
         print()
         seen = set()
         count = 0
@@ -544,7 +543,7 @@ def analysis_1_summary(f1_hits, f2_hits, target_canonical, control_canonical):
     ctrl_attys = {k: v for k, v in by_attorney.items() if k in control_canonical}
 
     if target_attys:
-        print(f"  Target Attorneys:")
+        print("  Target Attorneys:")
         print(f"  {'Attorney':<28} {'f(1)':<7} {'f(2)':<7} {'Total':<7} {'Same':<7} {'Cross':<7}")
         print(f"  {'-'*63}")
         for atty in sorted(target_attys.keys(), key=lambda k: -target_attys[k]['total']):
@@ -561,7 +560,7 @@ def analysis_1_summary(f1_hits, f2_hits, target_canonical, control_canonical):
         print()
 
     if ctrl_attys:
-        print(f"  Control Attorneys:")
+        print("  Control Attorneys:")
         print(f"  {'Attorney':<28} {'f(1)':<7} {'f(2)':<7} {'Total':<7}")
         print(f"  {'-'*49}")
         for atty in sorted(ctrl_attys.keys(), key=lambda k: -ctrl_attys[k]['total']):
@@ -690,7 +689,7 @@ def analysis_2_109g(cases, case_attorneys, target_canonical, control_canonical):
     print()
 
     target_willful = [h for h in target_hits if h['potentially_willful']]
-    print(f"  Potentially willful (disposition suggests failure):")
+    print("  Potentially willful (disposition suggests failure):")
     print(f"    Target:  {len(target_willful)}")
     print(f"    Control: {len([h for h in ctrl_hits if h['potentially_willful']])}")
     print()
@@ -706,7 +705,7 @@ def analysis_2_109g(cases, case_attorneys, target_canonical, control_canonical):
 
     target_atty_stats = {k: v for k, v in atty_stats.items() if k in target_canonical}
     if target_atty_stats:
-        print(f"  Per-Attorney (Target):")
+        print("  Per-Attorney (Target):")
         print(f"  {'Attorney':<28} {'Total':<8} {'Willful':<8}")
         print(f"  {'-'*44}")
         for atty in sorted(target_atty_stats.keys(), key=lambda k: -target_atty_stats[k]['total']):
@@ -717,7 +716,7 @@ def analysis_2_109g(cases, case_attorneys, target_canonical, control_canonical):
     # Shortest gaps
     shortest = sorted(target_hits, key=lambda x: x['gap_days'])[:15]
     if shortest:
-        print(f"  FASTEST Target Dismiss-Refile Turnarounds (top 15):")
+        print("  FASTEST Target Dismiss-Refile Turnarounds (top 15):")
         print(f"  {'#':<4} {'Gap':>5} {'Debtor':<40} {'Prior Case':<22} {'New Case':<22}")
         print(f"  {'-'*93}")
         for i, h in enumerate(shortest, 1):
@@ -725,9 +724,9 @@ def analysis_2_109g(cases, case_attorneys, target_canonical, control_canonical):
                   f"{h['prior_case']:<22} {h['new_case']:<22}")
         print()
 
-    print(f"  NOTE: Section 109(g)(1) requires 'willful failure to abide by orders")
-    print(f"  of the court.' PACER disposition codes cannot definitively distinguish")
-    print(f"  voluntary from willful dismissals. All hits require manual verification.")
+    print("  NOTE: Section 109(g)(1) requires 'willful failure to abide by orders")
+    print("  of the court.' PACER disposition codes cannot definitively distinguish")
+    print("  voluntary from willful dismissals. All hits require manual verification.")
     print()
     return hits
 
@@ -834,7 +833,7 @@ def analysis_3_pipeline(cases, case_attorneys, target_canonical, control_canonic
 
     target_atty_gaps = {k: v for k, v in atty_gaps.items() if k in target_canonical}
     if target_atty_gaps:
-        print(f"  Per-Attorney (Target):")
+        print("  Per-Attorney (Target):")
         print(f"  {'Attorney':<28} {'Count':>6} {'Min':>7} {'Median':>8} {'Mean':>8} {'Max':>7} {'<90d':>5} {'<180d':>6}")
         print(f"  {'-'*76}")
         for atty in sorted(target_atty_gaps.keys(), key=lambda k: -len(target_atty_gaps[k])):
@@ -859,7 +858,7 @@ def analysis_3_pipeline(cases, case_attorneys, target_canonical, control_canonic
     # Top 20 fastest turnarounds
     fastest = sorted(target_hits, key=lambda x: x['gap_days'])[:20]
     if fastest:
-        print(f"  FASTEST Target Ch.7->Ch.13 Turnarounds (top 20):")
+        print("  FASTEST Target Ch.7->Ch.13 Turnarounds (top 20):")
         print(f"  {'#':<4} {'Gap':>5} {'Debtor':<35} {'Ch.7 Case':<22} {'Ch.13 Case':<22} {'Attorney':<25}")
         print(f"  {'-'*113}")
         for i, h in enumerate(fastest, 1):
@@ -873,7 +872,7 @@ def analysis_3_pipeline(cases, case_attorneys, target_canonical, control_canonic
         dismissed_count = sum(1 for h in target_hits if h['ch13_dismissed'])
         discharged_count = sum(1 for h in target_hits if h['ch13_discharged'])
         open_count = sum(1 for h in target_hits if not h['ch13_dismissed'] and not h['ch13_discharged'])
-        print(f"  Target Ch.13 Outcomes (in Ch.7->Ch.13 pipeline):")
+        print("  Target Ch.13 Outcomes (in Ch.7->Ch.13 pipeline):")
         print(f"    Dismissed:  {dismissed_count} ({100*dismissed_count/len(target_hits):.1f}%)")
         print(f"    Discharged: {discharged_count} ({100*discharged_count/len(target_hits):.1f}%)")
         print(f"    Open:       {open_count} ({100*open_count/len(target_hits):.1f}%)")

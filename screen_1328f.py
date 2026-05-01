@@ -188,7 +188,7 @@ def load_all_cases(data_dir: Path, attorney_keys: set, display_map: dict,
     if not csv_files:
         print("ERROR: No matching CSV files found.", file=sys.stderr)
         print(f"  Searched: {data_dir}", file=sys.stderr)
-        print(f"  Expected pattern: api_{{LastName_FirstName}}_{{court}}_{{timestamp}}.csv",
+        print("  Expected pattern: api_{LastName_FirstName}_{court}_{timestamp}.csv",
               file=sys.stderr)
         if attorney_keys:
             print(f"  Attorney keys: {', '.join(sorted(attorney_keys))}", file=sys.stderr)
@@ -454,7 +454,7 @@ def print_summary(f1_hits, f2_hits, target_canonical, control_canonical):
             by_attorney[atty]['total'] += 1
 
     print(f"\n{'='*80}")
-    print(f"  SUMMARY: 1328(f) Violations by Attorney (Ch.13 filed on/after BAPCPA 10/17/2005)")
+    print("  SUMMARY: 1328(f) Violations by Attorney (Ch.13 filed on/after BAPCPA 10/17/2005)")
     print(f"{'='*80}\n")
 
     # Target attorneys
@@ -465,7 +465,7 @@ def print_summary(f1_hits, f2_hits, target_canonical, control_canonical):
         target_total_f1 = sum(v['f1'] for v in target_attys.values())
         target_total_f2 = sum(v['f2'] for v in target_attys.values())
 
-        print(f"  Target Attorneys:")
+        print("  Target Attorneys:")
         print(f"  {'Attorney':<30} {'f(1)':<8} {'f(2)':<8} {'Total':<8}")
         print(f"  {'-'*54}")
         for atty in sorted(target_attys.keys(), key=lambda k: -target_attys[k]['total']):
@@ -478,7 +478,7 @@ def print_summary(f1_hits, f2_hits, target_canonical, control_canonical):
     if ctrl_attys:
         ctrl_total_f1 = sum(v['f1'] for v in ctrl_attys.values())
         ctrl_total_f2 = sum(v['f2'] for v in ctrl_attys.values())
-        print(f"\n  Control Attorneys:")
+        print("\n  Control Attorneys:")
         print(f"  {'Attorney':<30} {'f(1)':<8} {'f(2)':<8} {'Total':<8}")
         print(f"  {'-'*54}")
         for atty in sorted(ctrl_attys.keys(), key=lambda k: -ctrl_attys[k]['total']):
@@ -501,14 +501,14 @@ def print_summary(f1_hits, f2_hits, target_canonical, control_canonical):
     unique_discharged = set(h['ch13_case'] for h in discharged_despite)
     print(f"  Ch.13 cases that received discharge DESPITE bar: {len(unique_discharged)}")
     if unique_discharged:
-        print(f"    (May be legitimate if court granted waiver or dates are imprecise)")
+        print("    (May be legitimate if court granted waiver or dates are imprecise)")
     print()
 
 
 def print_cross_attorney_detail(f1_hits, f2_hits):
     """Print cases where prior discharge attorney differs from Ch.13 filer."""
     print(f"\n{'='*80}")
-    print(f"  CROSS-ATTORNEY DETAIL: Prior case by different attorney than Ch.13 filer")
+    print("  CROSS-ATTORNEY DETAIL: Prior case by different attorney than Ch.13 filer")
     print(f"{'='*80}\n")
 
     cross = []
@@ -550,7 +550,7 @@ def print_most_egregious(f1_hits, f2_hits):
     target_hits = [h for h in f1_hits + f2_hits if not h['is_control']]
 
     print(f"\n{'='*80}")
-    print(f"  MOST EGREGIOUS: Short gaps and non-dismissed barred Ch.13 cases")
+    print("  MOST EGREGIOUS: Short gaps and non-dismissed barred Ch.13 cases")
     print(f"{'='*80}\n")
 
     # Cases not dismissed
@@ -594,7 +594,7 @@ def print_most_egregious(f1_hits, f2_hits):
 def print_methodological_notes():
     """Print caveats about the screening methodology."""
     print(f"\n{'='*80}")
-    print(f"  METHODOLOGICAL NOTES / CAVEATS")
+    print("  METHODOLOGICAL NOTES / CAVEATS")
     print(f"{'='*80}\n")
     print("  1. Name matching is fuzzy (first+last). Some hits may be different people")
     print("     with the same name. Manual verification required for each hit.")

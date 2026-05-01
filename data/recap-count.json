@@ -1,1 +1,10 @@
-{"count": 2060, "donated": 0}
+{
+  "_schema_note": "Authoritative RECAP contribution counts. Consumed by scripts/counters/update_counters.py and surfaced to public counters.json.",
+  "count": 2060,
+  "_count_definition": "Total discrete RECAP entries from the OBP contribution chain (legacy field; preserved for backward compatibility).",
+  "cases": 549,
+  "documents": 3100,
+  "courts": 11,
+  "donated": 0,
+  "as_of": "2026-04-11"
+}
