@@ -1,0 +1,663 @@
+{
+  "version": "0.1.0",
+  "generated": "2026-05-21",
+  "publisher": {
+    "name": "Open Bankruptcy Project",
+    "url": "https://openbankruptcyproject.org",
+    "nonprofitStatus": "NonprofitType501c3",
+    "ein": "41-5159631"
+  },
+  "license": "CC-BY-4.0",
+  "canonicalBase": "https://openbankruptcyproject.org/methodology/",
+  "contributions": [
+    {
+      "slug": "binary-forcing-notice",
+      "title": "Binary-Forcing Notice with Conditional Variants",
+      "abstract": "Procedural-status notice that converts a vague adversary position into a four-outcome forced binary with each outcome pre-engineered to produce a documented exhibit.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "procedural-notice",
+        "forced-binary",
+        "documentary-trap",
+        "adversary-engineering"
+      ],
+      "pairsWith": [
+        "reserved-instrument-discipline",
+        "zugzwang-net-architecture",
+        "soft-documentary-trap"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-19",
+        "artifact": "evidence/outgoing/binary_forcing_5_19_2026/NOTICE.md"
+      },
+      "sourceMemory": "memory/MEMORY.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/binary-forcing-notice/"
+    },
+    {
+      "slug": "reserved-instrument-discipline",
+      "title": "Reserved-Instrument Discipline (Variants A through E)",
+      "abstract": "Drafting and holding trigger-conditional instruments with held variants as documented deterrent inventory.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "reserved-instrument",
+        "deterrent-inventory",
+        "conditional-deployment",
+        "drafting-discipline"
+      ],
+      "pairsWith": [
+        "binary-forcing-notice",
+        "hold-posture-as-information-warfare",
+        "zugzwang-net-architecture"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-18",
+        "artifact": "memory/reserved_binary_withdrawal_forcing_notice_20260518.md"
+      },
+      "sourceMemory": "memory/reserved_binary_withdrawal_forcing_notice_20260518.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/reserved-instrument-discipline/"
+    },
+    {
+      "slug": "zugzwang-net-architecture",
+      "title": "Zugzwang Net Architecture",
+      "abstract": "Win-forcing system where every adversary move plus the \"do nothing\" option produces a documented loss through independent autonomous channels.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "win-forcing",
+        "attack-architecture",
+        "channel-independence",
+        "strategic-framework"
+      ],
+      "pairsWith": [
+        "binary-forcing-notice",
+        "channel-independent-escalation",
+        "fraud-by-accumulation-framework"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-19",
+        "artifact": "investigation/ZUGZWANG_NET_20260519.md"
+      },
+      "sourceMemory": "memory/MEMORY.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/zugzwang-net-architecture/"
+    },
+    {
+      "slug": "fraud-by-accumulation-framework",
+      "title": "Fraud-by-Accumulation Framework",
+      "abstract": "Doctrine that accumulation of misrepresentations supplies the scienter element of fraud, locking framing across institutional channels to push carrier outcomes toward fraud-exclusion.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "fraud-framing",
+        "scienter",
+        "carrier-coverage",
+        "pattern-evidence"
+      ],
+      "pairsWith": [
+        "vague-adverse-characterization-pattern",
+        "category-substitution-refusal-pattern",
+        "zugzwang-net-architecture"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-19",
+        "artifact": "drafts/misrepresentation_accumulation_is_fraud_20260519.md"
+      },
+      "sourceMemory": "memory/feedback_fraud_framing_over_damages_recovery.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/fraud-by-accumulation-framework/"
+    },
+    {
+      "slug": "vague-adverse-characterization-pattern",
+      "title": "Vague Adverse Characterization Pattern Catalog",
+      "abstract": "Discrete pattern element where the adversary's accusation-without-specification is itself the misrepresentation.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "adversary-pattern",
+        "misrepresentation",
+        "rule-9011",
+        "documentary-analysis"
+      ],
+      "pairsWith": [
+        "category-substitution-refusal-pattern",
+        "fraud-by-accumulation-framework",
+        "adversary-public-statement-rebuke"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-20",
+        "artifact": "memory/project_vague_adverse_characterization_pattern.md"
+      },
+      "sourceMemory": "memory/project_vague_adverse_characterization_pattern.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/vague-adverse-characterization-pattern/"
+    },
+    {
+      "slug": "documentary-anchoring-discipline",
+      "title": "Documentary-Anchoring Discipline",
+      "abstract": "Rule that every operative claim must be sourced to adversary-authored or court-filed artifact, never to inference or AI-generated synthesis.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "sourcing-rule",
+        "adversary-authored",
+        "ai-methodology",
+        "evidentiary-integrity"
+      ],
+      "pairsWith": [
+        "exemplar-case-for-ai-in-law",
+        "counsel-readability-standard",
+        "disclosed-facts-opinion-from-record"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-20",
+        "artifact": "memory/feedback_exemplar_case_for_ai_in_law.md"
+      },
+      "sourceMemory": "memory/feedback_exemplar_case_for_ai_in_law.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/documentary-anchoring-discipline/"
+    },
+    {
+      "slug": "channel-independent-escalation",
+      "title": "Channel-Independent Escalation Discipline",
+      "abstract": "Nine institutional channels each execute on their own schedule once seeded, requiring no further originator work.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "institutional-channels",
+        "autonomous-escalation",
+        "force-multiplier",
+        "seeded-action"
+      ],
+      "pairsWith": [
+        "zugzwang-net-architecture",
+        "upl-guardrail-counsel-gated-routing",
+        "attribution-publication-sequence"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-19",
+        "artifact": "investigation/ZUGZWANG_NET_20260519.md"
+      },
+      "sourceMemory": "memory/MEMORY.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/channel-independent-escalation/"
+    },
+    {
+      "slug": "upl-guardrail-counsel-gated-routing",
+      "title": "UPL Guardrail with Counsel-Gated Federal Channel Routing",
+      "abstract": "Pro-se complainant addresses bar forums directly but federal-agency communications route through retained counsel.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "upl-guardrail",
+        "pro-se",
+        "federal-routing",
+        "counsel-gate"
+      ],
+      "pairsWith": [
+        "channel-independent-escalation",
+        "counsel-readability-standard",
+        "forensic-complainant-filling-vacuum"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-20",
+        "artifact": "memory/feedback_fraud_framing_over_damages_recovery.md"
+      },
+      "sourceMemory": "memory/feedback_fraud_framing_over_damages_recovery.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/upl-guardrail-counsel-gated-routing/"
+    },
+    {
+      "slug": "counsel-readability-standard",
+      "title": "Counsel-Readability Standard",
+      "abstract": "Every artifact functions as a four-lens roadmap for new counsel: briefing, fee-economics, derisk, deliverables.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "counsel-handoff",
+        "four-lens",
+        "drafting-standard",
+        "new-counsel-roadmap"
+      ],
+      "pairsWith": [
+        "documentary-anchoring-discipline",
+        "upl-guardrail-counsel-gated-routing",
+        "exemplar-case-for-ai-in-law"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-20",
+        "artifact": "memory/feedback_everything_is_roadmap_for_new_counsel.md"
+      },
+      "sourceMemory": "memory/feedback_everything_is_roadmap_for_new_counsel.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/counsel-readability-standard/"
+    },
+    {
+      "slug": "exemplar-case-for-ai-in-law",
+      "title": "Exemplar-Case-for-AI-in-Law Positioning",
+      "abstract": "Strategic dual-coupling of accountability outcomes with AI-methodology proof such that outcomes vindicate the methodology.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "ai-methodology",
+        "exemplar-positioning",
+        "dual-coupling",
+        "vindication-arc"
+      ],
+      "pairsWith": [
+        "documentary-anchoring-discipline",
+        "claude-parallel-labor-architecture",
+        "counsel-readability-standard"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-20",
+        "artifact": "memory/feedback_exemplar_case_for_ai_in_law.md"
+      },
+      "sourceMemory": "memory/feedback_exemplar_case_for_ai_in_law.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/exemplar-case-for-ai-in-law/"
+    },
+    {
+      "slug": "five-tier-graduated-punishment-ladder",
+      "title": "Five-Tier Graduated Punishment Ladder",
+      "abstract": "Trustee oversight ladder Tier 0 through Tier 4 deployed with deliberate 30-day spacing, preserving deterrence inventory.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "graduated-escalation",
+        "trustee-oversight",
+        "deterrent-pacing",
+        "tiered-deployment"
+      ],
+      "pairsWith": [
+        "reserved-instrument-discipline",
+        "hold-posture-as-information-warfare",
+        "channel-independent-escalation"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-19",
+        "artifact": "drafts/trustee/TIER0 through TIER4"
+      },
+      "sourceMemory": "memory/project_subv_oversight_pattern_20260519.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/five-tier-graduated-punishment-ladder/"
+    },
+    {
+      "slug": "soft-documentary-trap",
+      "title": "Soft Documentary Trap",
+      "abstract": "Drafting form asking the addressee to substantiate an unsupportable claim, producing three good outcomes including non-response as documentary exhibit.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "documentary-trap",
+        "substantiation-request",
+        "non-response-exhibit",
+        "drafting-form"
+      ],
+      "pairsWith": [
+        "binary-forcing-notice",
+        "adversary-public-statement-rebuke",
+        "disclosed-facts-opinion-from-record"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-11",
+        "artifact": "drafts/_clip_independence_review_unified_20260511.txt"
+      },
+      "sourceMemory": "memory/feedback_continual_trap_setting_strategy.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/soft-documentary-trap/"
+    },
+    {
+      "slug": "category-substitution-refusal-pattern",
+      "title": "Category-Substitution Refusal Pattern Detection",
+      "abstract": "Identification of adversary's structural move of substituting one factual category for another as itself a Rule 9011 / 8.4(c) candidate.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "adversary-pattern",
+        "rule-9011",
+        "krpc-8-4",
+        "category-substitution"
+      ],
+      "pairsWith": [
+        "vague-adverse-characterization-pattern",
+        "fraud-by-accumulation-framework",
+        "spoliation-historical-not-cured"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-18",
+        "artifact": "memory/project_4_21_harassment_framing_documentary_refutation_20260518.md"
+      },
+      "sourceMemory": "memory/project_4_21_harassment_framing_documentary_refutation_20260518.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/category-substitution-refusal-pattern/"
+    },
+    {
+      "slug": "disclosed-facts-opinion-from-record",
+      "title": "Disclosed-Facts + Opinion-from-the-Record Structure",
+      "abstract": "Public review structure containing only adversary-authored facts plus opinions explicitly drawn from those facts, producing defamation-resilient deposits.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "public-review",
+        "defamation-resilient",
+        "opinion-from-record",
+        "drafting-structure"
+      ],
+      "pairsWith": [
+        "documentary-anchoring-discipline",
+        "adversary-public-statement-rebuke",
+        "soft-documentary-trap"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-11",
+        "artifact": "drafts/_clip_independence_review_unified_20260511.txt"
+      },
+      "sourceMemory": "memory/MEMORY.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/disclosed-facts-opinion-from-record/"
+    },
+    {
+      "slug": "cfo-incentive-cross-case-outreach",
+      "title": "CFO-Incentive Cross-Case Outreach Framework",
+      "abstract": "Outreach routing PII / governance notifications to CFO not GC, exploiting five CFO-specific incentives that produce faster action than counsel channels.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "cfo-outreach",
+        "cross-case-routing",
+        "pii-notification",
+        "incentive-exploitation"
+      ],
+      "pairsWith": [
+        "channel-independent-escalation",
+        "forensic-complainant-filling-vacuum",
+        "attribution-publication-sequence"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-19",
+        "artifact": "memory/project_cfo_outreach_20260519.md"
+      },
+      "sourceMemory": "memory/project_cfo_outreach_20260519.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/cfo-incentive-cross-case-outreach/"
+    },
+    {
+      "slug": "adversary-public-statement-rebuke",
+      "title": "Adversary Public-Statement Rebuke Structure",
+      "abstract": "Five-step logical box for responding to adversary statements that invoke duties they simultaneously violate.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "rebuke-structure",
+        "five-step",
+        "duty-invocation",
+        "logical-box"
+      ],
+      "pairsWith": [
+        "disclosed-facts-opinion-from-record",
+        "soft-documentary-trap",
+        "vague-adverse-characterization-pattern"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-11",
+        "artifact": "drafts/_clip_independence_review_unified_20260511.txt"
+      },
+      "sourceMemory": "memory/feedback_adversary_quote_rebuke_structure.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/adversary-public-statement-rebuke/"
+    },
+    {
+      "slug": "hold-posture-as-information-warfare",
+      "title": "Hold Posture as Information Warfare",
+      "abstract": "Framing of strategic non-action timing as active information warfare with measurable EV via bar-complaint confidentiality shelf-life asymmetry.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "hold-posture",
+        "information-warfare",
+        "timing-asymmetry",
+        "confidentiality-shelf-life"
+      ],
+      "pairsWith": [
+        "reserved-instrument-discipline",
+        "five-tier-graduated-punishment-ladder",
+        "surveillance-legibility-preservation"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-10",
+        "artifact": "file-production arc validation"
+      },
+      "sourceMemory": "memory/feedback_hold_posture_is_information_warfare.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/hold-posture-as-information-warfare/"
+    },
+    {
+      "slug": "attribution-publication-sequence",
+      "title": "Attribution Publication Sequence (Methodology then RECAP then Bar)",
+      "abstract": "Three-vehicle sequencing stages institutional credibility before adversarial move, converting one-litigant grievance into published-research-backed referral.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "publication-sequence",
+        "credibility-staging",
+        "recap-deposit",
+        "bar-referral"
+      ],
+      "pairsWith": [
+        "originating-attorney-attribution",
+        "channel-independent-escalation",
+        "surveillance-legibility-preservation"
+      ],
+      "firstDeployment": {
+        "date": "2026-04-25",
+        "artifact": "memory/attribution_publication_sequence.md"
+      },
+      "sourceMemory": "memory/attribution_publication_sequence.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/attribution-publication-sequence/"
+    },
+    {
+      "slug": "originating-attorney-attribution",
+      "title": "Originating-Attorney Attribution Methodology",
+      "abstract": "Methodology footnote in every per-attorney bar complaint pre-empting the \"I inherited it\" symmetry defense via within-firm cycling case law.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "attribution-methodology",
+        "bar-complaint",
+        "inherited-defense",
+        "within-firm-cycling"
+      ],
+      "pairsWith": [
+        "attribution-publication-sequence",
+        "spoliation-historical-not-cured",
+        "documentary-anchoring-discipline"
+      ],
+      "firstDeployment": {
+        "date": "2026-04-30",
+        "artifact": "bar-complaint draft series"
+      },
+      "sourceMemory": "memory/feedback_attribution_methodology_footnote.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/originating-attorney-attribution/"
+    },
+    {
+      "slug": "spoliation-historical-not-cured",
+      "title": "Spoliation Is Historical Not Cured",
+      "abstract": "Doctrine that the originally-stripped production date is a fixed historical Rule 3.4(a) event; subsequent native production does not cure it.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "spoliation",
+        "rule-3-4-a",
+        "historical-event",
+        "metadata-stripping"
+      ],
+      "pairsWith": [
+        "category-substitution-refusal-pattern",
+        "originating-attorney-attribution",
+        "documentary-anchoring-discipline"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-07",
+        "artifact": "memory/project_5_05_production_metadata_audit_20260507.md"
+      },
+      "sourceMemory": "memory/feedback_5_05_spoliation_event_is_historical.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/spoliation-historical-not-cured/"
+    },
+    {
+      "slug": "forensic-complainant-filling-vacuum",
+      "title": "Forensic Complainant Filling Federal Vacuum",
+      "abstract": "Posture framing the complainant as forensic investigator filling an enforcement gap rather than aggrieved client seeking redress.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "complainant-posture",
+        "forensic-framing",
+        "enforcement-gap",
+        "role-positioning"
+      ],
+      "pairsWith": [
+        "upl-guardrail-counsel-gated-routing",
+        "cfo-incentive-cross-case-outreach",
+        "exemplar-case-for-ai-in-law"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-02",
+        "artifact": "memory/feedback_role_forensic_complainant_not_aggrieved_client.md"
+      },
+      "sourceMemory": "memory/feedback_role_forensic_complainant_not_aggrieved_client.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/forensic-complainant-filling-vacuum/"
+    },
+    {
+      "slug": "surveillance-legibility-preservation",
+      "title": "Surveillance-Legibility Preservation Discipline",
+      "abstract": "SEO/publication discipline withholding distribution expansions during adversarial windows to preserve clean signal-to-noise against surveilling-adversary population.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "seo-discipline",
+        "surveillance-asymmetry",
+        "signal-preservation",
+        "publication-restraint"
+      ],
+      "pairsWith": [
+        "hold-posture-as-information-warfare",
+        "attribution-publication-sequence",
+        "claude-parallel-labor-architecture"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-01",
+        "artifact": "memory/feedback_case_index_seo_asymmetry_is_a_feature.md"
+      },
+      "sourceMemory": "memory/feedback_case_index_seo_asymmetry_is_a_feature.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/surveillance-legibility-preservation/"
+    },
+    {
+      "slug": "claude-parallel-labor-architecture",
+      "title": "Claude-Parallel Labor Architecture",
+      "abstract": "Labor model where marginal capacity comes from additional Claude seats rather than human hires, recognizing verification not generation as the bottleneck.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "version": "0.1.0",
+      "tags": [
+        "labor-architecture",
+        "claude-parallelism",
+        "verification-bottleneck",
+        "capacity-scaling"
+      ],
+      "pairsWith": [
+        "exemplar-case-for-ai-in-law",
+        "documentary-anchoring-discipline",
+        "surveillance-legibility-preservation"
+      ],
+      "firstDeployment": {
+        "date": "2026-04-29",
+        "artifact": "memory/feedback_labor_model_claude_parallel.md"
+      },
+      "sourceMemory": "memory/feedback_labor_model_claude_parallel.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/claude-parallel-labor-architecture/"
+    },
+    {
+      "slug": "no-facade-architecture",
+      "title": "No-Facade Architecture Principle",
+      "abstract": "Multi-domain content discipline: every owned domain must stand on its own real content; no domain may exist as a facade whose only purpose is to capture URL real estate or transfer ranking signal to another owned domain. Carve-out for defensive TLD-pair registrations.",
+      "status": "draft",
+      "value": "HIGH",
+      "datePublished": "2026-05-21",
+      "dateModified": "2026-05-21",
+      "version": "0.1.1",
+      "tags": [
+        "seo-discipline",
+        "multi-domain-strategy",
+        "content-integrity",
+        "ranking-juice",
+        "defensive-registration"
+      ],
+      "pairsWith": [
+        "documentary-anchoring-discipline",
+        "reserved-instrument-discipline",
+        "surveillance-legibility-preservation"
+      ],
+      "firstDeployment": {
+        "date": "2026-05-21",
+        "artifact": "commit 9fb340cfd on github.com/openbankruptcyproject/openbankruptcyproject.org (51 facade stubs deleted in help/<state>.html cluster)"
+      },
+      "sourceMemory": "methodology/contributions/no-facade-architecture.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/no-facade-architecture/"
+    }
+  ]
+}
