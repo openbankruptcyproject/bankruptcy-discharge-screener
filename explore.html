@@ -7,8 +7,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-FTWLM223G7");gtag("config","G-053Z64N82F");gtag("config", "G-RV60F9WDXN");</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bankruptcy Data Explorer -- Compare Districts, States & Trends | 4.9M Cases [2026]</title>
-<meta name="description" content="Interactive bankruptcy statistics explorer. Compare any two federal districts side-by-side, view filing trends by year, and see state-level rollups. Free, open-source data from 4.9M cases across 94 districts.">
+<title>Bankruptcy Data Explorer -- Compare Districts, States & Trends | 5.1M Cases [2026]</title>
+<meta name="description" content="Interactive bankruptcy statistics explorer. Compare any two federal districts side-by-side, view filing trends by year, and see state-level rollups. Free, open-source data from 5.1M cases across 94 districts.">
 <link rel="canonical" href="https://1328f.com/explore.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:title" content="Bankruptcy Data Explorer -- Compare Districts, States & Trends">
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Bankruptcy Data Explorer",
-  "description": "Interactive bankruptcy statistics explorer for comparing districts, viewing trends, and exploring state-level data across 94 federal districts and 4.9 million cases.",
+  "description": "Interactive bankruptcy statistics explorer for comparing districts, viewing trends, and exploring state-level data across 94 federal districts and 5.1 million cases.",
   "url": "https://1328f.com/explore.html",
   "applicationCategory": "ReferenceApplication",
   "operatingSystem": "Any",
@@ -214,7 +214,7 @@ footer {
 
 <header>
   <h1>Bankruptcy Data Explorer</h1>
-  <p class="subtitle">Compare districts, view filing trends, and explore state-level statistics across 94 federal districts and 4.9 million Chapter 13 cases.</p>
+  <p class="subtitle">Compare districts, view filing trends, and explore state-level statistics across 94 federal districts and 5.1 million Chapter 13 cases.</p>
   <div class="links">
     <a href="/">Screener</a>
     <a href="/dashboard.html">Map</a>
@@ -310,7 +310,7 @@ footer {
 </div>
 
 <footer>
-  Data sourced from FJC Integrated Database (4.9M Ch.13 cases, FY2008-2024) and U.S. Courts Statistics.<br>
+  Data sourced from FJC Integrated Database (5.1M Ch.13 cases, FY2008-2025) and U.S. Courts Statistics.<br>
   Built by the <a href="https://openbankruptcyproject.org">Open Bankruptcy Project</a>.
   No personal information is collected or displayed.
   <p style="margin-top:0.5rem;">This site provides general information, not legal advice. Consult a qualified attorney for your specific situation.</p>
@@ -870,7 +870,7 @@ footer {
 
     var rows = [
       ['Court Code', d.court_id],
-      ['Total Ch.13 Filed (2008-2024)', fmt(d.total_filed)],
+      ['Total Ch.13 Filed (2008-2025)', fmt(d.total_filed)],
       ['Closed Cases', fmt(d.closed)],
       ['Discharged', '<span class="stat-val green">' + fmt(d.discharged) + '</span>'],
       ['Dismissed', '<span class="stat-val red">' + fmt(d.dismissed) + '</span>'],
