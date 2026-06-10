@@ -658,6 +658,107 @@
       },
       "sourceMemory": "methodology/contributions/no-facade-architecture.md",
       "canonical": "https://openbankruptcyproject.org/methodology/no-facade-architecture/"
+    },
+    {
+      "slug": "firm-wide-vs-individual-withdrawal",
+      "title": "Firm-Wide vs. Individual Attorney Withdrawal in U.S. Bankruptcy Court",
+      "abstract": "Procedural distinction between firm-level withdrawal under Section 327 employment and individual-attorney withdrawal under local rules. Covers W.D. Mo. Bankr. LBR 2019-1 (formerly 2091-1; renumbered January 5, 2026), D. Kan. Bankr. LBR 9010.1, the two-step Limited Entry mechanism, the corporate-debtor pro se bar under Rowland, MRPC 5.1 supervisory implications, and the distinction between docket-listed counsel of record and Section 327 firm authorization.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "kind": "procedural-primer",
+      "datePublished": "2026-05-22",
+      "dateModified": "2026-05-22",
+      "version": "0.1.0",
+      "tags": [
+        "withdrawal-procedure",
+        "section-327",
+        "local-rule-2091",
+        "corporate-debtor-pro-se",
+        "supervisory-responsibility"
+      ],
+      "pairsWith": [
+        "section-327-firm-employment-persistence",
+        "krpc-1-16-d-entire-file-standard",
+        "rule-2016-post-confirmation-fees"
+      ],
+      "sourceMemory": "memory/project_wm_law_firm_withdrawal_pattern_20260522.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/firm-wide-vs-individual-withdrawal/"
+    },
+    {
+      "slug": "rule-2016-post-confirmation-fees",
+      "title": "Rule 2016(b) Post-Confirmation Fee Disclosure Framework",
+      "abstract": "Compensation disclosure framework under Federal Rule of Bankruptcy Procedure 2016(b) and 11 U.S.C. Section 329(b). Covers Form B2030, local-rule carve-outs for post-confirmation services, the supplemental-disclosure trigger when fee arrangements change post-confirmation, and the consequences of non-compliance under Whitley, Kisseberth, Park-Helena, and Saturley.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "kind": "procedural-primer",
+      "datePublished": "2026-05-22",
+      "dateModified": "2026-05-22",
+      "version": "0.1.0",
+      "tags": [
+        "rule-2016",
+        "section-329",
+        "fee-disclosure",
+        "form-b2030",
+        "post-confirmation-services"
+      ],
+      "pairsWith": [
+        "section-327-firm-employment-persistence",
+        "firm-wide-vs-individual-withdrawal",
+        "krpc-1-16-d-entire-file-standard"
+      ],
+      "sourceMemory": "memory/project_wm_law_one_per_attorney_smoking_gun_packet_20260522.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/rule-2016-post-confirmation-fees/"
+    },
+    {
+      "slug": "section-327-firm-employment-persistence",
+      "title": "Section 327 Employment of Professional Persons: How Firm Authorization Persists After Individual Attorney Movement",
+      "abstract": "Doctrine that Section 327 employment authorizes the firm rather than the individual attorney. Covers three scenarios of attorney departure (the firm retains, the attorney departs to a new firm, or the attorney exits practice), the continuing-disinterestedness duty per Rome v. Braunstein, and the four-modality termination mechanism for firm-level withdrawal.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "kind": "procedural-primer",
+      "datePublished": "2026-05-22",
+      "dateModified": "2026-05-22",
+      "version": "0.1.0",
+      "tags": [
+        "section-327",
+        "firm-employment",
+        "attorney-departure",
+        "disinterestedness",
+        "rule-2014"
+      ],
+      "pairsWith": [
+        "firm-wide-vs-individual-withdrawal",
+        "rule-2016-post-confirmation-fees",
+        "krpc-1-16-d-entire-file-standard"
+      ],
+      "sourceMemory": "memory/project_wm_law_firm_withdrawal_pattern_20260522.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/section-327-firm-employment-persistence/"
+    },
+    {
+      "slug": "krpc-1-16-d-entire-file-standard",
+      "title": "KRPC / MRPC 1.16(d) Entire-File Production Standard at Termination of Representation",
+      "abstract": "Ethical duty to surrender the entire client file upon termination of representation under KRPC 1.16(d) (Kansas), MRPC 4-1.16(d) (Missouri), and ABA Model Rule 1.16(d). Covers ABA Formal Opinion 471, Restatement (Third) of the Law Governing Lawyers Section 46, Sage Realty, the five common firm-side defenses and why they fail, and the cross-jurisdictional consistency of the entire-file interpretation.",
+      "status": "draft",
+      "value": "MEDIUM",
+      "kind": "procedural-primer",
+      "datePublished": "2026-05-22",
+      "dateModified": "2026-05-22",
+      "version": "0.1.0",
+      "tags": [
+        "krpc-1-16",
+        "mrpc-1-16",
+        "file-production",
+        "termination-of-representation",
+        "client-file",
+        "aba-formal-opinion-471"
+      ],
+      "pairsWith": [
+        "firm-wide-vs-individual-withdrawal",
+        "section-327-firm-employment-persistence",
+        "rule-2016-post-confirmation-fees"
+      ],
+      "sourceMemory": "memory/project_krpc_116d_partial_production_avvo_confirmation_20260505.md",
+      "canonical": "https://openbankruptcyproject.org/methodology/krpc-1-16-d-entire-file-standard/"
     }
   ]
 }
