@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chapter 13 Plan Survival Calculator — Real Completion Rates by District — 1328f.com</title>
+<meta name="description" content="What share of Chapter 13 plans actually finish? Real completion, conversion, and dismissal rates for your district from 1,781,208 federal cases (2014-2019 cohorts).">
+<link rel="canonical" href="https://1328f.com/tools/plan-survival-calculator.html">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTWLM223G7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('set','allow_ad_personalization_signals',false);gtag('config','G-FTWLM223G7');gtag('config','G-053Z64N82F');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.6}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:720px;margin:0 auto;padding:2rem}
+.breadcrumb{color:#9eaab6;font-size:0.85rem;margin-bottom:1rem}
+.breadcrumb a{color:#9eaab6}
+h1{font-size:1.8rem;margin-bottom:0.5rem;color:#f0f6fc}
+.subtitle{color:#9eaab6;margin-bottom:1rem}
+.quick{background:#161b22;border-left:3px solid #58a6ff;border-radius:0 6px 6px 0;padding:0.8rem 1rem;font-size:0.95rem;margin-bottom:2rem}
+.calc{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem}
+label{display:block;margin:1rem 0 0.3rem;font-weight:600;color:#f0f6fc}
+select{width:100%;padding:0.6rem 0.8rem;background:#0d1117;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:1rem;font-family:inherit}
+button{background:#238636;color:#fff;padding:0.75rem 1.5rem;border:none;border-radius:6px;font-weight:600;font-size:1rem;cursor:pointer;margin-top:1.5rem}
+.result{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-top:1.5rem;display:none}
+.result.show{display:block}
+.bar{display:flex;height:34px;border-radius:6px;overflow:hidden;margin:1rem 0;font-size:0.78rem;font-weight:700;color:#0d1117}
+.bar div{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.seg-c{background:#3fb950}.seg-v{background:#d29922}.seg-d{background:#f85149}.seg-o{background:#8b949e}
+.legend{font-size:0.85rem;color:#9eaab6;display:flex;gap:1rem;flex-wrap:wrap}
+.dot{display:inline-block;width:10px;height:10px;border-radius:5px;margin-right:4px}
+.stat{font-family:ui-monospace,monospace;background:#161b22;border-radius:6px;padding:0.8rem;margin-top:1rem;font-size:0.9rem}
+.disclaimer{font-size:0.8rem;color:#8b949e;padding:1rem;background:#161b22;border-radius:6px;margin-top:1.5rem}
+.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #30363d;color:#9eaab6;font-size:0.85rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; Plan Survival Calculator</div>
+<h1>Chapter 13 Plan Survival Calculator</h1>
+<p class="subtitle">What actually happens to Chapter 13 plans in your district — from the full population of federal filings, not a survey. All data inline; nothing about you is sent or collected.</p>
+<div class="quick"><strong>Quick answer:</strong> Nationally, 37.6% of Chapter 13 cases filed 2014&ndash;2019 completed the plan and received a Chapter 13 discharge; 53.9% were dismissed (most within 8 months), and 6.6% converted to Chapter 7 and were discharged there. Completion varies enormously by district — from under 10% to over 60%.</div>
+
+<div class="calc">
+<label for="district">Your federal bankruptcy district</label>
+<select id="district">
+<option value="national">United States (all districts)</option>
+<option value="73">C.D. California</option>
+<option value="53">C.D. Illinois</option>
+<option value="70">D. Alaska</option>
+<option value="71">D. Arizona</option>
+<option value="82">D. Colorado</option>
+<option value="05">D. Connecticut</option>
+<option value="11">D. Delaware</option>
+<option value="00">D. District of Columbia</option>
+<option value="90">D. Guam</option>
+<option value="75">D. Hawaii</option>
+<option value="76">D. Idaho</option>
+<option value="83">D. Kansas</option>
+<option value="02">D. Maine</option>
+<option value="16">D. Maryland</option>
+<option value="01">D. Massachusetts</option>
+<option value="64">D. Minnesota</option>
+<option value="77">D. Montana</option>
+<option value="67">D. Nebraska</option>
+<option value="78">D. Nevada</option>
+<option value="03">D. New Hampshire</option>
+<option value="12">D. New Jersey</option>
+<option value="84">D. New Mexico</option>
+<option value="68">D. North Dakota</option>
+<option value="79">D. Oregon</option>
+<option value="04">D. Puerto Rico</option>
+<option value="20">D. South Carolina</option>
+<option value="69">D. South Dakota</option>
+<option value="88">D. Utah</option>
+<option value="10">D. Vermont</option>
+<option value="93">D. Virgin Islands</option>
+<option value="89">D. Wyoming</option>
+<option value="60">E.D. Arkansas</option>
+<option value="7-">E.D. California</option>
+<option value="43">E.D. Kentucky</option>
+<option value="3L">E.D. Louisiana</option>
+<option value="45">E.D. Michigan</option>
+<option value="65">E.D. Missouri</option>
+<option value="07">E.D. New York</option>
+<option value="17">E.D. North Carolina</option>
+<option value="86">E.D. Oklahoma</option>
+<option value="13">E.D. Pennsylvania</option>
+<option value="49">E.D. Tennessee (Knoxville)</option>
+<option value="40">E.D. Texas</option>
+<option value="22">E.D. Virginia</option>
+<option value="80">E.D. Washington</option>
+<option value="57">E.D. Wisconsin</option>
+<option value="27">M.D. Alabama</option>
+<option value="3A">M.D. Florida</option>
+<option value="3G">M.D. Georgia (Macon)</option>
+<option value="3N">M.D. Louisiana</option>
+<option value="18">M.D. North Carolina</option>
+<option value="14">M.D. Pennsylvania</option>
+<option value="50">M.D. Tennessee (Nashville)</option>
+<option value="26">N.D. Alabama</option>
+<option value="72">N.D. California</option>
+<option value="29">N.D. Florida</option>
+<option value="3E">N.D. Georgia (Atlanta)</option>
+<option value="52">N.D. Illinois (Chicago)</option>
+<option value="55">N.D. Indiana</option>
+<option value="62">N.D. Iowa</option>
+<option value="37">N.D. Mississippi</option>
+<option value="06">N.D. New York</option>
+<option value="47">N.D. Ohio</option>
+<option value="85">N.D. Oklahoma</option>
+<option value="39">N.D. Texas (Dallas)</option>
+<option value="24">N.D. West Virginia</option>
+<option value="28">S.D. Alabama</option>
+<option value="74">S.D. California</option>
+<option value="3C">S.D. Florida</option>
+<option value="3J">S.D. Georgia (Savannah)</option>
+<option value="54">S.D. Illinois</option>
+<option value="56">S.D. Indiana</option>
+<option value="63">S.D. Iowa</option>
+<option value="38">S.D. Mississippi</option>
+<option value="08">S.D. New York</option>
+<option value="48">S.D. Ohio</option>
+<option value="41">S.D. Texas (Houston)</option>
+<option value="25">S.D. West Virginia</option>
+<option value="61">W.D. Arkansas</option>
+<option value="44">W.D. Kentucky</option>
+<option value="36">W.D. Louisiana</option>
+<option value="46">W.D. Michigan</option>
+<option value="66">W.D. Missouri</option>
+<option value="09">W.D. New York</option>
+<option value="19">W.D. North Carolina</option>
+<option value="87">W.D. Oklahoma</option>
+<option value="15">W.D. Pennsylvania</option>
+<option value="51">W.D. Tennessee (Memphis)</option>
+<option value="42">W.D. Texas</option>
+<option value="23">W.D. Virginia</option>
+<option value="81">W.D. Washington</option>
+<option value="58">W.D. Wisconsin</option>
+</select>
+<button onclick="calc()">Show Real Outcomes</button>
+</div>
+
+<div id="result" class="result"></div>
+
+<div class="disclaimer">
+<strong>Source &amp; method:</strong> Federal Judicial Center Bankruptcy Petition NewSTATS Snapshots database — every voluntary Chapter 13 case filed 2014&ndash;2019 in U.S. bankruptcy courts (1,781,208 cases; dispositions current through January 2026). "Completed" = discharged with the case still under Chapter 13 (a discharge after conversion to Chapter 7 is counted separately, not as plan completion). Transfers and administrative closures are excluded from percentages. Rates are cohort outcomes, not predictions: your case depends on your budget, your district's practices, and whether you have counsel — represented debtors complete plans at far higher rates than pro se filers. Not legal advice.
+</div>
+
+<div class="footer">
+<p>Part of the <strong>Open Bankruptcy Project</strong>. <a href="/">Re-Filing Screener</a> &middot; <a href="/tools/">All Tools</a> &middot; <a href="/tools/plan-payment-calculator.html">Plan Payment Calculator</a></p>
+</div>
+</div>
+
+<script>
+const DATA={"national":{"label":"United States (all districts)","n":1781208,"resolved":1764514,"completed":662933,"converted_discharged":116292,"dismissed":950965,"pct_completed":37.6,"pct_converted_discharged":6.6,"pct_dismissed":53.9,"median_months_completed":54.8,"median_months_dismissed":8.5},"districts":{"00":{"label":"D. District of Columbia","n":1380,"resolved":1366,"completed":723,"converted_discharged":193,"dismissed":438,"pct_completed":52.9,"pct_converted_discharged":14.1,"pct_dismissed":32.1,"median_months_completed":55.2,"median_months_dismissed":13.1},"01":{"label":"D. Massachusetts","n":16020,"resolved":15904,"completed":4993,"converted_discharged":1288,"dismissed":9425,"pct_completed":31.4,"pct_converted_discharged":8.1,"pct_dismissed":59.3,"median_months_completed":47.5,"median_months_dismissed":6.2},"02":{"label":"D. Maine","n":3000,"resolved":2974,"completed":1230,"converted_discharged":338,"dismissed":1353,"pct_completed":41.4,"pct_converted_discharged":11.4,"pct_dismissed":45.5,"median_months_completed":39.1,"median_months_dismissed":5.3},"03":{"label":"D. New Hampshire","n":3018,"resolved":2989,"completed":885,"converted_discharged":303,"dismissed":1745,"pct_completed":29.6,"pct_converted_discharged":10.1,"pct_dismissed":58.4,"median_months_completed":37.9,"median_months_dismissed":1.1},"04":{"label":"D. Puerto Rico","n":31870,"resolved":31652,"completed":16389,"converted_discharged":2120,"dismissed":12761,"pct_completed":51.8,"pct_converted_discharged":6.7,"pct_dismissed":40.3,"median_months_completed":61.4,"median_months_dismissed":16.1},"05":{"label":"D. Connecticut","n":5568,"resolved":5489,"completed":1029,"converted_discharged":451,"dismissed":3935,"pct_completed":18.7,"pct_converted_discharged":8.2,"pct_dismissed":71.7,"median_months_completed":54.5,"median_months_dismissed":5.1},"06":{"label":"N.D. New York","n":6849,"resolved":6762,"completed":3307,"converted_discharged":859,"dismissed":2510,"pct_completed":48.9,"pct_converted_discharged":12.7,"pct_dismissed":37.1,"median_months_completed":52.8,"median_months_dismissed":17.6},"07":{"label":"E.D. New York","n":25392,"resolved":25159,"completed":2419,"converted_discharged":507,"dismissed":22102,"pct_completed":9.6,"pct_converted_discharged":2.0,"pct_dismissed":87.8,"median_months_completed":51.4,"median_months_dismissed":1.6},"08":{"label":"S.D. New York","n":10409,"resolved":10348,"completed":3300,"converted_discharged":812,"dismissed":6145,"pct_completed":31.9,"pct_converted_discharged":7.8,"pct_dismissed":59.4,"median_months_completed":59.4,"median_months_dismissed":7.3},"09":{"label":"W.D. New York","n":5121,"resolved":5105,"completed":2133,"converted_discharged":337,"dismissed":2375,"pct_completed":41.8,"pct_converted_discharged":6.6,"pct_dismissed":46.5,"median_months_completed":56.2,"median_months_dismissed":7.1},"10":{"label":"D. Vermont","n":502,"resolved":496,"completed":299,"converted_discharged":68,"dismissed":123,"pct_completed":60.3,"pct_converted_discharged":13.7,"pct_dismissed":24.8,"median_months_completed":48.5,"median_months_dismissed":5.2},"11":{"label":"D. Delaware","n":3127,"resolved":3096,"completed":1372,"converted_discharged":204,"dismissed":1514,"pct_completed":44.3,"pct_converted_discharged":6.6,"pct_dismissed":48.9,"median_months_completed":64.0,"median_months_dismissed":11.5},"12":{"label":"D. New Jersey","n":52582,"resolved":52310,"completed":16334,"converted_discharged":3460,"dismissed":30748,"pct_completed":31.2,"pct_converted_discharged":6.6,"pct_dismissed":58.8,"median_months_completed":46.7,"median_months_dismissed":5.8},"13":{"label":"E.D. Pennsylvania","n":25394,"resolved":25184,"completed":7042,"converted_discharged":1170,"dismissed":16609,"pct_completed":28.0,"pct_converted_discharged":4.6,"pct_dismissed":66.0,"median_months_completed":60.5,"median_months_dismissed":8.2},"14":{"label":"M.D. Pennsylvania","n":10239,"resolved":10134,"completed":4326,"converted_discharged":771,"dismissed":4629,"pct_completed":42.7,"pct_converted_discharged":7.6,"pct_dismissed":45.7,"median_months_completed":54.9,"median_months_dismissed":8.8},"15":{"label":"W.D. Pennsylvania","n":12686,"resolved":12588,"completed":5432,"converted_discharged":853,"dismissed":6138,"pct_completed":43.2,"pct_converted_discharged":6.8,"pct_dismissed":48.8,"median_months_completed":63.0,"median_months_dismissed":13.8},"16":{"label":"D. Maryland","n":28007,"resolved":27605,"completed":6754,"converted_discharged":2987,"dismissed":17401,"pct_completed":24.5,"pct_converted_discharged":10.8,"pct_dismissed":63.0,"median_months_completed":50.2,"median_months_dismissed":5.3},"17":{"label":"E.D. North Carolina","n":22555,"resolved":22496,"completed":12072,"converted_discharged":903,"dismissed":9282,"pct_completed":53.7,"pct_converted_discharged":4.0,"pct_dismissed":41.3,"median_months_completed":59.6,"median_months_dismissed":12.4},"18":{"label":"M.D. North Carolina","n":11666,"resolved":11622,"completed":6213,"converted_discharged":664,"dismissed":4706,"pct_completed":53.5,"pct_converted_discharged":5.7,"pct_dismissed":40.5,"median_months_completed":60.2,"median_months_dismissed":11.2},"19":{"label":"W.D. North Carolina","n":9801,"resolved":9689,"completed":4242,"converted_discharged":717,"dismissed":4521,"pct_completed":43.8,"pct_converted_discharged":7.4,"pct_dismissed":46.7,"median_months_completed":61.1,"median_months_dismissed":13.7},"20":{"label":"D. South Carolina","n":24405,"resolved":24244,"completed":10921,"converted_discharged":1378,"dismissed":11655,"pct_completed":45.0,"pct_converted_discharged":5.7,"pct_dismissed":48.1,"median_months_completed":59.4,"median_months_dismissed":11.2},"22":{"label":"E.D. Virginia","n":36479,"resolved":36338,"completed":14878,"converted_discharged":3484,"dismissed":17607,"pct_completed":40.9,"pct_converted_discharged":9.6,"pct_dismissed":48.5,"median_months_completed":53.8,"median_months_dismissed":9.9},"23":{"label":"W.D. Virginia","n":10419,"resolved":10347,"completed":6235,"converted_discharged":869,"dismissed":3166,"pct_completed":60.3,"pct_converted_discharged":8.4,"pct_dismissed":30.6,"median_months_completed":58.6,"median_months_dismissed":13.3},"24":{"label":"N.D. West Virginia","n":1135,"resolved":1129,"completed":563,"converted_discharged":150,"dismissed":404,"pct_completed":49.9,"pct_converted_discharged":13.3,"pct_dismissed":35.8,"median_months_completed":59.8,"median_months_dismissed":8.5},"25":{"label":"S.D. West Virginia","n":899,"resolved":889,"completed":373,"converted_discharged":138,"dismissed":369,"pct_completed":42.0,"pct_converted_discharged":15.5,"pct_dismissed":41.5,"median_months_completed":62.8,"median_months_dismissed":12.2},"26":{"label":"N.D. Alabama","n":34771,"resolved":34622,"completed":12789,"converted_discharged":3608,"dismissed":17385,"pct_completed":36.9,"pct_converted_discharged":10.4,"pct_dismissed":50.2,"median_months_completed":54.3,"median_months_dismissed":15.4},"27":{"label":"M.D. Alabama","n":38101,"resolved":37713,"completed":18170,"converted_discharged":2871,"dismissed":16323,"pct_completed":48.2,"pct_converted_discharged":7.6,"pct_dismissed":43.3,"median_months_completed":57.5,"median_months_dismissed":17.3},"28":{"label":"S.D. Alabama","n":13664,"resolved":13570,"completed":5918,"converted_discharged":851,"dismissed":6701,"pct_completed":43.6,"pct_converted_discharged":6.3,"pct_dismissed":49.4,"median_months_completed":59.9,"median_months_dismissed":14.7},"29":{"label":"N.D. Florida","n":3154,"resolved":3121,"completed":921,"converted_discharged":279,"dismissed":1887,"pct_completed":29.5,"pct_converted_discharged":8.9,"pct_dismissed":60.5,"median_months_completed":49.9,"median_months_dismissed":7.9},"36":{"label":"W.D. Louisiana","n":41566,"resolved":41123,"completed":15944,"converted_discharged":2569,"dismissed":21721,"pct_completed":38.8,"pct_converted_discharged":6.2,"pct_dismissed":52.8,"median_months_completed":55.8,"median_months_dismissed":13.3},"37":{"label":"N.D. Mississippi","n":17348,"resolved":17237,"completed":8943,"converted_discharged":664,"dismissed":7281,"pct_completed":51.9,"pct_converted_discharged":3.9,"pct_dismissed":42.2,"median_months_completed":57.9,"median_months_dismissed":18.2},"38":{"label":"S.D. Mississippi","n":19786,"resolved":19695,"completed":8075,"converted_discharged":1081,"dismissed":10167,"pct_completed":41.0,"pct_converted_discharged":5.5,"pct_dismissed":51.6,"median_months_completed":60.4,"median_months_dismissed":13.7},"39":{"label":"N.D. Texas (Dallas)","n":39518,"resolved":39338,"completed":10378,"converted_discharged":3464,"dismissed":24449,"pct_completed":26.4,"pct_converted_discharged":8.8,"pct_dismissed":62.2,"median_months_completed":57.3,"median_months_dismissed":7.1},"3A":{"label":"M.D. Florida","n":48350,"resolved":47997,"completed":14069,"converted_discharged":2896,"dismissed":30455,"pct_completed":29.3,"pct_converted_discharged":6.0,"pct_dismissed":63.5,"median_months_completed":46.2,"median_months_dismissed":5.0},"3C":{"label":"S.D. Florida","n":45482,"resolved":45278,"completed":18492,"converted_discharged":1235,"dismissed":25179,"pct_completed":40.8,"pct_converted_discharged":2.7,"pct_dismissed":55.6,"median_months_completed":60.5,"median_months_dismissed":7.1},"3E":{"label":"N.D. Georgia (Atlanta)","n":91871,"resolved":91267,"completed":22936,"converted_discharged":5969,"dismissed":61336,"pct_completed":25.1,"pct_converted_discharged":6.5,"pct_dismissed":67.2,"median_months_completed":48.3,"median_months_dismissed":3.7},"3G":{"label":"M.D. Georgia (Macon)","n":35030,"resolved":34787,"completed":16453,"converted_discharged":1933,"dismissed":15960,"pct_completed":47.3,"pct_converted_discharged":5.6,"pct_dismissed":45.9,"median_months_completed":54.7,"median_months_dismissed":15.5},"3J":{"label":"S.D. Georgia (Savannah)","n":33857,"resolved":33710,"completed":16003,"converted_discharged":1617,"dismissed":15362,"pct_completed":47.5,"pct_converted_discharged":4.8,"pct_dismissed":45.6,"median_months_completed":52.0,"median_months_dismissed":14.0},"3L":{"label":"E.D. Louisiana","n":11443,"resolved":11383,"completed":5330,"converted_discharged":545,"dismissed":5405,"pct_completed":46.8,"pct_converted_discharged":4.8,"pct_dismissed":47.5,"median_months_completed":53.0,"median_months_dismissed":12.4},"3N":{"label":"M.D. Louisiana","n":4254,"resolved":4219,"completed":1368,"converted_discharged":473,"dismissed":2222,"pct_completed":32.4,"pct_converted_discharged":11.2,"pct_dismissed":52.7,"median_months_completed":44.5,"median_months_dismissed":8.1},"40":{"label":"E.D. Texas","n":16283,"resolved":16025,"completed":4891,"converted_discharged":1316,"dismissed":9451,"pct_completed":30.5,"pct_converted_discharged":8.2,"pct_dismissed":59.0,"median_months_completed":54.0,"median_months_dismissed":10.6},"41":{"label":"S.D. Texas (Houston)","n":28052,"resolved":27815,"completed":9188,"converted_discharged":1015,"dismissed":17111,"pct_completed":33.0,"pct_converted_discharged":3.6,"pct_dismissed":61.5,"median_months_completed":61.1,"median_months_dismissed":7.2},"42":{"label":"W.D. Texas","n":20028,"resolved":19937,"completed":6007,"converted_discharged":1922,"dismissed":11783,"pct_completed":30.1,"pct_converted_discharged":9.6,"pct_dismissed":59.1,"median_months_completed":53.9,"median_months_dismissed":9.7},"43":{"label":"E.D. Kentucky","n":14343,"resolved":14296,"completed":7667,"converted_discharged":1611,"dismissed":4261,"pct_completed":53.6,"pct_converted_discharged":11.3,"pct_dismissed":29.8,"median_months_completed":54.4,"median_months_dismissed":16.7},"44":{"label":"W.D. Kentucky","n":15538,"resolved":15288,"completed":6362,"converted_discharged":1455,"dismissed":7083,"pct_completed":41.6,"pct_converted_discharged":9.5,"pct_dismissed":46.3,"median_months_completed":54.5,"median_months_dismissed":17.4},"45":{"label":"E.D. Michigan","n":27678,"resolved":27336,"completed":11619,"converted_discharged":1698,"dismissed":13038,"pct_completed":42.5,"pct_converted_discharged":6.2,"pct_dismissed":47.7,"median_months_completed":58.6,"median_months_dismissed":13.5},"46":{"label":"W.D. Michigan","n":8046,"resolved":7962,"completed":4043,"converted_discharged":641,"dismissed":3122,"pct_completed":50.8,"pct_converted_discharged":8.1,"pct_dismissed":39.2,"median_months_completed":47.6,"median_months_dismissed":13.3},"47":{"label":"N.D. Ohio","n":23147,"resolved":22833,"completed":9712,"converted_discharged":1937,"dismissed":10626,"pct_completed":42.5,"pct_converted_discharged":8.5,"pct_dismissed":46.5,"median_months_completed":51.2,"median_months_dismissed":11.1},"48":{"label":"S.D. Ohio","n":33280,"resolved":32852,"completed":16585,"converted_discharged":2342,"dismissed":13596,"pct_completed":50.5,"pct_converted_discharged":7.1,"pct_dismissed":41.4,"median_months_completed":55.5,"median_months_dismissed":14.0},"49":{"label":"E.D. Tennessee (Knoxville)","n":26752,"resolved":26538,"completed":10241,"converted_discharged":2495,"dismissed":13097,"pct_completed":38.6,"pct_converted_discharged":9.4,"pct_dismissed":49.4,"median_months_completed":51.4,"median_months_dismissed":12.9},"50":{"label":"M.D. Tennessee (Nashville)","n":26936,"resolved":26643,"completed":11115,"converted_discharged":1735,"dismissed":13336,"pct_completed":41.7,"pct_converted_discharged":6.5,"pct_dismissed":50.1,"median_months_completed":56.2,"median_months_dismissed":11.7},"51":{"label":"W.D. Tennessee (Memphis)","n":66559,"resolved":66320,"completed":12782,"converted_discharged":2261,"dismissed":50453,"pct_completed":19.3,"pct_converted_discharged":3.4,"pct_dismissed":76.1,"median_months_completed":60.5,"median_months_dismissed":5.2},"52":{"label":"N.D. Illinois (Chicago)","n":112848,"resolved":112478,"completed":32088,"converted_discharged":5895,"dismissed":70947,"pct_completed":28.5,"pct_converted_discharged":5.2,"pct_dismissed":63.1,"median_months_completed":44.8,"median_months_dismissed":8.8},"53":{"label":"C.D. Illinois","n":6158,"resolved":6096,"completed":3151,"converted_discharged":673,"dismissed":2185,"pct_completed":51.7,"pct_converted_discharged":11.0,"pct_dismissed":35.8,"median_months_completed":49.7,"median_months_dismissed":17.3},"54":{"label":"S.D. Illinois","n":7612,"resolved":7593,"completed":3481,"converted_discharged":777,"dismissed":3226,"pct_completed":45.8,"pct_converted_discharged":10.2,"pct_dismissed":42.5,"median_months_completed":49.5,"median_months_dismissed":15.2},"55":{"label":"N.D. Indiana","n":14101,"resolved":13978,"completed":5753,"converted_discharged":1330,"dismissed":6594,"pct_completed":41.2,"pct_converted_discharged":9.5,"pct_dismissed":47.2,"median_months_completed":54.5,"median_months_dismissed":13.6},"56":{"label":"S.D. Indiana","n":30524,"resolved":30405,"completed":15296,"converted_discharged":3102,"dismissed":11362,"pct_completed":50.3,"pct_converted_discharged":10.2,"pct_dismissed":37.4,"median_months_completed":50.5,"median_months_dismissed":13.6},"57":{"label":"E.D. Wisconsin","n":25360,"resolved":25188,"completed":9588,"converted_discharged":1583,"dismissed":13134,"pct_completed":38.1,"pct_converted_discharged":6.3,"pct_dismissed":52.1,"median_months_completed":52.2,"median_months_dismissed":13.4},"58":{"label":"W.D. Wisconsin","n":4746,"resolved":4724,"completed":2327,"converted_discharged":442,"dismissed":1855,"pct_completed":49.3,"pct_converted_discharged":9.4,"pct_dismissed":39.3,"median_months_completed":52.4,"median_months_dismissed":15.0},"60":{"label":"E.D. Arkansas","n":19860,"resolved":19807,"completed":6384,"converted_discharged":1346,"dismissed":11144,"pct_completed":32.2,"pct_converted_discharged":6.8,"pct_dismissed":56.3,"median_months_completed":61.1,"median_months_dismissed":12.9},"61":{"label":"W.D. Arkansas","n":7834,"resolved":7801,"completed":3176,"converted_discharged":730,"dismissed":3556,"pct_completed":40.7,"pct_converted_discharged":9.4,"pct_dismissed":45.6,"median_months_completed":60.0,"median_months_dismissed":16.7},"62":{"label":"N.D. Iowa","n":883,"resolved":867,"completed":339,"converted_discharged":123,"dismissed":390,"pct_completed":39.1,"pct_converted_discharged":14.2,"pct_dismissed":45.0,"median_months_completed":44.2,"median_months_dismissed":9.6},"63":{"label":"S.D. Iowa","n":2099,"resolved":2083,"completed":888,"converted_discharged":227,"dismissed":926,"pct_completed":42.6,"pct_converted_discharged":10.9,"pct_dismissed":44.5,"median_months_completed":62.0,"median_months_dismissed":10.0},"64":{"label":"D. Minnesota","n":8576,"resolved":8546,"completed":5001,"converted_discharged":713,"dismissed":2763,"pct_completed":58.5,"pct_converted_discharged":8.3,"pct_dismissed":32.3,"median_months_completed":53.9,"median_months_dismissed":13.2},"65":{"label":"E.D. Missouri","n":21726,"resolved":21668,"completed":7512,"converted_discharged":1830,"dismissed":11769,"pct_completed":34.7,"pct_converted_discharged":8.4,"pct_dismissed":54.3,"median_months_completed":50.5,"median_months_dismissed":12.6},"66":{"label":"W.D. Missouri","n":14883,"resolved":14114,"completed":7633,"converted_discharged":631,"dismissed":5662,"pct_completed":54.1,"pct_converted_discharged":4.5,"pct_dismissed":40.1,"median_months_completed":56.2,"median_months_dismissed":16.4},"67":{"label":"D. Nebraska","n":7951,"resolved":7909,"completed":4524,"converted_discharged":642,"dismissed":2493,"pct_completed":57.2,"pct_converted_discharged":8.1,"pct_dismissed":31.5,"median_months_completed":54.6,"median_months_dismissed":16.4},"68":{"label":"D. North Dakota","n":368,"resolved":365,"completed":190,"converted_discharged":31,"dismissed":140,"pct_completed":52.1,"pct_converted_discharged":8.5,"pct_dismissed":38.4,"median_months_completed":54.3,"median_months_dismissed":12.0},"69":{"label":"D. South Dakota","n":470,"resolved":470,"completed":296,"converted_discharged":18,"dismissed":149,"pct_completed":63.0,"pct_converted_discharged":3.8,"pct_dismissed":31.7,"median_months_completed":62.2,"median_months_dismissed":17.0},"7-":{"label":"E.D. California","n":480,"resolved":476,"completed":140,"converted_discharged":65,"dismissed":266,"pct_completed":29.4,"pct_converted_discharged":13.7,"pct_dismissed":55.9,"median_months_completed":39.7,"median_months_dismissed":3.8},"70":{"label":"D. Alaska","n":16535,"resolved":16431,"completed":6268,"converted_discharged":1544,"dismissed":8360,"pct_completed":38.1,"pct_converted_discharged":9.4,"pct_dismissed":50.9,"median_months_completed":55.8,"median_months_dismissed":6.0},"71":{"label":"D. Arizona","n":23273,"resolved":23154,"completed":10467,"converted_discharged":762,"dismissed":11387,"pct_completed":45.2,"pct_converted_discharged":3.3,"pct_dismissed":49.2,"median_months_completed":61.4,"median_months_dismissed":6.2},"72":{"label":"N.D. California","n":3863,"resolved":3820,"completed":1390,"converted_discharged":244,"dismissed":2038,"pct_completed":36.4,"pct_converted_discharged":6.4,"pct_dismissed":53.4,"median_months_completed":44.6,"median_months_dismissed":3.2},"73":{"label":"C.D. California","n":58282,"resolved":57384,"completed":12068,"converted_discharged":1990,"dismissed":42227,"pct_completed":21.0,"pct_converted_discharged":3.5,"pct_dismissed":73.6,"median_months_completed":52.3,"median_months_dismissed":1.4},"74":{"label":"S.D. California","n":8679,"resolved":8596,"completed":2975,"converted_discharged":404,"dismissed":4992,"pct_completed":34.6,"pct_converted_discharged":4.7,"pct_dismissed":58.1,"median_months_completed":47.3,"median_months_dismissed":2.8},"75":{"label":"D. Hawaii","n":1886,"resolved":1880,"completed":939,"converted_discharged":110,"dismissed":805,"pct_completed":49.9,"pct_converted_discharged":5.9,"pct_dismissed":42.8,"median_months_completed":49.3,"median_months_dismissed":14.4},"76":{"label":"D. Idaho","n":2470,"resolved":2435,"completed":887,"converted_discharged":186,"dismissed":1335,"pct_completed":36.4,"pct_converted_discharged":7.6,"pct_dismissed":54.8,"median_months_completed":44.9,"median_months_dismissed":9.9},"77":{"label":"D. Montana","n":1233,"resolved":1216,"completed":602,"converted_discharged":189,"dismissed":408,"pct_completed":49.5,"pct_converted_discharged":15.5,"pct_dismissed":33.6,"median_months_completed":40.5,"median_months_dismissed":1.8},"78":{"label":"D. Nevada","n":11186,"resolved":11133,"completed":4377,"converted_discharged":799,"dismissed":5595,"pct_completed":39.3,"pct_converted_discharged":7.2,"pct_dismissed":50.3,"median_months_completed":47.6,"median_months_dismissed":9.1},"79":{"label":"D. Oregon","n":10540,"resolved":10468,"completed":5645,"converted_discharged":550,"dismissed":3939,"pct_completed":53.9,"pct_converted_discharged":5.3,"pct_dismissed":37.6,"median_months_completed":50.2,"median_months_dismissed":13.2},"80":{"label":"E.D. Washington","n":5302,"resolved":5289,"completed":2958,"converted_discharged":294,"dismissed":1904,"pct_completed":55.9,"pct_converted_discharged":5.6,"pct_dismissed":36.0,"median_months_completed":48.4,"median_months_dismissed":12.5},"81":{"label":"W.D. Washington","n":16310,"resolved":16217,"completed":8028,"converted_discharged":741,"dismissed":7032,"pct_completed":49.5,"pct_converted_discharged":4.6,"pct_dismissed":43.4,"median_months_completed":44.9,"median_months_dismissed":7.5},"82":{"label":"D. Colorado","n":15750,"resolved":15642,"completed":7082,"converted_discharged":988,"dismissed":7299,"pct_completed":45.3,"pct_converted_discharged":6.3,"pct_dismissed":46.7,"median_months_completed":55.7,"median_months_dismissed":13.1},"83":{"label":"D. Kansas","n":14601,"resolved":14534,"completed":9326,"converted_discharged":1021,"dismissed":4086,"pct_completed":64.2,"pct_converted_discharged":7.0,"pct_dismissed":28.1,"median_months_completed":52.1,"median_months_dismissed":18.0},"84":{"label":"D. New Mexico","n":1966,"resolved":1951,"completed":771,"converted_discharged":327,"dismissed":796,"pct_completed":39.5,"pct_converted_discharged":16.8,"pct_dismissed":40.8,"median_months_completed":48.3,"median_months_dismissed":10.5},"85":{"label":"N.D. Oklahoma","n":1740,"resolved":1728,"completed":613,"converted_discharged":176,"dismissed":895,"pct_completed":35.5,"pct_converted_discharged":10.2,"pct_dismissed":51.8,"median_months_completed":52.4,"median_months_dismissed":8.6},"86":{"label":"E.D. Oklahoma","n":871,"resolved":867,"completed":412,"converted_discharged":80,"dismissed":361,"pct_completed":47.5,"pct_converted_discharged":9.2,"pct_dismissed":41.6,"median_months_completed":55.4,"median_months_dismissed":9.8},"87":{"label":"W.D. Oklahoma","n":5853,"resolved":5824,"completed":2522,"converted_discharged":619,"dismissed":2652,"pct_completed":43.3,"pct_converted_discharged":10.6,"pct_dismissed":45.5,"median_months_completed":56.6,"median_months_dismissed":10.6},"88":{"label":"D. Utah","n":26830,"resolved":26724,"completed":8922,"converted_discharged":1932,"dismissed":15500,"pct_completed":33.4,"pct_converted_discharged":7.2,"pct_dismissed":58.0,"median_months_completed":43.1,"median_months_dismissed":8.2},"89":{"label":"D. Wyoming","n":604,"resolved":598,"completed":217,"converted_discharged":46,"dismissed":332,"pct_completed":36.3,"pct_converted_discharged":7.7,"pct_dismissed":55.5,"median_months_completed":36.7,"median_months_dismissed":5.5},"90":{"label":"D. Guam","n":907,"resolved":899,"completed":200,"converted_discharged":78,"dismissed":604,"pct_completed":22.2,"pct_converted_discharged":8.7,"pct_dismissed":67.2,"median_months_completed":38.1,"median_months_dismissed":3.2},"93":{"label":"D. Virgin Islands","n":177,"resolved":176,"completed":98,"converted_discharged":11,"dismissed":67,"pct_completed":55.7,"pct_converted_discharged":6.2,"pct_dismissed":38.1,"median_months_completed":40.3,"median_months_dismissed":12.4}},"trend":{"2008":35.9,"2009":43.3,"2010":43.0,"2011":41.3,"2012":39.5,"2013":38.6,"2014":37.6,"2015":36.7,"2016":36.4,"2017":37.7,"2018":38.2,"2019":38.8}};
+function calc(){
+  const v=document.getElementById('district').value;
+  const d=v==='national'?DATA.national:DATA.districts[v];
+  const n=DATA.national;
+  const other=Math.max(0,(100-d.pct_completed-d.pct_converted_discharged-d.pct_dismissed)).toFixed(1);
+  const seg=(cls,pct,txt)=>pct>=4?`<div class="seg-${cls}" style="width:${pct}%">${txt}</div>`:`<div class="seg-${cls}" style="width:${pct}%"></div>`;
+  let html=`<h2 style="color:#f0f6fc;margin-bottom:0.3rem">${d.label}</h2>
+<p style="color:#9eaab6;font-size:0.85rem">${d.n.toLocaleString()} Chapter 13 cases filed 2014&ndash;2019 &middot; ${d.resolved.toLocaleString()} resolved</p>
+<div class="bar">
+${seg('c',d.pct_completed,d.pct_completed+'% completed')}
+${seg('v',d.pct_converted_discharged,d.pct_converted_discharged+'%')}
+${seg('d',d.pct_dismissed,d.pct_dismissed+'% dismissed')}
+${seg('o',other,'')}
+</div>
+<div class="legend">
+<span><span class="dot seg-c"></span>Completed plan, Ch 13 discharge</span>
+<span><span class="dot seg-v"></span>Converted to Ch 7, discharged</span>
+<span><span class="dot seg-d"></span>Dismissed</span>
+<span><span class="dot seg-o"></span>Other (denied/withheld)</span>
+</div>
+<div class="stat">
+<div>Median time to complete (discharged cases): ${d.median_months_completed?d.median_months_completed.toFixed(0)+' months':'n/a'}</div>
+<div>Median time to dismissal (dismissed cases): ${d.median_months_dismissed?d.median_months_dismissed.toFixed(0)+' months':'n/a'}</div>`;
+  if(v!=='national'){
+    const diff=(d.pct_completed-n.pct_completed).toFixed(1);
+    html+=`<div style="margin-top:0.5rem">vs. national completion ${n.pct_completed}%: <strong style="color:${diff>=0?'#3fb950':'#f85149'}">${diff>=0?'+':''}${diff} pts</strong></div>`;
+  }
+  html+=`</div>
+<p style="margin-top:1rem;font-size:0.9rem">Worried about completing a plan? <a href="/tools/plan-payment-calculator.html">Estimate your monthly payment</a>, or if a prior case ended recently, <a href="/">check refiling discharge eligibility</a>.</p>`;
+  const r=document.getElementById('result');r.innerHTML=html;r.classList.add('show');
+  if(typeof gtag==='function')gtag('event','plan_survival_calc',{district:v});
+}
+</script>
+</body>
+</html>
