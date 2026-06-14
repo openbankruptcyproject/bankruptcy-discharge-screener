@@ -469,7 +469,7 @@ document.addEventListener('click', function(e) {
 
     <ol class="step-list">
         <li><strong>Export PACER data.</strong> Use the <a href="https://pcl.uscourts.gov">PACER Case Locator</a> to export CSV data for your district. Filter by attorney name, date range, or case chapter. Searches are free; document pulls are $0.10/page (capped at $3).</li>
-        <li><strong>Download the screener.</strong> Clone or download <code>screen_1328f.py</code> from the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub repository</a>. Python 3 standard library only -- no pip install needed.</li>
+        <li><strong>Download the screener.</strong> Clone or download <code>screen_1328f.py</code> from the <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener">GitHub repository</a>. Python 3 standard library only -- no pip install needed.</li>
         <li><strong>Run locally.</strong> Point the screener at your CSV exports. It groups cases by debtor name, checks discharge-to-filing gaps against statutory windows, and reports violations with attorney attribution. All processing happens on your machine. No data is transmitted anywhere.</li>
         <li><strong>Review results.</strong> The screener outputs per-attorney summaries, gap calculations, and methodological caveats. False positives from name matching are flagged for manual verification.</li>
     </ol>
@@ -516,7 +516,7 @@ document.addEventListener('click', function(e) {
             <p>Statutory framework, timing rules, and Question 9 analysis.</p>
         </div>
         <div class="tool-card">
-            <h3><a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub Repository</a></h3>
+            <h3><a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener">GitHub Repository</a></h3>
             <p>Source code, screener scripts, and documentation.</p>
         </div>
     </div>
@@ -557,7 +557,7 @@ document.addEventListener('click', function(e) {
 </div>
 <div class="footer">
         <p><a href="index.html">Map</a> &middot; <a href="check.html">Checker</a> &middot; <a href="explainer.html">Explainer</a> &middot; <a href="caselaw.html">Case Law</a> &middot; <a href="dashboard.html">Dashboard</a> &middot; <a href="glossary.html">Glossary</a></p>
-        <p style="margin-top:8px">Part of the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
+        <p style="margin-top:8px">Part of the <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener">Bankruptcy Discharge Bar Screener</a>, an open-source project. This is not legal advice.</p>
         <p style="margin-top:4px"><a href="https://1328f.org">Research</a> &middot; Research and reports at <a href="https://1328f.org">1328f.org</a></p>
         <p style="margin-top:8px">Last updated: June 2026</p>
     </div>
@@ -573,7 +573,7 @@ document.addEventListener('click', function(e) {
 </div>
 <script>fetch("/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString()}).catch(function(){})</script>
 <footer style="text-align:center;padding:24px 0;font-size:13px;color:#9eaab6;border-top:1px solid #30363d;margin-top:2rem">
-    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener" target="_blank" rel="noopener">Open Source</a>
+    <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener" target="_blank" rel="noopener">Open Source</a>
     &nbsp;&middot;&nbsp; <a href="https://1328f.org">Research</a>
     &nbsp;&middot;&nbsp; No personal data collected
     <br>Research and reports at <a href="https://1328f.org">1328f.org</a>

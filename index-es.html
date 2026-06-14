@@ -747,9 +747,9 @@ document.addEventListener('click', function(e) {
   <h1>Verificador de Descarga de Bancarrota</h1>
   <p class="subtitle">392,412 solicitantes repetidos de bancarrota recibieron descarga sin ninguna verificaci&oacute;n de elegibilidad. El gobierno public&oacute; los datos pero nunca los verific&oacute;. Elige un distrito. Ejecuta el verificador. Descubre cu&aacute;ntas son violaciones.</p>
   <p class="links">
-    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub</a>
+    <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener">GitHub</a>
     <a href="dashboard.html">Panel Interactivo</a>
-    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Gu&iacute;a del Voluntario</a>
+    <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Gu&iacute;a del Voluntario</a>
   </p>
 </header>
 
@@ -871,7 +871,7 @@ document.addEventListener('click', function(e) {
     </div>
     <div class="no-data" id="no-data" style="display:none;">
       A&uacute;n no hay datos para este estado.
-      <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">S&eacute; el primero en verificarlo.</a>
+      <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">S&eacute; el primero en verificarlo.</a>
     </div>
   </div>
 
@@ -886,12 +886,12 @@ document.addEventListener('click', function(e) {
       </div>
       <div class="vol-step">
         <h3><span class="vol-num">2</span> Clona el repositorio</h3>
-        <div class="vol-cmd" id="vol-cmd-clone">git clone https://github.com/ilikemath9999/bankruptcy-discharge-screener.git
+        <div class="vol-cmd" id="vol-cmd-clone">git clone https://github.com/openbankruptcyproject/bankruptcy-discharge-screener.git
 cd bankruptcy-discharge-screener</div>
       </div>
       <div class="vol-step">
         <h3><span class="vol-num">3</span> Descarga CSVs del PACER Case Locator</h3>
-        <p>Ve a <a href="https://pcl.uscourts.gov" target="_blank">pcl.uscourts.gov</a>, inicia sesi&oacute;n, busca por nombre de abogado en <strong id="vol-court-name">este tribunal</strong>. Exporta cada b&uacute;squeda como CSV en una carpeta <code>csv-exports/</code>. Descarga 2-3 abogados de alto volumen + 1-2 firmas peque&ntilde;as como control. Consulta la <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md" target="_blank">gu&iacute;a de CSV</a> para los pasos detallados.</p>
+        <p>Ve a <a href="https://pcl.uscourts.gov" target="_blank">pcl.uscourts.gov</a>, inicia sesi&oacute;n, busca por nombre de abogado en <strong id="vol-court-name">este tribunal</strong>. Exporta cada b&uacute;squeda como CSV en una carpeta <code>csv-exports/</code>. Descarga 2-3 abogados de alto volumen + 1-2 firmas peque&ntilde;as como control. Consulta la <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md" target="_blank">gu&iacute;a de CSV</a> para los pasos detallados.</p>
       </div>
       <div class="vol-step">
         <h3><span class="vol-num">4</span> Ejecuta el verificador</h3>
@@ -915,7 +915,7 @@ cd bankruptcy-discharge-screener</div>
       <div class="step">
         <div class="step-num">1</div>
         <h3>Descarga los datos</h3>
-        <p>Exporta CSVs del <a href="https://pcl.uscourts.gov">PACER Case Locator</a> (b&uacute;squedas gratuitas). La <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md">gu&iacute;a de CSV</a> te explica c&oacute;mo hacerlo.</p>
+        <p>Exporta CSVs del <a href="https://pcl.uscourts.gov">PACER Case Locator</a> (b&uacute;squedas gratuitas). La <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md">gu&iacute;a de CSV</a> te explica c&oacute;mo hacerlo.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
@@ -925,7 +925,7 @@ cd bankruptcy-discharge-screener</div>
       <div class="step">
         <div class="step-num">3</div>
         <h3>Reporta tus n&uacute;meros</h3>
-        <p>Abre un <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/issues/new?template=district-screening.md">issue en GitHub</a> con tu distrito, cantidad de casos y resultados. Lo agregamos al mapa.</p>
+        <p>Abre un <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/issues/new?template=district-screening.md">issue en GitHub</a> con tu distrito, cantidad de casos y resultados. Lo agregamos al mapa.</p>
       </div>
     </div>
   </div>
@@ -1362,7 +1362,7 @@ cd bankruptcy-discharge-screener</div>
       '(cualquier observaci\u00f3n, principales infractores, notas de verificaci\u00f3n)\n'
     );
     document.getElementById('vol-submit-link').href =
-      'https://github.com/ilikemath9999/bankruptcy-discharge-screener/issues/new?title=' + issueTitle + '&body=' + issueBody;
+      'https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/issues/new?title=' + issueTitle + '&body=' + issueBody;
 
     panel.classList.add('visible');
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });

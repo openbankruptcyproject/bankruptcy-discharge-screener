@@ -580,14 +580,14 @@
 <p class="subtitle">392,412 repeat bankruptcy filers received discharge with zero eligibility verification. The government published the data but never checked it. Pick a district. Run the screener. Find out how many are violations.</p>
 <p class="links">
 <a href="check.html">Check My Eligibility</a>
-<a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub</a>
+<a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener">GitHub</a>
 <a href="dashboard.html">Interactive Dashboard</a>
 <a href="before-you-file.html">Before You File</a>
 <a href="bankruptcy-by-state.html">By State</a>
 <a href="emergency-bankruptcy-filing.html">Emergency Filing</a>
 <a href="bankruptcy-trustee-investigation.html">Trustee Investigations</a>
 <a href="guides.html">All Guides</a>
-<a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Volunteer Guide</a>
+<a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Volunteer Guide</a>
 <a href="index-es.html" lang="es">Español</a>
 </p>
 </header>
@@ -711,7 +711,7 @@
 </div>
 <div class="no-data" id="no-data" style="display:none;">
       No data for this state yet.
-      <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Be the first to screen it.</a>
+      <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/volunteer_guide.md">Be the first to screen it.</a>
 </div>
 </div>
 <div class="volunteer-panel" id="volunteer-panel">
@@ -725,12 +725,12 @@
 </div>
 <div class="vol-step">
 <h3><span class="vol-num">2</span> Clone the repo</h3>
-<div class="vol-cmd" id="vol-cmd-clone">git clone https://github.com/ilikemath9999/bankruptcy-discharge-screener.git
+<div class="vol-cmd" id="vol-cmd-clone">git clone https://github.com/openbankruptcyproject/bankruptcy-discharge-screener.git
 cd bankruptcy-discharge-screener</div>
 </div>
 <div class="vol-step">
 <h3><span class="vol-num">3</span> Pull CSVs from PACER Case Locator</h3>
-<p>Go to <a href="https://pcl.uscourts.gov" target="_blank">pcl.uscourts.gov</a>, log in, search Party Name by attorney last name in <strong id="vol-court-name">this court</strong>. Export each search as CSV into a <code>csv-exports/</code> folder. Pull 2-3 high-volume filers + 1-2 smaller firms as controls. See the <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md" target="_blank">CSV guide</a> for detailed steps.</p>
+<p>Go to <a href="https://pcl.uscourts.gov" target="_blank">pcl.uscourts.gov</a>, log in, search Party Name by attorney last name in <strong id="vol-court-name">this court</strong>. Export each search as CSV into a <code>csv-exports/</code> folder. Pull 2-3 high-volume filers + 1-2 smaller firms as controls. See the <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md" target="_blank">CSV guide</a> for detailed steps.</p>
 </div>
 <div class="vol-step">
 <h3><span class="vol-num">4</span> Run the screener</h3>
@@ -753,7 +753,7 @@ cd bankruptcy-discharge-screener</div>
 <div class="step">
 <div class="step-num">1</div>
 <h3>Pull the data</h3>
-<p>Export CSVs from <a href="https://pcl.uscourts.gov">PACER Case Locator</a> (free searches). The <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md">CSV guide</a> walks through it.</p>
+<p>Export CSVs from <a href="https://pcl.uscourts.gov">PACER Case Locator</a> (free searches). The <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/blob/main/docs/pacer_csv_guide.md">CSV guide</a> walks through it.</p>
 </div>
 <div class="step">
 <div class="step-num">2</div>
@@ -763,7 +763,7 @@ cd bankruptcy-discharge-screener</div>
 <div class="step">
 <div class="step-num">3</div>
 <h3>Report your numbers</h3>
-<p>Open a <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener/issues/new?template=district-screening.md">GitHub issue</a> with your district, case count, and hit count. We add it to the map.</p>
+<p>Open a <a href="https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/issues/new?template=district-screening.md">GitHub issue</a> with your district, case count, and hit count. We add it to the map.</p>
 </div>
 </div>
 </div>
@@ -1224,7 +1224,7 @@ cd bankruptcy-discharge-screener</div>
       '(any observations, top offenders, verification notes)\n'
     );
     document.getElementById('vol-submit-link').href =
-      'https://github.com/ilikemath9999/bankruptcy-discharge-screener/issues/new?title=' + issueTitle + '&body=' + issueBody;
+      'https://github.com/openbankruptcyproject/bankruptcy-discharge-screener/issues/new?title=' + issueTitle + '&body=' + issueBody;
 
     panel.classList.add('visible');
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });

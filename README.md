@@ -206,7 +206,7 @@ CSV files should follow the naming convention: `api_{LastName_FirstName}_{court}
 ## Quick Start
 
 ```
-git clone https://github.com/ilikemath9999/bankruptcy-discharge-screener.git
+git clone https://github.com/openbankruptcyproject/bankruptcy-discharge-screener.git
 cd bankruptcy-discharge-screener
 
 # RSS Monitor
@@ -243,7 +243,7 @@ Cases are deduplicated by PACER case ID. Joint cases ("John Smith and Jane Smith
 
 ## Live Map
 
-**[View the national map](https://ilikemath9999.github.io/bankruptcy-discharge-screener/)** -- see which districts have been screened and what the numbers look like.
+**[View the national map](https://openbankruptcyproject.github.io/bankruptcy-discharge-screener/)** -- see which districts have been screened and what the numbers look like.
 
 The map updates as volunteers screen new districts. Every row is independently generated from public PACER data.
 
