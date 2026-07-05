@@ -96,9 +96,19 @@ def step_scan():
 
 
 def step_push():
-    log("STEP git push (terminal prompts disabled)")
-    r = run(["git", "push", "--progress", "origin", "HEAD"],
-            env={"GIT_TERMINAL_PROMPT": "0"}, timeout=600)
+    log("STEP git push")
+    # git's default credential helper here is Git Credential Manager, which
+    # pops a GUI dialog GIT_TERMINAL_PROMPT can't suppress and ignores the gh
+    # account switch. Route auth through gh so the push lands headlessly as
+    # the active (publish) account (leading empty helper resets the inherited
+    # manager helper first). The pre-push hook re-runs scan_before_push.sh —
+    # kept intentionally as the enforcement gate — so allow a long leash like
+    # step_scan rather than skipping it.
+    r = run(["git",
+             "-c", "credential.helper=",
+             "-c", "credential.helper=!gh auth git-credential",
+             "push", "--progress", "origin", "HEAD"],
+            env={"GIT_TERMINAL_PROMPT": "0"}, timeout=1800)
     for line in ((r.stderr or "") + (r.stdout or "")).strip().splitlines()[-5:]:
         log(f"  push: {line}")
     if r.returncode != 0:
