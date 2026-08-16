@@ -7,3 +7,16 @@ __pycache__/
 .env
 results/
 .sensitive_terms
+
+# --- Outreach drafts: never publish (added 2026-08-16) ---
+# GitHub Pages serves this repo at 1328f.com, so any tracked file is a LIVE URL.
+# These are private working drafts; one of them literally said "DO NOT PUBLISH"
+# while being served at https://1328f.com/REDDIT_POST_RANTIWORK.md
+reddit_*
+REDDIT_POST_*
+comments/
+CONTENT_FACTORY.md
+LEADERBOARD.md
+SEO_KEYWORD_TRACKER.md
+PUBLISH_CHECKLIST.md
+seo-dashboard.html
