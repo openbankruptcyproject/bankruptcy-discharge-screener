@@ -1,12 +1,19 @@
 {
-  "last_updated": "2026-05-23T22:00:00Z",
+  "last_updated": "2026-08-22T12:25:02Z",
   "domains": "210+",
   "domains_methodology": "Registered + deployed publication domains across the Bankruptcy Transparency Network. Counts each apex domain and each functionally distinct subdomain separately. See https://openbankruptcyproject.org/network/ for the public inventory.",
   "pages": "49,000+",
   "pages_methodology": "Total HTML pages across the Bankruptcy Transparency Network across six languages. Last full count 2026-05-23: 48,977 active pages (openbankruptcyproject.org 37,854 + statute-sites 10,339 + 1328f.com 784, excluding stale backups and not-owned mirrors). Multi-language layer: EN base + ES + DE + PL + FR + IT.",
   "pages_spanish": "4,200+",
   "languages": 6,
-  "languages_list": ["en", "es", "de", "pl", "fr", "it"],
+  "languages_list": [
+    "en",
+    "es",
+    "de",
+    "pl",
+    "fr",
+    "it"
+  ],
   "spend_research": "$508+",
   "recap_cases": "549+",
   "recap_documents": "3,100+",
